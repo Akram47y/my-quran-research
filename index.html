@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>গবেষণা ও কুরআন অনুবাদ</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        /* Header & Nav */
+        header {
+            background-color: #1a365d;
+            color: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+        nav a:hover {
+            color: #cbd5e0;
+        }
+        /* Hero Section */
+        .hero {
+            background-color: #2b6cb0;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        .hero h1 {
+            margin-bottom: 1rem;
+        }
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .section-title {
+            border-bottom: 3px solid #2b6cb0;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.3rem;
+            color: #1a365d;
+        }
+        /* Cards Layout */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .card h3 {
+            color: #2b6cb0;
+            margin-bottom: 0.5rem;
+        }
+        /* Video Container Responsive */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        /* Footer */
+        footer {
+            background-color: #1a365d;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h2>গবেষণা ও অনুবাদ</h2>
+        <nav>
+            <a href="#home">হোম</a>
+            <a href="#quran">কুরআন অনুবাদ</a>
+            <a href="#research">গবেষণা</a>
+            <a href="#videos">ভিডিও</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>কুরআন গবেষণা ও শব্দানুবাদ প্ল্যাটফর্ম</h1>
+        <p>শব্দ ও মূল রুট বিশ্লেষণের মাধ্যমে সঠিক অনুবাদের প্রয়াস</p>
+    </section>
+
+    <div class="container">
+        
+        <!-- Quran Section -->
+        <section id="quran">
+            <h2 class="section-title">কুরআন অনুবাদ ও রুট বিশ্লেষণ</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>সুরা আল-ফাতিহা</h3>
+                    <p>প্রতিটি শব্দের মূল রুট ও বাংলা অর্থ সহ অনুবাদ পড়ুন...</p>
+                </div>
+                <div class="card">
+                    <h3>সুরা আল-বাকারা</h3>
+                    <p>প্রতিটি শব্দের মূল রুট ও বাংলা অর্থ সহ অনুবাদ পড়ুন...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Articles Section -->
+        <section id="research">
+            <h2 class="section-title">গবেষণামূলক নিবন্ধসমূহ</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>আরবি শব্দমূলের গঠন ও অর্থ</h3>
+                    <p>রুট বিশ্লেষণের মাধ্যমে শব্দের মূল ভাব বের করার পদ্ধতি সংক্রান্ত গবেষণা...</p>
+                </div>
+                <div class="card">
+                    <h3>ঐতিহাসিক ও ভাষাতাত্ত্বিক বিশ্লেষণ</h3>
+                    <p>কুরআনের ভাষার শৈলী এবং এর গঠনমূলক বিশ্লেষণ নিয়ে সংক্ষিপ্ত আলোচনা...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Section -->
+        <section id="videos">
+            <h2 class="section-title">ভিডিও আলোচনা</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="video-container">
+                        <!-- আপনার ইউটিউব বা ভিডিও লিংক এখানে বসবে -->
+                        <iframe src="https://www.youtube.com/embed/sample" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <h3 style="margin-top: 10px;">ভিডিও শিরোনাম ১</h3>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; ২০২৬ সর্বস্বত্ব সংরক্ষিত</p>
+    </footer>
+
+</body>
+</html>
