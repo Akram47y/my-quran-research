@@ -20,7 +20,7 @@
         }
         header h1 {
             margin: 0;
-            font-size: 24px;
+            font-size: 22px;
         }
         .nav-link {
             color: #cbd5e0;
@@ -31,36 +31,36 @@
         }
         .container {
             max-width: 800px;
-            margin: 20px auto;
-            padding: 0 15px;
+            margin: 15px auto;
+            padding: 0 10px;
         }
         .surah-header {
             background: #ffffff;
-            padding: 20px;
+            padding: 15px;
             border-radius: 12px;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
         .surah-title {
             color: #1a365d;
-            margin: 0 0 10px 0;
-            font-size: 28px;
+            margin: 0 0 5px 0;
+            font-size: 24px;
         }
         .surah-info {
             color: #718096;
-            font-size: 14px;
+            font-size: 13px;
         }
         .ayah-card {
             background: #ffffff;
             border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 25px;
+            padding: 18px 12px;
+            margin-bottom: 20px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             border-right: 4px solid #2b6cb0;
         }
         .ayah-header {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         .ayah-number {
             background: #ebf8ff;
@@ -74,27 +74,27 @@
             font-size: 28px;
             text-align: right;
             direction: rtl;
-            line-height: 2.2;
-            margin-bottom: 20px;
+            line-height: 2;
+            margin-bottom: 18px;
             color: #2d3748;
             font-family: 'Traditional Arabic', 'Scheherazade New', serif;
         }
+        
+        /* প্রতি লাইনে ৩টি করে বক্স রাখার লেআউট */
         .wbw-container {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             direction: rtl;
-            gap: 10px;
-            margin-bottom: 20px;
-            justify-content: flex-start;
+            gap: 8px;
+            margin-bottom: 18px;
         }
         .word-box {
             background: #f8fafc;
             border: 1px solid #e2e8f0;
             border-radius: 8px;
-            padding: 10px 8px;
+            padding: 10px 4px;
             text-align: center;
-            min-width: 80px;
-            flex: 1;
+            box-sizing: border-box;
         }
         .wbw-arabic {
             font-size: 22px;
@@ -106,7 +106,7 @@
             font-size: 11px;
             color: #e53e3e;
             background: #fff5f5;
-            padding: 2px 6px;
+            padding: 2px 5px;
             border-radius: 4px;
             display: inline-block;
             margin-bottom: 4px;
@@ -115,10 +115,12 @@
             font-size: 13px;
             color: #4a5568;
             font-weight: 500;
+            line-height: 1.3;
         }
+        
         .flow-translation {
             background: #ebf8ff;
-            padding: 15px;
+            padding: 12px 15px;
             border-radius: 8px;
             color: #2c5282;
             font-size: 15px;
