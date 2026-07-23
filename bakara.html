@@ -81,18 +81,21 @@
         }
         
         .wbw-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            display: flex;
+            flex-wrap: wrap;
             direction: rtl;
-            gap: 8px;
+            gap: 10px;
             margin-bottom: 18px;
+            justify-content: flex-start;
         }
         .word-box {
             background: #f8fafc;
             border: 1px solid #e2e8f0;
             border-radius: 8px;
-            padding: 10px 4px;
+            padding: 10px;
             text-align: center;
+            min-width: 90px;
+            flex: 1 1 calc(33.333% - 10px);
             box-sizing: border-box;
         }
         .wbw-arabic {
@@ -149,38 +152,45 @@
         <div class="arabic-text">ذَٰلِكَ الْكِتَابُ لَا رَيْبَ ۛ فِيهِ ۛ هُدًى لِّلْمُتَّقِينَ</div>
         
         <div class="wbw-container">
+            <!-- ১. ذَٰلِكَ -->
             <div class="word-box">
                 <div class="wbw-arabic">ذَٰلِكَ</div>
                 <div class="wbw-root">সর্বনাম</div>
                 <div class="wbw-meaning">এটি</div>
             </div>
+            <!-- ২. الْكِتَابُ -->
             <div class="word-box">
                 <div class="wbw-arabic">الْكِتَابُ</div>
                 <div class="wbw-root">রুট: ك ت ب</div>
                 <div class="wbw-meaning">সেই নথি</div>
             </div>
+            <!-- ৩. لَا -->
             <div class="word-box">
                 <div class="wbw-arabic">لَا</div>
-                <div class="wbw-root">নঞর্থক</div>
+                <div class="wbw-root">নঞর্থক অব্যয়</div>
                 <div class="wbw-meaning">নেই</div>
             </div>
+            <!-- ৪. رَيْبَ -->
             <div class="word-box">
                 <div class="wbw-arabic">رَيْبَ</div>
                 <div class="wbw-root">রুট: ر ي ب</div>
                 <div class="wbw-meaning">কোনো সন্দেহ</div>
             </div>
+            <!-- ৫. فِيهِ -->
             <div class="word-box">
                 <div class="wbw-arabic">فِيهِ</div>
-                <div class="wbw-root">অব্যয়+সর্বনাম</div>
+                <div class="wbw-root">في + ه</div>
                 <div class="wbw-meaning">এতে</div>
             </div>
+            <!-- ৬. هُدًى -->
             <div class="word-box">
                 <div class="wbw-arabic">هُدًى</div>
                 <div class="wbw-root">রুট: ه د ي</div>
                 <div class="wbw-meaning">দিকনির্দেশ</div>
             </div>
+            <!-- ৭. لِّلْمُتَّقِينَ -->
             <div class="word-box">
-                <div class="wbw-arabic">لِّلْمُتَّقِينَ</div>
+                <div class="wbw-arabic">لِّـلْمُتَّقِينَ</div>
                 <div class="wbw-root">রুট: و ق ي</div>
                 <div class="wbw-meaning">আত্মরক্ষাকারীদের জন্য</div>
             </div>
