@@ -3,229 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>সুরা আল-ফাতিহা - শব্দানুবাদ ও রুট বিশ্লেষণ</title>
+    <title>কুরআন শব্দানুবাদ ও রুট বিশ্লেষণ</title>
     <style>
-        * {
-            box-sizing: border-box;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
         }
-        body {
-            background-color: #f4f7f6;
-            color: #2d3748;
-            line-height: 1.6;
-        }
-        /* Header */
-        header { 
+        header {
             background-color: #1a365d;
-            color: #fff;
-            padding: 1rem;
+            color: white;
             text-align: center;
+            padding: 20px 10px;
         }
-        header a {
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .nav-link {
             color: #cbd5e0;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 14px;
             display: inline-block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 8px;
         }
-        /* Container */
         .container {
-            max-width: 900px;
-            margin: 1.5rem auto;
-            padding: 0 1rem;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 15px;
         }
         .surah-header {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
             text-align: center;
-            background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
         }
-        .surah-header h1 {
+        .surah-title {
             color: #1a365d;
-            margin-bottom: 0.3rem;
+            margin: 0 0 10px 0;
+            font-size: 28px;
         }
-        /* Ayah Box */
+        .surah-info {
+            color: #718096;
+            font-size: 14px;
+        }
         .ayah-card {
-            background: white;
-            border-radius: 10px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             border-right: 4px solid #2b6cb0;
         }
-        .ayah-number {
-            font-weight: bold;
-            color: #2b6cb0;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
+        .ayah-header {
+            margin-bottom: 15px;
         }
-        /* Full Ayah Arabic Display */
-        .full-arabic {
-            font-size: 1.8rem;
+        .ayah-number {
+            background: #ebf8ff;
+            color: #2b6cb0;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .arabic-text {
+            font-size: 28px;
             text-align: right;
             direction: rtl;
-            color: #1a202c;
-            margin-bottom: 1.5rem;
             line-height: 2.2;
+            margin-bottom: 20px;
+            color: #2d3748;
+            font-family: 'Traditional Arabic', 'Scheherazade New', serif;
         }
-        /* Word by Word Grid */
-        .word-grid {
+        .wbw-container {
             display: flex;
             flex-wrap: wrap;
-            flex-direction: row-reverse; /* আরবি ডান থেকে বামে সাজানোর জন্য */
+            direction: rtl;
             gap: 10px;
-            margin-bottom: 1.5rem;
-            border-bottom: 1px solid #e2e8f0;
-            padding-bottom: 1rem;
+            margin-bottom: 20px;
+            justify-content: flex-start;
         }
         .word-box {
             background: #f8fafc;
-            border: 1px solid #cbd5e0;
-            border-radius: 6px;
-            padding: 8px 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 10px 8px;
             text-align: center;
-            min-width: 90px;
+            min-width: 80px;
             flex: 1;
         }
         .wbw-arabic {
-            font-size: 1.4rem;
-            color: #1a365d;
-            font-weight: bold;
-            direction: rtl;
+            font-size: 22px;
+            color: #1a202c;
+            margin-bottom: 4px;
+            font-family: 'Traditional Arabic', 'Scheherazade New', serif;
         }
         .wbw-root {
-            font-size: 0.8rem;
+            font-size: 11px;
             color: #e53e3e;
             background: #fff5f5;
-            padding: 2px 4px;
+            padding: 2px 6px;
             border-radius: 4px;
-            margin: 4px 0;
             display: inline-block;
+            margin-bottom: 4px;
         }
         .wbw-meaning {
-            font-size: 0.9rem;
-            color: #2d3748;
+            font-size: 13px;
+            color: #4a5568;
             font-weight: 500;
         }
-        /* Flow Translation */
         .flow-translation {
             background: #ebf8ff;
-            padding: 1rem;
-            border-radius: 6px;
+            padding: 15px;
+            border-radius: 8px;
             color: #2c5282;
-            font-size: 1rem;
-        }
-        .flow-translation strong {
-            color: #1a365d;
+            font-size: 15px;
+            line-height: 1.6;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <a href="index.html">&larr; হোমপেজে ফিরে যান</a>
-        <h2>কুরআন শব্দানুবাদ ও রুট বিশ্লেষণ</h2>
-    </header>
+<header>
+    <a href="index.html" class="nav-link">← হোমপেজে ফিরে যান</a>
+    <h1>কুরআন শব্দানুবাদ ও রুট বিশ্লেষণ</h1>
+</header>
 
-    <div class="container">
+<div class="container">
 
-        <!-- Surah Title -->
-        <div class="surah-header">
-            <h1>১. সুরা আল-ফাতিহা</h1>
-            <p>আয়াত সংখ্যা: ৭ | অবতীর্ণ: মক্কা</p>
-        </div>
-
-        <!-- আয়াত ১ -->
-<div class="ayah-card">
-    <div class="ayah-header">
-        <span class="ayah-number">আয়াত ১</span>
-    </div>
-    <div class="arabic-text">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
-    
-    <div class="wbw-container">
-        <div class="word-box">
-            <div class="wbw-arabic">بِسْمِ</div>
-            <div class="wbw-root">রুট: س م و</div>
-            <div class="wbw-meaning">নামে</div>
-        </div>
-        <div class="word-box">
-            <div class="wbw-arabic">اللَّهِ</div>
-            <div class="wbw-root">রুট: أ ل ه</div>
-            <div class="wbw-meaning">আল্লাহর</div>
-        </div>
-        <div class="word-box">
-            <div class="wbw-arabic">الرَّحْمَنِ</div>
-            <div class="wbw-root">রুট: ر ح م</div>
-            <div class="wbw-meaning">পরম মমতাময়</div>
-        </div>
-        <div class="word-box">
-            <div class="wbw-arabic">الرَّحِيمِ</div>
-            <div class="wbw-root">রুট: ر ح م</div>
-            <div class="wbw-meaning">সদামমতাবদ্ধ</div>
-        </div>
+    <div class="surah-header">
+        <h2 class="surah-title">১. সূরা আল-ফাতিহা</h2>
+        <div class="surah-info">আয়াত সংখ্যা: ৭ | অবতীর্ণ: মক্কা</div>
     </div>
 
-    <div class="flow-translation">
-        <strong>বাংলা অনুবাদ:</strong> পরম মমতাময়, সদামমতাবদ্ধ আল্লাহর নামে।
-    </div>
-</div>
+    <!-- আয়াত ১ -->
+    <div class="ayah-card">
+        <div class="ayah-header">
+            <span class="ayah-number">আয়াত ১</span>
+        </div>
+        <div class="arabic-text">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
         
-
-        <!-- Ayah 2 -->
-        <div class="ayah-card">
-            <div class="ayah-number">আয়াত ২</div>
-            
-            <div class="full-arabic">
-                ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَـٰلَمِينَ
+        <div class="wbw-container">
+            <div class="word-box">
+                <div class="wbw-arabic">بِسْمِ</div>
+                <div class="wbw-root">রুট: س م و</div>
+                <div class="wbw-meaning">নামে</div>
             </div>
-
-            <div class="word-grid">
-                <div class="word-box">
-                    <div class="wbw-arabic">ٱلْحَمْدُ</div>
-                    <div class="wbw-root">রুট: ح م د</div>
-                    <div class="wbw-meaning">সকল প্রশংসা</div>
-                </div>
-                <div class="word-box">
-                    <div class="wbw-arabic">لِلَّهِ</div>
-                    <div class="wbw-root">রুট: أ ل ه</div>
-                    <div class="wbw-meaning">আল্লাহর জন্য</div>
-                </div>
-                <div class="word-box">
-                    <div class="wbw-arabic">رَبِّ</div>
-                    <div class="wbw-root">রুট: ر ب ب</div>
-                    <div class="wbw-meaning">প্রতিপালক</div>
-                </div>
-                <div class="word-box">
-                    <div class="wbw-arabic">ٱلْعَـٰلَمِينَ</div>
-                    <div class="wbw-root">রুট: ع ل م</div>
-                    <div class="wbw-meaning">সকল জগতের</div>
-                </div>
+            <div class="word-box">
+                <div class="wbw-arabic">اللَّهِ</div>
+                <div class="wbw-root">রুট: أ ل ه</div>
+                <div class="wbw-meaning">আল্লাহর</div>
             </div>
-
-            <div class="flow-translation">
-                <strong>বাংলা অনুবাদ:</strong> সকল প্রশংসা বিশ্বজগতের প্রতিপালক আল্লাহর জন্য।
+            <div class="word-box">
+                <div class="wbw-arabic">الرَّحْمَنِ</div>
+                <div class="wbw-root">রুট: ر ح م</div>
+                <div class="wbw-meaning">পরম মমতাময়</div>
+            </div>
+            <div class="word-box">
+                <div class="wbw-arabic">الرَّحِيمِ</div>
+                <div class="wbw-root">রুট: ر ح م</div>
+                <div class="wbw-meaning">সদামমতাবদ্ধ</div>
             </div>
         </div>
 
-    </div>  <!-- রুট র-হ-ম ও বিষয়বস্তু -->
-<div style="background: #ffffff; padding: 20px; border-radius: 8px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.05); color: #2d3748;">
-    <h3 style="color: #1a365d; margin-top: 0;">রুট বিশ্লেষণ: ر ح م (র–হ–ম)</h3>
-    <p><strong>রুট র–হ–ম (ر ح م) মোট ৩৩৯ বার এসেছে</strong> = মমতা/মমতায়/মমতাময়/মমতাশীল/মমতাবদ্ধতা/মমতাবদ্ধ/মমতাবদ্ধন।</p>
-    
-    <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
-    
-    <div style="text-align: center; margin: 20px 0;">
-        <p style="font-size: 24px; font-family: 'Scheherazade New', 'Traditional Arabic', serif; color: #2c5282; margin-bottom: 10px;">
-            بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
-        </p>
-        <p style="font-size: 18px; color: #2d3748; font-weight: bold;">
-            “পরম মমতাময়, সদামমতাবদ্ধ আল্লাহর নামে।”
-        </p>
+        <div class="flow-translation">
+            <strong>বাংলা অনুবাদ:</strong> পরম মমতাময়, সদামমতাবদ্ধ আল্লাহর নামে।
+        </div>
     </div>
+
+    <!-- আয়াত ২ -->
+    <div class="ayah-card">
+        <div class="ayah-header">
+            <span class="ayah-number">আয়াত ২</span>
+        </div>
+        <div class="arabic-text">الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ</div>
+        
+        <div class="wbw-container">
+            <div class="word-box">
+                <div class="wbw-arabic">الْحَمْدُ</div>
+                <div class="wbw-root">রুট: ح م د</div>
+                <div class="wbw-meaning">সকল প্রশংসা</div>
+            </div>
+            <div class="word-box">
+                <div class="wbw-arabic">لِلَّهِ</div>
+                <div class="wbw-root">রুট: أ ل ه</div>
+                <div class="wbw-meaning">আল্লাহর জন্য</div>
+            </div>
+            <div class="word-box">
+                <div class="wbw-arabic">رَبِّ</div>
+                <div class="wbw-root">রুট: ر ب ب</div>
+                <div class="wbw-meaning">প্রতিপালক</div>
+            </div>
+            <div class="word-box">
+                <div class="wbw-arabic">الْعَالَمِينَ</div>
+                <div class="wbw-root">রুট: ع ل م</div>
+                <div class="wbw-meaning">সকল জগতের</div>
+            </div>
+        </div>
+
+        <div class="flow-translation">
+            <strong>বাংলা অনুবাদ:</strong> সকল প্রশংসা বিশ্বজগতের প্রতিপালক আল্লাহর জন্য।
+        </div>
+    </div>
+
 </div>
 
 </body>
