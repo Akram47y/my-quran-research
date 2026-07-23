@@ -8,7 +8,7 @@
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f4f6f8;
-      margin: 20px;
+      margin: 20px 10px;
       padding: 0;
     }
     .surah-table-container {
@@ -17,7 +17,7 @@
       background: #ffffff;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      overflow-x: auto;
+      overflow: hidden;
     }
     table.surah-table {
       width: 100%;
@@ -27,40 +27,49 @@
     table.surah-table th {
       background-color: #1a5d1a;
       color: #ffffff;
-      padding: 14px 16px;
-      font-size: 16px;
-      text-transform: uppercase;
+      padding: 14px 12px;
+      font-size: 15px;
     }
     table.surah-table td {
-      padding: 12px 16px;
+      padding: 0; /* লিংক দিয়ে পুরো ঘর পূরণ করার জন্য */
       border-bottom: 1px solid #eef2f5;
-      color: #333333;
-      font-size: 15px;
     }
     table.surah-table tr:hover {
       background-color: #f1f8f1;
     }
-    .number-col {
-      text-align: center;
-      font-weight: bold;
-      width: 10%;
+    /* পুরো রৌ কে ক্লিকঅ্যাবল করার জন্য স্টাইল */
+    .surah-link {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 12px;
+      text-decoration: none;
+      color: inherit;
+      box-sizing: border-box;
     }
-    .arabic-col {
-      text-align: right;
-      font-family: 'Traditional Arabic', 'Scheherazade New', 'Amiri', serif;
-      font-size: 20px !important;
+    .number-col {
       font-weight: bold;
-      color: #0d47a1;
-      width: 25%;
+      width: 12%;
+      color: #333;
     }
     .name-col {
       font-weight: 600;
       color: #1a5d1a;
-      width: 35%;
+      width: 38%;
     }
     .meaning-col {
       color: #555555;
+      font-size: 14px;
       width: 30%;
+    }
+    .arabic-col {
+      text-align: right;
+      font-family: 'Traditional Arabic', 'Scheherazade New', 'Amiri', serif;
+      font-size: 20px;
+      font-weight: bold;
+      color: #0d47a1;
+      width: 20%;
+      margin-left: auto;
     }
   </style>
 </head>
@@ -70,131 +79,89 @@
   <table class="surah-table">
     <thead>
       <tr>
-        <th class="number-col">নম্বর</th>
-        <th class="name-col">সূরার নাম</th>
-        <th class="meaning-col">বাংলা অর্থ</th>
-        <th class="arabic-col">আরবি নাম</th>
+        <th style="width: 12%;">নং</th>
+        <th style="width: 38%;">সূরার নাম</th>
+        <th style="width: 30%;">বাংলা অর্থ</th>
+        <th style="width: 20%; text-align: right;">আরবি নাম</th>
       </tr>
     </thead>
     <tbody>
-      <tr><td class="number-col">১</td><td class="name-col">আল-ফাতিহা</td><td class="meaning-col">সূচনা</td><td class="arabic-col">الفاتحة</td></tr>
-      <tr><td class="number-col">২</td><td class="name-col">আল-বাকারাহ</td><td class="meaning-col">বকনা-বাছুর</td><td class="arabic-col">البقرة</td></tr>
-      <tr><td class="number-col">৩</td><td class="name-col">আলি ‘ইমরান</td><td class="meaning-col">ইমরণের পরিবার</td><td class="arabic-col">آل عمران</td></tr>
-      <tr><td class="number-col">৪</td><td class="name-col">আন-নিসা</td><td class="meaning-col">নারী</td><td class="arabic-col">النساء</td></tr>
-      <tr><td class="number-col">৫</td><td class="name-col">আল-মা’ইদাহ</td><td class="meaning-col">পরিবেশিত টেবিল</td><td class="arabic-col">المائدة</td></tr>
-      <tr><td class="number-col">৬</td><td class="name-col">আল-আন‘আম</td><td class="meaning-col">গৃহপালিত পশু</td><td class="arabic-col">الأنعام</td></tr>
-      <tr><td class="number-col">৭</td><td class="name-col">আল-আ‘রাফ</td><td class="meaning-col">উঁচু স্থান</td><td class="arabic-col">الأعراف</td></tr>
-      <tr><td class="number-col">৮</td><td class="name-col">আল-আনফাল</td><td class="meaning-col">যুদ্ধ-লব্ধ ধনসম্পদ</td><td class="arabic-col">الأنفال</td></tr>
-      <tr><td class="number-col">৯</td><td class="name-col">াত-তাওবাহ</td><td class="meaning-col">অনুশোচনা</td><td class="arabic-col">التوبة</td></tr>
-      <tr><td class="number-col">১০</td><td class="name-col">ইউনুস</td><td class="meaning-col">নবী ইউনুস</td><td class="arabic-col">يونس</td></tr>
-      <tr><td class="number-col">১১</td><td class="name-col">হূদ</td><td class="meaning-col">নবী হূদ</td><td class="arabic-col">هود</td></tr>
-      <tr><td class="number-col">১২</td><td class="name-col">ইউসুফ</td><td class="meaning-col">নবী ইউসুফ</td><td class="arabic-col">يوسف</td></tr>
-      <tr><td class="number-col">১৩</td><td class="name-col">আর-রা‘দ</td><td class="meaning-col">বজ্রপাত</td><td class="arabic-col">الرعد</td></tr>
-      <tr><td class="number-col">১৪</td><td class="name-col">ইব্রাহীম</td><td class="meaning-col">নবী ইব্রাহীম</td><td class="arabic-col">إبراهيم</td></tr>
-      <tr><td class="number-col">১৫</td><td class="name-col">আল-হিজর</td><td class="meaning-col">পাহাড়ি উপত্যকা</td><td class="arabic-col">الحجر</td></tr>
-      <tr><td class="number-col">১৬</td><td class="name-col">আন-নাহল</td><td class="meaning-col">মৌমাছি</td><td class="arabic-col">النحل</td></tr>
-      <tr><td class="number-col">১৭</td><td class="name-col">আল-ইসরা (বনি ইসরাঈল)</td><td class="meaning-col">নৈশ ভ্রমণ</td><td class="arabic-col">الإسراء</td></tr>
-      <tr><td class="number-col">১৮</td><td class="name-col">আল-কাহফ</td><td class="meaning-col">গুহা</td><td class="arabic-col">الكهف</td></tr>
-      <tr><td class="number-col">১৯</td><td class="name-col">মারইয়াম</td><td class="meaning-col">মারইয়াম (আ:)</td><td class="arabic-col">مريم</td></tr>
-      <tr><td class="number-col">২০</td><td class="name-col">ত্বা-হা</td><td class="meaning-col">ত্বা-হা</td><td class="arabic-col">طه</td></tr>
-      <tr><td class="number-col">২১</td><td class="name-col">আল-আম্বিয়া</td><td class="meaning-col">নবীগণ</td><td class="arabic-col">الأنبياء</td></tr>
-      <tr><td class="number-col">২২</td><td class="name-col">আল-হাজ্জ</td><td class="meaning-col">হজ্জ</td><td class="arabic-col">الحج</td></tr>
-      <tr><td class="number-col">২৩</td><td class="name-col">আল-মু’মিনূন</td><td class="meaning-col">বিশ্বাসীগণ</td><td class="arabic-col">المؤمنون</td></tr>
-      <tr><td class="number-col">২৪</td><td class="name-col">আন-নূর</td><td class="meaning-col">জ্যোতি</td><td class="arabic-col">النور</td></tr>
-      <tr><td class="number-col">২৫</td><td class="name-col">আল-ফুরকান</td><td class="meaning-col">সত্য-মিথ্যার মানদণ্ড</td><td class="arabic-col">الفرقان</td></tr>
-      <tr><td class="number-col">২৬</td><td class="name-col">আশ-শু‘আরা</td><td class="meaning-col">কবিগণ</td><td class="arabic-col">الشعراء</td></tr>
-      <tr><td class="number-col">২৭</td><td class="name-col">আন-নামল</td><td class="meaning-col">পিঁপড়া</td><td class="arabic-col">النمل</td></tr>
-      <tr><td class="number-col">২৮</td><td class="name-col">আল-কাসাস</td><td class="meaning-col">কাহিনী</td><td class="arabic-col">القصص</td></tr>
-      <tr><td class="number-col">২৯</td><td class="name-col">আল-‘আনকাবূত</td><td class="meaning-col">মাকড়সা</td><td class="arabic-col">العنكبوت</td></tr>
-      <tr><td class="number-col">৩০</td><td class="name-col">আর-রূম</td><td class="meaning-col">রোমান জাতি</td><td class="arabic-col">الروم</td></tr>
-      <tr><td class="number-col">৩১</td><td class="name-col">লুকমান</td><td class="meaning-col">জ্ঞানী লুকমান</td><td class="arabic-col">لقمان</td></tr>
-      <tr><td class="number-col">৩২</td><td class="name-col">আস-সাজদাহ</td><td class="meaning-col">সিজদা</td><td class="arabic-col">السجدة</td></tr>
-      <tr><td class="number-col">৩৩</td><td class="name-col">আল-আহযাব</td><td class="meaning-col">জোটবদ্ধ দল</td><td class="arabic-col">الأحزاب</td></tr>
-      <tr><td class="number-col">৩৪</td><td class="name-col">সাবা</td><td class="meaning-col">সাবা সম্প্রদায়</td><td class="arabic-col">سبأ</td></tr>
-      <tr><td class="number-col">৩৫</td><td class="name-col">ফাতির</td><td class="meaning-col">আদি স্রষ্টা</td><td class="arabic-col">فاطر</td></tr>
-      <tr><td class="number-col">৩৬</td><td class="name-col">ইয়া-সীন</td><td class="meaning-col">ইয়া-সীন</td><td class="arabic-col">يس</td></tr>
-      <tr><td class="number-col">৩৭</td><td class="name-col">আস-ছফফাত</td><td class="meaning-col">সারিবদ্ধ দল</td><td class="arabic-col">الصافات</td></tr>
-      <tr><td class="number-col">৩৮</td><td class="name-col">ছা-দ</td><td class="meaning-col">ছা-দ</td><td class="arabic-col">ص</td></tr>
-      <tr><td class="number-col">৩৯</td><td class="name-col">আজ-জুমার</td><td class="meaning-col">দলবদ্ধ জনতা</td><td class="arabic-col">الزمر</td></tr>
-      <tr><td class="number-col">৪০</td><td class="name-col">গাফির</td><td class="meaning-col">ক্ষমাকারী</td><td class="arabic-col">غافر</td></tr>
-      <tr><td class="number-col">৪১</td><td class="name-col">ফুচ্ছিলাত</td><td class="meaning-col">বিশদ বর্ণিত</td><td class="arabic-col">فصلت</td></tr>
-      <tr><td class="number-col">৪২</td><td class="name-col">আশ-শূরা</td><td class="meaning-col">পরামর্শ</td><td class="arabic-col">الشورى</td></tr>
-      <tr><td class="number-col">৪৩</td><td class="name-col">আজ-জুখরুফ</td><td class="meaning-col">সোনাদানা ও অলংকার</td><td class="arabic-col">الزخرف</td></tr>
-      <tr><td class="number-col">৪৪</td><td class="name-col">আদ-দুখান</td><td class="meaning-col">ধোঁয়া</td><td class="arabic-col">الدخان</td></tr>
-      <tr><td class="number-col">৪৫</td><td class="name-col">আল-জাসিয়াহ</td><td class="meaning-col">নতজানু</td><td class="arabic-col">الجاثية</td></tr>
-      <tr><td class="number-col">৪৬</td><td class="name-col">আল-আহক্বাফ</td><td class="meaning-col">বালুটিলা</td><td class="arabic-col">الأحقاف</td></tr>
-      <tr><td class="number-col">৪৭</td><td class="name-col">মুহাম্মদ</td><td class="meaning-col">নবী মুহাম্মদ (সা:)</td><td class="arabic-col">محمد</td></tr>
-      <tr><td class="number-col">৪৮</td><td class="name-col">আল-ফাতহ</td><td class="meaning-col">বিজয়</td><td class="arabic-col">الفتح</td></tr>
-      <tr><td class="number-col">৪৯</td><td class="name-col">আল-হুজুরাত</td><td class="meaning-col">বাসস্থানসমূহ</td><td class="arabic-col">الحجرات</td></tr>
-      <tr><td class="number-col">৫০</td><td class="name-col">ক্বাফ</td><td class="meaning-col">ক্বাফ</td><td class="arabic-col">ق</td></tr>
-      <tr><td class="number-col">৫১</td><td class="name-col">আয-যারিয়াত</td><td class="meaning-col">বিক্ষিপ্তকারী বাতাস</td><td class="arabic-col">الذاريات</td></tr>
-      <tr><td class="number-col">৫২</td><td class="name-col">অত-তূর</td><td class="meaning-col">তূর পাহাড়</td><td class="arabic-col">الطور</td></tr>
-      <tr><td class="number-col">৫৩</td><td class="name-col">আন-নাজম</td><td class="meaning-col">তারকা</td><td class="arabic-col">النجم</td></tr>
-      <tr><td class="number-col">৫৪</td><td class="name-col">আল-কামার</td><td class="meaning-col">চাঁদ</td><td class="arabic-col">القمر</td></tr>
-      <tr><td class="number-col">৫৫</td><td class="name-col">আর-রহমান</td><td class="meaning-col">পরম করুণাময়</td><td class="arabic-col">الرحمن</td></tr>
-      <tr><td class="number-col">৫৬</td><td class="name-col">আল-ওয়াকি‘আহ</td><td class="meaning-col">কেয়ামত / অনিয়মিত ঘটনা</td><td class="arabic-col">الواقعة</td></tr>
-      <tr><td class="number-col">৫৭</td><td class="name-col">আল-হাদীদ</td><td class="meaning-col">লোহা</td><td class="arabic-col">الحديد</td></tr>
-      <tr><td class="number-col">৫৮</td><td class="name-col">আল-মুজাদালাহ</td><td class="meaning-col">অনুযোগকারী নারী</td><td class="arabic-col">المجادلة</td></tr>
-      <tr><td class="number-col">৫৯</td><td class="name-col">আল-হাশর</td><td class="meaning-col">সমাবেশ</td><td class="arabic-col">الحشر</td></tr>
-      <tr><td class="number-col">৬০</td><td class="name-col">আল-মুমতাহিনাহ</td><td class="meaning-col">পরীক্ষিতা নারী</td><td class="arabic-col">الممتحنة</td></tr>
-      <tr><td class="number-col">৬১</td><td class="name-col">আস-ছফ</td><td class="meaning-col">সারি</td><td class="arabic-col">الصف</td></tr>
-      <tr><td class="number-col">৬২</td><td class="name-col">আল-জুমু‘আহ</td><td class="meaning-col">শুক্রবার</td><td class="arabic-col">الجمعة</td></tr>
-      <tr><td class="number-col">৬৩</td><td class="name-col">আল-মুনাফিকূন</td><td class="meaning-col">কপট বিশ্বাসীগণ</td><td class="arabic-col">المنافقون</td></tr>
-      <tr><td class="number-col">৬৪</td><td class="name-col">অত-তাগাবুন</td><td class="meaning-col">লাভ-ক্ষতি / হার-জিত</td><td class="arabic-col">التغابن</td></tr>
-      <tr><td class="number-col">৬৫</td><td class="name-col">অত-ত্বলাক</td><td class="meaning-col">তালাক</td><td class="arabic-col">الطلاق</td></tr>
-      <tr><td class="number-col">৬৬</td><td class="name-col">অত-তাহরীম</td><td class="meaning-col">নিষিদ্ধকরণ</td><td class="arabic-col">التحريم</td></tr>
-      <tr><td class="number-col">৬৭</td><td class="name-col">আল-মুলক</td><td class="meaning-col">রাজত্ব</td><td class="arabic-col">الملك</td></tr>
-      <tr><td class="number-col">৬৮</td><td class="name-col">আল-কলম</td><td class="meaning-col">কলম</td><td class="arabic-col">القلم</td></tr>
-      <tr><td class="number-col">৬৯</td><td class="name-col">আল-হাক্কাহ</td><td class="meaning-col">সুনিশ্চিত সত্য</td><td class="arabic-col">الحاقة</td></tr>
-      <tr><td class="number-col">৭০</td><td class="name-col">আল-মা‘আরিজ</td><td class="meaning-col">উন্নয়নের সিঁড়ি</td><td class="arabic-col">المعارج</td></tr>
-      <tr><td class="number-col">৭১</td><td class="name-col">নূহ</td><td class="meaning-col">নবী নূহ</td><td class="arabic-col">نوح</td></tr>
-      <tr><td class="number-col">৭২</td><td class="name-col">আল-জিন</td><td class="meaning-col">জিন সম্প্রদায়</td><td class="arabic-col">الجن</td></tr>
-      <tr><td class="number-col">৭৩</td><td class="name-col">আল-মুযযাম্মিল</td><td class="meaning-col">বস্ত্রাবৃত</td><td class="arabic-col">المزمل</td></tr>
-      <tr><td class="number-col">৭৪</td><td class="name-col">আল-মুদ্দাসসির</td><td class="meaning-col">চাদরাবৃত</td><td class="arabic-col">المدثر</td></tr>
-      <tr><td class="number-col">৭৫</td><td class="name-col">আল-কিয়ামাহ</td><td class="meaning-col">পুনরুত্থান</td><td class="arabic-col">القيامة</td></tr>
-      <tr><td class="number-col">৭৬</td><td class="name-col">আল-ইনসান</td><td class="meaning-col">মানুষ</td><td class="arabic-col">الإنسان</td></tr>
-      <tr><td class="number-col">৭৭</td><td class="name-col">আল-মুরসালাত</td><td class="meaning-col">প্রেরিত বাতাস</td><td class="arabic-col">المرسلات</td></tr>
-      <tr><td class="number-col">৭৮</td><td class="name-col">আন-নাবা</td><td class="meaning-col">মহাবার্তা</td><td class="arabic-col">النبأ</td></tr>
-      <tr><td class="number-col">৭৯</td><td class="name-col">আন-নাযি‘আত</td><td class="meaning-col">প্রচ্ছন্নভাবে আকর্ষণকারী</td><td class="arabic-col">النازعات</td></tr>
-      <tr><td class="number-col">৮০</td><td class="name-col">‘আবাসা</td><td class="meaning-col">তিনি ভ্রূকুটি করলেন</td><td class="arabic-col">عبس</td></tr>
-      <tr><td class="number-col">৮১</td><td class="name-col">অত-তাকবীর</td><td class="meaning-col">অন্ধকারাচ্ছন্ন করা</td><td class="arabic-col">التكوير</td></tr>
-      <tr><td class="number-col">৮২</td><td class="name-col">আল-ইনফিতার</td><td class="meaning-col">বিদীর্ণ হওয়া</td><td class="arabic-col">الانفطار</td></tr>
-      <tr><td class="number-col">৮৩</td><td class="name-col">আল-মুত্বাফফিফীন</td><td class="meaning-col">মাপে কম দানকারী</td><td class="arabic-col">المطففين</td></tr>
-      <tr><td class="number-col">৮৪</td><td class="name-col">আল-ইনশিকাক</td><td class="meaning-col">খণ্ড-বিখণ্ড হওয়া</td><td class="arabic-col">الانشقاق</td></tr>
-      <tr><td class="number-col">৮৫</td><td class="name-col">আল-বুরুজ</td><td class="meaning-col">নক্ষত্রপুঞ্জ</td><td class="arabic-col">البروج</td></tr>
-      <tr><td class="number-col">৮৬</td><td class="name-col">অত-ত্বারিক</td><td class="meaning-col">নৈশ আগমনকারী</td><td class="arabic-col">الطارق</td></tr>
-      <tr><td class="number-col">৮৭</td><td class="name-col">আল-আ‘লা</td><td class="meaning-col">সর্বোচ্চ</td><td class="arabic-col">الأعلى</td></tr>
-      <tr><td class="number-col">৮৮</td><td class="name-col">আল-গাশিয়াহ</td><td class="meaning-col">আচ্ছন্নকারী আযাব</td><td class="arabic-col">الغاشية</td></tr>
-      <tr><td class="number-col">৮৯</td><td class="name-col">আল-ফজর</td><td class="meaning-col">ভোরবেলা</td><td class="arabic-col">الفجر</td></tr>
-      <tr><td class="number-col">৯০</td><td class="name-col">আল-বালাদ</td><td class="meaning-col">নগরী</td><td class="arabic-col">البلد</td></tr>
-      <tr><td class="number-col">৯১</td><td class="name-col">আশ-শামস</td><td class="meaning-col">সূর্য</td><td class="arabic-col">الشمس</td></tr>
-      <tr><td class="number-col">৯২</td><td class="name-col">আল-লাইল</td><td class="meaning-col">রাত</td><td class="arabic-col">الليل</td></tr>
-      <tr><td class="number-col">৯৩</td><td class="name-col">অদ্ব-দ্বুহা</td><td class="meaning-col">পূর্বাহ্নের রোদ</td><td class="arabic-col">الضحى</td></tr>
-      <tr><td class="number-col">৯৪</td><td class="name-col">আশ-শারহ</td><td class="meaning-col">বক্ষ সম্প্রসারণ</td><td class="arabic-col">الشرح</td></tr>
-      <tr><td class="number-col">৯৫</td><td class="name-col">অত-তীন</td><td class="meaning-col">ডুমুর ফল</td><td class="arabic-col">التين</td></tr>
-      <tr><td class="number-col">৯৬</td><td class="name-col">আল-‘আলাক</td><td class="meaning-col">রক্তপিণ্ড</td><td class="arabic-col">العلق</td></tr>
-      <tr><td class="number-col">৯৭</td><td class="name-col">আল-কদর</td><td class="meaning-col">মহিমান্বিত রাত</td><td class="arabic-col">القدر</td></tr>
-      <tr><td class="number-col">৯৮</td><td class="name-col">আল-বাইয়্যিনাহ</td><td class="meaning-col">স্পষ্ট প্রমাণ</td><td class="arabic-col">البينة</td></tr>
-      <tr><td class="number-col">৯৯</td><td class="name-col">আজ-যালযালাহ</td><td class="meaning-col">ভূকম্পন</td><td class="arabic-col">الزلزلة</td></tr>
-      <tr><td class="number-col">১০০</td><td class="name-col">আল-‘আদিয়াত</td><td class="meaning-col">অভিযানকারী অশ্ব</td><td class="arabic-col">العاديات</td></tr>
-      <tr><td class="number-col">১০১</td><td class="name-col">আল-ক্বারি‘আহ</td><td class="meaning-col">মহা বিপত্তি</td><td class="arabic-col">القارعة</td></tr>
-      <tr><td class="number-col">১০২</td><td class="name-col">অত-তাকাসুর</td><td class="meaning-col">প্রাচুর্যের প্রতিযোগিতা</td><td class="arabic-col">التكاثر</td></tr>
-      <tr><td class="number-col">১০৩</td><td class="name-col">আল-‘আসর</td><td class="meaning-col">সময়</td><td class="arabic-col">العصر</td></tr>
-      <tr><td class="number-col">১০৪</td><td class="name-col">আল-হুমাযাহ</td><td class="meaning-col">পরনিন্দাকারী</td><td class="arabic-col">الهمزة</td></tr>
-      <tr><td class="number-col">১০৫</td><td class="name-col">আল-ফীল</td><td class="meaning-col">হাতি</td><td class="arabic-col">الفيل</td></tr>
-      <tr><td class="number-col">১০৬</td><td class="name-col">কুরাইশ</td><td class="meaning-col">কুরাইশ বংশ</td><td class="arabic-col">قريش</td></tr>
-      <tr><td class="number-col">১০৭</td><td class="name-col">আল-মা‘উন</td><td class="meaning-col">নিত্যব্যবহার্য বস্তু</td><td class="arabic-col">الماعون</td></tr>
-      <tr><td class="number-col">১০৮</td><td class="name-col">আল-কাউসার</td><td class="meaning-col">প্রচুর কল্যাণ</td><td class="arabic-col">الكوثر</td></tr>
-      <tr><td class="number-col">১০৯</td><td class="name-col">আল-কাফিরূন</td><td class="meaning-col">অবিশ্বাসীগণ</td><td class="arabic-col">الكافرون</td></tr>
-      <tr><td class="number-col">১১০</td><td class="name-col">আন-নাসর</td><td class="meaning-col">সাহায্য</td><td class="arabic-col">النصر</td></tr>
-      <tr><td class="number-col">১১১</td><td class="name-col">আল-লাহাব</td><td class="meaning-col">অগ্নিশিখা</td><td class="arabic-col">المسد</td></tr>
-      <tr><td class="number-col">১১২</td><td class="name-col">আল-ইখলাস</td><td class="meaning-col">একনিষ্ঠতা</td><td class="arabic-col">الإخلاص</td></tr>
-      <tr><td class="number-col">১১৩</td><td class="name-col">আল-ফালাক</td><td class="meaning-col">প্রভাত</td><td class="arabic-col">الفلق</td></tr>
-      <tr><td class="number-col">১১৪</td><td class="name-col">আন-নাস</td><td class="meaning-col">মানবজাতি</td><td class="arabic-col">الناس</td></tr>
-    </tbody>
-  </table>
-</div>
-
-</body>
-    </html>
-          
+      <tr><td colspan="4"><a href="1.html" class="surah-link"><span class="number-col">১</span><span class="name-col">আল-ফাতিহা</span><span class="meaning-col">সূচনা</span><span class="arabic-col">الفاتحة</span></a></td></tr>
+      <tr><td colspan="4"><a href="2.html" class="surah-link"><span class="number-col">২</span><span class="name-col">আল-বাকারাহ</span><span class="meaning-col">বকনা-বাছুর</span><span class="arabic-col">البقرة</span></a></td></tr>
+      <tr><td colspan="4"><a href="3.html" class="surah-link"><span class="number-col">৩</span><span class="name-col">আলি ‘ইমরান</span><span class="meaning-col">ইমরানের পরিবার</span><span class="arabic-col">آل عمران</span></a></td></tr>
+      <tr><td colspan="4"><a href="4.html" class="surah-link"><span class="number-col">৪</span><span class="name-col">আন-নিসা</span><span class="meaning-col">নারী</span><span class="arabic-col">النساء</span></a></td></tr>
+      <tr><td colspan="4"><a href="5.html" class="surah-link"><span class="number-col">৫</span><span class="name-col">আল-মা’ইদাহ</span><span class="meaning-col">পরিবেশিত টেবিল</span><span class="arabic-col">المائدة</span></a></td></tr>
+      <tr><td colspan="4"><a href="6.html" class="surah-link"><span class="number-col">৬</span><span class="name-col">আল-আন‘আম</span><span class="meaning-col">গৃহপালিত পশু</span><span class="arabic-col">الأنعام</span></a></td></tr>
+      <tr><td colspan="4"><a href="7.html" class="surah-link"><span class="number-col">৭</span><span class="name-col">আল-আ‘রাফ</span><span class="meaning-col">উঁচু স্থান</span><span class="arabic-col">الأعراف</span></a></td></tr>
+      <tr><td colspan="4"><a href="8.html" class="surah-link"><span class="number-col">৮</span><span class="name-col">আল-আনফাল</span><span class="meaning-col">যুদ্ধ-লব্ধ ধনসম্পদ</span><span class="arabic-col">الأنفال</span></a></td></tr>
+      <tr><td colspan="4"><a href="9.html" class="surah-link"><span class="number-col">৯</span><span class="name-col">াত-তাওবাহ</span><span class="meaning-col">অনুশোচনা</span><span class="arabic-col">التوبة</span></a></td></tr>
+      <tr><td colspan="4"><a href="10.html" class="surah-link"><span class="number-col">১০</span><span class="name-col">ইউনুস</span><span class="meaning-col">নবী ইউনুস</span><span class="arabic-col">يونس</span></a></td></tr>
+      <tr><td colspan="4"><a href="11.html" class="surah-link"><span class="number-col">১১</span><span class="name-col">হূদ</span><span class="meaning-col">নবী হূদ</span><span class="arabic-col">هود</span></a></td></tr>
+      <tr><td colspan="4"><a href="12.html" class="surah-link"><span class="number-col">১২</span><span class="name-col">ইউসুফ</span><span class="meaning-col">নবী ইউসুফ</span><span class="arabic-col">يوسف</span></a></td></tr>
+      <tr><td colspan="4"><a href="13.html" class="surah-link"><span class="number-col">১৩</span><span class="name-col">আর-রা‘দ</span><span class="meaning-col">বজ্রপাত</span><span class="arabic-col">الرعد</span></a></td></tr>
+      <tr><td colspan="4"><a href="14.html" class="surah-link"><span class="number-col">১৪</span><span class="name-col">ইব্রাহীম</span><span class="meaning-col">নবী ইব্রাহীম</span><span class="arabic-col">إبراهيم</span></a></td></tr>
+      <tr><td colspan="4"><a href="15.html" class="surah-link"><span class="number-col">১৫</span><span class="name-col">আল-হিজর</span><span class="meaning-col">পাহাড়ি উপত্যকা</span><span class="arabic-col">الحجر</span></a></td></tr>
+      <tr><td colspan="4"><a href="16.html" class="surah-link"><span class="number-col">১৬</span><span class="name-col">আন-নাহল</span><span class="meaning-col">মৌমাছি</span><span class="arabic-col">النحل</span></a></td></tr>
+      <tr><td colspan="4"><a href="17.html" class="surah-link"><span class="number-col">১৭</span><span class="name-col">আল-ইসরা</span><span class="meaning-col">নৈশ ভ্রমণ</span><span class="arabic-col">الإسراء</span></a></td></tr>
+      <tr><td colspan="4"><a href="18.html" class="surah-link"><span class="number-col">১৮</span><span class="name-col">আল-কাহফ</span><span class="meaning-col">গুহা</span><span class="arabic-col">الكهف</span></a></td></tr>
+      <tr><td colspan="4"><a href="19.html" class="surah-link"><span class="number-col">১৯</span><span class="name-col">মারইয়াম</span><span class="meaning-col">মারইয়াম (আ:)</span><span class="arabic-col">مريم</span></a></td></tr>
+      <tr><td colspan="4"><a href="20.html" class="surah-link"><span class="number-col">২০</span><span class="name-col">ত্বা-হা</span><span class="meaning-col">ত্বা-হা</span><span class="arabic-col">طه</span></a></td></tr>
+      <tr><td colspan="4"><a href="21.html" class="surah-link"><span class="number-col">২১</span><span class="name-col">আল-আম্বিয়া</span><span class="meaning-col">নবীগণ</span><span class="arabic-col">الأنبياء</span></a></td></tr>
+      <tr><td colspan="4"><a href="22.html" class="surah-link"><span class="number-col">২২</span><span class="name-col">আল-হাজ্জ</span><span class="meaning-col">হজ্জ</span><span class="arabic-col">الحج</span></a></td></tr>
+      <tr><td colspan="4"><a href="23.html" class="surah-link"><span class="number-col">২৩</span><span class="name-col">আল-মু’মিনূন</span><span class="meaning-col">বিশ্বাসীগণ</span><span class="arabic-col">المؤمنون</span></a></td></tr>
+      <tr><td colspan="4"><a href="24.html" class="surah-link"><span class="number-col">২৪</span><span class="name-col">আন-নূর</span><span class="meaning-col">জ্যোতি</span><span class="arabic-col">النور</span></a></td></tr>
+      <tr><td colspan="4"><a href="25.html" class="surah-link"><span class="number-col">২৫</span><span class="name-col">আল-ফুরকান</span><span class="meaning-col">মানদণ্ড</span><span class="arabic-col">الفرقان</span></a></td></tr>
+      <tr><td colspan="4"><a href="26.html" class="surah-link"><span class="number-col">২৬</span><span class="name-col">আশ-শু‘আরা</span><span class="meaning-col">কবিগণ</span><span class="arabic-col">الشعراء</span></a></td></tr>
+      <tr><td colspan="4"><a href="27.html" class="surah-link"><span class="number-col">২৭</span><span class="name-col">আন-নামল</span><span class="meaning-col">পিঁপড়া</span><span class="arabic-col">النمل</span></a></td></tr>
+      <tr><td colspan="4"><a href="28.html" class="surah-link"><span class="number-col">২৮</span><span class="name-col">আল-কাসাস</span><span class="meaning-col">কাহিনী</span><span class="arabic-col">القصص</span></a></td></tr>
+      <tr><td colspan="4"><a href="29.html" class="surah-link"><span class="number-col">২৯</span><span class="name-col">আল-‘আনকাবূত</span><span class="meaning-col">মাকড়সা</span><span class="arabic-col">العنكبوت</span></a></td></tr>
+      <tr><td colspan="4"><a href="30.html" class="surah-link"><span class="number-col">৩০</span><span class="name-col">আর-রূম</span><span class="meaning-col">রোমান জাতি</span><span class="arabic-col">الروم</span></a></td></tr>
+      <tr><td colspan="4"><a href="31.html" class="surah-link"><span class="number-col">৩১</span><span class="name-col">লুকমান</span><span class="meaning-col">জ্ঞানী লুকমান</span><span class="arabic-col">لقمان</span></a></td></tr>
+      <tr><td colspan="4"><a href="32.html" class="surah-link"><span class="number-col">৩২</span><span class="name-col">আস-সাজদাহ</span><span class="meaning-col">সিজদা</span><span class="arabic-col">السجدة</span></a></td></tr>
+      <tr><td colspan="4"><a href="33.html" class="surah-link"><span class="number-col">৩৩</span><span class="name-col">আল-আহযাব</span><span class="meaning-col">জোটবদ্ধ দল</span><span class="arabic-col">الأحزاب</span></a></td></tr>
+      <tr><td colspan="4"><a href="34.html" class="surah-link"><span class="number-col">৩৪</span><span class="name-col">সাবা</span><span class="meaning-col">সাবা সম্প্রদায়</span><span class="arabic-col">سبأ</span></a></td></tr>
+      <tr><td colspan="4"><a href="35.html" class="surah-link"><span class="number-col">৩৫</span><span class="name-col">ফাতির</span><span class="meaning-col">আদি স্রষ্টা</span><span class="arabic-col">فاطر</span></a></td></tr>
+      <tr><td colspan="4"><a href="36.html" class="surah-link"><span class="number-col">৩৬</span><span class="name-col">ইয়া-সীন</span><span class="meaning-col">ইয়া-সীন</span><span class="arabic-col">يس</span></a></td></tr>
+      <tr><td colspan="4"><a href="37.html" class="surah-link"><span class="number-col">৩৭</span><span class="name-col">আস-ছফফাত</span><span class="meaning-col">সারিবদ্ধ দল</span><span class="arabic-col">الصافات</span></a></td></tr>
+      <tr><td colspan="4"><a href="38.html" class="surah-link"><span class="number-col">৩৮</span><span class="name-col">ছা-দ</span><span class="meaning-col">ছা-দ</span><span class="arabic-col">ص</span></a></td></tr>
+      <tr><td colspan="4"><a href="39.html" class="surah-link"><span class="number-col">৩৯</span><span class="name-col">আজ-জুমার</span><span class="meaning-col">দলবদ্ধ জনতা</span><span class="arabic-col">الزمر</span></a></td></tr>
+      <tr><td colspan="4"><a href="40.html" class="surah-link"><span class="number-col">৪০</span><span class="name-col">গাফির</span><span class="meaning-col">ক্ষমাকারী</span><span class="arabic-col">غافر</span></a></td></tr>
+      <tr><td colspan="4"><a href="41.html" class="surah-link"><span class="number-col">৪১</span><span class="name-col">ফুচ্ছিলাত</span><span class="meaning-col">বিশদ বর্ণিত</span><span class="arabic-col">فصلت</span></a></td></tr>
+      <tr><td colspan="4"><a href="42.html" class="surah-link"><span class="number-col">৪২</span><span class="name-col">আশ-শূরা</span><span class="meaning-col">পরামর্শ</span><span class="arabic-col">الشورى</span></a></td></tr>
+      <tr><td colspan="4"><a href="43.html" class="surah-link"><span class="number-col">৪৩</span><span class="name-col">আজ-জুখরুফ</span><span class="meaning-col">অলংকার</span><span class="arabic-col">الزخرف</span></a></td></tr>
+      <tr><td colspan="4"><a href="44.html" class="surah-link"><span class="number-col">৪৪</span><span class="name-col">আদ-দুখান</span><span class="meaning-col">ধোঁয়া</span><span class="arabic-col">الدخان</span></a></td></tr>
+      <tr><td colspan="4"><a href="45.html" class="surah-link"><span class="number-col">৪৫</span><span class="name-col">আল-জাসিয়াহ</span><span class="meaning-col">নতজানু</span><span class="arabic-col">الجاثية</span></a></td></tr>
+      <tr><td colspan="4"><a href="46.html" class="surah-link"><span class="number-col">৪৬</span><span class="name-col">আল-আহক্বাফ</span><span class="meaning-col">বালুটিলা</span><span class="arabic-col">الأحقاف</span></a></td></tr>
+      <tr><td colspan="4"><a href="47.html" class="surah-link"><span class="number-col">৪৭</span><span class="name-col">মুহাম্মদ</span><span class="meaning-col">নবী মুহাম্মদ (সা:)</span><span class="arabic-col">محمد</span></a></td></tr>
+      <tr><td colspan="4"><a href="48.html" class="surah-link"><span class="number-col">৪৮</span><span class="name-col">আল-ফাতহ</span><span class="meaning-col">বিজয়</span><span class="arabic-col">الفتح</span></a></td></tr>
+      <tr><td colspan="4"><a href="49.html" class="surah-link"><span class="number-col">৪৯</span><span class="name-col">আল-হুজুরাত</span><span class="meaning-col">বাসস্থানসমূহ</span><span class="arabic-col">الحجرات</span></a></td></tr>
+      <tr><td colspan="4"><a href="50.html" class="surah-link"><span class="number-col">৫০</span><span class="name-col">ক্বাফ</span><span class="meaning-col">ক্বাফ</span><span class="arabic-col">ق</span></a></td></tr>
+      <tr><td colspan="4"><a href="51.html" class="surah-link"><span class="number-col">৫১</span><span class="name-col">আয-যারিয়াত</span><span class="meaning-col">বিক্ষিপ্তকারী বাতাস</span><span class="arabic-col">الذاريات</span></a></td></tr>
+      <tr><td colspan="4"><a href="52.html" class="surah-link"><span class="number-col">৫২</span><span class="name-col">অত-তূর</span><span class="meaning-col">তূর পাহাড়</span><span class="arabic-col">الطور</span></a></td></tr>
+      <tr><td colspan="4"><a href="53.html" class="surah-link"><span class="number-col">৫৩</span><span class="name-col">আন-নাজম</span><span class="meaning-col">তারকা</span><span class="arabic-col">النجم</span></a></td></tr>
+      <tr><td colspan="4"><a href="54.html" class="surah-link"><span class="number-col">৫৪</span><span class="name-col">আল-কামার</span><span class="meaning-col">চাঁদ</span><span class="arabic-col">القمر</span></a></td></tr>
+      <tr><td colspan="4"><a href="55.html" class="surah-link"><span class="number-col">৫৫</span><span class="name-col">আর-রহমান</span><span class="meaning-col">পরম করুণাময়</span><span class="arabic-col">الرحمن</span></a></td></tr>
+      <tr><td colspan="4"><a href="56.html" class="surah-link"><span class="number-col">৫৬</span><span class="name-col">আল-ওয়াকি‘আহ</span><span class="meaning-col">কেয়ামত</span><span class="arabic-col">الواقعة</span></a></td></tr>
+      <tr><td colspan="4"><a href="57.html" class="surah-link"><span class="number-col">৫৭</span><span class="name-col">আল-হাদীদ</span><span class="meaning-col">লোহা</span><span class="arabic-col">الحديد</span></a></td></tr>
+      <tr><td colspan="4"><a href="58.html" class="surah-link"><span class="number-col">৫৮</span><span class="name-col">আল-মুজাদালাহ</span><span class="meaning-col">অনুযোগকারী নারী</span><span class="arabic-col">المجادلة</span></a></td></tr>
+      <tr><td colspan="4"><a href="59.html" class="surah-link"><span class="number-col">৫৯</span><span class="name-col">আল-হাশর</span><span class="meaning-col">সমাবেশ</span><span class="arabic-col">الحشر</span></a></td></tr>
+      <tr><td colspan="4"><a href="60.html" class="surah-link"><span class="number-col">৬০</span><span class="name-col">আল-মুমতাহিনাহ</span><span class="meaning-col">পরীক্ষিতা নারী</span><span class="arabic-col">الممتحنة</span></a></td></tr>
+      <tr><td colspan="4"><a href="61.html" class="surah-link"><span class="number-col">৬১</span><span class="name-col">আস-ছফ</span><span class="meaning-col">সারি</span><span class="arabic-col">الصف</span></a></td></tr>
+      <tr><td colspan="4"><a href="62.html" class="surah-link"><span class="number-col">৬২</span><span class="name-col">আল-জুমু‘আহ</span><span class="meaning-col">শুক্রবার</span><span class="arabic-col">الجمعة</span></a></td></tr>
+      <tr><td colspan="4"><a href="63.html" class="surah-link"><span class="number-col">৬৩</span><span class="name-col">আল-মুনাফিকূন</span><span class="meaning-col">কপট বিশ্বাসীগণ</span><span class="arabic-col">المنافقون</span></a></td></tr>
+      <tr><td colspan="4"><a href="64.html" class="surah-link"><span class="number-col">৬৪</span><span class="name-col">অত-তাগাবুন</span><span class="meaning-col">হার-জিত</span><span class="arabic-col">التغابن</span></a></td></tr>
+      <tr><td colspan="4"><a href="65.html" class="surah-link"><span class="number-col">৬৫</span><span class="name-col">অত-ত্বলাক</span><span class="meaning-col">তালাক</span><span class="arabic-col">الطلاق</span></a></td></tr>
+      <tr><td colspan="4"><a href="66.html" class="surah-link"><span class="number-col">৬৬</span><span class="name-col">অত-তাহরীম</span><span class="meaning-col">নিষিদ্ধকরণ</span><span class="arabic-col">التحريم</span></a></td></tr>
+      <tr><td colspan="4"><a href="67.html" class="surah-link"><span class="number-col">৬৭</span><span class="name-col">আল-মুলক</span><span class="meaning-col">রাজত্ব</span><span class="arabic-col">الملك</span></a></td></tr>
+      <tr><td colspan="4"><a href="68.html" class="surah-link"><span class="number-col">৬৮</span><span class="name-col">আল-কলম</span><span class="meaning-col">কলম</span><span class="arabic-col">القلم</span></a></td></tr>
+      <tr><td colspan="4"><a href="69.html" class="surah-link"><span class="number-col">৬৯</span><span class="name-col">আল-হাক্কাহ</span><span class="meaning-col">সুনিশ্চিত সত্য</span><span class="arabic-col">الحاقة</span></a></td></tr>
+      <tr><td colspan="4"><a href="70.html" class="surah-link"><span class="number-col">৭০</span><span class="name-col">আল-মা‘আরিজ</span><span class="meaning-col">উন্নয়নের সিঁড়ি</span><span class="arabic-col">المعارج</span></a></td></tr>
+      <tr><td colspan="4"><a href="71.html" class="surah-link"><span class="number-col">৭১</span><span class="name-col">নূহ</span><span class="meaning-col">নবী নূহ</span><span class="arabic-col">نوح</span></a></td></tr>
+      <tr><td colspan="4"><a href="72.html" class="surah-link"><span class="number-col">৭২</span><span class="name-col">আল-জিন</span><span class="meaning-col">জিন সম্প্রদায়</span><span class="arabic-col">الجن</span></a></td></tr>
+      <tr><td colspan="4"><a href="73.html" class="surah-link"><span class="number-col">৭৩</span><span class="name-col">আল-মুযযাম্মিল</span><span class="meaning-col">বস্ত্রাবৃত</span><span class="arabic-col">المزمل</span></a></td></tr>
+      <tr><td colspan="4"><a href="74.html" class="surah-link"><span class="number-col">৭৪</span><span class="name-col">আল-মুদ্দাসসির</span><span class="meaning-col">চাদরাবৃত</span><span class="arabic-col">المدثر</span></a></td></tr>
+      <tr><td colspan="4"><a href="75.html" class="surah-link"><span class="number-col">৭৫</span><span class="name-col">আল-কিয়ামাহ</span><span class="meaning-col">পুনরুত্থান</span><span class="arabic-col">القيامة</span></a></td></tr>
+      <tr><td colspan="4"><a href="76.html" class="surah-link"><span class="number-col">৭৬</span><span class="name-col">আল-ইনসান</span><span class="meaning-col">মানুষ</span><span class="arabic-col">الإنسان</span></a></td></tr>
+      <tr><td colspan="4"><a href="77.html" class="surah-link"><span class="number-col">৭৭</span><span class="name-col">আল-মুরসালাত</span><span class="meaning-col">প্রেরিত বাতাস</span><span class="arabic-col">المرسلات</span></a></td></tr>
+      <tr><td colspan="4"><a href="78.html" class="surah-link"><span class="number-col">৭৮</span><span class="name-col">আন-নাবা</span><span class="meaning-col">মহাবার্তা</span><span class="arabic-col">النبأ</span></a></td></tr>
+      <tr
