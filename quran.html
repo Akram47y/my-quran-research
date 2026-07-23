@@ -1,399 +1,275 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>কুরআন শব্দানুবাদ ও রুট বিশ্লেষণ</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f7f6;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-        header {
-            background-color: #1a365d;
-            color: white;
-            text-align: center;
-            padding: 20px 10px;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 22px;
-        }
-        .nav-link {
-            color: #cbd5e0;
-            text-decoration: none;
-            font-size: 14px;
-            display: inline-block;
-            margin-bottom: 8px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 15px auto;
-            padding: 0 10px;
-        }
-        .surah-header {
-            background: #ffffff;
-            padding: 15px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            margin-bottom: 20px;
-        }
-        .surah-title {
-            color: #1a365d;
-            margin: 0 0 5px 0;
-            font-size: 24px;
-        }
-        .surah-info {
-            color: #718096;
-            font-size: 13px;
-        }
-        .ayah-card {
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 18px 12px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-right: 4px solid #2b6cb0;
-        }
-        .ayah-header {
-            margin-bottom: 12px;
-        }
-        .ayah-number {
-            background: #ebf8ff;
-            color: #2b6cb0;
-            padding: 4px 12px;
-            border-radius: 15px;
-            font-weight: bold;
-            font-size: 14px;
-        }
-        .arabic-text {
-            font-size: 28px;
-            text-align: right;
-            direction: rtl;
-            line-height: 2;
-            margin-bottom: 18px;
-            color: #2d3748;
-            font-family: 'Traditional Arabic', 'Scheherazade New', serif;
-        }
-        
-        /* প্রতি লাইনে ৩টি করে বক্স রাখার লেআউট */
-        .wbw-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            direction: rtl;
-            gap: 8px;
-            margin-bottom: 18px;
-        }
-        .word-box {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 10px 4px;
-            text-align: center;
-            box-sizing: border-box;
-        }
-        .wbw-arabic {
-            font-size: 22px;
-            color: #1a202c;
-            margin-bottom: 4px;
-            font-family: 'Traditional Arabic', 'Scheherazade New', serif;
-        }
-        .wbw-root {
-            font-size: 11px;
-            color: #e53e3e;
-            background: #fff5f5;
-            padding: 2px 5px;
-            border-radius: 4px;
-            display: inline-block;
-            margin-bottom: 4px;
-        }
-        .wbw-meaning {
-            font-size: 13px;
-            color: #4a5568;
-            font-weight: 500;
-            line-height: 1.3;
-        }
-        
-        .flow-translation {
-            background: #ebf8ff;
-            padding: 12px 15px;
-            border-radius: 8px;
-            color: #2c5282;
-            font-size: 15px;
-            line-height: 1.6;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>কুরআন গবেষণা ও শব্দানুবাদ</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 0;
+      color: #2d3748;
+      scroll-behavior: smooth;
+    }
+    header {
+      background-color: #1a5d1a;
+      color: #ffffff;
+      text-align: center;
+      padding: 30px 15px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 26px;
+    }
+    header p {
+      margin-top: 8px;
+      font-size: 15px;
+      opacity: 0.9;
+    }
+    nav {
+      background-color: #134213;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+      background-color: rgba(255, 255, 255, 0.1);
+      transition: background 0.2s;
+    }
+    nav a:hover {
+      background-color: #f1c40f;
+      color: #1a5d1a;
+    }
+    .container {
+      max-width: 850px;
+      margin: 20px auto;
+      padding: 0 15px;
+    }
+    .section-card {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 22px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    .section-title {
+      font-size: 20px;
+      color: #1a5d1a;
+      border-bottom: 2px solid #1a5d1a;
+      padding-bottom: 8px;
+      margin-top: 0;
+      margin-bottom: 18px;
+    }
+    
+    /* ১. গবেষকের কথা */
+    .about-text {
+      line-height: 1.7;
+      font-size: 15px;
+      color: #4a5568;
+    }
+
+    /* ২. সূরার তালিকা টেবিল ও লিংক */
+    table.surah-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+    table.surah-table th {
+      background-color: #eef7ee;
+      color: #1a5d1a;
+      padding: 12px;
+      font-size: 14px;
+      border-bottom: 2px solid #1a5d1a;
+    }
+    table.surah-table td {
+      padding: 0;
+      border-bottom: 1px solid #edf2f7;
+    }
+    table.surah-table tr:hover {
+      background-color: #f8fbf8;
+    }
+    .surah-link {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 12px;
+      text-decoration: none;
+      color: inherit;
+    }
+    .number-col { font-weight: bold; width: 12%; color: #333; }
+    .name-col { font-weight: 600; color: #1a5d1a; width: 38%; }
+    .meaning-col { color: #555; font-size: 14px; width: 30%; }
+    .arabic-col { text-align: right; font-size: 18px; font-weight: bold; color: #0d47a1; width: 20%; margin-left: auto; }
+
+    /* ৩. গবেষণা ও ৪. ভিডিও গ্যালারি */
+    .item-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .content-card {
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 15px;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .content-card:hover {
+      border-color: #1a5d1a;
+      background-color: #f9fbf9;
+    }
+    .content-card h3 {
+      margin: 0 0 6px 0;
+      font-size: 16px;
+      color: #1a5d1a;
+    }
+    .content-card p {
+      margin: 0;
+      font-size: 13px;
+      color: #666;
+      line-height: 1.5;
+    }
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 13px;
+      color: #718096;
+    }
+  </style>
 </head>
 <body>
 
 <header>
-    <a href="index.html" class="nav-link">← হোমপেজে ফিরে যান</a>
-    <h1>কুরআন শব্দানুবাদ ও রুট বিশ্লেষণ</h1>
+  <h1>কুরআন গবেষণা ও শব্দানুবাদ</h1>
+  <p>রুটভিত্তিক মূল ভাবার্থ, শুদ্ধ শব্দানুবাদ ও তথ্যভিত্তিক ভিডিও সংকলন</p>
 </header>
+
+<nav>
+  <a href="#about">পরিচিতি</a>
+  <a href="#surah-list">সূরার তালিকা</a>
+  <a href="#articles">গবেষণা</a>
+  <a href="#videos">ভিডিও গ্যালারি</a>
+</nav>
 
 <div class="container">
 
-    <div class="surah-header">
-        <h2 class="surah-title">১. সূরা আল-ফাতিহা</h2>
-        <div class="surah-info">আয়াত সংখ্যা: ৭ | অবতীর্ণ: মক্কা</div>
+  <!-- ১. সংক্ষিপ্ত পরিচিতি ও গবেষকের কথা -->
+  <div id="about" class="section-card">
+    <h2 class="section-title">সংক্ষিপ্ত পরিচিতি ও গবেষকের কথা</h2>
+    <div class="about-text">
+      <p>আসসালামু আলাইকুম। এই প্ল্যাটফর্মটি কুরআনের শব্দভিত্তিক রুট বিশ্লেষণ ও সহজ প্রাঞ্জল বাংলা অনুবাদের একটি গবেষণা প্ল্যাটফর্ম। এখানে ব্যাকরণভিত্তিক অতিরিক্ত কোনো গল্প বা কল্পিত ব্যাখ্যা ছাড়াই শুধুমাত্র বিশুদ্ধ টেক্সট ও শব্দমূল (Root Word)-এর ওপর ভিত্তি করে কুরআন অনুবাদের প্রয়াস চালানো হয়েছে।</p>
     </div>
+  </div>
 
-    <!-- আয়াত ১ -->
-    <div class="ayah-card">
-        <div class="ayah-header">
-            <span class="ayah-number">আয়াত ১</span>
-        </div>
-        <div class="arabic-text">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
-        
-        <div class="wbw-container">
-            <div class="word-box">
-                <div class="wbw-arabic">بِسْمِ</div>
-                <div class="wbw-root">রুট: س م و</div>
-                <div class="wbw-meaning">নামে</div>
-            </div>
-            <div class="word-box">
-                <div class="wbw-arabic">اللَّهِ</div>
-                <div class="wbw-root">রুট: أ ل ه</div>
-                <div class="wbw-meaning">আল্লাহর</div>
-            </div>
-            <div class="word-box">
-                <div class="wbw-arabic">الرَّحْمَنِ</div>
-                <div class="wbw-root">রুট: ر ح م</div>
-                <div class="wbw-meaning">পরম মমতাময়</div>
-            </div>
-            <div class="word-box">
-                <div class="wbw-arabic">الرَّحِيمِ</div>
-                <div class="wbw-root">রুট: ر ح م</div>
-                <div class="wbw-meaning">সদামমতাবদ্ধ</div>
-            </div>
-        </div>
-
-        <div class="flow-translation">
-            <strong>বাংলা অনুবাদ:</strong> পরম মমতাময়, সদামমতাবদ্ধ আল্লাহর নামে।
-        </div>
-    </div>
-
-    <!-- আয়াত ২ -->
-    <div class="ayah-card">
-        <div class="ayah-header">
-            <span class="ayah-number">আয়াত ২</span>
-        </div>
-        <div class="arabic-text">الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ</div>
-        
-        <div class="wbw-container">
-            <div class="word-box">
-                <div class="wbw-arabic">الْحَمْدُ</div>
-                <div class="wbw-root">রুট: ح م د</div>
-                <div class="wbw-meaning">সকল প্রশংসা</div>
-            </div>
-            <div class="word-box">
-                <div class="wbw-arabic">لِلَّهِ</div>
-                <div class="wbw-root">রুট: أ ل ه</div>
-                <div class="wbw-meaning">আল্লাহর জন্য</div>
-            </div>
-            <div class="word-box">
-                <div class="wbw-arabic">رَبِّ</div>
-                <div class="wbw-root">রুট: ر ب ب</div>
-                <div class="wbw-meaning">প্রতিপালক</div>
-            </div>
-            <div class="word-box">
-                <div class="wbw-arabic">الْعَالَمِينَ</div>
-                <div class="wbw-root">রুট: ع ل م</div>
-                <div class="wbw-meaning">সর্ব-জ্ঞাতসমূহের</div>
-            </div>
-        </div>
-
-        <div class="flow-translation">
-            <strong>বাংলা অনুবাদ:</strong> সকল প্রশংসা সর্ব-জ্ঞাতসমূহের প্রতিপালক আল্লাহর জন্য।
-        </div>
-    </div>
-
-    <!-- আয়াত ৩ -->
-    <div class="ayah-card">
-        <div class="ayah-header">
-            <span class="ayah-number">আয়াত ৩</span>
-        </div>
-        <div class="arabic-text">الرَّحْمَنِ الرَّحِيمِ</div>
-        
-        <div class="wbw-container">
-            <div class="word-box">
-                <div class="wbw-arabic">الرَّحْمَنِ</div>
-                <div class="wbw-root">রুট: ر ح م</div>
-                <div class="wbw-meaning">পরম মমতাময়</div>
-            </div>
-            <div class="word-box">
-                <div class="wbw-arabic">الرَّحِيمِ</div>
-                <div class="wbw-root">রুট: ر ح م</div>
-                <div class="wbw-meaning">সদামমতাবদ্ধ</div>
-            </div>
-        </div>
-
-        <div class="flow-translation">
-            <strong>বাংলা অনুবাদ:</strong> পরম মমতাময়, সদামমতাবদ্ধ।
-        </div>
-    </div>
-
-    <!-- আয়াত ৪ -->
-    <div class="ayah-card">
-        <div class="ayah-header">
-            <span class="ayah-number">আয়াত ৪</span>
-        </div>
-        <div class="arabic-text">مَالِكِ يَوْمِ الدِّينِ</div>
-        
-        <div class="wbw-container">
-            <div class="word-box">
-                <div class="wbw-arabic">مَالِكِ</div>
-                <div class="wbw-root">রুট: م ل ك</div>
-                <div class="wbw-meaning">কর্তৃত্বকারী</div>
-            </div>
-            <div class="word-box">
-                <div class="wbw-arabic">يَوْمِ</div>
-                <div class="wbw-root">রুট: ي و م</div>
-                <div class="wbw-meaning">সময়ের</div>
-            </div>
-            <div class="word-box">
-                <div class="wbw-arabic">الدِّينِ</div>
-                <div class="wbw-root">রুট: د ي ن</div>
-                <div class="wbw-meaning">দায়বদ্ধতার</div>
-            </div>
-        </div>
-
-        <div class="flow-translation">
-            <strong>বাংলা অনুবাদ:</strong> দায়বদ্ধতার সময়ের কর্তৃত্বকারী।
-        </div>
-    </div>
-
-    <!-- আয়াত ৫ -->
-    <div class="ayah-card">
-        <div class="ayah-header">
-            <span class="ayah-number">আয়াত ৫</span>
-        </div>
-        <div class="arabic-text">إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ</div>
-        
-        <div class="wbw-container">
-            <div class="word-box">
-                <div class="wbw-arabic">إِيَّاكَ</div>
-                <div class="wbw-root">সর্বনাম</div>
-                <div class="wbw-meaning">আপনারই</div>
-            </div>
-            <div class="word-box">
-                <div class="wbw-arabic">نَعْبُدُ</div>
-                <div class="wbw-root">রুট: ع ب د</div>
-                <div class="wbw-meaning">আমরা দাসত্ব করি</div>
-            </div>
-            <div class="word-box">
-                <div class="wbw-arabic">وَإِيَّاكَ</div>
-                <div class="wbw-root">সর্বনাম</div>
-                <div class="wbw-meaning">এবং আপনারই</div>
-            </div>
-            <div class="word-box">
-                <div class="wbw-arabic">نَسْتَعِينُ</div>
-                <div class="wbw-root">রুট: ع و ن</div>
-                <div class="wbw-meaning">আমরা উৎস খুঁজি</div>
-            </div>
-        </div>
-
-        <div class="flow-translation">
-            <strong>বাংলা অনুবাদ:</strong> আমরা আপনারই দাসত্ব করি এবং আমরা আপনারই উৎস খুঁজি।
-        </div>
-    </div>
-
-    <!-- আয়াত ৬ -->
-    <div class="ayah-card">
-        <div class="ayah-header">
-            <span class="ayah-number">আয়াত ৬</span>
-        </div>
-        <div class="arabic-text">اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ</div>
-        
-        <div class="wbw-container">
-            <div class="word-box">
-                <div class="wbw-arabic">اهْدِنَا</div>
-                <div class="wbw-root">রুট: ه د ي</div>
-                <div class="wbw-meaning">আমাদেরকে দিকনির্দেশ দাও</div>
-            </div>
-            <div class="word-box">
-                <div class="wbw-arabic">الصِّرَاطَ</div>
-                <div class="wbw-root">রুট: ص ر ط</div>
-                <div class="wbw-meaning">পথের</div>
-            </div>
-            <div class="word-box">
-                <div class="wbw-arabic">الْمُسْتَقِيمَ</div>
-                <div class="wbw-root">রুট: ق و م</div>
-                <div class="wbw-meaning">সরল</div>
-            </div>
-        </div>
-
-        <div class="flow-translation">
-            <strong>বাংলা অনুবাদ:</strong> আমাদেরকে সরল পথের দিকনির্দেশ দাও।
-        </div>
-    </div>
-
-    <!-- আয়াত ৭ -->
-    <div class="ayah-card">
-        <div class="ayah-header">
-            <span class="ayah-number">আয়াত ৭</span>
-        </div>
-        <div class="arabic-text">صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ</div>
-        
-        <div class="wbw-container">
-            <div class="word-box">
-                <div class="wbw-arabic">صِرَاطَ</div>
-                <div class="wbw-root">রুট: ص ر ط</div>
-                <div class="wbw-meaning">পথ</div>
-            </div>
-            <div class="word-box">
-                <div class="wbw-arabic">الَّذِينَ</div>
-                <div class="wbw-root">সর্বনাম</div>
-                <div class="wbw-meaning">যাদের</div>
-            </div>
-            <div class="word-box">
-                <div class="wbw-arabic">أَنْعَمْتَ</div>
-                <div class="wbw-root">রুট: ن ع م</div>
-                <div class="wbw-meaning">আপনি অনুগ্রহ করেছেন</div>
-            </div>
-            <div class="word-box">
-                <div class="wbw-arabic">عَلَيْهِمْ</div>
-                <div class="wbw-root">সর্বনাম</div>
-                <div class="wbw-meaning">তাদের ওপর</div>
-            </div>
-            <div class="word-box">
-                <div class="wbw-arabic">غَيْرِ</div>
-                <div class="wbw-root">রুট: غ ي ر</div>
-                <div class="wbw-meaning">ব্যতীত</div>
-            </div>
-            <div class="word-box">
-                <div class="wbw-arabic">الْمَغْضُوبِ</div>
-                <div class="wbw-root">রুট: غ ض ب</div>
-                <div class="wbw-meaning">ক্রোধিতদের</div>
-            </div>
-            <div class="word-box">
-                <div class="wbw-arabic">عَلَيْهِمْ</div>
-                <div class="wbw-root">সর্বনাম</div>
-                <div class="wbw-meaning">তাদের ওপর</div>
-            </div>
-            <div class="word-box">
-                <div class="wbw-arabic">وَلَا</div>
-                <div class="wbw-root">নঞর্থক</div>
-                <div class="wbw-meaning">এবং না</div>
-            </div>
-            <div class="word-box">
-                <div class="wbw-arabic">الضَّالِّينَ</div>
-                <div class="wbw-root">রুট: ض ل ل</div>
-                <div class="wbw-meaning">পথভ্রষ্টদের</div>
-            </div>
-        </div>
-
-        <div class="flow-translation">
-            <strong>বাংলা অনুবাদ:</strong> যাদের ওপর আপনি অনুগ্রহ করেছেন তাদের পথ, যাদের ওপর ক্রোধ বর্ষিত হয়েছে তাদের নয় এবং পথভ্রষ্টদেরও নয়।
-        </div>
-    </div>
-
-</div>
-
-</body>
-    </html>
-    
+  <!-- ২. ১১৪টি সূরার তালিকা এবং শব্দে শব্দে বাংলা অনুবাদ -->
+  <div id="surah-list" class="section-card">
+    <h2 class="section-title">১১৪টি সূরার তালিকা (শব্দে শব্দে অনুবাদ)</h2>
+    <table class="surah-table">
+      <thead>
+        <tr>
+          <th style="width: 12%;">নং</th>
+          <th style="width: 38%;">সূরার নাম</th>
+          <th style="width: 30%;">বাংলা অর্থ</th>
+          <th style="width: 20%; text-align: right;">আরবি নাম</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td colspan="4"><a href="1.html" class="surah-link"><span class="number-col">১</span><span class="name-col">আল-ফাতিহা</span><span class="meaning-col">সূচনা</span><span class="arabic-col">الفاتحة</span></a></td></tr>
+        <tr><td colspan="4"><a href="2.html" class="surah-link"><span class="number-col">২</span><span class="name-col">আল-বাকারাহ</span><span class="meaning-col">বকনা-বাছুর</span><span class="arabic-col">البقرة</span></a></td></tr>
+        <tr><td colspan="4"><a href="3.html" class="surah-link"><span class="number-col">৩</span><span class="name-col">আলি ‘ইমরান</span><span class="meaning-col">ইমরানের পরিবার</span><span class="arabic-col">آل عمران</span></a></td></tr>
+        <tr><td colspan="4"><a href="4.html" class="surah-link"><span class="number-col">৪</span><span class="name-col">আন-নিসা</span><span class="meaning-col">নারী</span><span class="arabic-col">النساء</span></a></td></tr>
+        <tr><td colspan="4"><a href="5.html" class="surah-link"><span class="number-col">৫</span><span class="name-col">আল-মা’ইদাহ</span><span class="meaning-col">পরিবেশিত টেবিল</span><span class="arabic-col">المائدة</span></a></td></tr>
+        <tr><td colspan="4"><a href="6.html" class="surah-link"><span class="number-col">৬</span><span class="name-col">আল-আন‘আম</span><span class="meaning-col">গৃহপালিত পশু</span><span class="arabic-col">الأنعام</span></a></td></tr>
+        <tr><td colspan="4"><a href="7.html" class="surah-link"><span class="number-col">৭</span><span class="name-col">আল-আ‘রাফ</span><span class="meaning-col">উঁচু স্থান</span><span class="arabic-col">الأعراف</span></a></td></tr>
+        <tr><td colspan="4"><a href="8.html" class="surah-link"><span class="number-col">৮</span><span class="name-col">আল-আনফাল</span><span class="meaning-col">যুদ্ধ-লব্ধ ধনসম্পদ</span><span class="arabic-col">الأنفال</span></a></td></tr>
+        <tr><td colspan="4"><a href="9.html" class="surah-link"><span class="number-col">৯</span><span class="name-col">অত-তাওবাহ</span><span class="meaning-col">অনুশোচনা</span><span class="arabic-col">التوبة</span></a></td></tr>
+        <tr><td colspan="4"><a href="10.html" class="surah-link"><span class="number-col">১০</span><span class="name-col">ইউনুস</span><span class="meaning-col">নবী ইউনুস</span><span class="arabic-col">يونس</span></a></td></tr>
+        <tr><td colspan="4"><a href="11.html" class="surah-link"><span class="number-col">১১</span><span class="name-col">হূদ</span><span class="meaning-col">নবী হূদ</span><span class="arabic-col">هود</span></a></td></tr>
+        <tr><td colspan="4"><a href="12.html" class="surah-link"><span class="number-col">১২</span><span class="name-col">ইউসুফ</span><span class="meaning-col">নবী ইউসুফ</span><span class="arabic-col">يوسف</span></a></td></tr>
+        <tr><td colspan="4"><a href="13.html" class="surah-link"><span class="number-col">১৩</span><span class="name-col">আর-রা‘দ</span><span class="meaning-col">বজ্রপাত</span><span class="arabic-col">الرعد</span></a></td></tr>
+        <tr><td colspan="4"><a href="14.html" class="surah-link"><span class="number-col">১৪</span><span class="name-col">ইব্রাহীম</span><span class="meaning-col">নবী ইব্রাহীম</span><span class="arabic-col">إبراهيم</span></a></td></tr>
+        <tr><td colspan="4"><a href="15.html" class="surah-link"><span class="number-col">১৫</span><span class="name-col">আল-হিজর</span><span class="meaning-col">পাহাড়ি উপত্যকা</span><span class="arabic-col">الحجر</span></a></td></tr>
+        <tr><td colspan="4"><a href="16.html" class="surah-link"><span class="number-col">১৬</span><span class="name-col">আন-নাহল</span><span class="meaning-col">মৌমাছি</span><span class="arabic-col">النحل</span></a></td></tr>
+        <tr><td colspan="4"><a href="17.html" class="surah-link"><span class="number-col">১৭</span><span class="name-col">আল-ইসরা</span><span class="meaning-col">নৈশ ভ্রমণ</span><span class="arabic-col">الإسراء</span></a></td></tr>
+        <tr><td colspan="4"><a href="18.html" class="surah-link"><span class="number-col">১৮</span><span class="name-col">আল-কাহফ</span><span class="meaning-col">গুহা</span><span class="arabic-col">الكهف</span></a></td></tr>
+        <tr><td colspan="4"><a href="19.html" class="surah-link"><span class="number-col">১৯</span><span class="name-col">মারইয়াম</span><span class="meaning-col">মারইয়াম (আ:)</span><span class="arabic-col">مريم</span></a></td></tr>
+        <tr><td colspan="4"><a href="20.html" class="surah-link"><span class="number-col">২০</span><span class="name-col">ত্বা-হা</span><span class="meaning-col">ত্বা-হা</span><span class="arabic-col">طه</span></a></td></tr>
+        <tr><td colspan="4"><a href="21.html" class="surah-link"><span class="number-col">২১</span><span class="name-col">আল-আম্বিয়া</span><span class="meaning-col">নবীগণ</span><span class="arabic-col">الأنبياء</span></a></td></tr>
+        <tr><td colspan="4"><a href="22.html" class="surah-link"><span class="number-col">২২</span><span class="name-col">আল-হাজ্জ</span><span class="meaning-col">হজ্জ</span><span class="arabic-col">الحج</span></a></td></tr>
+        <tr><td colspan="4"><a href="23.html" class="surah-link"><span class="number-col">২৩</span><span class="name-col">আল-মু’মিনূন</span><span class="meaning-col">বিশ্বাসীগণ</span><span class="arabic-col">المؤمنون</span></a></td></tr>
+        <tr><td colspan="4"><a href="24.html" class="surah-link"><span class="number-col">২৪</span><span class="name-col">আন-নূর</span><span class="meaning-col">জ্যোতি</span><span class="arabic-col">النور</span></a></td></tr>
+        <tr><td colspan="4"><a href="25.html" class="surah-link"><span class="number-col">২৫</span><span class="name-col">আল-ফুরকান</span><span class="meaning-col">মানদণ্ড</span><span class="arabic-col">الفرقان</span></a></td></tr>
+        <tr><td colspan="4"><a href="26.html" class="surah-link"><span class="number-col">২৬</span><span class="name-col">আশ-শু‘আরা</span><span class="meaning-col">কবিগণ</span><span class="arabic-col">الشعراء</span></a></td></tr>
+        <tr><td colspan="4"><a href="27.html" class="surah-link"><span class="number-col">২৭</span><span class="name-col">আন-নামল</span><span class="meaning-col">পিঁপড়া</span><span class="arabic-col">النمل</span></a></td></tr>
+        <tr><td colspan="4"><a href="28.html" class="surah-link"><span class="number-col">২৮</span><span class="name-col">আল-কাসাস</span><span class="meaning-col">কাহিনী</span><span class="arabic-col">القصص</span></a></td></tr>
+        <tr><td colspan="4"><a href="29.html" class="surah-link"><span class="number-col">২৯</span><span class="name-col">আল-‘আনকাবূত</span><span class="meaning-col">মাকড়সা</span><span class="arabic-col">العنكبوت</span></a></td></tr>
+        <tr><td colspan="4"><a href="30.html" class="surah-link"><span class="number-col">৩০</span><span class="name-col">আর-রূম</span><span class="meaning-col">রোমান জাতি</span><span class="arabic-col">الروم</span></a></td></tr>
+        <tr><td colspan="4"><a href="31.html" class="surah-link"><span class="number-col">৩১</span><span class="name-col">লুকমান</span><span class="meaning-col">জ্ঞানী লুকমান</span><span class="arabic-col">لقمان</span></a></td></tr>
+        <tr><td colspan="4"><a href="32.html" class="surah-link"><span class="number-col">৩২</span><span class="name-col">আস-সাজদাহ</span><span class="meaning-col">সিজদা</span><span class="arabic-col">السجدة</span></a></td></tr>
+        <tr><td colspan="4"><a href="33.html" class="surah-link"><span class="number-col">৩৩</span><span class="name-col">আল-আহযাব</span><span class="meaning-col">জোটবদ্ধ দল</span><span class="arabic-col">الأحزاب</span></a></td></tr>
+        <tr><td colspan="4"><a href="34.html" class="surah-link"><span class="number-col">৩৪</span><span class="name-col">সাবা</span><span class="meaning-col">সাবা সম্প্রদায়</span><span class="arabic-col">سبأ</span></a></td></tr>
+        <tr><td colspan="4"><a href="35.html" class="surah-link"><span class="number-col">৩৫</span><span class="name-col">ফাতির</span><span class="meaning-col">আদি স্রষ্টা</span><span class="arabic-col">فاطر</span></a></td></tr>
+        <tr><td colspan="4"><a href="36.html" class="surah-link"><span class="number-col">৩৬</span><span class="name-col">ইয়া-সীন</span><span class="meaning-col">ইয়া-সীন</span><span class="arabic-col">يس</span></a></td></tr>
+        <tr><td colspan="4"><a href="37.html" class="surah-link"><span class="number-col">৩৭</span><span class="name-col">আস-ছফফাত</span><span class="meaning-col">সারিবদ্ধ দল</span><span class="arabic-col">الصافات</span></a></td></tr>
+        <tr><td colspan="4"><a href="38.html" class="surah-link"><span class="number-col">৩৮</span><span class="name-col">ছা-দ</span><span class="meaning-col">ছা-দ</span><span class="arabic-col">ص</span></a></td></tr>
+        <tr><td colspan="4"><a href="39.html" class="surah-link"><span class="number-col">৩৯</span><span class="name-col">আজ-জুমার</span><span class="meaning-col">দলবদ্ধ জনতা</span><span class="arabic-col">الزمر</span></a></td></tr>
+        <tr><td colspan="4"><a href="40.html" class="surah-link"><span class="number-col">৪০</span><span class="name-col">গাফির</span><span class="meaning-col">ক্ষমাকারী</span><span class="arabic-col">غافر</span></a></td></tr>
+        <tr><td colspan="4"><a href="41.html" class="surah-link"><span class="number-col">৪১</span><span class="name-col">ফুচ্ছিলাত</span><span class="meaning-col">বিশদ বর্ণিত</span><span class="arabic-col">فصلت</span></a></td></tr>
+        <tr><td colspan="4"><a href="42.html" class="surah-link"><span class="number-col">৪২</span><span class="name-col">আশ-শূরা</span><span class="meaning-col">পরামর্শ</span><span class="arabic-col">الشورى</span></a></td></tr>
+        <tr><td colspan="4"><a href="43.html" class="surah-link"><span class="number-col">৪৩</span><span class="name-col">আজ-জুখরুফ</span><span class="meaning-col">অলংকার</span><span class="arabic-col">الزخرف</span></a></td></tr>
+        <tr><td colspan="4"><a href="44.html" class="surah-link"><span class="number-col">৪৪</span><span class="name-col">আদ-দুখান</span><span class="meaning-col">ধোঁয়া</span><span class="arabic-col">الدخان</span></a></td></tr>
+        <tr><td colspan="4"><a href="45.html" class="surah-link"><span class="number-col">৪৫</span><span class="name-col">আল-জাসিয়াহ</span><span class="meaning-col">নতজানু</span><span class="arabic-col">الجاثية</span></a></td></tr>
+        <tr><td colspan="4"><a href="46.html" class="surah-link"><span class="number-col">৪৬</span><span class="name-col">আল-আহক্বাফ</span><span class="meaning-col">বালুটিলা</span><span class="arabic-col">الأحقاف</span></a></td></tr>
+        <tr><td colspan="4"><a href="47.html" class="surah-link"><span class="number-col">৪৭</span><span class="name-col">মুহাম্মদ</span><span class="meaning-col">নবী মুহাম্মদ (সা:)</span><span class="arabic-col">محمد</span></a></td></tr>
+        <tr><td colspan="4"><a href="48.html" class="surah-link"><span class="number-col">৪৮</span><span class="name-col">আল-ফাতহ</span><span class="meaning-col">বিজয়</span><span class="arabic-col">الفتح</span></a></td></tr>
+        <tr><td colspan="4"><a href="49.html" class="surah-link"><span class="number-col">৪৯</span><span class="name-col">আল-হুজুরাত</span><span class="meaning-col">বাসস্থানসমূহ</span><span class="arabic-col">الحجرات</span></a></td></tr>
+        <tr><td colspan="4"><a href="50.html" class="surah-link"><span class="number-col">৫০</span><span class="name-col">ক্বাফ</span><span class="meaning-col">ক্বাফ</span><span class="arabic-col">ق</span></a></td></tr>
+        <tr><td colspan="4"><a href="51.html" class="surah-link"><span class="number-col">৫১</span><span class="name-col">আয-যারিয়াত</span><span class="meaning-col">বিক্ষিপ্তকারী বাতাস</span><span class="arabic-col">الذاريات</span></a></td></tr>
+        <tr><td colspan="4"><a href="52.html" class="surah-link"><span class="number-col">৫২</span><span class="name-col">অত-তূর</span><span class="meaning-col">তূর পাহাড়</span><span class="arabic-col">الطور</span></a></td></tr>
+        <tr><td colspan="4"><a href="53.html" class="surah-link"><span class="number-col">৫৩</span><span class="name-col">আন-নাজম</span><span class="meaning-col">তারকা</span><span class="arabic-col">النجم</span></a></td></tr>
+        <tr><td colspan="4"><a href="54.html" class="surah-link"><span class="number-col">৫৪</span><span class="name-col">আল-কামার</span><span class="meaning-col">চাঁদ</span><span class="arabic-col">القمر</span></a></td></tr>
+        <tr><td colspan="4"><a href="55.html" class="surah-link"><span class="number-col">৫৫</span><span class="name-col">আর-রহমান</span><span class="meaning-col">পরম করুণাময়</span><span class="arabic-col">الرحمن</span></a></td></tr>
+        <tr><td colspan="4"><a href="56.html" class="surah-link"><span class="number-col">৫৬</span><span class="name-col">আল-ওয়াকি‘আহ</span><span class="meaning-col">কেয়ামত</span><span class="arabic-col">الواقعة</span></a></td></tr>
+        <tr><td colspan="4"><a href="57.html" class="surah-link"><span class="number-col">৫৭</span><span class="name-col">আল-হাদীদ</span><span class="meaning-col">লোহা</span><span class="arabic-col">الحديد</span></a></td></tr>
+        <tr><td colspan="4"><a href="58.html" class="surah-link"><span class="number-col">৫৮</span><span class="name-col">আল-মুজাদালাহ</span><span class="meaning-col">অনুযোগকারী নারী</span><span class="arabic-col">المجادلة</span></a></td></tr>
+        <tr><td colspan="4"><a href="59.html" class="surah-link"><span class="number-col">৫৯</span><span class="name-col">আল-হাশর</span><span class="meaning-col">সমাবেশ</span><span class="arabic-col">الحشر</span></a></td></tr>
+        <tr><td colspan="4"><a href="60.html" class="surah-link"><span class="number-col">৬০</span><span class="name-col">আল-মুমতাহিনাহ</span><span class="meaning-col">পরীক্ষিতা নারী</span><span class="arabic-col">الممتحنة</span></a></td></tr>
+        <tr><td colspan="4"><a href="61.html" class="surah-link"><span class="number-col">৬১</span><span class="name-col">আস-ছফ</span><span class="meaning-col">সারি</span><span class="arabic-col">الصف</span></a></td></tr>
+        <tr><td colspan="4"><a href="62.html" class="surah-link"><span class="number-col">৬২</span><span class="name-col">আল-জুমু‘আহ</span><span class="meaning-col">শুক্রবার</span><span class="arabic-col">الجمعة</span></a></td></tr>
+        <tr><td colspan="4"><a href="63.html" class="surah-link"><span class="number-col">৬৩</span><span class="name-col">আল-মুনাফিকূন</span><span class="meaning-col">কপট বিশ্বাসীগণ</span><span class="arabic-col">المنافقون</span></a></td></tr>
+        <tr><td colspan="4"><a href="64.html" class="surah-link"><span class="number-col">৬৪</span><span class="name-col">অত-তাগাবুন</span><span class="meaning-col">হার-জ
