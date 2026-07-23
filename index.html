@@ -16,80 +16,470 @@
             background-color: #1a365d;
             color: white;
             text-align: center;
-            padding: 30px 15px;
+            padding: 20px 15px;
         }
         header h1 {
-            margin: 0 0 10px 0;
-            font-size: 26px;
+            margin: 0 0 5px 0;
+            font-size: 24px;
         }
         header p {
             margin: 0;
-            font-size: 14px;
+            font-size: 13px;
             color: #cbd5e0;
         }
         .container {
             max-width: 800px;
-            margin: 25px auto;
-            padding: 0 15px;
+            margin: 15px auto;
+            padding: 0 12px;
         }
-        .section-title {
-            color: #1a365d;
-            font-size: 20px;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #2b6cb0;
-            display: inline-block;
-            padding-bottom: 5px;
+        .surah-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
         .surah-card {
             background: #ffffff;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-radius: 10px;
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             text-decoration: none;
             color: inherit;
-            display: block;
-            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
             border-left: 4px solid #2b6cb0;
+            transition: background 0.2s;
         }
         .surah-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            background-color: #f8fafc;
         }
-        .surah-card h3 {
-            margin: 0 0 8px 0;
+        .surah-info-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .surah-number {
+            font-size: 18px;
+            font-weight: bold;
+            color: #4a5568;
+            min-width: 25px;
+        }
+        .surah-details h3 {
+            margin: 0 0 2px 0;
             color: #2b6cb0;
-            font-size: 20px;
+            font-size: 18px;
         }
-        .surah-card p {
+        .surah-details p {
             margin: 0;
             color: #718096;
-            font-size: 14px;
+            font-size: 13px;
+        }
+        .disabled-card {
+            opacity: 0.6;
+            cursor: not-allowed;
+            border-left-color: #cbd5e0;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>কুরআন গবেষণা ও শব্দানুবাদ প্ল্যাটফর্ম</h1>
+    <h1>কুরআন গবেষণা ও শব্দানুবাদ</h1>
     <p>শব্দ ও মূল রুট বিশ্লেষণের মাধ্যমে সঠিক অনুবাদের প্রয়াস</p>
 </header>
 
 <div class="container">
-    <h2 class="section-title">কুরআন অনুবাদ ও রুট বিশ্লেষণ</h2>
+    <div class="surah-list">
 
-    <!-- সূরা আল-ফাতিহা (যেটিতে ক্লিক করলে আয়াতে যাবে) -->
-    <a href="quran.html" class="surah-card">
-        <h3>সূরা আল-ফাতিহা</h3>
-        <p>প্রতিটি শব্দের মূল রুট ও বাংলা অর্থ সহ অনুবাদ পড়ুন...</p>
-    </a>
+        <!-- ১. সূরা আল-ফাতিহা -->
+        <a href="quran.html" class="surah-card">
+            <div class="surah-info-left">
+                <span class="surah-number">১</span>
+                <div class="surah-details">
+                    <h3>আল-ফাতিহা</h3>
+                    <p>সূচনা 🕋</p>
+                </div>
+            </div>
+        </a>
 
-    <!-- সূরা আল-বাকারা -->
-    <div class="surah-card" style="opacity: 0.7; cursor: not-allowed;">
-        <h3>সূরা আল-বাকারা</h3>
-        <p>প্রতিটি শব্দের মূল রুট ও বাংলা অর্থ সহ অনুবাদ পড়ুন (শীঘ্রই আসছে...)</p>
-    </div>
-</div>
+        <!-- ২. সূরা আল-বাকারা -->
+        <a href="bakara.html" class="surah-card">
+            <div class="surah-info-left">
+                <span class="surah-number">২</span>
+                <div class="surah-details">
+                    <h3>আল-বাকারা</h3>
+                    <p>বকনা-বাছুর 🕌</p>
+                </div>
+            </div>
+        </a>
 
-</body>
-</html>
+        <!-- ৩. আল ইমরান -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left">
+                <span class="surah-number">৩</span>
+                <div class="surah-details">
+                    <h3>আলি 'ইমরান</h3>
+                    <p>ইমরানের পরিবার 🕌</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ৪. আন-নিসা -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left">
+                <span class="surah-number">৪</span>
+                <div class="surah-details">
+                    <h3>আন-নিসা</h3>
+                    <p>নারী 🕌</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ৫. আল-মা'ইদাহ -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left">
+                <span class="surah-number">৫</span>
+                <div class="surah-details">
+                    <h3>আল-মা'ইদাহ</h3>
+                    <p>পরিবেশিত টেবিল 🕌</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ৬. আল-আন'আম -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left">
+                <span class="surah-number">৬</span>
+                <div class="surah-details">
+                    <h3>আল-আন'আম</h3>
+                    <p>গৃহপালিত পশু 🕋</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ৭. আল-আ'রাফ -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left">
+                <span class="surah-number">৭</span>
+                <div class="surah-details">
+                    <h3>আল-আ'রাফ</h3>
+                    <p>উঁচু স্থান 🕋</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ৮. আল-আনফাল -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left">
+                <span class="surah-number">৮</span>
+                <div class="surah-details">
+                    <h3>আল-আনফাল</h3>
+                    <p>যুদ্ধ-লব্ধ ধনসম্পদ 🕌</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ৯. আত-তাওবাহ -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left">
+                <span class="surah-number">৯</span>
+                <div class="surah-details">
+                    <h3>আত-তাওবাহ</h3>
+                    <p>অনুশোচনা 🕌</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ১০. ইউনুস -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">১০</span><div class="surah-details"><h3>ইউনুস</h3><p>নবী ইউনুস 🕋</p></div></div>
+        </div>
+
+        <!-- ১১. হুদ -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">১১</span><div class="surah-details"><h3>হুদ</h3><p>নবী হুদ 🕋</p></div></div>
+        </div>
+
+        <!-- ১২. ইউসুফ -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">১২</span><div class="surah-details"><h3>ইউসুফ</h3><p>নবী ইউসুফ 🕋</p></div></div>
+        </div>
+
+        <!-- ১৩. আর্-রা'দ -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">১৩</span><div class="surah-details"><h3>আর্-রা'দ</h3><p>বজ্রপাত 🕌</p></div></div>
+        </div>
+
+        <!-- ১৪. ইব্রাহীম -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">১৪</span><div class="surah-details"><h3>ইব্রাহীম</h3><p>নবী ইব্রাহীম 🕋</p></div></div>
+        </div>
+
+        <!-- ১৫. আল-হিজর -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">১৫</span><div class="surah-details"><h3>আল-হিজর</h3><p>পাথুরে উপত্যকা 🕋</p></div></div>
+        </div>
+
+        <!-- ১৬. আন-নাহল -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">১৬</span><div class="surah-details"><h3>আন-নাহল</h3><p>মৌমাছি 🕋</p></div></div>
+        </div>
+
+        <!-- ১৭. আল-ইসরা -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">১৭</span><div class="surah-details"><h3>আল-ইসরা</h3><p>রাতের সফর 🕋</p></div></div>
+        </div>
+
+        <!-- ১৮. আল-কাহফ -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">১৮</span><div class="surah-details"><h3>আল-কাহফ</h3><p>গুহা 🕋</p></div></div>
+        </div>
+
+        <!-- ১৯. মারইয়াম -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">১৯</span><div class="surah-details"><h3>মারইয়াম</h3><p>মারইয়াম (আ:) 🕋</p></div></div>
+        </div>
+
+        <!-- ২০. ত্বা-হা -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">২০</span><div class="surah-details"><h3>ত্বা-হা</h3><p>ত্বা-হা 🕋</p></div></div>
+        </div>
+
+        <!-- ২১. আল-আনবিয়া -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">২১</span><div class="surah-details"><h3>আল-আনবিয়া</h3><p>নবীগণ 🕋</p></div></div>
+        </div>
+
+        <!-- ২২. আল-হাজ্জ -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">২২</span><div class="surah-details"><h3>আল-হাজ্জ</h3><p>হজ্জ 🕌</p></div></div>
+        </div>
+
+        <!-- ২৩. আল-মু'মিনূন -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">২৩</span><div class="surah-details"><h3>আল-মু'মিনূন</h3><p>বিশ্বাসীরা 🕋</p></div></div>
+        </div>
+
+        <!-- ২৪. আন-নূর -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">২৪</span><div class="surah-details"><h3>আন-নূর</h3><p>জ্যোতি 🕌</p></div></div>
+        </div>
+
+        <!-- ২৫. আল-ফুরকান -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">২৫</span><div class="surah-details"><h3>আল-ফুরকান</h3><p>সত্য-মিথ্যার মানদণ্ড 🕋</p></div></div>
+        </div>
+
+        <!-- ২৬. আশ-শু'আরা -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">২৬</span><div class="surah-details"><h3>আশ-শু'আরা</h3><p>কবিগণ 🕋</p></div></div>
+        </div>
+
+        <!-- ২৭. আন-নামল -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">২৭</span><div class="surah-details"><h3>আন-নামল</h3><p>পিঁপড়া 🕋</p></div></div>
+        </div>
+
+        <!-- ২৮. আল-কাসাস -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">২৮</span><div class="surah-details"><h3>আল-কাসাস</h3><p>কাহিনী 🕋</p></div></div>
+        </div>
+
+        <!-- ২৯. আল-'আনকাবূত -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">২৯</span><div class="surah-details"><h3>আল-'আনকাবূত</h3><p>মাকড়সা 🕋</p></div></div>
+        </div>
+
+        <!-- ৩০. আর-রূম -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৩০</span><div class="surah-details"><h3>আর-রূম</h3><p>রোমান জাতি 🕋</p></div></div>
+        </div>
+
+        <!-- ৩১. লুকমান -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৩১</span><div class="surah-details"><h3>লুকমান</h3><p>জ্ঞানী লুকমান 🕋</p></div></div>
+        </div>
+
+        <!-- ৩২. আস-সাজদাহ -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৩২</span><div class="surah-details"><h3>আস-সাজদাহ</h3><p>সেজদা 🕋</p></div></div>
+        </div>
+
+        <!-- ৩৩. আল-আহযাব -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৩৩</span><div class="surah-details"><h3>আল-আহযাব</h3><p>জোটবদ্ধ দল 🕌</p></div></div>
+        </div>
+
+        <!-- ৩৪. সাবা -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৩৪</span><div class="surah-details"><h3>সাবা</h3><p>সাবা জাতি 🕋</p></div></div>
+        </div>
+
+        <!-- ৩৫. ফাতির -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৩৫</span><div class="surah-details"><h3>ফাতির</h3><p>সৃষ্টিকর্তা 🕋</p></div></div>
+        </div>
+
+        <!-- ৩৬. ইয়াসীন -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৩৬</span><div class="surah-details"><h3>ইয়াসীন</h3><p>ইয়াসীন 🕋</p></div></div>
+        </div>
+
+        <!-- ৩৭. আস-ফাফফাত -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৩৭</span><div class="surah-details"><h3>আস-সাফফাত</h3><p>সারিভুক্ত দল 🕋</p></div></div>
+        </div>
+
+        <!-- ৩৮. সোয়াদ -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৩৮</span><div class="surah-details"><h3>সোয়াদ</h3><p>সোয়াদ 🕋</p></div></div>
+        </div>
+
+        <!-- ৩৯. আজ-জুমার -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৩৯</span><div class="surah-details"><h3>আজ-জুমার</h3><p>দলবদ্ধ জনতা 🕋</p></div></div>
+        </div>
+
+        <!-- ৪০. গাফির -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৪০</span><div class="surah-details"><h3>গাফির</h3><p>ক্ষমাশীল 🕋</p></div></div>
+        </div>
+
+        <!-- ৪১. ফুসসিলাত -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৪১</span><div class="surah-details"><h3>ফুসসিলাত</h3><p>বিশদ বিবরণ 🕋</p></div></div>
+        </div>
+
+        <!-- ৪২. আশ-শূরা -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৪২</span><div class="surah-details"><h3>আশ-শূরা</h3><p>পরামর্শ 🕋</p></div></div>
+        </div>
+
+        <!-- ৪৩. আজ-জুখরুফ -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৪৩</span><div class="surah-details"><h3>আজ-জুখরুফ</h3><p>সোনাদানা 🕋</p></div></div>
+        </div>
+
+        <!-- ৪৪. আদ-দুখান -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৪৪</span><div class="surah-details"><h3>আদ-দুখান</h3><p>ধোঁয়া 🕋</p></div></div>
+        </div>
+
+        <!-- ৪৫. আল-জাসিয়াহ -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৪৫</span><div class="surah-details"><h3>আল-জাসিয়াহ</h3><p>নতজানু 🕋</p></div></div>
+        </div>
+
+        <!-- ৪৬. আল-আহকাফ -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৪৬</span><div class="surah-details"><h3>আল-আহকাফ</h3><p>বালুকা পাহাড় 🕋</p></div></div>
+        </div>
+
+        <!-- ৪৭. মুহাম্মদ -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৪৭</span><div class="surah-details"><h3>মুহাম্মদ</h3><p>নবী মুহাম্মদ 🕌</p></div></div>
+        </div>
+
+        <!-- ৪৮. আল-ফাতহ -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৪৮</span><div class="surah-details"><h3>আল-ফাতহ</h3><p>বিজয় 🕌</p></div></div>
+        </div>
+
+        <!-- ৪৯. আল-হুজুরাত -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৪৯</span><div class="surah-details"><h3>আল-হুজুরাত</h3><p>কক্ষসমূহ 🕌</p></div></div>
+        </div>
+
+        <!-- ৫০. ক্বাফ -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৫০</span><div class="surah-details"><h3>ক্বাফ</h3><p>ক্বাফ 🕋</p></div></div>
+        </div>
+
+        <!-- ৫১. আয-যারিয়াত -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৫১</span><div class="surah-details"><h3>আয-যারিয়াত</h3><p>বিক্ষিপ্তকারী বাতাস 🕋</p></div></div>
+        </div>
+
+        <!-- ৫২. আত-তূর -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৫২</span><div class="surah-details"><h3>আত-তূর</h3><p>তূর পাহাড় 🕋</p></div></div>
+        </div>
+
+        <!-- ৫৩. আন-নাজম -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৫৩</span><div class="surah-details"><h3>আন-নাজম</h3><p>তারা 🕋</p></div></div>
+        </div>
+
+        <!-- ৫৪. আল-কামার -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৫৪</span><div class="surah-details"><h3>আল-কামার</h3><p>চাঁদ 🕋</p></div></div>
+        </div>
+
+        <!-- ৫৫. আর-রহমান -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৫৫</span><div class="surah-details"><h3>আর-রহমান</h3><p>পরম দয়াময় 🕌</p></div></div>
+        </div>
+
+        <!-- ৫৬. আল-ওয়াকি'আ -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৫৬</span><div class="surah-details"><h3>আল-ওয়াকি'আ</h3><p>নিশ্চিত ঘটনা 🕋</p></div></div>
+        </div>
+
+        <!-- ৫৭. আল-হাদীদ -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৫৭</span><div class="surah-details"><h3>আল-হাদীদ</h3><p>লোহা 🕌</p></div></div>
+        </div>
+
+        <!-- ৫৮. আল-মুজাদিলাহ -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৫৮</span><div class="surah-details"><h3>আল-মুজাদিলাহ</h3><p>অনুনয়কারী নারী 🕌</p></div></div>
+        </div>
+
+        <!-- ৫৯. আল-হাশর -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৫৯</span><div class="surah-details"><h3>আল-হাশর</h3><p>সমাবেশ 🕌</p></div></div>
+        </div>
+
+        <!-- ৬০. আল-মুমতাহিনাহ -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৬০</span><div class="surah-details"><h3>আল-মুমতাহিনাহ</h3><p>পরীক্ষিতা নারী 🕌</p></div></div>
+        </div>
+
+        <!-- ৬১. আস-সফ -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৬১</span><div class="surah-details"><h3>আস-সফ</h3><p>সারি 🕌</p></div></div>
+        </div>
+
+        <!-- ৬২. আল-জুমু'আ -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৬২</span><div class="surah-details"><h3>আল-জুমু'আ</h3><p>শুক্রবার 🕌</p></div></div>
+        </div>
+
+        <!-- ৬৩. আল-মুনাফিকূন -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৬৩</span><div class="surah-details"><h3>আল-মুনাফিকূন</h3><p>কপট বিশ্বাসী 🕌</p></div></div>
+        </div>
+
+        <!-- ৬৪. আত-তাগাবুন -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৬৪</span><div class="surah-details"><h3>আত-তাগাবুন</h3><p>হার-জিত 🕌</p></div></div>
+        </div>
+
+        <!-- ৬৫. আত-ত্বলাক -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৬৫</span><div class="surah-details"><h3>আত-ত্বলাক</h3><p>তালাক 🕌</p></div></div>
+        </div>
+
+        <!-- ৬৬. আত-তাহরীম -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৬৬</span><div class="surah-details"><h3>আত-তাহরীম</h3><p>নিষিদ্ধকরণ 🕌</p></div></div>
+        </div>
+
+        <!-- ৬৭. আল-মুলক -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৬৭</span><div class="surah-details"><h3>আল-মুলক</h3><p>সার্বভৌম কর্তৃত্ব 🕋</p></div></div>
+        </div>
+
+        <!-- ৬৮. আল-কলম -->
+        <div class="surah-card disabled-card">
+            <div class="surah-info-left"><span class="surah-number">৬৮</span><div class="surah-details"><h3>আল-কলম</h3><p>কল
