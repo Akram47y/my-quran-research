@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>কুরআন গবেষণা ও শব্দানুবাদ</title>
+    <title>বাংলা অনুবাদ - সূরার তালিকা</title>
     <style>
         * {
             box-sizing: border-box;
@@ -20,75 +20,91 @@
             background-color: #1a5d1a;
             color: #ffffff;
             text-align: center;
-            padding: 35px 15px;
+            padding: 30px 15px;
         }
         header h1 {
-            font-size: 26px;
+            font-size: 24px;
             margin-bottom: 8px;
         }
-        header p {
-            font-size: 15px;
-            opacity: 0.9;
+        .nav-back {
+            display: inline-block;
+            margin-top: 10px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
         }
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 25px auto;
             padding: 0 15px;
         }
-        .intro-box {
-            background: #ffffff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        .search-box {
             margin-bottom: 25px;
-            border-left: 5px solid #1a5d1a;
         }
-        .intro-box h2 {
-            color: #1a5d1a;
-            margin-bottom: 8px;
-            font-size: 18px;
+        .search-box input {
+            width: 100%;
+            padding: 12px 18px;
+            font-size: 15px;
+            border: 1px solid #cbd5e0;
+            border-radius: 8px;
+            outline: none;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-        }
-        .menu-card {
-            background: #ffffff;
-            border-radius: 10px;
-            padding: 20px;
-            text-decoration: none;
-            color: inherit;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-            border: 1px solid #e2e8f0;
-            transition: all 0.2s ease-in-out;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .menu-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        .search-box input:focus {
             border-color: #1a5d1a;
         }
-        .menu-card h3 {
+        .surah-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 15px;
+        }
+        .surah-card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 16px;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.04);
+            border: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            transition: all 0.2s ease;
+        }
+        .surah-card:hover {
+            transform: translateY(-2px);
+            border-color: #1a5d1a;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+        }
+        .surah-number {
+            width: 42px;
+            height: 42px;
+            background-color: #f0fdf4;
             color: #1a5d1a;
-            font-size: 17px;
-            margin-bottom: 8px;
-        }
-        .menu-card p {
-            font-size: 13.5px;
-            color: #666;
-        }
-        .card-btn {
-            margin-top: 15px;
+            border: 1px solid #bbf7d0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-weight: bold;
-            color: #2b6cb0;
-            font-size: 13.5px;
+            font-size: 15px;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        .surah-info h3 {
+            font-size: 16px;
+            color: #2d3748;
+            margin-bottom: 3px;
+        }
+        .surah-info p {
+            font-size: 12px;
+            color: #718096;
         }
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 25px;
             font-size: 13px;
             color: #718096;
             margin-top: 30px;
@@ -98,63 +114,101 @@
 <body>
 
 <header>
-    <h1>কুরআন গবেষণা ও শব্দানুবাদ</h1>
-    <p>বিশুদ্ধ টেক্সট ও শব্দমূল (Root Word) ভিত্তিক গবেষণা প্ল্যাটফর্ম</p>
+    <h1>বাংলা অনুবাদ - সূরার তালিকা</h1>
+    <a href="../index.html" class="nav-back">&larr; মূল হোমপেজে ফিরে যান</a>
 </header>
 
 <div class="container">
 
-    <div class="intro-box">
-        <h2>স্বাগতম</h2>
-        <p>কুরআনের শব্দানুবাদ, মূল রুটভিত্তিক ব্যাকরণগত আলোচনা, বিষয়ভিত্তিক প্রবন্ধ ও ভিডিও গবেষণার সংকলনে আপনাকে স্বাগতম। নিচের যেকোনো বিভাগে প্রবেশ করুন।</p>
+    <!-- সার্চ বক্স -->
+    <div class="search-box">
+        <input type="text" id="searchInput" onkeyup="filterSurahs()" placeholder="সূরার নাম বা নম্বর লিখে খুঁজুন...">
     </div>
 
-    <div class="menu-grid">
+    <!-- সূরার গ্রিড -->
+    <div class="surah-grid" id="surahGrid">
 
-        <!-- ১. প্রাসঙ্গিক কথা -->
-        <a href="about.html" class="menu-card">
-            <div>
-                <h3>📖 ১. প্রাসঙ্গিক কথা</h3>
-                <p>গবেষণার মূল উদ্দেশ্য, নীতিমালা ও অনুবাদ সংক্রান্ত সংক্ষিপ্ত পরিচিতি।</p>
+        <a href="surah-1.html" class="surah-card">
+            <div class="surah-number">১</div>
+            <div class="surah-info">
+                <h3>সূরা আল-ফাতিহা</h3>
+                <p>আয়াত: ৭ | মাক্কী</p>
             </div>
-            <div class="card-btn">প্রবেশ করুন &rarr;</div>
         </a>
 
-        <!-- ২. বাংলা অনুবাদ -->
-        <a href="quran.html" class="menu-card">
-            <div>
-                <h3>📜 ২. বাংলা অনুবাদ</h3>
-                <p>১১৪টি সূরার তালিকা এবং শব্দে শব্দে প্রাঞ্জল বাংলা অনুবাদ।</p>
+        <a href="surah-2.html" class="surah-card">
+            <div class="surah-number">২</div>
+            <div class="surah-info">
+                <h3>সূরা আল-বাক্বারাহ</h3>
+                <p>আয়াত: ২৮৬ | মাদানী</p>
             </div>
-            <div class="card-btn">সূরার তালিকা দেখুন &rarr;</div>
         </a>
 
-        <!-- ৩. রুট বিশ্লেষণ মূলক আলোচনা -->
-        <a href="root-analysis.html" class="menu-card">
-            <div>
-                <h3>🔍 ৩. রুট বিশ্লেষণ মূলক আলোচনা</h3>
-                <p>আরবি শব্দের মূল রুট, একবচন-বহুবচন ও অর্থগত পরিবর্তনের আলোচনা।</p>
+        <a href="surah-3.html" class="surah-card">
+            <div class="surah-number">৩</div>
+            <div class="surah-info">
+                <h3>সূরা আল-ইমরান</h3>
+                <p>আয়াত: ২০০ | মাদানী</p>
             </div>
-            <div class="card-btn">আলোচনা দেখুন &rarr;</div>
         </a>
 
-        <!-- ৪. বিষয় ভিত্তিক প্রবন্ধ -->
-        <a href="articles.html" class="menu-card">
-            <div>
-                <h3>📝 ৪. বিষয় ভিত্তিক প্রবন্ধ</h3>
-                <p>কুরআনিক বিভিন্ন গুরুত্বপূর্ণ বিষয়ের ওপর গবেষণামূলক প্রবন্ধ।</p>
+        <a href="surah-4.html" class="surah-card">
+            <div class="surah-number">৪</div>
+            <div class="surah-info">
+                <h3>সূরা আন-নিসা</h3>
+                <p>আয়াত: ১৭৬ | মাদানী</p>
             </div>
-            <div class="card-btn">প্রবন্ধ পড়ুন &rarr;</div>
         </a>
 
-        <!-- ৫. ভিডিও -->
-        <a href="videos.html" class="menu-card">
-            <div>
-                <h3>🎥 ৫. ভিডিও গ্যালারি</h3>
-                <p>কুরআন গবেষণা ও শব্দানুবাদের ওপর ধারণকৃত ভিডিও আলোচনা।</p>
+        <a href="surah-5.html" class="surah-card">
+            <div class="surah-number">৫</div>
+            <div class="surah-info">
+                <h3>সূরা আল-মায়িদাহ</h3>
+                <p>আয়াত: ১২০ | মাদানী</p>
             </div>
-            <div class="card-btn">ভিডিও দেখুন &rarr;</div>
         </a>
+
+        <a href="surah-6.html" class="surah-card">
+            <div class="surah-number">৬</div>
+            <div class="surah-info">
+                <h3>সূরা আল-আনআম</h3>
+                <p>আয়াত: ১৬৫ | মাক্কী</p>
+            </div>
+        </a>
+
+        <a href="surah-7.html" class="surah-card">
+            <div class="surah-number">৭</div>
+            <div class="surah-info">
+                <h3>সূরা আল-আরাফ</h3>
+                <p>আয়াত: ২০৬ | মাক্কী</p>
+            </div>
+        </a>
+
+        <a href="surah-8.html" class="surah-card">
+            <div class="surah-number">৮</div>
+            <div class="surah-info">
+                <h3>সূরা আল-আনফাল</h3>
+                <p>আয়াত: ৭৫ | মাদানী</p>
+            </div>
+        </a>
+
+        <a href="surah-9.html" class="surah-card">
+            <div class="surah-number">৯</div>
+            <div class="surah-info">
+                <h3>সূরা আত-তাওবাহ</h3>
+                <p>আয়াত: ১২৯ | মাদানী</p>
+            </div>
+        </a>
+
+        <a href="surah-10.html" class="surah-card">
+            <div class="surah-number">১০</div>
+            <div class="surah-info">
+                <h3>সূরা ইউনুস</h3>
+                <p>আয়াত: ১০৯ | মাক্কী</p>
+            </div>
+        </a>
+
+        <!-- বাকি সূরাগুলোও একইভাবে ধারাবাহিকভাবে যুক্ত হবে -->
 
     </div>
 
@@ -163,6 +217,28 @@
 <footer>
     <p>&copy; ২০২৬ কুরআন গবেষণা ও শব্দানুবাদ | সর্বস্বত্ব সংরক্ষিত</p>
 </footer>
+
+<script>
+    function filterSurahs() {
+        var input = document.getElementById('searchInput');
+        var filter = input.value.toLowerCase();
+        var grid = document.getElementById('surahGrid');
+        var cards = grid.getElementsByClassName('surah-card');
+
+        for (var i = 0; i < cards.length; i++) {
+            var title = cards[i].getElementsByTagName('h3')[0];
+            var num = cards[i].getElementsByClassName('surah-number')[0];
+            var txtValue = title.textContent || title.innerText;
+            var numValue = num.textContent || num.innerText;
+
+            if (txtValue.toLowerCase().indexOf(filter) > -1 || numValue.indexOf(filter) > -1) {
+                cards[i].style.display = "";
+            } else {
+                cards[i].style.display = "none";
+            }
+        }
+    }
+</script>
 
 </body>
 </html>
