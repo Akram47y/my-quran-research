@@ -72,9 +72,10 @@
             font-size: 18px;
             margin-bottom: 15px;
         }
+        /* প্রতি লাইনে ঠিক ৩টি করে শব্দ রাখার জন্য Grid সিস্টেম */
         .words-container {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: 12px;
             direction: rtl;
             margin-bottom: 20px;
@@ -83,9 +84,8 @@
             background-color: #f8f9fa;
             border: 1px solid #e2e8f0;
             border-radius: 6px;
-            padding: 8px 12px;
+            padding: 8px 6px;
             text-align: center;
-            min-width: 80px;
         }
         .arabic-word {
             display: block;
@@ -96,7 +96,7 @@
         }
         .bn-word {
             display: block;
-            font-size: 14px;
+            font-size: 13.5px;
             color: #4a5568;
             direction: ltr;
         }
@@ -264,7 +264,7 @@
         <!-- নেভিগেশন -->
         <div class="navigation">
             <a href="surah-109.html" class="nav-btn">← পূর্ববর্তী (সূরা আল-কাফিরুন)</a>
-            <a href="index.html" class="nav-btn">সূরা তালিকা</a>
+            <a href="surah-list.html" class="nav-btn">সূরা তালিকা</a>
             <a href="surah-111.html" class="nav-btn">পরবর্তী (সূরা আল-মাসাদ) →</a>
         </div>
 
