@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>সূরা আল-ইখলাস - কুরআন গবেষণা ও শব্দানুবাদ</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'SolaimanLipi', 'Kalpurush', Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #2c3e50;
+            line-height: 1.7;
+            padding: 15px;
+        }
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #eef2f5;
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+        .header h1 {
+            font-size: 28px;
+            color: #1b4332;
+            margin-bottom: 8px;
+        }
+        .header p {
+            color: #555;
+            font-size: 16px;
+        }
+        .bismillah-card {
+            background-color: #fcfcfc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        .bismillah-arabic {
+            font-family: 'Meaney', 'Amiri', 'Traditional Arabic', serif;
+            font-size: 26px;
+            color: #1b4332;
+            margin-bottom: 10px;
+        }
+        .bismillah-bn {
+            font-size: 16px;
+            color: #4a5568;
+        }
+        .verse-card {
+            background: #ffffff;
+            border: 1px solid #e0e6ed;
+            border-left: 4px solid #2d6a4f;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        .verse-number {
+            font-weight: bold;
+            color: #2d6a4f;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        .words-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            direction: rtl;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 600px) {
+            .words-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        .word-block {
+            background-color: #f8f9fa;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 8px 6px;
+            text-align: center;
+        }
+        .arabic-word {
+            display: block;
+            font-family: 'Meaney', 'Amiri', 'Traditional Arabic', serif;
+            font-size: 22px;
+            color: #1b4332;
+            margin-bottom: 4px;
+        }
+        .bn-word {
+            display: block;
+            font-size: 13.5px;
+            color: #4a5568;
+            direction: ltr;
+        }
+        .full-translation {
+            direction: ltr;
+            background-color: #f1f8f5;
+            padding: 12px 15px;
+            border-radius: 6px;
+            font-size: 16px;
+            color: #2d3748;
+            font-weight: 500;
+        }
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 2px solid #eef2f5;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .nav-btn {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #2d6a4f;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .nav-btn:hover {
+            background-color: #1b4332;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 10px;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- হেডার -->
+        <div class="header">
+            <h1>সূরা আল-ইখলাস</h1>
+            <p>সূরা ১১২ | মাক্কী</p>
+        </div>
+
+        <!-- বিসমিল্লাহ -->
+        <div class="bismillah-card">
+            <div class="bismillah-arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+            <div class="bismillah-bn">“পরম মমতাময়, সদামমতাবদ্ধ আল্লাহর নামে।”</div>
+        </div>
+
+        <!-- আয়াত ১১২:১ -->
+        <div class="verse-card">
+            <div class="verse-number">১১২:১</div>
+            <div class="words-container">
+                <div class="word-block">
+                    <span class="arabic-word">قُلْ</span>
+                    <span class="bn-word">বলো</span>
+                </div>
+                <div class="word-block">
+                    <span class="arabic-word">هُوَ</span>
+                    <span class="bn-word">তিনিই</span>
+                </div>
+                <div class="word-block">
+                    <span class="arabic-word">اللَّهُ</span>
+                    <span class="bn-word">আল্লাহ</span>
+                </div>
+                <div class="word-block">
+                    <span class="arabic-word">أَحَدٌ</span>
+                    <span class="bn-word">একক</span>
+                </div>
+            </div>
+            <div class="full-translation">
+                "বলো, তিনিই আল্লাহ, একক।"
+            </div>
+        </div>
+
+        <!-- আয়াত ১১২:২ -->
+        <div class="verse-card">
+            <div class="verse-number">১১২:২</div>
+            <div class="words-container" style="grid-template-columns: repeat(2, 1fr);">
+                <div class="word-block">
+                    <span class="arabic-word">اللَّهُ</span>
+                    <span class="bn-word">আল্লাহ</span>
+                </div>
+                <div class="word-block">
+                    <span class="arabic-word">الصَّمَدُ</span>
+                    <span class="bn-word">সর্বাশ্রয়</span>
+                </div>
+            </div>
+            <div class="full-translation">
+                "আল্লাহ, সর্বাশ্রয়।"
+            </div>
+        </div>
+
+        <!-- নেভিগেশন -->
+        <div class="navigation">
+            <a href="surah-111.html" class="nav-btn">← পূর্ববর্তী (সূরা আল-মাসাদ)</a>
+            <a href="index.html" class="nav-btn">সূরা তালিকা</a>
+            <a href="surah-113.html" class="nav-btn">পরবর্তী (সূরা আল-ফালাক) →</a>
+        </div>
+
+        <!-- ফুটার -->
+        <footer>
+            <p>&copy; ২০২৬ কুরআন গবেষণা ও শব্দানুবাদ | সর্বস্বত্ব সংরক্ষিত</p>
+        </footer>
+    </div>
+
+</body>
+</html>
+
