@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="bn" dir="ltr">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>সূরা আল-ফাতিহা - শব্দে শব্দে অনুবাদ</title>
+    <title>সূরা আল-ফাতিহা - কুরআন গবেষণা ও শব্দানুবাদ</title>
     <style>
         * {
             box-sizing: border-box;
@@ -14,13 +14,14 @@
             font-family: 'SolaimanLipi', 'Kalpurush', Arial, sans-serif;
             background-color: #f4f6f8;
             color: #2c3e50;
+            line-height: 1.8;
             padding: 15px;
         }
         .container {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
             background: #ffffff;
-            padding: 20px;
+            padding: 25px;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
@@ -33,130 +34,144 @@
         .header h1 {
             font-size: 26px;
             color: #1b4332;
+            margin-bottom: 5px;
         }
-        .header p {
+        .header .meta-info {
             color: #666;
-            font-size: 15px;
+            font-size: 14px;
         }
-        .bismillah {
+        .bismillah-box {
+            background-color: #f8f9fa;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 15px;
             text-align: center;
             margin-bottom: 25px;
-            padding: 15px;
-            background-color: #f8f9fa;
-            border-radius: 8px;
-            border: 1px solid #e9ecef;
         }
-        .bismillah .arabic {
+        .bismillah-arabic {
+            font-family: 'Meaney', 'Amiri', 'Traditional Arabic', serif;
             font-size: 24px;
             color: #1b4332;
+            margin-bottom: 8px;
             display: block;
-            margin-bottom: 5px;
-            font-family: 'Traditional Arabic', 'Scheherazade', serif;
         }
-        .bismillah .meaning {
-            font-size: 16px;
-            color: #555;
+        .bismillah-meaning {
+            font-size: 15px;
+            color: #1b4332; /* শব্দানুবাদের সবুজ রঙ */
+            font-weight: bold;
         }
         .verse-card {
-            background: #ffffff;
             border: 1px solid #e0e6ed;
-            border-top: 3px solid #2d6a4f;
-            padding: 20px 15px;
-            margin-bottom: 20px;
             border-radius: 8px;
+            padding: 18px;
+            margin-bottom: 20px;
+            background-color: #ffffff;
         }
-        .verse-number {
+        .verse-num {
+            font-size: 14px;
             font-weight: bold;
-            color: #2d6a4f;
-            margin-bottom: 15px;
-            font-size: 16px;
+            color: #1b4332;
+            margin-bottom: 12px;
         }
-        .words-container {
+        .word-by-word-container {
             display: flex;
             flex-wrap: wrap;
-            direction: rtl; 
-            gap: 15px 12px;
-            margin-bottom: 20px;
+            direction: rtl;
             justify-content: flex-start;
+            gap: 12px;
+            margin-bottom: 15px;
         }
-        .word-block {
+        .word-box {
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-align: center;
-            min-width: 60px;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 6px;
-            direction: ltr;
+            background-color: #f8f9fa;
+            border: 1px solid #edf2f7;
+            padding: 8px 12px;
+            border-radius: 6px;
+            min-width: 70px;
         }
-        .word-block .arabic-word {
-            font-size: 26px;
+        .arabic-word {
+            font-family: 'Meaney', 'Amiri', 'Traditional Arabic', serif;
+            font-size: 22px;
             color: #1b4332;
-            font-family: 'Traditional Arabic', 'Scheherazade', serif;
             margin-bottom: 4px;
         }
-        .word-block .bn-word {
-            font-size: 14px;
-            color: #555;
+        /* আরবির নিচের বাংলা শব্দকে সবুজ করার ক্লাস */
+        .verified-meaning {
+            font-size: 13.5px;
+            color: #1b4332; /* সবুজ রঙ */
+            font-weight: bold;
+            direction: ltr;
+            text-align: center;
         }
         .full-translation {
-            font-size: 17px;
-            color: #1a252f;
             background-color: #f8f9fa;
+            border-left: 4px solid #1b4332;
             padding: 12px 15px;
-            border-radius: 6px;
-            border-left: 3px solid #2d6a4f;
+            border-radius: 0 6px 6px 0;
+            font-size: 16px;
+            color: #2c3e50; /* মূল অনুবাদ কালো/গাঢ় ধূসর */
             direction: ltr;
         }
         .navigation {
             display: flex;
             justify-content: space-between;
-            margin-top: 25px;
+            margin-top: 30px;
             padding-top: 15px;
             border-top: 2px solid #eef2f5;
+            gap: 10px;
+            flex-wrap: wrap;
         }
         .nav-btn {
             text-decoration: none;
             color: #ffffff;
             background-color: #2d6a4f;
-            padding: 8px 16px;
+            padding: 10px 18px;
             border-radius: 6px;
             font-size: 14px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .nav-btn:hover {
+            background-color: #1b4332;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
+        <!-- হেডার -->
         <div class="header">
             <h1>সূরা আল-ফাতিহা</h1>
-            <p>সূরা ১ | আয়াত: ৭ | মাক্কী</p>
+            <div class="meta-info">সূরা ১ | আয়াত: ৭ | মাক্কী</div>
         </div>
 
-        <div class="bismillah">
-            <span class="arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</span>
-            <span class="meaning">“পরম মমতাময়, সদামমতাবদ্ধ আল্লাহর নামে।”</span>
+        <!-- বিসমিল্লাহ -->
+        <div class="bismillah-box">
+            <span class="bismillah-arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</span>
+            <div class="bismillah-meaning">"পরম মমতাময়, সদামমতাবদ্ধ আল্লাহর নামে।"</div>
         </div>
 
-        <!-- আয়াত ১ -->
+        <!-- আয়াত ১:১ -->
         <div class="verse-card">
-            <div class="verse-number">১:১</div>
-            <div class="words-container">
-                <div class="word-block">
+            <div class="verse-num">১:১</div>
+            <div class="word-by-word-container">
+                <div class="word-box">
                     <span class="arabic-word">الْحَمْدُ</span>
-                    <span class="bn-word">সকল প্রশংসা</span>
+                    <span class="verified-meaning">সকল প্রশংসা</span>
                 </div>
-                <div class="word-block">
-                    <span class="arabic-word">لِلَّهِ</span>
-                    <span class="bn-word">আল্লাহর জন্য</span>
+                <div class="word-box">
+                    <span class="arabic-word">لِلَّهِ</span>
+                    <span class="verified-meaning">আল্লাহর জন্য</span>
                 </div>
-                <div class="word-block">
-                    <span class="arabic-word">رَبِّ</span>
-                    <span class="bn-word">প্রতিপালক</span>
+                <div class="word-box">
+                    <span class="arabic-word">رَبِّ</span>
+                    <span class="verified-meaning">প্রতিপালক</span>
                 </div>
-                <div class="word-block">
+                <div class="word-box">
                     <span class="arabic-word">الْعَالَمِينَ</span>
-                    <span class="bn-word">সর্ব-জ্ঞাতসমূহের</span>
+                    <span class="verified-meaning">সর্ব-জ্ঞাতসমূহের</span>
                 </div>
             </div>
             <div class="full-translation">
@@ -164,17 +179,17 @@
             </div>
         </div>
 
-        <!-- আয়াত ২ -->
+        <!-- আয়াত ১:২ -->
         <div class="verse-card">
-            <div class="verse-number">১:২</div>
-            <div class="words-container">
-                <div class="word-block">
-                    <span class="arabic-word">الرَّحْمَٰنِ</span>
-                    <span class="bn-word">পরম মমতাময়</span>
+            <div class="verse-num">১:২</div>
+            <div class="word-by-word-container">
+                <div class="word-box">
+                    <span class="arabic-word">الرَّحْمَٰنِ</span>
+                    <span class="verified-meaning">পরম মমতাময়</span>
                 </div>
-                <div class="word-block">
-                    <span class="arabic-word">الرَّحِيمِ</span>
-                    <span class="bn-word">সদামমতাবদ্ধ</span>
+                <div class="word-box">
+                    <span class="arabic-word">الرَّحِيمِ</span>
+                    <span class="verified-meaning">সদামমতাবদ্ধ</span>
                 </div>
             </div>
             <div class="full-translation">
@@ -182,21 +197,21 @@
             </div>
         </div>
 
-        <!-- আয়াত ৩ -->
+        <!-- আয়াত ১:৩ -->
         <div class="verse-card">
-            <div class="verse-number">১:৩</div>
-            <div class="words-container">
-                <div class="word-block">
+            <div class="verse-num">১:৩</div>
+            <div class="word-by-word-container">
+                <div class="word-box">
                     <span class="arabic-word">مَالِكِ</span>
-                    <span class="bn-word">কর্তৃত্বকারী</span>
+                    <span class="verified-meaning">কর্তৃত্বকারী</span>
                 </div>
-                <div class="word-block">
+                <div class="word-box">
                     <span class="arabic-word">يَوْمِ</span>
-                    <span class="bn-word">সময়ের</span>
+                    <span class="verified-meaning">সময়ের</span>
                 </div>
-                <div class="word-block">
-                    <span class="arabic-word">الدِّينِ</span>
-                    <span class="bn-word">দায়বদ্ধতার</span>
+                <div class="word-box">
+                    <span class="arabic-word">الدِّينِ</span>
+                    <span class="verified-meaning">দায়বদ্ধতার</span>
                 </div>
             </div>
             <div class="full-translation">
@@ -204,25 +219,25 @@
             </div>
         </div>
 
-        <!-- আয়াত ৪ -->
+        <!-- আয়াত ১:৪ -->
         <div class="verse-card">
-            <div class="verse-number">১:৪</div>
-            <div class="words-container">
-                <div class="word-block">
-                    <span class="arabic-word">إِيَّاكَ</span>
-                    <span class="bn-word">আপনারই</span>
+            <div class="verse-num">১:৪</div>
+            <div class="word-by-word-container">
+                <div class="word-box">
+                    <span class="arabic-word">إِيَّاكَ</span>
+                    <span class="verified-meaning">আপনারই</span>
                 </div>
-                <div class="word-block">
+                <div class="word-box">
                     <span class="arabic-word">نَعْبُدُ</span>
-                    <span class="bn-word">আমরা দাসত্ব করি</span>
+                    <span class="verified-meaning">আমরা দাসত্ব করি</span>
                 </div>
-                <div class="word-block">
-                    <span class="arabic-word">وَإِيَّاكَ</span>
-                    <span class="bn-word">এবং আপনারই</span>
+                <div class="word-box">
+                    <span class="arabic-word">وَإِيَّاكَ</span>
+                    <span class="verified-meaning">এবং আপনারই</span>
                 </div>
-                <div class="word-block">
+                <div class="word-box">
                     <span class="arabic-word">نَسْتَعِينُ</span>
-                    <span class="bn-word">আমরা উৎস খুঁজি</span>
+                    <span class="verified-meaning">আমরা উৎস খুঁজি</span>
                 </div>
             </div>
             <div class="full-translation">
@@ -230,13 +245,12 @@
             </div>
         </div>
 
+        <!-- নেভিগেশন -->
         <div class="navigation">
-            <a href="index.html" class="nav-btn">← পূর্ববর্তী</a>
-            <a href="index.html" class="nav-btn">সূরা তালিকা</a>
-            <a href="surah-2.html" class="nav-btn">পরবর্তী →</a>
+            <a href="index.html" class="nav-btn">← সূরা তালিকা</a>
+            <a href="2.html" class="nav-btn">পরবর্তী সূরা →</a>
         </div>
     </div>
 
 </body>
 </html>
-
