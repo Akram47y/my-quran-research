@@ -9,7 +9,7 @@
         :root {
             --bg-color: #121212; --container-bg: #1e1e1e; --card-bg: #2d2d2d;
             --card-border: #3d3d3d; --text-primary: #e0e0e0; --text-secondary: #a0a0a0;
-            --primary-accent: #28a745; --highlight-bg: #223e2b; --highlight-border: #28a745;
+            --primary-accent: #28a745; --highlight-bg: #1c3322; --highlight-border: #28a745;
         }
         [data-theme="light"] {
             --bg-color: #f4f6f8; --container-bg: #ffffff; --card-bg: #f8f9fa;
@@ -17,19 +17,40 @@
             --primary-accent: #1b4332; --highlight-bg: #e8f5e9; --highlight-border: #2e7d32;
         }
         body { font-family: 'SolaimanLipi', 'Kalpurush', Arial, sans-serif; background-color: var(--bg-color); color: var(--text-primary); line-height: 1.8; padding: 15px; }
-        .container { max-width: 850px; margin: 0 auto; background: var(--container-bg); padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .header { position: relative; text-align: center; border-bottom: 2px solid var(--card-border); padding-bottom: 15px; margin-bottom: 25px; }
-        .header h1 { font-size: 24px; color: var(--primary-accent); margin-bottom: 5px; }
+        .container { max-width: 850px; margin: 0 auto; background: var(--container-bg); padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); position: relative; }
+        .header { position: relative; text-align: center; border-bottom: 2px solid var(--card-border); padding-top: 35px; padding-bottom: 15px; margin-bottom: 25px; }
+        .header h1 { font-size: 22px; color: var(--primary-accent); margin-bottom: 5px; word-wrap: break-word; }
         .header p { color: var(--text-secondary); font-size: 14px; }
-        .theme-toggle-btn { position: absolute; top: 0; right: 0; background-color: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-primary); padding: 6px 12px; border-radius: 20px; cursor: pointer; font-size: 13px; display: flex; align-items: center; gap: 5px; }
+        
+        /* ছোট ও সুন্দর লাইট মোড বাটন */
+        .theme-toggle-btn { 
+            position: absolute; 
+            top: 0px; 
+            right: 0px; 
+            background-color: var(--card-bg); 
+            border: 1px solid var(--card-border); 
+            color: var(--text-primary); 
+            padding: 3px 8px; 
+            border-radius: 15px; 
+            cursor: pointer; 
+            font-size: 11px; 
+            display: flex; 
+            align-items: center; 
+            gap: 4px;
+            z-index: 10;
+        }
+
         .section-card { background-color: var(--card-bg); border: 1px solid var(--card-border); border-left: 4px solid var(--primary-accent); padding: 20px; border-radius: 8px; margin-bottom: 20px; }
         .section-card h2 { font-size: 18px; color: var(--primary-accent); margin-bottom: 12px; }
         .section-card p, .section-card ul { font-size: 15px; color: var(--text-primary); margin-bottom: 10px; }
         .section-card ul { padding-left: 20px; }
         .section-card li { margin-bottom: 8px; }
         .highlight-box { background-color: var(--highlight-bg); border: 1px solid var(--highlight-border); padding: 15px; border-radius: 6px; margin: 15px 0; }
-        .navigation { text-align: center; margin-top: 30px; padding-top: 15px; border-top: 2px solid var(--card-border); }
-        .nav-btn { text-decoration: none; color: #ffffff; background-color: #1b4332; padding: 10px 20px; border-radius: 6px; font-size: 14px; font-weight: bold; display: inline-block; }
+        
+        /* নেভিগেশন বাটন স্টাইল */
+        .navigation { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 30px; padding-top: 15px; border-top: 2px solid var(--card-border); }
+        .nav-btn { text-decoration: none; color: #ffffff; background-color: #1b4332; padding: 8px 14px; border-radius: 6px; font-size: 13px; font-weight: bold; text-align: center; flex: 1; min-width: 110px; }
+        .nav-btn:hover { background-color: #2d6a4f; }
     </style>
 </head>
 <body>
@@ -79,8 +100,11 @@
             </div>
         </div>
 
+        <!-- ৩টি বাটন সমৃদ্ধ নেভিগেশন সেকশন -->
         <div class="navigation">
-            <a href="index.html" class="nav-btn">← মূল তালিকায় ফিরুন</a>
+            <a href="1.html" class="nav-btn">← পূর্ববর্তী প্রবন্ধ</a>
+            <a href="index.html" class="nav-btn">মূল তালিকায় ফিরুন</a>
+            <a href="3.html" class="nav-btn">পরবর্তী প্রবন্ধ →</a>
         </div>
     </div>
 
