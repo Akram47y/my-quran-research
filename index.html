@@ -97,6 +97,76 @@
             color: #718096;
             margin-top: 40px;
         }
+   /* ========================================== */
+/* ডার্ক মোড স্টাইল - আপডেটেড */
+/* ========================================== */
+body.dark-mode {
+    background-color: #1a1a1a !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode header {
+    background: linear-gradient(135deg, #2d5016 0%, #1a3a0a 100%) !important;
+}
+
+body.dark-mode .intro-box,
+body.dark-mode .menu-card {
+    background-color: #2d2d2d !important;
+    border-color: #404040 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .intro-box h2,
+body.dark-mode .intro-box h3,
+body.dark-mode .menu-card h3 {
+    color: #4ade80 !important;
+}
+
+body.dark-mode .intro-box p,
+body.dark-mode .menu-card p {
+    color: #d1d5db !important;
+}
+
+body.dark-mode .card-btn,
+body.dark-mode button[onclick="toggleNote()"] {
+    color: #4ade80 !important;
+}
+
+body.dark-mode .card-btn:hover,
+body.dark-mode button[onclick="toggleNote()"]:hover {
+    color: #22c55e !important;
+}
+
+body.dark-mode #dark-mode-toggle {
+    background: rgba(255,255,255,0.1) !important;
+    border-color: rgba(255,255,255,0.2) !important;
+}
+
+body.dark-mode #dark-mode-toggle:hover {
+    background: rgba(255,255,255,0.2) !important;
+}
+
+body.dark-mode footer {
+    background-color: #2d2d2d !important;
+    color: #9ca3af !important;
+    border-top-color: #404040 !important;
+}
+
+body.dark-mode strong {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode strong[style*="color: #15803d"] {
+    color: #4ade80 !important;
+}
+
+body.dark-mode strong[style*="color: #0f172a"] {
+    color: #f1f5f9 !important;
+}
+
+body, header, .intro-box, .menu-card, footer, button {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
+}
         /* ========================================== */
 /* ডার্ক মোড স্টাইল */
 /* ========================================== */
@@ -163,24 +233,7 @@ body.dark-mode div[style*="background: linear-gradient(135deg, #f0fdf4"] p {
 
 body.dark-mode div[style*="background: linear-gradient(135deg, #f0fdf4"] strong[style*="background-color: #dcfce7"] {
     background-color: #14532d !important;
-    color: #4ade80 !important;
-}
 
-body.dark-mode div[style*="background: linear-gradient(135deg, #f0fdf4"] strong[style*="background-color: #f1f5f9"] {
-    background-color: #404040 !important;
-    color: #e0e0e0 !important;
-}
-
-/* ফুটার - ডার্ক মোড */
-body.dark-mode footer {
-    background-color: #2d2d2d !important;
-    color: #9ca3af !important;
-}
-
-/* স্মুথ ট্রানজিশন */
-body, header, .intro-box, .menu-card, footer, button {
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
-}
     </style>
 </head>
 <body>
