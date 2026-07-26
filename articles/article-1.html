@@ -9,7 +9,7 @@
         :root {
             --bg-color: #121212; --container-bg: #1e1e1e; --card-bg: #2d2d2d;
             --card-border: #3d3d3d; --text-primary: #e0e0e0; --text-secondary: #a0a0a0;
-            --primary-accent: #28a745; --highlight-bg: #223e2b; --highlight-border: #28a745;
+            --primary-accent: #28a745; --highlight-bg: #1c3322; --highlight-border: #28a745;
         }
         [data-theme="light"] {
             --bg-color: #f4f6f8; --container-bg: #ffffff; --card-bg: #f8f9fa;
@@ -17,20 +17,40 @@
             --primary-accent: #1b4332; --highlight-bg: #e8f5e9; --highlight-border: #2e7d32;
         }
         body { font-family: 'SolaimanLipi', 'Kalpurush', Arial, sans-serif; background-color: var(--bg-color); color: var(--text-primary); line-height: 1.8; padding: 15px; }
-        .container { max-width: 850px; margin: 0 auto; background: var(--container-bg); padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .header { position: relative; text-align: center; border-bottom: 2px solid var(--card-border); padding-bottom: 15px; margin-bottom: 25px; }
-        .header h1 { font-size: 24px; color: var(--primary-accent); margin-bottom: 5px; }
+        .container { max-width: 850px; margin: 0 auto; background: var(--container-bg); padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); position: relative; }
+        .header { position: relative; text-align: center; border-bottom: 2px solid var(--card-border); padding-top: 35px; padding-bottom: 15px; margin-bottom: 25px; }
+        .header h1 { font-size: 22px; color: var(--primary-accent); margin-bottom: 5px; word-wrap: break-word; }
         .header p { color: var(--text-secondary); font-size: 14px; }
-        .theme-toggle-btn { position: absolute; top: 0; right: 0; background-color: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-primary); padding: 6px 12px; border-radius: 20px; cursor: pointer; font-size: 13px; display: flex; align-items: center; gap: 5px; }
+        
+        /* ছোট ও সুন্দর লাইট মোড বাটন */
+        .theme-toggle-btn { 
+            position: absolute; 
+            top: 0px; 
+            right: 0px; 
+            background-color: var(--card-bg); 
+            border: 1px solid var(--card-border); 
+            color: var(--text-primary); 
+            padding: 3px 8px; 
+            border-radius: 15px; 
+            cursor: pointer; 
+            font-size: 11px; 
+            display: flex; 
+            align-items: center; 
+            gap: 4px;
+            z-index: 10;
+        }
+
         .section-card { background-color: var(--card-bg); border: 1px solid var(--card-border); border-left: 4px solid var(--primary-accent); padding: 20px; border-radius: 8px; margin-bottom: 20px; }
         .section-card h2 { font-size: 18px; color: var(--primary-accent); margin-bottom: 12px; }
         .section-card p, .section-card ul { font-size: 15px; color: var(--text-primary); margin-bottom: 10px; }
         .section-card ul { padding-left: 20px; }
         .section-card li { margin-bottom: 8px; }
         .highlight-box { background-color: var(--highlight-bg); border: 1px solid var(--highlight-border); padding: 15px; border-radius: 6px; margin: 15px 0; }
-        .arabic-text { font-family: 'Meaney', 'Amiri', serif; font-size: 22px; text-align: center; display: block; margin-bottom: 8px; color: var(--primary-accent); }
-        .navigation { text-align: center; margin-top: 30px; padding-top: 15px; border-top: 2px solid var(--card-border); }
-        .nav-btn { text-decoration: none; color: #ffffff; background-color: #1b4332; padding: 10px 20px; border-radius: 6px; font-size: 14px; font-weight: bold; display: inline-block; }
+        
+        /* নেভিগেশন বাটন স্টাইল */
+        .navigation { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 30px; padding-top: 15px; border-top: 2px solid var(--card-border); }
+        .nav-btn { text-decoration: none; color: #ffffff; background-color: #1b4332; padding: 8px 14px; border-radius: 6px; font-size: 13px; font-weight: bold; text-align: center; flex: 1; min-width: 110px; }
+        .nav-btn:hover { background-color: #2d6a4f; }
     </style>
 </head>
 <body>
@@ -42,47 +62,32 @@
         </div>
 
         <div class="section-card">
-            <p>ভাষার প্রবাহ প্রতিটি ভাষার নিজস্ব সত্তা। আরবি, ইংরেজি এবং বাংলা, এই তিন ভাষার চিন্তার গতিপথ বা বাক্য গঠনের রীতি সম্পূর্ণ আলাদা। এক ভাষার কাঠামোকে সরাসরি অন্য ভাষার কাঠামোতে বসালে ভাষার প্রাণস্পন্দন হারিয়ে যায়, আবার অতিরিক্ত শব্দ যোগ করলে মূল বার্তা থেকে অনুবাদ ব্যাখ্যামূলক রূপ নিতে পারে। বিভিন্ন ভাষার প্রবাহ তার নিজস্ব ধারায় বিদ্যমান।</p>
+            <p>অনুবাদ হলো এক ভাষা থেকে অন্য ভাষায় বার্তা পৌঁছানোর একটি বিশ্বস্ত মাধ্যম। কিন্তু বিশেষ করে পবিত্র কুরআনের অনুবাদের ক্ষেত্রে অধিকাংশ অনুবাদক মূল শব্দের আক্ষরিক ও নিখুঁত অনুবাদের বদলে নিজস্ব ব্যাখ্যামূলক শব্দ বা অতিরিক্ত ধারণা যুক্ত করেন। এতে মূল বার্তার বিশুদ্ধতা ও আনুগত্য ক্ষতিগ্রস্ত হয়।</p>
         </div>
 
         <div class="section-card">
-            <h2>তিন ভাষার তিনটি ভিন্ন প্রবাহ</h2>
-            <p>একটি বাক্য কীভাবে চিন্তা, ক্রিয়া এবং সম্পর্ককে সাজায়, তা নিচের উদাহরণ থেকে স্পষ্ট হয়:</p>
-            <ul>
-                <li><b>(ক) আরবি (ক্রিয়া-কেন্দ্রিক):</b> অনেক সময় বাক্য শুরুই হয় ক্রিয়া দিয়ে, তারপর কর্তা ও কর্ম আসে। যেমন: "করেছেন তিনি কাজটি" এখানে "করা" আগে, "কে করেছে" পরে; অর্থাৎ, ঘটনার গুরুত্ব আগে।</li>
-                <li><b>(খ) ইংরেজি (কর্তা-কেন্দ্রিক):</b> এখানে 'কে' করেছে তা প্রধান। যেমন: <i>He did the work</i> (কর্তা + ক্রিয়া + কর্ম)। এখানে "কে" আগে নির্ধারিত হয়, তারপর "কী করেছে" তা বলা হয়।</li>
-                <li><b>(গ) বাংলা (ভাব ও প্রসঙ্গ-কেন্দ্রিক):</b> বাংলায় সাধারণত ক্রিয়া শেষে বসে বাক্যকে পূর্ণতা দেয়। যেমন: "তিনি কাজটি করেছেন।" এখানে ক্রিয়া বাক্যের শেষে বসে পুরো ভাবটিকে শেষে সমাপ্ত করেছে।</li>
-            </ul>
-            <p>এই পার্থক্যের কারণে আরবির কাঠামোকে সরাসরি বাংলায় বসালে ভাষার স্বাভাবিক প্রাণস্পন্দন হারিয়ে যায়। ভাষা আসলে শুধু শব্দের যোগফল নয়; এটি চিন্তার চলাচলের পথ।</p>
+            <h2>১. আক্ষরিক বিশুদ্ধতা বনাম ব্যাখ্যামূলক সংযোজন</h2>
+            <p>কুরআনের প্রতিটি আরবি শব্দ অত্যন্ত সুনির্দিষ্ট এবং গাণিতিকভাবে নিখুঁত। অনুবাদকের মূল কাজ হলো প্রতিটি শব্দের মূল রুট ও অর্থের ওপর ভিত্তি করে সবচেয়ে সামঞ্জস্যপূর্ণ শব্দ নির্বাচন করা। যখনই কোনো অনুবাদে অতিরিক্ত ব্যাখ্যামূলক শব্দ যোগ করা হয়, তখন পাঠকের কাছে মূল বার্তাটি পৌঁছানোর বদলে অনুবাদকের নিজস্ব মতামতটিই বড় হয়ে ওঠে।</p>
         </div>
 
         <div class="section-card">
-            <h2>অতিরিক্ত শব্দের ব্যবহার: অনুবাদ না কি ব্যাখ্যা?</h2>
-            <p>কুরআন অনুবাদের ক্ষেত্রে আমাদের সবচেয়ে বড় চ্যালেঞ্জ হলো, আরবি শব্দের সমপরিমাণ বাংলা শব্দ ব্যবহার করা। অনেক সময় আরবির প্রবাহ মেলাতে গিয়ে বাংলায় অতিরিক্ত শব্দ যোগ করা হয়, যা মূল টেক্সটে নেই। এই অতিরিক্ত শব্দ যোগ করার পরিবর্তে বাক্যকে বাংলার স্বাভাবিক প্রবাহ অনুযায়ী পুনর্বিন্যাস করা অধিক উপযুক্ত।</p>
-            
-            <div class="highlight-box">
-                <span class="arabic-text">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</span>
-                <p><b>প্রচলিত অনুবাদ:</b> "আল্লাহর নামে, যিনি পরম করুণাময়, পরম দয়ালু।"</p>
-            </div>
-
-            <p>এখানে 'যিনি' শব্দ মূল আরবিতে নেই। এটি অনুবাদকের একটি সংযোজন, যা বাংলা গদ্যের আরামের জন্য করা হয়। কিন্তু এতে পাঠক সরাসরি মূল বার্তার চেয়ে অনুবাদকের ব্যাখ্যা পড়ছেন। আর এটি শব্দ-আনুগত্য অনুবাদের পরিবর্তে ব্যাখ্যামূলক অনুবাদের উদাহরণ।</p>
-            <p>একজন বার্তাবাহকের প্রধান দায়িত্ব হলো প্রেরকের বার্তা কোনো কমবেশি না করে পৌঁছে দেওয়া। বার্তাকে অন্যের বোধগম্য করার জন্য ভাষার প্রবাহ পরিবর্তন করা যুক্তিসঙ্গত, কিন্তু নতুন শব্দ যোগ করা শব্দ-আনুগত্য অনুবাদের দৃষ্টিতে গ্রহণযোগ্য নয়। যেহেতু এটি এক ভাষা থেকে অন্য ভাষার ট্রান্সলেট করা হচ্ছে সেখানে সবচেয়ে গুরুত্বপূর্ণ বিষয় হচ্ছে প্রকৃত বক্তব্য কী তা উপস্থাপন করা। এটাই বক্তার প্রতি আনুগত্য বজায় রাখে।</p>
-
-            <div class="highlight-box">
-                <p><b>(ক) বেমানান অনুবাদ:</b> "আল্লাহর নামে, পরম মমতাময়, সদামমতাবদ্ধ।"<br><i>(এটি আরবির শব্দক্রম অনুসরণ করায় বাংলায় শ্রুতিমধুর নয়)।</i></p>
-                <p style="margin-top: 8px;"><b>(খ) সঠিক ও নিখাদ বাংলা প্রবাহ:</b> "পরম মমতাময়, সদামমতাবদ্ধ আল্লাহর নামে।"</p>
-            </div>
-
-            <p>যারা শব্দ-আনুগত্য অনুবাদকে অগ্রাধিকার দেন, তাদের দৃষ্টিতে দ্বিতীয় রূপটি অধিক উপযুক্ত। কেননা এখানে কোনো নতুন শব্দ ('যিনি') ঢোকানো হয়নি। এটি বাংলার নিজস্ব 'শ্বাসপ্রশ্বাস' বা প্রবাহের সাথে পুরোপুরি সামঞ্জস্যপূর্ণ। এখানে অনুবাদক কোনো 'ব্যাখ্যাকার' নন, বরং একজন 'বিশ্বস্ত বাহক'। বার্তাবাহক যদি বার্তাকে অন্যের মতো সাজায় তবে সে দায়িত্বশীল। কিন্তু যদি সে এমন কিছু যোগ করে যা প্রেরক বলেননি, সে বিশ্বস্ততা হারায়।</p>
+            <h2>২. এক রুট, এক নীতি</h2>
+            <p>একটি নির্দিষ্ট রুটের অধীন গঠিত শব্দগুলোর জন্য সহজ ও সর্বজনীন বাংলা শব্দ নির্বাচন করা প্রয়োজন, যা সব ক্ষেত্রে সামঞ্জস্য রক্ষা করে। এতে অনুবাদের ধারাবাহিকতা ও বিশ্বস্ততা বজায় থাকে এবং কুরআনের বাণীর প্রকৃত গাম্ভীর্য প্রকাশ পায়।</p>
         </div>
 
         <div class="section-card">
             <h2>উপসংহার</h2>
-            <p>কুরআনের ক্ষেত্রে শব্দ যোগ করা একটি বড় সীমলঙ্ঘন। আমাদের লক্ষ্য হওয়া উচিত: <b>যতটুকু আরবি, ঠিক ততটুকু বাংলা।</b> তবে ভাষাগত কারণে শব্দের অবস্থান পরিবর্তন প্রয়োজন হতে পারে, কিন্তু নতুন শব্দ সংযোজন নয়। এটি পদ্ধতিগত আদর্শ, যান্ত্রিক সূত্র নয়। অতএব অতিরিক্ত ব্যাখ্যামূলক শব্দ বর্জন করে বাংলার নিজস্ব প্রবাহ ব্যবহার করা এবং আরবির সঠিক আনুগত্য বজায় রাখা উচিত।</p>
+            <p>ব্যাখ্যার উর্ধ্বে উঠে বিশুদ্ধ শব্দে শব্দে অনুবাদের মাধ্যমে আনুগত্য প্রকাশ করাই হলো কুরআন গবেষণার প্রাথমিক ও মৌলিক নিয়ম। এটি পাঠকদের নিজস্ব চিন্তাভাবনার সুযোগ দেয় এবং যেকোনো প্রকার পক্ষপাতিত্ব থেকে অনুবাদকে মুক্ত রাখে।</p>
+            
+            <div class="highlight-box">
+                <p><i>"এই গবেষণাটি ভাষার বিশুদ্ধতা ও অনুবাদের বিশ্বস্ততা রক্ষার একটি ক্ষুদ্র প্রয়াস। গঠনমূলক আলোচনা ও মতামত সাদরে আমন্ত্রিত।"</i></p>
+            </div>
         </div>
 
+        <!-- নেভিগেশন সেকশন -->
         <div class="navigation">
-            <a href="index.html" class="nav-btn">← মূল তালিকায় ফিরুন</a>
+            <a href="index.html" class="nav-btn">মূল তালিকায় ফিরুন</a>
+            <a href="2.html" class="nav-btn">পরবর্তী প্রবন্ধ →</a>
         </div>
     </div>
 
@@ -115,4 +120,3 @@
     </script>
 </body>
 </html>
-
