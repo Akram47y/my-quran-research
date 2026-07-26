@@ -21,7 +21,7 @@
             max-width: 850px;
             margin: 0 auto;
             background: #ffffff;
-            padding: 25px;
+            padding: 20px;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
@@ -33,7 +33,7 @@
         }
         .header h1 {
             font-size: 26px;
-            color: #1b4332;
+            color: #0d3b2e;
             margin-bottom: 5px;
         }
         .header .meta-info {
@@ -51,26 +51,26 @@
         .bismillah-arabic {
             font-family: 'Meaney', 'Amiri', 'Traditional Arabic', serif;
             font-size: 24px;
-            color: #1b4332;
+            color: #0d3b2e;
             margin-bottom: 8px;
             display: block;
         }
         .bismillah-meaning {
             font-size: 15px;
-            color: #1b4332; /* শব্দানুবাদের সবুজ রঙ */
+            color: #0d3b2e; /* গাঢ় সবুজ */
             font-weight: bold;
         }
         .verse-card {
             border: 1px solid #e0e6ed;
             border-radius: 8px;
-            padding: 18px;
+            padding: 15px;
             margin-bottom: 20px;
             background-color: #ffffff;
         }
         .verse-num {
             font-size: 14px;
             font-weight: bold;
-            color: #1b4332;
+            color: #0d3b2e;
             margin-bottom: 12px;
         }
         .word-by-word-container {
@@ -78,7 +78,7 @@
             flex-wrap: wrap;
             direction: rtl;
             justify-content: flex-start;
-            gap: 12px;
+            gap: 6px;
             margin-bottom: 15px;
         }
         .word-box {
@@ -87,31 +87,32 @@
             align-items: center;
             background-color: #f8f9fa;
             border: 1px solid #edf2f7;
-            padding: 8px 12px;
+            padding: 6px 4px;
             border-radius: 6px;
-            min-width: 70px;
+            flex: 1 1 calc(33.333% - 6px);
+            max-width: calc(33.333% - 6px);
+            box-sizing: border-box;
         }
         .arabic-word {
             font-family: 'Meaney', 'Amiri', 'Traditional Arabic', serif;
-            font-size: 22px;
-            color: #1b4332;
+            font-size: 20px;
+            color: #0d3b2e;
             margin-bottom: 4px;
         }
-        /* আরবির নিচের বাংলা শব্দকে সবুজ করার ক্লাস */
         .verified-meaning {
-            font-size: 13.5px;
-            color: #1b4332; /* সবুজ রঙ */
+            font-size: 13px;
+            color: #0d3b2e; /* গাঢ় সবুজ */
             font-weight: bold;
             direction: ltr;
             text-align: center;
         }
         .full-translation {
             background-color: #f8f9fa;
-            border-left: 4px solid #1b4332;
+            border-left: 4px solid #0d3b2e;
             padding: 12px 15px;
             border-radius: 0 6px 6px 0;
-            font-size: 16px;
-            color: #2c3e50; /* মূল অনুবাদ কালো/গাঢ় ধূসর */
+            font-size: 15.5px;
+            color: #2c3e50;
             direction: ltr;
         }
         .navigation {
@@ -126,7 +127,7 @@
         .nav-btn {
             text-decoration: none;
             color: #ffffff;
-            background-color: #2d6a4f;
+            background-color: #1b4332;
             padding: 10px 18px;
             border-radius: 6px;
             font-size: 14px;
@@ -134,7 +135,7 @@
             transition: background 0.2s;
         }
         .nav-btn:hover {
-            background-color: #1b4332;
+            background-color: #0d3b2e;
         }
     </style>
 </head>
