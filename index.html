@@ -112,31 +112,56 @@
         <h2>স্বাগতম</h2>
         <p>কুরআনের শব্দানুবাদ, মূল রুটভিত্তিক ব্যাকরণগত আলোচনা, বিষয়ভিত্তিক প্রবন্ধ ও ভিডিও গবেষণার সংকলনে আপনাকে স্বাগতম। মূল বিষয়বস্তুগুলোতে প্রবেশ করতে নিচের যেকোনো লিংকে ক্লিক করুন।</p>
     </div>
-
-    <div class="menu-grid">
-
-        <!-- ========================================== -->
-<!-- নতুন পদ্ধতিগত নোট বক্স -->
+    <!-- ========================================== -->
+<!-- পদ্ধতিগত নোট - কলাপসিবল বক্স -->
 <!-- ========================================== -->
-<div style="background-color: #f8fafc; border-left: 5px solid #16a34a; padding: 20px 25px; margin: 25px 0; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); font-family: 'SolaimanLipi', 'Kalpurush', 'Noto Sans Bengali', Arial, sans-serif;">
+<div style="background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%); border-left: 5px solid #16a34a; padding: 20px; margin: 25px 0; border-radius: 10px; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08); font-family: 'SolaimanLipi', 'Kalpurush', 'Noto Sans Bengali', Arial, sans-serif;">
     
-    <h4 style="color: #14532d; margin-top: 0; margin-bottom: 12px; font-size: 1.2em; border-bottom: 1px solid #bbf7d0; padding-bottom: 8px;">
-        📋 পদ্ধতিগত নোট
+    <h4 style="color: #14532d; margin-top: 0; margin-bottom: 15px; font-size: 1.3em; display: flex; align-items: center; border-bottom: 2px solid #bbf7d0; padding-bottom: 10px;">
+        <span style="font-size: 1.2em; margin-right: 8px;">📋</span> পদ্ধতিগত নোট
     </h4>
     
-    <p style="color: #334155; font-size: 1.05em; line-height: 1.9; margin-bottom: 12px; text-align: justify;">
-        এই প্রকল্পের মূল লক্ষ্য হলো পবিত্র কুরআনের বার্তাকে তার মূল ভাষাগত ও ব্যাকরণগত শেকড়ের (Root) সাথে সংযুক্ত করে শব্দে শব্দে অনুবাদ উপস্থাপন করা এবং প্রাসঙ্গিক ব্যাখ্যা অন্তর্ভুক্ত করা। শব্দে শব্দে রুটভিত্তিক অনুবাদের কাজ চলমান, যা ধারাবাহিকভাবে সংশোধন করা হবে।
-    </p>
+    <!-- শুরুতে যা দেখাবে -->
+    <div id="note-short" style="color: #334155; font-size: 1.05em; line-height: 1.8; text-align: justify;">
+        <p style="margin: 0 0 10px 0;">এই প্রকল্পের মূল লক্ষ্য হলো পবিত্র কুরআনের বার্তাকে তার মূল ভাষাগত ও ব্যাকরণগত শেকড়ের (Root) সাথে সংযুক্ত করে শব্দে শব্দে অনুবাদ উপস্থাপন করা এবং প্রাসঙ্গিক ব্যাখ্যা অন্তর্ভুক্ত করা।</p>
+    </div>
     
-    <p style="color: #334155; font-size: 1.05em; line-height: 1.9; margin-bottom: 12px; text-align: justify;">
-        গবেষণার স্বচ্ছতা বজায় রাখতে, <strong style="color: #15803d; background-color: #dcfce7; padding: 2px 6px; border-radius: 4px;">সম্পূর্ণ পর্যালোচিত শব্দগুলো সবুজ রঙে</strong> এবং <strong style="color: #0f172a; background-color: #f1f5f9; padding: 2px 6px; border-radius: 4px;">প্রচলিত মানসম্মত অনুবাদগুলো কালো রঙে</strong> চিহ্নিত করা হয়েছে। চূড়ান্ত পর্যালোচনার সাথে সাথে প্রতিটি আয়াত আপডেট করা হবে।
-    </p>
+    <!-- বাকি লেখা (লুকানো থাকবে) -->
+    <div id="note-full" style="display: none; color: #334155; font-size: 1.05em; line-height: 1.8; text-align: justify;">
+        <p style="margin: 0 0 12px 0;">শব্দে শব্দে রুটভিত্তিক অনুবাদের কাজ চলমান, যা ধারাবাহিকভাবে সংশোধন করা হবে।</p>
+        <p style="margin: 0 0 12px 0;">গবেষণার স্বচ্ছতা বজায় রাখতে, <strong style="color: #15803d; background-color: #dcfce7; padding: 2px 8px; border-radius: 4px; display: inline;">সম্পূর্ণ পর্যালোচিত শব্দগুলো সবুজ রঙে</strong> এবং <strong style="color: #0f172a; background-color: #f1f5f9; padding: 2px 8px; border-radius: 4px; display: inline;">প্রচলিত মানসম্মত অনুবাদগুলো কালো রঙে</strong> চিহ্নিত করা হয়েছে। চূড়ান্ত পর্যালোচনার সাথে সাথে প্রতিটি আয়াত আপডেট করা হবে।</p>
+        <p style="margin: 15px 0 0 0; font-style: italic; color: #475569; border-top: 1px dashed #cbd5e1; padding-top: 12px;">
+            "আপনার মূল্যবান মতামত এই গবেষণাকে আরও সমৃদ্ধ করবে।"
+        </p>
+    </div>
     
-    <p style="color: #475569; font-size: 1em; font-style: italic; margin-top: 15px; text-align: right; border-top: 1px dashed #cbd5e1; padding-top: 10px;">
-    "আপনার মূল্যবান মতামত এই গবেষণাকে আরও সমৃদ্ধ করবে।"
-    </p>
+    <!-- পড়ুন বাটন -->
+    <button onclick="toggleNote()" id="toggle-btn" style="margin-top: 15px; background: none; border: none; color: #16a34a; font-size: 1em; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 5px; font-family: inherit;">
+        <span id="toggle-text">পড়ুন</span>
+        <span id="toggle-arrow" style="transition: transform 0.3s;">↓</span>
+    </button>
     
 </div>
+
+<script>
+function toggleNote() {
+    var fullNote = document.getElementById('note-full');
+    var toggleText = document.getElementById('toggle-text');
+    var toggleArrow = document.getElementById('toggle-arrow');
+    
+    if (fullNote.style.display === 'none') {
+        fullNote.style.display = 'block';
+        toggleText.textContent = 'সংক্ষিপ্ত করুন';
+        toggleArrow.style.transform = 'rotate(180deg)';
+    } else {
+        fullNote.style.display = 'none';
+        toggleText.textContent = 'পড়ুন';
+        toggleArrow.style.transform = 'rotate(0deg)';
+    }
+}
+    </script>
+
+    <div class="menu-grid">
 
         <!-- ১. প্রাসঙ্গিক কথা -->
         <a href="about.html" class="menu-card">
