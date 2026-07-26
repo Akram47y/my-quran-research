@@ -73,32 +73,139 @@
             color: #2d6a4f;
             font-weight: bold;
         }
-        .navigation {
-            margin-top: 30px;
-            padding-top: 15px;
-            border-top: 2px solid #eef2f5;
-            text-align: center;
+        .navigation         * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
         }
+
+        /* ডার্ক মোড কালার ভেরিয়েবল (ডিফল্ট) */
+        :root {
+            --bg-color: #121212;
+            --container-bg: #1e1e1e;
+            --card-bg: #2d2d2d;
+            --card-border: #3d3d3d;
+            --text-primary: #e0e0e0;
+            --text-secondary: #a0a0a0;
+            --primary-accent: #28a745;
+            --btn-bg: #1b4332;
+            --btn-hover: #2d6a4f;
+        }
+
+        /* লাইট মোড কালার ভেরিয়েবল */
+        [data-theme="light"] {
+            --bg-color: #f4f6f8;
+            --container-bg: #ffffff;
+            --card-bg: #f8f9fa;
+            --card-border: #e0e6ed;
+            --text-primary: #2c3e50;
+            --text-secondary: #666666;
+            --primary-accent: #1b4332;
+            --btn-bg: #1b4332;
+            --btn-hover: #0d3b2e;
+        }
+
+        body {
+            font-family: 'SolaimanLipi', 'Kalpurush', Arial, sans-serif;
+            background-color: var(--bg-color) !important;
+            color: var(--text-primary) !important;
+            line-height: 1.8;
+            padding: 15px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: var(--container-bg) !important;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid var(--card-border);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            color: var(--primary-accent) !important;
+            font-size: 24px;
+        }
+
+        .header p {
+            color: var(--text-secondary) !important;
+            font-size: 14px;
+        }
+
+        .articles-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .article-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--card-bg) !important;
+            border: 1px solid var(--card-border) !important;
+            border-left: 4px solid var(--primary-accent) !important;
+            padding: 15px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .article-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .article-title {
+            color: var(--text-primary) !important;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .arrow-icon {
+            color: var(--primary-accent) !important;
+            font-size: 18px;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 2px solid var(--card-border);
+        }
+
         .nav-btn {
             text-decoration: none;
-            color: #ffffff;
-            background-color: #2d6a4f;
+            color: #ffffff !important;
+            background-color: var(--btn-bg) !important;
             padding: 10px 20px;
             border-radius: 6px;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: bold;
             display: inline-block;
         }
+
         .nav-btn:hover {
-            background-color: #1b4332;
+            background-color: var(--btn-hover) !important;
         }
+
         footer {
             text-align: center;
-            padding: 20px 10px;
+            font-size: 13px;
+            color: var(--text-secondary) !important;
             margin-top: 20px;
-            font-size: 14px;
-            color: #666;
         }
+        
     </style>
 </head>
 <body>
