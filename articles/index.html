@@ -1,1 +1,150 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>বিষয় ভিত্তিক প্রবন্ধ - সূচিপত্র</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'SolaimanLipi', 'Kalpurush', Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #2c3e50;
+            line-height: 1.7;
+            padding: 15px;
+        }
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #eef2f5;
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+        .header h1 {
+            font-size: 28px;
+            color: #1b4332;
+            margin-bottom: 8px;
+        }
+        .header p {
+            color: #555;
+            font-size: 16px;
+        }
+        .articles-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .article-card {
+            background: #ffffff;
+            border: 1px solid #e0e6ed;
+            border-left: 5px solid #2d6a4f;
+            border-radius: 8px;
+            padding: 18px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s ease-in-out;
+        }
+        .article-card:hover {
+            background-color: #f8f9fa;
+            border-left-color: #1b4332;
+            transform: translateX(3px);
+        }
+        .article-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1b4332;
+        }
+        .arrow-icon {
+            font-size: 20px;
+            color: #2d6a4f;
+            font-weight: bold;
+        }
+        .navigation {
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 2px solid #eef2f5;
+            text-align: center;
+        }
+        .nav-btn {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #2d6a4f;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: bold;
+            display: inline-block;
+        }
+        .nav-btn:hover {
+            background-color: #1b4332;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 10px;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
 
+    <div class="container">
+        <!-- হেডার -->
+        <div class="header">
+            <h1>📝 বিষয় ভিত্তিক প্রবন্ধ</h1>
+            <p>কুরআনভিত্তিক বিভিন্ন গুরুত্বপূর্ণ বিষয়ের ওপর গবেষণামূলক প্রবন্ধসমূহ</p>
+        </div>
+
+        <!-- সূচিপত্র বা প্রবন্ধের তালিকা -->
+        <div class="articles-list">
+            
+            <!-- প্রবন্ধ ১ -->
+            <a href="article-1.html" class="article-card">
+                <span class="article-title">১. অনুবাদে আনুগত্য প্রকাশে ব্যাখ্যার ঊর্ধ্বে বার্তা</span>
+                <span class="arrow-icon">→</span>
+            </a>
+
+            <!-- প্রবন্ধ ২ -->
+            <a href="article-2.html" class="article-card">
+                <span class="article-title">২. কুরআনের অক্ষর, উচ্চারণ ও লিপির ইতিহাস</span>
+                <span class="arrow-icon">→</span>
+            </a>
+
+            <!-- ভবিষ্যতে নতুন প্রবন্ধ যুক্ত করার জন্য নিচের ব্লকটি কপি করে ব্যবহার করবেন: -->
+            <!--
+            <a href="article-3.html" class="article-card">
+                <span class="article-title">৩. নতুন প্রবন্ধের শিরোনাম</span>
+                <span class="arrow-icon">→</span>
+            </a>
+            -->
+
+        </div>
+
+        <!-- নেভিগেশন -->
+        <div class="navigation">
+            <a href="index.html" class="nav-btn">← মূল তালিকায় ফিরুন</a>
+        </div>
+
+        <!-- ফুটার -->
+        <footer>
+            <p>&copy; ২০২৬ কুরআন গবেষণা ও শব্দানুবাদ | সর্বস্বত্ব সংরক্ষিত</p>
+        </footer>
+    </div>
+
+</body>
+</html>
