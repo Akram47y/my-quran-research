@@ -97,6 +97,90 @@
             color: #718096;
             margin-top: 40px;
         }
+        /* ========================================== */
+/* ডার্ক মোড স্টাইল */
+/* ========================================== */
+
+/* ডার্ক মোড অ্যাক্টিভ হলে */
+body.dark-mode {
+    background-color: #1a1a1a !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode header {
+    background: linear-gradient(135deg, #2d5016 0%, #1a3a0a 100%) !important;
+}
+
+body.dark-mode .intro-box,
+body.dark-mode .menu-card {
+    background-color: #2d2d2d !important;
+    border-color: #404040 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .intro-box h2,
+body.dark-mode .menu-card h3 {
+    color: #4ade80 !important;
+}
+
+body.dark-mode .intro-box p,
+body.dark-mode .menu-card p {
+    color: #d1d5db !important;
+}
+
+body.dark-mode .card-btn {
+    color: #4ade80 !important;
+}
+
+body.dark-mode .card-btn:hover {
+    background-color: #4ade80 !important;
+    color: #1a1a1a !important;
+}
+
+body.dark-mode #dark-mode-toggle {
+    background: rgba(255,255,255,0.1) !important;
+    border-color: rgba(255,255,255,0.2) !important;
+}
+
+body.dark-mode #dark-mode-toggle:hover {
+    background: rgba(255,255,255,0.2) !important;
+}
+
+/* পদ্ধতিগত নোট বক্স - ডার্ক মোড */
+body.dark-mode div[style*="background: linear-gradient(135deg, #f0fdf4"] {
+    background: linear-gradient(135deg, #2d3a1f 0%, #1a1a1a 100%) !important;
+    border-left-color: #4ade80 !important;
+}
+
+body.dark-mode div[style*="background: linear-gradient(135deg, #f0fdf4"] h4 {
+    color: #4ade80 !important;
+    border-bottom-color: #404040 !important;
+}
+
+body.dark-mode div[style*="background: linear-gradient(135deg, #f0fdf4"] p {
+    color: #d1d5db !important;
+}
+
+body.dark-mode div[style*="background: linear-gradient(135deg, #f0fdf4"] strong[style*="background-color: #dcfce7"] {
+    background-color: #14532d !important;
+    color: #4ade80 !important;
+}
+
+body.dark-mode div[style*="background: linear-gradient(135deg, #f0fdf4"] strong[style*="background-color: #f1f5f9"] {
+    background-color: #404040 !important;
+    color: #e0e0e0 !important;
+}
+
+/* ফুটার - ডার্ক মোড */
+body.dark-mode footer {
+    background-color: #2d2d2d !important;
+    color: #9ca3af !important;
+}
+
+/* স্মুথ ট্রানজিশন */
+body, header, .intro-box, .menu-card, footer, button {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
+}
     </style>
 </head>
 <body>
@@ -104,6 +188,11 @@
 <header>
     <h1>কুরআন গবেষণা ও শব্দানুবাদ</h1>
     <p>বিশুদ্ধ টেক্সট ও শব্দমূল (Root Word) ভিত্তিক গবেষণা প্ল্যাটফর্ম</p>
+    <!-- ডার্ক মোড টগল বাটন -->
+<button id="dark-mode-toggle" onclick="toggleDarkMode()" style="position: absolute; top: 20px; right: 20px; background: rgba(255,255,255,0.2); border: 2px solid rgba(255,255,255,0.3); color: white; padding: 8px 15px; border-radius: 25px; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease; z-index: 1000;">
+    <span id="dark-mode-icon"></span>
+    <span id="dark-mode-text">ডার্ক মোড</span>
+</button>
 </header>
 
 <div class="container">
@@ -220,5 +309,42 @@ function toggleNote() {
     </footer>
 
 </body>
+    <!-- ========================================== -->
+<!-- ডার্ক মোড জাভাস্ক্রিপ্ট -->
+<!-- ========================================== -->
+<script>
+// পেজ লোড হলে চেক করুন আগের পছন্দ আছে কিনা
+document.addEventListener('DOMContentLoaded', function() {
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+        updateDarkModeButton(true);
+    }
+});
+
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    
+    if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('darkMode', 'enabled');
+        updateDarkModeButton(true);
+    } else {
+        localStorage.setItem('darkMode', 'disabled');
+        updateDarkModeButton(false);
+    }
+}
+
+function updateDarkModeButton(isDark) {
+    var icon = document.getElementById('dark-mode-icon');
+    var text = document.getElementById('dark-mode-text');
+    
+    if (isDark) {
+        icon.textContent = '☀️';
+        text.textContent = 'লাইট মোড';
+    } else {
+        icon.textContent = '🌙';
+        text.textContent = 'ডার্ক মোড';
+    }
+}
+</script>
 </html>
 
