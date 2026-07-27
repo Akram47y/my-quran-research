@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>গবেষণার ভিত্তি ও পদ্ধতি - কুরআন গবেষণা</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-color: #e0e0e0;
+            --accent-color: #28a745;
+            --border-color: #333;
+            --highlight-green-bg: #1b4332;
+            --highlight-green-text: #81c784;
+            --highlight-black-bg: #2d3748;
+            --highlight-black-text: #e2e8f0;
+        }
+
+        [data-theme="light"] {
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #212529;
+            --accent-color: #1b4332;
+            --border-color: #e0e0e0;
+            --highlight-green-bg: #dcfce7;
+            --highlight-green-text: #15803d;
+            --highlight-black-bg: #f1f5f9;
+            --highlight-black-text: #0f172a;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 0;
+            color: var(--accent-color);
+        }
+
+        .theme-btn {
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .proposal-card {
+            background-color: var(--card-bg);
+            border-left: 4px solid var(--accent-color);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .proposal-card h2 {
+            margin-top: 0;
+            font-size: 20px;
+            color: var(--accent-color);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .proposal-card p {
+            line-height: 1.7;
+            font-size: 16px;
+            color: var(--text-color);
+            text-align: justify;
+        }
+
+        .proposal-list {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .proposal-list li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .badge-green {
+            color: var(--highlight-green-text);
+            background-color: var(--highlight-green-bg);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .badge-black {
+            color: var(--highlight-black-text);
+            background-color: var(--highlight-black-bg);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .footer-note {
+            margin-top: 15px;
+            font-style: italic;
+            border-top: 1px dashed var(--border-color);
+            padding-top: 10px;
+            color: var(--subtext-color);
+        }
+
+        .nav-navigation {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .nav-btn {
+            display: inline-block;
+            background-color: var(--card-bg);
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .nav-btn:hover {
+            background-color: var(--accent-color);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>গবেষণা প্রস্তাব (Research Proposal)</h1>
+            <button class="theme-btn" onclick="toggleTheme()" id="themeToggleBtn">☀️ লাইট মোড</button>
+        </header>
+
+        <!-- ১. প্রকল্পের উদ্দেশ্য -->
+        <div class="proposal-card">
+            <h2>১. মূল লক্ষ্য ও উদ্দেশ্য</h2>
+            <p>
+                এই প্রকল্পের মূল লক্ষ্য হলো পবিত্র কুরআনের বার্তাকে তার মূল ভাষাগত ও ব্যাকরণগত শেকড়ের (Root) সাথে সংযুক্ত করে শব্দে শব্দে অনুবাদ উপস্থাপন করা এবং প্রাসঙ্গিক ব্যাখ্যা অন্তর্ভুক্ত করা।
+            </p>
+        </div>
+
+        <!-- ২. গবেষণা ও রঙের নীতি -->
+        <div class="proposal-card">
+            <h2>২. গবেষণা ও অনুবাদ পদ্ধতি</h2>
+            <p>
+                শব্দে শব্দে রুটভিত্তিক অনুবাদের কাজ চলমান, যা ধারাবাহিকভাবে সংশোধন করা হবে। গবেষণার স্বচ্ছতা বজায় রাখতে শব্দগুলোকে দুইটি বিশেষ রঙে চিহ্নিত করা হয়েছে:
+            </p>
+            <ul class="proposal-list">
+                <li>
+                    <span class="badge-green">সবুজ রঙ:</span> সম্পূর্ণ পর্যালোচিত ও যাচাইকৃত রুটভিত্তিক শব্দসমূহ।
+                </li>
+                <li>
+                    <span class="badge-black">কালো রঙ:</span> প্রচলিত মানসম্মত অনুবাদের শব্দসমূহ।
+                </li>
+            </ul>
+            <p>
+                চূড়ান্ত পর্যালোচনার সাথে সাথে প্রতিটি আয়াত নতুন গবেষণালব্ধ তথ্য অনুযায়ী আপডেট করা হবে।
+            </p>
+        </div>
+
+        <!-- ৩. ফিডব্যাক / মতামত -->
+        <div class="proposal-card">
+            <h2>৩. মতামত ও সমৃদ্ধি</h2>
+            <p class="footer-note">
+                "আপনার মূল্যবান মতামত এই গবেষণাকে আরও সমৃদ্ধ করবে।"
+            </p>
+        </div>
+
+        <!-- নেভিগেশন -->
+        <div class="nav-navigation">
+            <a href="index.html" class="nav-btn">← মূল তালিকায় ফিরুন</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            
+            const btn = document.getElementById('themeToggleBtn');
+            btn.textContent = newTheme === 'light' ? '🌙 ডার্ক মোড' : '☀️ লাইট মোড';
+            
+            localStorage.setItem('theme', newTheme);
+        }
+
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.getElementById('themeToggleBtn').textContent = savedTheme === 'light' ? '🌙 ডার্ক মোড' : '☀️ লাইট মোড';
+    </script>
+</body>
+</html>
