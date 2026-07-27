@@ -21,16 +21,17 @@ function toggleDarkMode() {
     }
 }
 
-// Update dark mode button
 function updateDarkModeButton(isDark) {
     var icon = document.getElementById('dark-mode-icon');
     var text = document.getElementById('dark-mode-text');
     
     if (icon && text) {
         if (isDark) {
+            // যখন ডার্ক মোড ON → "লাইট মোড" দেখাবে
             icon.textContent = '☀️';
             text.textContent = 'লাইট মোড';
         } else {
+            // যখন লাইট মোড ON → "ডার্ক মোড" দেখাবে
             icon.textContent = '🌙';
             text.textContent = 'ডার্ক মোড';
         }
@@ -45,13 +46,10 @@ function toggleLanguage() {
     } else {
         switchToBengali();
     }
-}
-
-// Switch to English - FULL CONTENT
-function switchToEnglish() {
+}function switchToEnglish() {
     localStorage.setItem('language', 'en');
     
-    // Update language button
+    // Language button update
     var langBtn = document.getElementById('lang-text');
     if (langBtn) langBtn.textContent = 'BN';
     
@@ -64,6 +62,72 @@ function switchToEnglish() {
         welcomeText.textContent = 'Welcome to the Quran Research and Word Translation platform. Click the links below to access research proposals on translation methodology, root-based grammatical analysis, thematic articles, and video research.';
     }
     
+    // Research Proposal Card (1st card)
+    var cards = document.querySelectorAll('.menu-card');
+    if (cards[0]) {
+        var h3 = cards[0].querySelector('h3');
+        if (h3) h3.innerHTML = '📄 Research Proposal';
+        var p = cards[0].querySelector('p');
+        if (p) p.textContent = 'This research proposal explains the systematic pre-grammatical core-semantic approach and root-based as well as linguistic analysis methodology for Quranic word-by-word translation.';
+        var btn = cards[0].querySelector('.card-btn');
+        if (btn) btn.innerHTML = 'Read →';
+    }
+    
+    // Card 1: Introduction (2nd card)
+    if (cards[1]) {
+        var h3 = cards[1].querySelector('h3');
+        if (h3) h3.innerHTML = '📖 1. Introduction';
+        var p = cards[1].querySelector('p');
+        if (p) p.textContent = 'Brief introduction to research purpose, methodology and translation principles.';
+        var btn = cards[1].querySelector('.card-btn');
+        if (btn) btn.innerHTML = 'Read →';
+    }
+    
+    // Card 2: Bengali Translation (3rd card)
+    if (cards[2]) {
+        var h3 = cards[2].querySelector('h3');
+        if (h3) h3.innerHTML = '📜 2. Bengali Translation';
+        var p = cards[2].querySelector('p');
+        if (p) p.textContent = 'List of 114 Surahs and word-by-word simple Bengali translation.';
+        var btn = cards[2].querySelector('.card-btn');
+        if (btn) btn.innerHTML = 'View 114 Surahs →';
+    }
+    
+    // Card 3: Root Analysis (4th card)
+    if (cards[3]) {
+        var h3 = cards[3].querySelector('h3');
+        if (h3) h3.innerHTML = '🔍 3. Root Analysis';
+        var p = cards[3].querySelector('p');
+        if (p) p.textContent = 'Detailed discussion of Arabic word roots, morphology and semantic analysis.';
+        var btn = cards[3].querySelector('.card-btn');
+        if (btn) btn.innerHTML = 'View Analysis →';
+    }
+    
+    // Card 4: Articles (5th card)
+    if (cards[4]) {
+        var h3 = cards[4].querySelector('h3');
+        if (h3) h3.innerHTML = '✏️ 4. Thematic Articles';
+        var p = cards[4].querySelector('p');
+        if (p) p.textContent = 'Research-based articles on various important Quranic topics.';
+        var btn = cards[4].querySelector('.card-btn');
+        if (btn) btn.innerHTML = 'Read Articles →';
+    }
+    
+    // Card 5: Videos (6th card)
+    if (cards[5]) {
+        var h3 = cards[5].querySelector('h3');
+        if (h3) h3.innerHTML = '🎥 5. Videos';
+        var p = cards[5].querySelector('p');
+        if (p) p.textContent = 'Various video discussions on Quran research and word translation.';
+        var btn = cards[5].querySelector('.card-btn');
+        if (btn) btn.innerHTML = 'View Gallery →';
+    }
+    
+    // Footer
+    var footer = document.querySelector('footer p');
+    if (footer) footer.textContent = '© 2026 Quran Research & Word Translation | All Rights Reserved';
+}
+
     // Research Proposal Card
     var researchCard = document.querySelectorAll('.menu-card')[0];
     if (researchCard) {
