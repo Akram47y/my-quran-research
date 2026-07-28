@@ -105,6 +105,10 @@ function switchToEnglish() {
         var p = cards[4].querySelector('p');
         if (p) p.textContent = 'Research-based articles on various important Quranic topics.';
         var btn = cards[4].querySelector('.card-btn');
+        // Update about page if exists
+    if (document.querySelector('.content-card')) {
+        updateAboutPageContent('en');
+    }
         if (btn) btn.innerHTML = 'Read Articles →';
     }
     
