@@ -197,7 +197,10 @@ function switchToBengali() {
     
     var footer = document.querySelector('footer p');
     if (footer) footer.textContent = '© ২০২৬ কুরআন গবেষণা ও শব্দানুবাদ | সর্বস্বত্ব সংরক্ষিত';
-            }
+      // Update about page if exists
+    if (document.querySelector('.content-card')) {
+        updateAboutPageContent('bn');
+    }      }
 // ==========================================
 // About page content translation
 // ==========================================
