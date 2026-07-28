@@ -130,7 +130,16 @@
 </button>
             <h1>📖 প্রাসঙ্গিক কথা</h1>
         </div>
+<!-- Language toggle button -->
+<button id="lang-toggle" onclick="toggleLanguage()" style="position: absolute; top: 20px; left: 20px; background: rgba(255,255,255,0.2); border: 2px solid rgba(255,255,255,0.3); color: white; padding: 8px 15px; border-radius: 25px; cursor: pointer; font-size: 1em; font-weight: bold; transition: all 0.3s ease; z-index: 1000;">
+    <span id="lang-text">EN</span>
+</button>
 
+<!-- Dark mode button -->
+<button id="dark-mode-toggle" onclick="toggleDarkMode()" style="position: absolute; top: 20px; right: 20px; background: rgba(255,255,255,0.2); border: 2px solid rgba(255,255,255,0.3); color: white; padding: 8px 15px; border-radius: 25px; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease; z-index: 1000;">
+    <span id="dark-mode-icon"></span>
+    <span id="dark-mode-text">ডার্ক মোড</span>
+</button>
         <div class="content-card">
             <h2>ভূমিকা ও উদ্দেশ্য</h2>
             <p>এই গবেষণা প্ল্যাটফর্মটি তাদের জন্য, যারা ঐতিহ্যগত প্রথা বা অন্ধ অনুকরণ থেকে মুক্ত হয়ে নিজস্ব বিবেক ও বুদ্ধিকে কাজে লাগিয়ে স্থান-কাল-পাত্রের ঊর্ধ্বে উঠে কুরআনকে একটি সর্বজনীন দায়বদ্ধতার ব্যবস্থা হিসেবে উপলব্ধি করতে আগ্রহী।</p>
@@ -159,14 +168,6 @@
         </div>
 
         <!-- দায়-অস্বীকার (Disclaimer) -->
-        <script src="dark-mode.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    var currentLang = localStorage.getItem('language') || 'bn';
-    if (currentLang === 'en') {
-        updateAboutPageContent('en');
-        <div class="disclaimer-card">
-            <h2>দায়-অস্বীকার</h2>
             <p>এই ওয়েবসাইটে প্রকাশিত অনুবাদ, বিশ্লেষণ ও গবেষণা লেখকের অধ্যয়ন ও উপলব্ধির ফল। পাঠকদের নিজস্ব গবেষণা ও বিচার-বিবেচনার মাধ্যমে বিষয়গুলো যাচাই করার জন্য উৎসাহিত করা হচ্ছে। গঠনমূলক মতামত ও সংশোধনীকে স্বাগত জানানো হয়।</p>
         </div>
 
