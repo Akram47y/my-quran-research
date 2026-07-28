@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>প্রাসঙ্গিক কথা - কুরআন গবেষণা ও শব্দানুবাদ</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             font-family: 'SolaimanLipi', 'Kalpurush', Arial, sans-serif;
             background-color: #f4f6f8;
@@ -109,8 +105,6 @@
             font-size: 14px;
             color: #666;
         }
-        
-        /* Dark Mode Styles */
         body.dark-mode {
             background-color: #1a1a1a !important;
             color: #e0e0e0 !important;
@@ -148,22 +142,21 @@
         body.dark-mode .navigation {
             border-top-color: #404040 !important;
         }
+        body.dark-mode .header h1 {
+            color: #4ade80 !important;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <!-- Language toggle button -->
             <button id="lang-toggle" onclick="toggleLanguage()" style="position: absolute; top: 20px; left: 20px; background: rgba(45,106,79,0.9); border: 2px solid rgba(255,255,255,0.3); color: white; padding: 8px 15px; border-radius: 25px; cursor: pointer; font-size: 1em; font-weight: bold; transition: all 0.3s ease; z-index: 1000;">
                 <span id="lang-text">EN</span>
             </button>
-            
-            <!-- Dark mode button -->
             <button id="dark-mode-toggle" onclick="toggleDarkMode()" style="position: absolute; top: 20px; right: 20px; background: rgba(45,106,79,0.9); border: 2px solid rgba(255,255,255,0.3); color: white; padding: 8px 15px; border-radius: 25px; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease; z-index: 1000;">
                 <span id="dark-mode-icon">🌙</span>
                 <span id="dark-mode-text">ডার্ক মোড</span>
             </button>
-            
             <h1 id="page-title">📄 প্রাসঙ্গিক কথা</h1>
         </div>
 
@@ -188,7 +181,7 @@
         </div>
 
         <div class="disclaimer-card">
-            <h2>⚠️ দায়-অস্বীকার (Disclaimer)</h2>
+            <h2>️ দায়-অস্বীকার (Disclaimer)</h2>
             <p>এই ওয়েবসাইটে প্রকাশিত অনুবাদ, বিশ্লেষণ ও গবেষণা লেখকের অধ্যয়ন ও উপলব্ধির ফল। পাঠকদের নিজস্ব গবেষণা ও চিন্তা-চিন্তনের সাথে মিলিয়ে দেখার পরামর্শ দেওয়া হলো।</p>
         </div>
 
@@ -197,42 +190,82 @@
         </div>
 
         <footer>
-            <p>&copy; ২০২৬ কুরআন গবেষণা ও শব্দানুবাদ | সর্বস্বত্ব সংরক্ষিত</p>
+            <p>&copy; ২২৬ কুরআন গবেষণা ও শব্দানুবাদ | সর্বস্বত্ব সংরক্ষিত</p>
         </footer>
     </div>
 
-    <script src="dark-mode.js"></script>
     <script>
-        // About page language switching
-        function updateAboutPageContent(lang) {
-            if (lang === 'en') {
-                document.getElementById('page-title').textContent = '📄 Research Proposal';
-                document.getElementById('section1-title').textContent = '1. Main Objectives and Purpose';
-                document.getElementById('section1-text').textContent = 'The main goal of this project is to present the message of the Holy Quran by connecting it with its original linguistic and grammatical roots, providing word-by-word translation and contextual explanation.';
-                document.getElementById('section2-title').textContent = '2. Research and Translation Methodology';
-                document.getElementById('section2-text').textContent = 'The word-by-word root-based translation work is ongoing and will be continuously revised. To maintain research transparency, words are marked in two special colors:';
-                document.getElementById('section3-title').textContent = '3. Feedback and Consent';
-                document.getElementById('section3-text').textContent = '"Your valuable feedback will further enrich this research."';
-                document.getElementById('back-btn').textContent = '← Back to Main List';
+        // Dark mode functions
+        document.addEventListener('DOMContentLoaded', function() {
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                document.body.classList.add('dark-mode');
+                updateDarkModeButton(true);
+            }
+            var currentLang = localStorage.getItem('language') || 'bn';
+            if (currentLang === 'en') {
+                switchToEnglish();
+            }
+        });
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+                updateDarkModeButton(true);
             } else {
-                document.getElementById('page-title').textContent = '📄 প্রাসঙ্গিক কথা';
-                document.getElementById('section1-title').textContent = '১. মূল লক্ষ্য ও উদ্দেশ্য';
-                document.getElementById('section1-text').textContent = 'এই প্রকল্পের মূল লক্ষ্য হলো পবিত্র কুরআনের বার্তাকে তার মূল ভাষাগত ও ব্যাকরণগত শেকড়ের (Root) সাথে সংযুক্ত করে শব্দে শব্দে অনুবাদ উপস্থাপন করা এবং প্রাসঙ্গিক ব্যাখ্যা অন্তর্ভুক্ত করা।';
-                document.getElementById('section2-title').textContent = '২. গবেষণা ও অনুবাদ পদ্ধতি';
-                document.getElementById('section2-text').textContent = 'শব্দে শব্দে রুটভিত্তিক অনুবাদের কাজ চলমান, যা ধারাবাহিকভাবে সংশোধন করা হবে। গবেষণার স্বচ্ছতা বজায় রাখতে শব্দগুলোকে দুইটি বিশেষ রঙে চিহ্নিত করা হয়েছে:';
-                document.getElementById('section3-title').textContent = '৩. মতামত ও সম্মতি';
-                document.getElementById('section3-text').textContent = '"আপনার মূল্যবান মতামত এই গবেষণাকে আরও সমৃদ্ধ করবে।"';
-                document.getElementById('back-btn').textContent = '← মূল তালিকায় ফিরুন';
+                localStorage.setItem('darkMode', 'disabled');
+                updateDarkModeButton(false);
             }
         }
 
-        // Initialize on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            var currentLang = localStorage.getItem('language') || 'bn';
-            if (currentLang === 'en') {
-                updateAboutPageContent('en');
+        function updateDarkModeButton(isDark) {
+            var icon = document.getElementById('dark-mode-icon');
+            var text = document.getElementById('dark-mode-text');
+            if (icon && text) {
+                if (isDark) {
+                    icon.textContent = '☀️';
+                    text.textContent = 'লাইট মোড';
+                } else {
+                    icon.textContent = '🌙';
+                    text.textContent = 'ডার্ক মোড';
+                }
             }
-        });
+        }
+
+        function toggleLanguage() {
+            var lang = localStorage.getItem('language') || 'bn';
+            if (lang === 'bn') {
+                switchToEnglish();
+            } else {
+                switchToBengali();
+            }
+        }
+
+        function switchToEnglish() {
+            localStorage.setItem('language', 'en');
+            document.getElementById('lang-text').textContent = 'BN';
+            document.getElementById('page-title').textContent = '📄 Research Proposal';
+            document.getElementById('section1-title').textContent = '1. Main Objectives and Purpose';
+            document.getElementById('section1-text').textContent = 'The main goal of this project is to present the message of the Holy Quran by connecting it with its original linguistic and grammatical roots, providing word-by-word translation and contextual explanation.';
+            document.getElementById('section2-title').textContent = '2. Research and Translation Methodology';
+            document.getElementById('section2-text').textContent = 'The word-by-word root-based translation work is ongoing and will be continuously revised. To maintain research transparency, words are marked in two special colors:';
+            document.getElementById('section3-title').textContent = '3. Feedback and Consent';
+            document.getElementById('section3-text').textContent = '"Your valuable feedback will further enrich this research."';
+            document.getElementById('back-btn').textContent = '← Back to Main List';
+        }
+
+        function switchToBengali() {
+            localStorage.setItem('language', 'bn');
+            document.getElementById('lang-text').textContent = 'EN';
+            document.getElementById('page-title').textContent = '📄 প্রাসঙ্গিক কথা';
+            document.getElementById('section1-title').textContent = '১. মূল লক্ষ্য ও উদ্দেশ্য';
+            document.getElementById('section1-text').textContent = 'এই প্রকল্পের মূল লক্ষ্য হলো পবিত্র কুরআনের বার্তাকে তার মূল ভাষাগত ও ব্যাকরণগত শেকড়ের (Root) সাথে সংযুক্ত করে শব্দে শব্দে অনুবাদ উপস্থাপন করা এবং প্রাসঙ্গিক ব্যাখ্যা অন্তর্ভুক্ত করা।';
+            document.getElementById('section2-title').textContent = '২. গবেষণা ও অনুবাদ পদ্ধতি';
+            document.getElementById('section2-text').textContent = 'শব্দে শব্দে রুটভিত্তিক অনুবাদের কাজ চলমান, যা ধারাবাহিকভাবে সংশোধন করা হবে। গবেষণার স্বচ্ছতা বজায় রাখতে শব্দগুলোকে দুইটি বিশেষ রঙে চিহ্নিত করা হয়েছে:';
+            document.getElementById('section3-title').textContent = '৩. মতামত ও সম্মতি';
+            document.getElementById('section3-text').textContent = '"আপনার মূল্যবান মতামত এই গবেষণাকে আরও সমৃদ্ধ করবে।"';
+            document.getElementById('back-btn').textContent = '← মূল তালিকায় ফিরুন';
+        }
     </script>
 </body>
 </html>
