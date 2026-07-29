@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>সূরা আল-ইমরান</title>
+    <title>সূরা আল-ইমরান - ৩:৪</title>
     <style>
         body {
             font-family: 'SolaimanLipi', 'Kalpurush', sans-serif;
@@ -92,9 +92,10 @@
             margin-bottom: 15px;
         }
 
+        /* প্রতি সারিতে ৩টি করে কার্ড রাখার গ্রিড লেআউট */
         .word-by-word-container {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* এক সারিতে ৩টি শব্দ */
             direction: rtl; /* ডান থেকে বামে আরবি সাজানোর জন্য */
             gap: 8px;
             margin-bottom: 15px;
@@ -104,21 +105,19 @@
             background: #f8f9fa;
             border: 1px solid #edf2f7;
             border-radius: 6px;
-            padding: 8px 10px;
+            padding: 8px 5px;
             text-align: center;
-            min-width: 75px;
-            flex-grow: 1;
         }
 
         .arabic-word {
             display: block;
-            font-size: 20px;
+            font-size: 18px;
             color: #2d3748;
             margin-bottom: 4px;
             direction: rtl;
         }
 
-        /* রঙ নির্ধারণ */
+        /* রঙের বিন্যাস */
         .verified-meaning {
             display: block;
             font-size: 13px;
@@ -130,7 +129,7 @@
         .unverified-meaning {
             display: block;
             font-size: 13px;
-            color: #4a5568; /* সাধারণ কালো/ধূসর রঙ */
+            color: #4a5568; /* সাধারণ কালো রঙ */
             direction: ltr;
         }
 
@@ -153,17 +152,51 @@
             color: #222;
             border-radius: 0 4px 4px 0;
         }
+
+        /* নেভিগেশন বাটন লেআউট */
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .nav-left {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .nav-btn {
+            background-color: #1b4332;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .nav-btn:hover {
+            background-color: #143225;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
 
-    <!-- হেডার (সূরার নাম ও বাটন) -->
+    <!-- হেডার -->
     <div class="header">
         <h1 class="sura-title">সূরা আল-ইমরান</h1>
         <button class="trans-toggle-btn" onclick="toggleTransliteration()" id="transToggleBtn">
-            👁️ উচ্চারণ দেখান
+            🙈 উচ্চারণ লুকান
         </button>
         <div class="meta-info">সূরা ৩ | আয়াত: ২০০ | মাদানী</div>
     </div>
@@ -261,6 +294,17 @@
         </div>
     </div>
 
+    <!-- নেভিগেশন বাটন (পূর্ববর্তী, পরবর্তী ও সূরা তালিকা) -->
+    <div class="nav-container">
+        <div class="nav-left">
+            <a href="#" class="nav-btn">← পূর্ববর্তী সূরা</a>
+            <a href="#" class="nav-btn">পরবর্তী সূরা →</a>
+        </div>
+        <div class="nav-right">
+            <a href="#" class="nav-btn">সূরা তালিকা</a>
+        </div>
+    </div>
+
 </div>
 
 <script>
@@ -282,16 +326,7 @@ function toggleTransliteration() {
         btn.innerHTML = '👁️ উচ্চারণ দেখান';
     }
 }
-
-// ডিফল্টভাবে উচ্চারণ লুকিয়ে রাখা (সূরা ১ এর মতো করতে চাইলে)
-document.addEventListener("DOMContentLoaded", function() {
-    const transBoxes = document.querySelectorAll('.transliteration-box');
-    transBoxes.forEach(box => {
-        box.style.display = 'none';
-    });
-});
 </script>
 
 </body>
 </html>
-
