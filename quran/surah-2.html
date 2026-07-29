@@ -177,6 +177,9 @@
         <!-- হেডার -->
         <div class="header">
             <h1>সূরা আল-বাক্বারা</h1>
+                    <button class="trans-toggle-btn" onclick="toggleTransliteration()" id="transToggleBtn">
+            👁️ উচ্চারণ দেখান
+                    </button>
             <div class="meta-info">সূরা ২ | আয়াত: ২৮৬ | মাদানী</div>
         </div>
 
@@ -496,6 +499,26 @@
             <a href="3.html" class="nav-btn">পরবর্তী সূরা →</a>
         </div>
     </div>
+<script>
+function toggleTransliteration() {
+    const transBoxes = document.querySelectorAll('.transliteration-box');
+    const btn = document.getElementById('transToggleBtn');
+    
+    if (transBoxes.length === 0) return;
 
+    const isHidden = window.getComputedStyle(transBoxes[0]).display === 'none';
+    
+    transBoxes.forEach(box => {
+        box.style.display = isHidden ? 'block' : 'none';
+    });
+    
+    if (isHidden) {
+        btn.innerHTML = '🙈 উচ্চারণ লুকান';
+    } else {
+        btn.innerHTML = '👁️ উচ্চারণ দেখান';
+    }
+}
+</script>
+    
 </body>
 </html>
