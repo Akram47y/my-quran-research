@@ -323,6 +323,28 @@
             <a href="surah-2.html" class="nav-btn">পরবর্তী সূরা →</a>
         </div>
     </div>
+<script>
+function toggleTransliteration() {
+    const transBoxes = document.querySelectorAll('.transliteration-box');
+    const btn = document.getElementById('transToggleBtn');
+    
+    if (transBoxes.length === 0) return;
 
+    // বর্তমান অবস্থা চেক করা (দেখা যাচ্ছে কি না)
+    const isHidden = window.getComputedStyle(transBoxes[0]).display === 'none';
+    
+    transBoxes.forEach(box => {
+        box.style.display = isHidden ? 'block' : 'none';
+    });
+    
+    // বাটনের টেক্সট পরিবর্তন
+    if (isHidden) {
+        btn.innerHTML = '🙈 উচ্চারণ লুকান';
+    } else {
+        btn.innerHTML = '👁️ উচ্চারণ দেখান';
+    }
+}
+</script>
+    
 </body>
 </html>
