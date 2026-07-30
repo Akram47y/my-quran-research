@@ -293,8 +293,8 @@
             "পূর্বে থেকে মানবসমষ্টির জন্য দিশা হিসেবে; এবং তিনি পার্থক্যকারী অবতীর্ণ করেছেন। নিশ্চয়ই যারা আল্লাহর নিদর্শনসমূহে আচ্ছাদন করেছে, তাদের জন্য কঠিন শাস্তি; আর আল্লাহ পরাক্রমশালী, প্রতিশোধের অধিকারী।"
         </div>
     </div>
-<!-- আয়াতের অনুবাদ -->
-<div class="verse-translation">
+    <!-- আয়াতের অনুবাদ (উপরে) -->
+<div class="verse-top-translation">
     "এটি মানবসমষ্টির জন্য স্পষ্টীকরণ, এবং দিশা, এবং আত্মরক্ষাকারীদের জন্য উপদেশ।"
 </div>
 
@@ -345,18 +345,39 @@
 
 </div>
 
-<!-- প্রয়োজনীয় CSS (প্রথম স্ক্রিনশটের স্টাইল অনুযায়ী) -->
+<!-- উচ্চারণ ও পূর্ণাঙ্গ অনুবাদ বক্স (নিচে) -->
+<div class="verse-details">
+    <!-- উচ্চারণ বক্স -->
+    <div class="info-box border-green">
+        <strong>উচ্চারণ:</strong> হা-জা বা-য়া-নুল লিন্নাসি ওয়া হুদাউ ওয়া মাউ'ইজাতুল লিল মুত্তাকীন।
+    </div>
+
+    <!-- অনুবাদ বক্স -->
+    <div class="info-box border-green">
+        "এটি মানবসমষ্টির জন্য স্পষ্টীকরণ, এবং দিশা, এবং আত্মরক্ষাকারীদের জন্য উপদেশ।"
+    </div>
+</div>
+
+<!-- আপনার মূল ডিজাইনের CSS -->
 <style>
+    .verse-top-translation {
+        font-size: 1.05em;
+        line-height: 1.6;
+        color: #1a1a1a;
+        margin-bottom: 15px;
+        text-align: left;
+    }
+
     .word-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* ৩ কলামের গ্রিড */
+        grid-template-columns: repeat(3, 1fr);
         gap: 10px;
-        direction: rtl; /* ডান থেকে বামে সাজানো */
-        margin-top: 15px;
+        direction: rtl;
+        margin-bottom: 20px;
     }
 
     .word-card {
-        background-color: #f8f9fa; /* হালকা ব্যাকগ্রাউন্ড (১ম স্ক্রিনশটের মতো) */
+        background-color: #f8f9fa;
         border-radius: 8px;
         padding: 12px 8px;
         text-align: center;
@@ -367,29 +388,50 @@
     }
 
     .word-card .arabic {
-        font-size: 1.2em;
-        color: #2b2b2b; /* স্পষ্ট কালো/গাঢ় রঙ */
+        font-size: 1.3em;
+        color: #2b2b2b;
         font-family: 'Amiri', serif;
         margin-bottom: 4px;
     }
 
     .word-card .pronunciation {
         font-size: 0.85em;
-        color: #555555; /* সাধারণ উচ্চারণ রঙ */
+        color: #6c757d;
         direction: ltr;
         margin-bottom: 4px;
     }
 
     .word-card .meaning {
         font-size: 0.9em;
-        color: #2b2b2b; /* সাধারণ অর্থের রঙ */
+        color: #2b2b2b;
         direction: ltr;
+        font-weight: bold;
     }
 
-    /* কাঙ্ক্ষিত অংশ সবুজ রঙের জন্য */
+    /* শুধুমাত্র আপনার চাওয়া অনুযায়ী সবুজ রঙের লেখা */
     .word-card .meaning.highlight {
-        color: #2d6a4f; /* গাঢ় সবুজ রঙ */
-        font-weight: bold;
+        color: #1b4332;
+    }
+
+    /* নিচের উচ্চারণ ও অনুবাদ বক্সের স্টাইল */
+    .verse-details {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .info-box {
+        background-color: #f8f9fa;
+        padding: 12px 15px;
+        border-radius: 4px;
+        font-size: 0.95em;
+        line-height: 1.6;
+        color: #2b2b2b;
+    }
+
+    .border-green {
+        border-left: 4px solid #1b4332;
     }
 </style>
     
