@@ -5,82 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>সূরা আন-নিসা</title>
     <style>
-        body { font-family: sans-serif; background-color: #f7fafc; margin: 0; padding: 20px; }
-        .container { max-width: 800px; margin: 0 auto; background: #ffffff; padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .surah-header { text-align: center; margin-bottom: 20px; }
-        .surah-header h1 { color: #1a5d1a; margin-bottom: 8px; font-size: 28px; }
-        .toggle-btn { background-color: #1a5d1a; color: white; border: none; padding: 6px 14px; border-radius: 5px; cursor: pointer; font-size: 13px; margin-bottom: 8px; }
-        .surah-info { color: #718096; font-size: 14px; margin: 0; }
-        .bismillah-box { background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px; text-align: center; margin-bottom: 25px; }
-        .arabic-bismillah { font-size: 22px; font-family: 'Amiri', serif; color: #1a202c; margin-bottom: 6px; }
-        .bismillah-translation { color: #16a34a; font-weight: bold; font-size: 14px; }
-        .verse-container { border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px; margin-bottom: 20px; background: #fff; }
-        .verse-number { font-weight: bold; font-size: 15px; color: #1a5d1a; margin-bottom: 12px; }
-        .word-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 10px; direction: rtl; margin-bottom: 15px; }
-        .word-card { background-color: #f8fafc; border: 1px solid #edf2f7; border-radius: 6px; padding: 10px; text-align: center; }
-        .arabic-word { font-size: 20px; color: #1a5d1a; font-family: 'Amiri', serif; margin-bottom: 4px; font-weight: bold; }
-        .pronunciation { font-size: 12px; color: #a0aec0; margin: 4px 0; }
-        .word-translation { font-size: 13px; font-weight: bold; }
-        .reviewed { color: #16a34a; }
-        .normal-black { color: #2d3748; }
-        .full-translation { background-color: #f8fafc; padding: 12px 15px; border-radius: 6px; font-size: 14px; color: #2d3748; line-height: 1.6; border-left: 3px solid #1a5d1a; }
-        .nav-container { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; flex-wrap: wrap; gap: 10px; }
-        .nav-btn { background-color: #1a5d1a; color: white !important; text-decoration: none; padding: 8px 16px; border-radius: 5px; font-size: 13px; font-weight: bold; display: inline-block; }
+        body { font-family: system-ui, -apple-system, sans-serif; background-color: #f8fafc; margin: 0; padding: 15px; }
+        .main-card { max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 20px; padding: 25px 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); border: 1px solid #edf2f7; }
+        
+        /* হেডার */
+        .header { text-align: center; margin-bottom: 25px; }
+        .header h1 { color: #0d4722; font-size: 26px; margin: 0 0 12px 0; font-weight: 800; }
+        .toggle-btn { background-color: #0d4722; color: #ffffff; border: none; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
+        .surah-meta { color: #718096; font-size: 13px; margin-top: 10px; }
+
+        /* বিসমিল্লাহ বক্স */
+        .bismillah-card { background-color: #f8fafc; border: 1px solid #edf2f7; border-radius: 12px; padding: 20px 15px; text-align: center; margin-bottom: 20px; }
+        .bismillah-arabic { font-size: 24px; color: #2d3748; margin-bottom: 8px; font-family: 'Amiri', serif; }
+        .bismillah-translation { color: #16a34a; font-size: 14px; font-weight: 700; line-height: 1.5; }
+
+        /* আয়াতের মেইন বক্স */
+        .verse-box { border: 1px solid #edf2f7; border-radius: 12px; padding: 16px; margin-bottom: 20px; background: #ffffff; }
+        .verse-num { font-size: 14px; font-weight: 700; color: #2d3748; margin-bottom: 12px; }
+
+        /* শব্দ কার্ডের গ্রিড (RTL) */
+        .word-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(105px, 1fr)); gap: 10px; direction: rtl; margin-bottom: 15px; }
+        .word-card { background-color: #f8fafc; border: 1px solid #edf2f7; border-radius: 8px; padding: 12px 8px; text-align: center; }
+        .arabic-text { font-size: 20px; color: #2d3748; margin-bottom: 6px; font-family: 'Amiri', serif; }
+        .meaning { font-size: 13px; font-weight: 700; line-height: 1.4; }
+        .green-text { color: #16a34a; }
+        .black-text { color: #2d3748; }
+
+        /* উচ্চারণ বক্স (নিচে) */
+        .pronunciation-box { background-color: #f8fafc; border-left: 3px solid #718096; padding: 12px 15px; border-radius: 4px; font-size: 14px; color: #4a5568; margin-bottom: 10px; line-height: 1.6; display: block; }
+        .pronunciation-label { font-weight: bold; color: #2d3748; }
+
+        /* অনুবাদ বক্স (নিচে) */
+        .translation-box { background-color: #f8fafc; border-left: 3px solid #0d4722; padding: 12px 15px; border-radius: 4px; font-size: 14px; color: #2d3748; line-height: 1.6; }
+
+        /* নেভিগেশন বাটন */
+        .nav-group { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 25px; }
+        .nav-btn { background-color: #0d4722; color: white !important; text-decoration: none; padding: 8px 14px; border-radius: 6px; font-size: 13px; font-weight: 600; display: inline-block; }
     </style>
 </head>
 <body>
 
-<div class="container">
+<div class="main-card">
 
-    <!-- সূরার হেডার -->
-    <div class="surah-header">
+    <!-- হেডার -->
+    <div class="header">
         <h1>সূরা আন-নিসা</h1>
-        <button class="toggle-btn" onclick="togglePronunciation()">👁️ উচ্চারণ লুকান</button>
-        <p class="surah-info">সূরা ৪ | আয়াত: ১৭৬ | মাদানী</p>
+        <button class="toggle-btn" onclick="togglePronunciation()">
+            <span id="btn-icon">🙈</span> <span id="btn-text">উচ্চারণ লুকান</span>
+        </button>
+        <div class="surah-meta">সূরা ৪ | আয়াত: ১৭৬ | মাদানী</div>
     </div>
 
-    <!-- বিসমিল্লাহ বক্স -->
-    <div class="bismillah-box">
-        <div class="arabic-bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
-        <div class="bismillah-translation">পরম দয়াময়, অসীম দয়ালু আল্লাহর নামে।</div>
+    <!-- বিসমিল্লাহ -->
+    <div class="bismillah-card">
+        <div class="bismillah-arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+        <div class="bismillah-translation">"পরম দয়াময়, অসীম দয়ালু আল্লাহর নামে।"</div>
     </div>
 
-    <!-- ৪:৬৮ আয়াত -->
-    <div class="verse-container">
-        <div class="verse-number">৪:৬৮</div>
+    <!-- আয়াত ৪:৬৮ -->
+    <div class="verse-box">
+        <div class="verse-num">৪:৬৮</div>
 
+        <!-- কার্ডের গ্রিড (উচ্চারণ ছাড়া) -->
         <div class="word-grid">
             
-            <!-- শব্দ ১ -->
             <div class="word-card">
-                <div class="arabic-word">وَلَهَدَيْنَاهُمْ</div>
-                <div class="pronunciation">ওয়ালাহাদায়নাহুম</div>
-                <div class="word-translation reviewed">এবং অবশ্যই আমরা তাদেরকে দিশা দিতাম</div>
+                <div class="arabic-text">وَلَهَدَيْنَاهُمْ</div>
+                <div class="meaning green-text">এবং অবশ্যই আমরা তাদেরকে দিশা দিতাম</div>
             </div>
 
-            <!-- শব্দ ২ -->
             <div class="word-card">
-                <div class="arabic-word">صِرَاطًا</div>
-                <div class="pronunciation">সিরাতান</div>
-                <div class="word-translation reviewed">পথের</div>
+                <div class="arabic-text">صِرَاطًا</div>
+                <div class="meaning green-text">পথের</div>
             </div>
 
-            <!-- শব্দ ৩ (সুদৃঢ় - সাধারণ কালো রঙ) -->
+            <!-- সুদৃঢ়: সাধারণ কালো রং -->
             <div class="word-card">
-                <div class="arabic-word">مُسْتَقِيمًا</div>
-                <div class="pronunciation">মুস্তাকীমা</div>
-                <div class="word-translation normal-black">সুদৃঢ়</div>
+                <div class="arabic-text">مُسْتَقِيمًا</div>
+                <div class="meaning black-text">সুদৃঢ়</div>
             </div>
 
         </div>
 
-        <div class="full-translation">
+        <!-- নিচে উচ্চারণ বক্স -->
+        <div class="pronunciation-box" id="pron-4-68">
+            <span class="pronunciation-label">উচ্চারণ:</span> ওয়ালাহাদায়নাহুম সিরাতাম মুস্তাকীমা
+        </div>
+
+        <!-- নিচে বাংলা অনুবাদ বক্স -->
+        <div class="translation-box">
             "এবং অবশ্যই আমরা তাদেরকে সুদৃঢ় পথের দিশা দিতাম।"
         </div>
     </div>
 
     <!-- নেভিগেশন বাটনসমূহ -->
-    <div class="nav-container">
+    <div class="nav-group">
         <div style="display: flex; flex-direction: column; gap: 8px;">
             <a href="surah3.html" class="nav-btn">&larr; পূর্ববর্তী সূরা</a>
             <a href="surah5.html" class="nav-btn">পরবর্তী সূরা &rarr;</a>
@@ -94,13 +113,26 @@
 
 <script>
 function togglePronunciation() {
-    var elements = document.getElementsByClassName('pronunciation');
-    for (var i = 0; i < elements.length; i++) {
-        if (elements[i].style.display === 'none') {
-            elements[i].style.display = 'block';
+    var pronBoxes = document.querySelectorAll('.pronunciation-box');
+    var btnText = document.getElementById('btn-text');
+    var btnIcon = document.getElementById('btn-icon');
+    
+    var isHidden = false;
+    pronBoxes.forEach(function(box) {
+        if (box.style.display === 'none') {
+            box.style.display = 'block';
         } else {
-            elements[i].style.display = 'none';
+            box.style.display = 'none';
+            isHidden = true;
         }
+    });
+
+    if (isHidden) {
+        btnText.innerText = 'উচ্চারণ দেখান';
+        btnIcon.innerText = '👁️';
+    } else {
+        btnText.innerText = 'উচ্চারণ লুকান';
+        btnIcon.innerText = '🙈';
     }
 }
 </script>
