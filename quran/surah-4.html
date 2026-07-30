@@ -10,37 +10,37 @@
         
         /* হেডার */
         .header { text-align: center; margin-bottom: 25px; }
-        .header h1 { color: #0d4722; font-size: 26px; margin: 0 0 12px 0; font-weight: 800; }
+        .header h1 { color: #0d4722; font-size: 28px; margin: 0 0 12px 0; font-weight: 800; }
         .toggle-btn { background-color: #0d4722; color: #ffffff; border: none; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
-        .surah-meta { color: #718096; font-size: 13px; margin-top: 10px; }
+        .surah-meta { color: #718096; font-size: 14px; margin-top: 10px; }
 
         /* বিসমিল্লাহ বক্স */
         .bismillah-card { background-color: #f8fafc; border: 1px solid #edf2f7; border-radius: 12px; padding: 20px 15px; text-align: center; margin-bottom: 20px; }
-        .bismillah-arabic { font-size: 24px; color: #2d3748; margin-bottom: 8px; font-family: 'Amiri', serif; }
-        .bismillah-translation { color: #16a34a; font-size: 14px; font-weight: 700; line-height: 1.5; }
+        .bismillah-arabic { font-size: 26px; color: #2d3748; margin-bottom: 8px; font-family: 'Amiri', serif; }
+        .bismillah-translation { color: #16a34a; font-size: 15px; font-weight: 700; line-height: 1.5; }
 
         /* আয়াতের মেইন বক্স */
         .verse-box { border: 1px solid #edf2f7; border-radius: 12px; padding: 16px; margin-bottom: 20px; background: #ffffff; }
-        .verse-num { font-size: 14px; font-weight: 700; color: #2d3748; margin-bottom: 12px; }
+        .verse-num { font-size: 15px; font-weight: 700; color: #2d3748; margin-bottom: 12px; }
 
-        /* শব্দ কার্ডের গ্রিড (RTL) */
-        .word-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(105px, 1fr)); gap: 10px; direction: rtl; margin-bottom: 15px; }
-        .word-card { background-color: #f8fafc; border: 1px solid #edf2f7; border-radius: 8px; padding: 12px 8px; text-align: center; }
-        .arabic-text { font-size: 20px; color: #2d3748; margin-bottom: 6px; font-family: 'Amiri', serif; }
-        .meaning { font-size: 13px; font-weight: 700; line-height: 1.4; }
+        /* শব্দ কার্ডের গ্রিড (সূরা ২ এর সাইজ অনুযায়ী) */
+        .word-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(115px, 1fr)); gap: 10px; direction: rtl; margin-bottom: 15px; }
+        .word-card { background-color: #f8fafc; border: 1px solid #edf2f7; border-radius: 8px; padding: 14px 10px; text-align: center; }
+        .arabic-text { font-size: 26px; color: #2d3748; margin-bottom: 8px; font-family: 'Amiri', serif; }
+        .meaning { font-size: 15px; font-weight: 700; line-height: 1.4; }
         .green-text { color: #16a34a; }
         .black-text { color: #2d3748; }
 
-        /* উচ্চারণ বক্স (নিচে) */
-        .pronunciation-box { background-color: #f8fafc; border-left: 3px solid #718096; padding: 12px 15px; border-radius: 4px; font-size: 14px; color: #4a5568; margin-bottom: 10px; line-height: 1.6; display: block; }
+        /* উচ্চারণ বক্স */
+        .pronunciation-box { background-color: #f8fafc; border-left: 3px solid #718096; padding: 12px 15px; border-radius: 4px; font-size: 15px; color: #4a5568; margin-bottom: 10px; line-height: 1.6; display: block; }
         .pronunciation-label { font-weight: bold; color: #2d3748; }
 
-        /* অনুবাদ বক্স (নিচে) */
-        .translation-box { background-color: #f8fafc; border-left: 3px solid #0d4722; padding: 12px 15px; border-radius: 4px; font-size: 14px; color: #2d3748; line-height: 1.6; }
+        /* অনুবাদ বক্স */
+        .translation-box { background-color: #f8fafc; border-left: 3px solid #0d4722; padding: 12px 15px; border-radius: 4px; font-size: 15px; color: #2d3748; line-height: 1.6; }
 
         /* নেভিগেশন বাটন */
         .nav-group { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 25px; }
-        .nav-btn { background-color: #0d4722; color: white !important; text-decoration: none; padding: 8px 14px; border-radius: 6px; font-size: 13px; font-weight: 600; display: inline-block; }
+        .nav-btn { background-color: #0d4722; color: white !important; text-decoration: none; padding: 8px 14px; border-radius: 6px; font-size: 14px; font-weight: 600; display: inline-block; }
     </style>
 </head>
 <body>
@@ -66,7 +66,7 @@
     <div class="verse-box">
         <div class="verse-num">৪:৬৮</div>
 
-        <!-- কার্ডের গ্রিড (উচ্চারণ ছাড়া) -->
+        <!-- শব্দ কার্ডসমূহ -->
         <div class="word-grid">
             
             <div class="word-card">
@@ -79,7 +79,6 @@
                 <div class="meaning green-text">পথের</div>
             </div>
 
-            <!-- সুদৃঢ়: সাধারণ কালো রং -->
             <div class="word-card">
                 <div class="arabic-text">مُسْتَقِيمًا</div>
                 <div class="meaning black-text">সুদৃঢ়</div>
@@ -87,12 +86,12 @@
 
         </div>
 
-        <!-- নিচে উচ্চারণ বক্স -->
+        <!-- উচ্চারণ বক্স -->
         <div class="pronunciation-box" id="pron-4-68">
             <span class="pronunciation-label">উচ্চারণ:</span> ওয়ালাহাদায়নাহুম সিরাতাম মুস্তাকীমা
         </div>
 
-        <!-- নিচে বাংলা অনুবাদ বক্স -->
+        <!-- অনুবাদ বক্স -->
         <div class="translation-box">
             "এবং অবশ্যই আমরা তাদেরকে সুদৃঢ় পথের দিশা দিতাম।"
         </div>
@@ -139,3 +138,4 @@ function togglePronunciation() {
 
 </body>
 </html>
+
