@@ -146,6 +146,11 @@
         <!-- হেডার -->
         <div class="header">
             <h1>সূরা আল-কলম</h1>
+            <div style="text-align: center; margin: 15px 0;">
+    <button id="pronun-toggle" onclick="togglePronunciation()" style="background-color: #1a5d1a; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: bold;">
+        <span id="pronun-icon">👁️</span> <span id="pronun-text">উচ্চারণ দেখান</span>
+    </button>
+            </div>
             <div class="meta-info">সূরা ৬৮ | আয়াত: ৫২ | মাক্কী</div>
         </div>
 
@@ -176,6 +181,12 @@
                     <span class="verified-meaning">বিশাল</span>
                 </div>
             </div>
+            <!-- ৬৮:৪ উচ্চারণ সেকশন -->
+<div class="pronunciation-box" style="display: none; background-color: #f8fafc; border-left: 3px solid #1a5d1a; padding: 10px 15px; margin-bottom: 10px; border-radius: 4px;">
+    <p style="margin: 0; font-size: 14px; color: #334155; font-style: italic;">
+        <strong>উচ্চারণ:</strong> ওয়া ইন্নাকা লা‘আলা- খুলুক্বিন ‘আজ়ীম।
+    </p>
+</div>
             <div class="full-translation">
                 “এবং নিশ্চয়ই আপনি বিশাল গঠনসৃষ্টির উপর।”
             </div>
@@ -188,6 +199,29 @@
             <a href="69.html" class="nav-btn">পরবর্তী সূরা →</a>
         </div>
     </div>
+<script>
+function togglePronunciation() {
+    var pronunBoxes = document.querySelectorAll('.pronunciation-box');
+    var btnText = document.getElementById('pronun-text');
+    var btnIcon = document.getElementById('pronun-icon');
 
+    if (pronunBoxes.length === 0) return;
+
+    var isHidden = window.getComputedStyle(pronunBoxes[0]).display === 'none';
+
+    pronunBoxes.forEach(function(box) {
+        box.style.display = isHidden ? 'block' : 'none';
+    });
+
+    if (isHidden) {
+        if (btnText) btnText.textContent = 'উচ্চারণ লুকান';
+        if (btnIcon) btnIcon.textContent = '🙈';
+    } else {
+        if (btnText) btnText.textContent = 'উচ্চারণ দেখান';
+        if (btnIcon) btnIcon.textContent = '👁️';
+    }
+}
+</script>
+    
 </body>
 </html>
