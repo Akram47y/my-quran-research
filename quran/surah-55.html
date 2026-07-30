@@ -146,6 +146,11 @@
         <!-- হেডার -->
         <div class="header">
             <h1>সূরা আর-রহমান</h1>
+            <div style="text-align: center; margin: 15px 0;">
+    <button id="pronun-toggle" onclick="togglePronunciation()" style="background-color: #1a5d1a; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: bold;">
+        <span id="pronun-icon">👁️</span> <span id="pronun-text">উচ্চারণ দেখান</span>
+    </button>
+            </div>
             <div class="meta-info">সূরা ৫৫ | আয়াত: ৭৮ | মাদানী</div>
         </div>
 
@@ -164,6 +169,17 @@
                     <span class="verified-meaning">পরম মমতাময়</span>
                 </div>
             </div>
+            <!-- ৫৫:১ উচ্চারণ সেকশন (প্রথমে লুকানো থাকবে) -->
+<div class="pronunciation-box" style="display: none; background-color: #f8fafc; border-left: 3px solid #1a5d1a; padding: 10px 15px; margin-bottom: 10px; border-radius: 4px;">
+    <p style="margin: 0; font-size: 14px; color: #334155; font-style: italic;">
+        <strong>উচ্চারণ:</strong> আর-রহমান।
+    </p>
+</div>
+
+<!-- আপনার আগের অনুবাদ বক্স -->
+<div class="translation-box">
+    "পরম দয়াময়।"
+</div>  
             <div class="full-translation">
                 "পরম মমতাময়।"
             </div>
