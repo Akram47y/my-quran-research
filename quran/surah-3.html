@@ -293,110 +293,103 @@
             "পূর্বে থেকে মানবসমষ্টির জন্য দিশা হিসেবে; এবং তিনি পার্থক্যকারী অবতীর্ণ করেছেন। নিশ্চয়ই যারা আল্লাহর নিদর্শনসমূহে আচ্ছাদন করেছে, তাদের জন্য কঠিন শাস্তি; আর আল্লাহ পরাক্রমশালী, প্রতিশোধের অধিকারী।"
         </div>
     </div>
-<div class="verse-card">
-    <!-- অনুবাদ অংশ -->
-    <div class="translation-text">
-        <span class="highlight">এটি মানবসমষ্টির জন্য স্পষ্টীকরণ, এবং দিশা, এবং আত্মরক্ষাকারীদের জন্য</span> উপদেশ।
-    </div>
-
-    <hr class="divider">
-
-    <!-- শব্দে শব্দে বিশ্লেষণ (আরবি, উচ্চারণ ও অনুবাদ) -->
-    <div class="word-by-word">
-        <div class="word-box">
-            <span class="arabic">هٰذَا</span>
-            <span class="pronunciation">হাজা</span>
-            <span class="meaning highlight">এটি</span>
-        </div>
-
-        <div class="word-box">
-            <span class="arabic">بَيَانٌ</span>
-            <span class="pronunciation">বায়ানুন</span>
-            <span class="meaning highlight">স্পষ্টীকরণ</span>
-        </div>
-
-        <div class="word-box">
-            <span class="arabic">لِّلنَّاسِ</span>
-            <span class="pronunciation">লিন্নাসি</span>
-            <span class="meaning highlight">মানবসমষ্টির জন্য</span>
-        </div>
-
-        <div class="word-box">
-            <span class="arabic">وَهُدًى</span>
-            <span class="pronunciation">ওয়া হুদান</span>
-            <span class="meaning highlight">এবং দিশা</span>
-        </div>
-
-        <div class="word-box">
-            <span class="arabic">وَمَوْعِظَةٌ</span>
-            <span class="pronunciation">ওয়া মাউ'ইজাতুন</span>
-            <span class="meaning">এবং উপদেশ</span>
-        </div>
-
-        <div class="word-box">
-            <span class="arabic">لِّلْمُتَّقِينَ</span>
-            <span class="pronunciation">লিল মুত্তাকীন</span>
-            <span class="meaning highlight">আত্মরক্ষাকারীদের জন্য</span>
-        </div>
-    </div>
+<!-- আয়াতের অনুবাদ -->
+<div class="verse-translation">
+    "এটি মানবসমষ্টির জন্য স্পষ্টীকরণ, এবং দিশা, এবং আত্মরক্ষাকারীদের জন্য উপদেশ।"
 </div>
 
-<!-- প্রয়োজনীয় CSS স্টাইল -->
+<!-- শব্দে শব্দে গ্রিড কার্ডসমূহ -->
+<div class="word-grid">
+
+    <!-- ১. হাজা -->
+    <div class="word-card">
+        <div class="arabic">هٰذَا</div>
+        <div class="pronunciation">হাজা</div>
+        <div class="meaning highlight">এটি</div>
+    </div>
+
+    <!-- ২. বায়ানুন -->
+    <div class="word-card">
+        <div class="arabic">بَيَانٌ</div>
+        <div class="pronunciation">বায়ানুন</div>
+        <div class="meaning highlight">স্পষ্টীকরণ</div>
+    </div>
+
+    <!-- ৩. লিন্নাসি -->
+    <div class="word-card">
+        <div class="arabic">لِّلنَّاسِ</div>
+        <div class="pronunciation">লিন্নাসি</div>
+        <div class="meaning highlight">মানবসমষ্টির জন্য</div>
+    </div>
+
+    <!-- ৪. ওয়া হুদান -->
+    <div class="word-card">
+        <div class="arabic">وَهُدًى</div>
+        <div class="pronunciation">ওয়া হুদান</div>
+        <div class="meaning highlight">এবং দিশা</div>
+    </div>
+
+    <!-- ৫. ওয়া মাউ'ইজাতুন -->
+    <div class="word-card">
+        <div class="arabic">وَمَوْعِظَةٌ</div>
+        <div class="pronunciation">ওয়া মাউ'ইজাতুন</div>
+        <div class="meaning">এবং উপদেশ</div>
+    </div>
+
+    <!-- ৬. লিল মুত্তাকীন -->
+    <div class="word-card">
+        <div class="arabic">لِّلْمُتَّقِينَ</div>
+        <div class="pronunciation">লিল মুত্তাকীন</div>
+        <div class="meaning highlight">আত্মরক্ষাকারীদের জন্য</div>
+    </div>
+
+</div>
+
+<!-- প্রয়োজনীয় CSS (প্রথম স্ক্রিনশটের স্টাইল অনুযায়ী) -->
 <style>
-    .verse-card {
-        background-color: #1e1e1e;
-        border: 1px solid #333;
-        border-radius: 8px;
-        padding: 18px;
-        margin-bottom: 15px;
-        color: #ffffff;
-    }
-    .translation-text {
-        font-size: 1.1em;
-        line-height: 1.6;
-        color: #ffffff;
-    }
-    .highlight {
-        color: #74c69d; /* সবুজ রঙ */
-        font-weight: bold;
-    }
-    .divider {
-        border: 0;
-        border-top: 1px solid #333;
-        margin: 15px 0;
-    }
-    .word-by-word {
-        display: flex;
-        flex-wrap: wrap;
+    .word-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* ৩ কলামের গ্রিড */
         gap: 10px;
-        direction: rtl; /* ডান থেকে বামে শব্দ সাজাতে */
+        direction: rtl; /* ডান থেকে বামে সাজানো */
+        margin-top: 15px;
     }
-    .word-box {
-        background-color: #252525;
-        border: 1px solid #3d3d3d;
-        border-radius: 6px;
-        padding: 8px 12px;
+
+    .word-card {
+        background-color: #f8f9fa; /* হালকা ব্যাকগ্রাউন্ড (১ম স্ক্রিনশটের মতো) */
+        border-radius: 8px;
+        padding: 12px 8px;
+        text-align: center;
         display: flex;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
-        text-align: center;
-        min-width: 80px;
     }
-    .arabic {
-        font-size: 1.3em;
-        color: #ffffff;
-        font-family: 'Amiri', 'Traditional Arabic', serif;
+
+    .word-card .arabic {
+        font-size: 1.2em;
+        color: #2b2b2b; /* স্পষ্ট কালো/গাঢ় রঙ */
+        font-family: 'Amiri', serif;
+        margin-bottom: 4px;
     }
-    .pronunciation {
+
+    .word-card .pronunciation {
         font-size: 0.85em;
-        color: #b0b0b0; /* সাধারণ রঙ */
-        margin: 3px 0;
+        color: #555555; /* সাধারণ উচ্চারণ রঙ */
+        direction: ltr;
+        margin-bottom: 4px;
+    }
+
+    .word-card .meaning {
+        font-size: 0.9em;
+        color: #2b2b2b; /* সাধারণ অর্থের রঙ */
         direction: ltr;
     }
-    .meaning {
-        font-size: 0.9em;
-        color: #ffffff; /* সাধারণ রঙ */
-        direction: ltr;
+
+    /* কাঙ্ক্ষিত অংশ সবুজ রঙের জন্য */
+    .word-card .meaning.highlight {
+        color: #2d6a4f; /* গাঢ় সবুজ রঙ */
+        font-weight: bold;
     }
 </style>
     
