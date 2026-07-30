@@ -23,13 +23,16 @@
         .verse-box { border: 1px solid #edf2f7; border-radius: 12px; padding: 16px; margin-bottom: 20px; background: #ffffff; }
         .verse-num { font-size: 15px; font-weight: 700; color: #2d3748; margin-bottom: 12px; }
 
-        /* শব্দ কার্ডের গ্রিড (সূরা ২ এর সাইজ অনুযায়ী) */
+        /* শব্দ কার্ডের গ্রিড */
         .word-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(115px, 1fr)); gap: 10px; direction: rtl; margin-bottom: 15px; }
         .word-card { background-color: #f8fafc; border: 1px solid #edf2f7; border-radius: 8px; padding: 14px 10px; text-align: center; }
         .arabic-text { font-size: 26px; color: #2d3748; margin-bottom: 8px; font-family: 'Amiri', serif; }
-        .meaning { font-size: 15px; font-weight: 700; line-height: 1.4; }
-        .green-text { color: #16a34a; }
-        .black-text { color: #2d3748; }
+        
+        /* সবুজ পর্যালোচনা করা শব্দ */
+        .meaning-green { font-size: 15px; font-weight: 700; color: #16a34a; line-height: 1.4; }
+        
+        /* সাধারণ ধূসর শব্দ (ছবি ৩:৪ এর সাথে হুবহু মিল) */
+        .meaning-normal { font-size: 15px; font-weight: 400; color: #4a5568; line-height: 1.4; }
 
         /* উচ্চারণ বক্স */
         .pronunciation-box { background-color: #f8fafc; border-left: 3px solid #718096; padding: 12px 15px; border-radius: 4px; font-size: 15px; color: #4a5568; margin-bottom: 10px; line-height: 1.6; display: block; }
@@ -71,17 +74,18 @@
             
             <div class="word-card">
                 <div class="arabic-text">وَلَهَدَيْنَاهُمْ</div>
-                <div class="meaning green-text">এবং অবশ্যই আমরা তাদেরকে দিশা দিতাম</div>
+                <div class="meaning-green">এবং অবশ্যই আমরা তাদেরকে দিশা দিতাম</div>
             </div>
 
             <div class="word-card">
                 <div class="arabic-text">صِرَاطًا</div>
-                <div class="meaning green-text">পথের</div>
+                <div class="meaning-green">পথের</div>
             </div>
 
+            <!-- সুদৃঢ়: ছবি ৩:৪ অনুযায়ী স্বাভাবিক ধূসর রঙ -->
             <div class="word-card">
                 <div class="arabic-text">مُسْتَقِيمًا</div>
-                <div class="meaning black-text">সুদৃঢ়</div>
+                <div class="meaning-normal">সুদৃঢ়</div>
             </div>
 
         </div>
@@ -138,4 +142,3 @@ function togglePronunciation() {
 
 </body>
 </html>
-
