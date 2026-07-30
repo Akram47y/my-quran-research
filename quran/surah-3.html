@@ -3,361 +3,378 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>সূরা আল-ইমরান - ৩:৪</title>
+    <title>সূরা আল-ইমরান - ৩:৪/১৩৮</title>
     <style>
-        body {
-            font-family: 'SolaimanLipi', 'Kalpurush', sans-serif;
-            background-color: #f8f9fa;
+        * {
+            box-sizing: border-box;
             margin: 0;
-            padding: 15px;
-            display: flex;
-            justify-content: center;
+            padding: 0;
         }
-
+        body {
+            font-family: 'SolaimanLipi', 'Kalpurush', Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #2c3e50;
+            line-height: 1.8;
+            padding: 15px;
+        }
         .container {
             max-width: 850px;
-            width: 100%;
+            margin: 0 auto;
             background: #ffffff;
             padding: 20px;
             border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
-
-        /* হেডার স্টাইল */
         .header {
             text-align: center;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #eee;
+            border-bottom: 2px solid #eef2f5;
             padding-bottom: 15px;
+            margin-bottom: 20px;
         }
-
-        .sura-title {
-            color: #1b4332;
+        .header h1 {
             font-size: 26px;
-            margin: 0 0 10px 0;
-            font-weight: bold;
+            color: #1b4332;
+            margin-bottom: 5px;
         }
-
-        .trans-toggle-btn {
-            background-color: #1b4332;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 14px;
-            margin-bottom: 10px;
-        }
-
-        .meta-info {
+        .header .meta-info {
             color: #666;
             font-size: 14px;
         }
-
-        /* বিসমিল্লাহ কার্ড */
-        .bismillah-card {
-            background-color: #fcfcfc;
-            border: 1px solid #e0e0e0;
+        .bismillah-box {
+            background-color: #f8f9fa;
+            border: 1px solid #e2e8f0;
             border-radius: 8px;
             padding: 15px;
             text-align: center;
             margin-bottom: 25px;
         }
-
         .bismillah-arabic {
+            font-family: 'Meaney', 'Amiri', 'Traditional Arabic', serif;
             font-size: 24px;
-            color: #2d3748;
+            color: #1b4332;
             margin-bottom: 8px;
             display: block;
         }
-
-        .bismillah-translation {
-            color: #2d6a4f;
-            font-weight: bold;
+        .bismillah-meaning {
             font-size: 15px;
+            color: #28a745;
+            font-weight: bold;
         }
-
-        /* আয়াত কার্ড স্টাইল */
         .verse-card {
-            border: 1px solid #e0e0e0;
+            border: 1px solid #e0e6ed;
             border-radius: 8px;
             padding: 15px;
             margin-bottom: 20px;
-            background: #fff;
+            background-color: #ffffff;
         }
-
         .verse-num {
+            font-size: 14px;
             font-weight: bold;
             color: #1b4332;
             margin-bottom: 12px;
         }
-
-        /* প্রতি সারিতে ৩টি করে কার্ড রাখার গ্রিড লেআউট */
         .word-by-word-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* এক সারিতে ৩টি শব্দ */
-            direction: rtl; /* ডান থেকে বামে আরবি সাজানোর জন্য */
+            display: flex;
+            flex-wrap: wrap;
+            direction: rtl;
+            justify-content: flex-start;
             gap: 6px;
             margin-bottom: 15px;
         }
-
         .word-box {
-            background: #f8f9fa;
-            border: 1px solid #edf2f7;
-            border-radius: 6px;
-            padding: 6px 4px;
-            text-align: center;
-        }
-
-        .arabic-word {
-            display: block;
-            font-size: 20px;
-            color: #2d3748;
-            margin-bottom: 4px;
-            direction: rtl;
-        }
-
-        /* রঙের বিন্যাস */
-        .verified-meaning {
-            display: block;
-            font-size: 13px;
-            color: #2d6a4f; /* সবুজ রঙ */
-            font-weight: bold;
-            direction: ltr;
-        }
-
-        .unverified-meaning {
-            display: block;
-            font-size: 13px;
-            color: #4a5568; /* সাধারণ কালো রঙ */
-            direction: ltr;
-        }
-
-        /* উচ্চারণ এবং পূর্ণ অনুবাদ */
-        .transliteration-box {
-            background: #f4f6f8;
-            border-left: 3px solid #1b4332;
-            padding: 12px 15px;
-            font-size: 15.5px;
-            color: #333;
-            margin-bottom: 10px;
-            border-radius: 0 4px 4px 0;
-        }
-
-        .full-translation {
-            background: #f4f6f8;
-            border-left: 4px solid #2d6a4f;
-            padding: 12px 15px;
-            font-size: 15.5px;
-            color: #222;
-            border-radius: 0 4px 4px 0;
-        }
-
-        /* নেভিগেশন বাটন লেআউট */
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 30px;
-            padding-top: 15px;
-            border-top: 2px solid #eee;
-        }
-
-        .nav-left {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            align-items: center;
+            background-color: #f8f9fa;
+            border: 1px solid #edf2f7;
+            padding: 6px 4px;
+            border-radius: 6px;
+            flex: 1 1 calc(33.333% - 6px);
+            max-width: calc(33.333% - 6px);
+            box-sizing: border-box;
         }
-
+        .arabic-word {
+            font-family: 'Meaney', 'Amiri', 'Traditional Arabic', serif;
+            font-size: 20px;
+            color: #1b4332;
+            margin-bottom: 4px;
+        }
+        .verified-meaning {
+            font-size: 13.5px;
+            color: #28a745;
+            font-weight: bold;
+            direction: ltr;
+            text-align: center;
+        }
+        .unverified-meaning {
+            font-size: 13.5px;
+            color: #4a5568;
+            direction: ltr;
+            text-align: center;
+        }
+        .full-translation {
+            background-color: #f8f9fa;
+            border-left: 4px solid #1b4332;
+            padding: 12px 15px;
+            border-radius: 0 6px 6px 0;
+            font-size: 15.5px;
+            color: #2c3e50;
+            direction: ltr;
+        }
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 2px solid #eef2f5;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
         .nav-btn {
+            text-decoration: none;
+            color: #ffffff;
             background-color: #1b4332;
-            color: white;
-            border: none;
             padding: 10px 18px;
             border-radius: 6px;
             font-size: 14px;
             font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            text-align: center;
+            transition: background 0.2s;
         }
-
         .nav-btn:hover {
-            background-color: #143225;
+            background-color: #0d3b2e;
+        }
+        .transliteration-box {
+            display: none;
+            margin-top: 8px;
+            margin-bottom: 8px;
+            padding: 6px 12px;
+            background-color: #f8f9fa;
+            border-left: 3px solid #1b4332;
+            border-radius: 4px;
+            font-style: italic;
+            font-size: 0.95em;
+            color: #2c3e50;
+        }
+        .trans-toggle-btn {
+            background-color: #1b4332;
+            color: #ffffff;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: bold;
+            transition: background 0.2s;
+            margin-top: 4px;
+            margin-bottom: 6px;
+        }
+        .trans-toggle-btn:hover {
+            background-color: #0d3b2e;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-
     <!-- হেডার -->
     <div class="header">
-        <h1 class="sura-title">সূরা আল-ইমরান</h1>
-        <button class="trans-toggle-btn" onclick="toggleTransliteration()" id="transToggleBtn">
-            🙈 উচ্চারণ লুকান
-        </button>
+        <h1>সূরা আল-ইমরান</h1>
+        <button class="trans-toggle-btn" onclick="toggleTransliteration()" id="transToggleBtn">👁️ উচ্চারণ লুকান</button>
         <div class="meta-info">সূরা ৩ | আয়াত: ২০০ | মাদানী</div>
     </div>
 
     <!-- বিসমিল্লাহ -->
-    <div class="bismillah-card">
-        <span class="bismillah-arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
-        <div class="bismillah-translation">"পরম মমতাময়, সদামমতাবদ্ধ আল্লাহর নামে।"</div>
+    <div class="bismillah-box">
+        <span class="bismillah-arabic">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِيمِ</span>
+        <div class="bismillah-meaning">পরম দয়াময়, অসীম দয়ালু আল্লাহর নামে।</div>
     </div>
 
     <!-- আয়াত ৩:৪ -->
     <div class="verse-card">
         <div class="verse-num">৩:৪</div>
         <div class="word-by-word-container">
+
+            <!-- ১. মিন -->
             <div class="word-box">
                 <span class="arabic-word">مِن</span>
-                <span class="verified-meaning">পূর্বে</span>
-            </div>
-            <div class="word-box">
-                <span class="arabic-word">قَبْلُ</span>
                 <span class="verified-meaning">থেকে</span>
             </div>
+
+            <!-- ২. ক্বাবলু -->
+            <div class="word-box">
+                <span class="arabic-word">قَبْلُ</span>
+                <span class="verified-meaning">পূর্বে</span>
+            </div>
+
+            <!-- ৩. হুদান -->
             <div class="word-box">
                 <span class="arabic-word">هُدًى</span>
                 <span class="verified-meaning">দিশা</span>
             </div>
+
+            <!-- ৪. লিন্নাসি -->
             <div class="word-box">
                 <span class="arabic-word">لِّلنَّاسِ</span>
                 <span class="verified-meaning">মানবসমষ্টির জন্য</span>
             </div>
+
+            <!-- ৫. ওয়া আনজালা -->
             <div class="word-box">
                 <span class="arabic-word">وَأَنزَلَ</span>
                 <span class="unverified-meaning">এবং তিনি অবতীর্ণ করেছেন</span>
             </div>
+
+            <!-- ৬. আল-ফুরক্বান -->
             <div class="word-box">
                 <span class="arabic-word">الْفُرْقَانَ</span>
                 <span class="unverified-meaning">পার্থক্যকারী</span>
             </div>
+
+            <!-- ৭. ইন্না -->
             <div class="word-box">
                 <span class="arabic-word">إِنَّ</span>
                 <span class="verified-meaning">নিশ্চয়ই</span>
             </div>
+
+            <!-- ৮. আল্লাজিনা -->
             <div class="word-box">
                 <span class="arabic-word">الَّذِينَ</span>
                 <span class="verified-meaning">যারা</span>
             </div>
+
+            <!-- ৯. কাফারু -->
             <div class="word-box">
                 <span class="arabic-word">كَفَرُوا</span>
                 <span class="verified-meaning">আচ্ছাদন করেছে</span>
             </div>
+
+            <!-- ১০. বি-আয়াতি -->
             <div class="word-box">
                 <span class="arabic-word">بِآيَاتِ</span>
                 <span class="verified-meaning">নিদর্শনসমূহে</span>
             </div>
+
+            <!-- ১১. আল্লাহি -->
             <div class="word-box">
                 <span class="arabic-word">اللَّهِ</span>
                 <span class="verified-meaning">আল্লাহর</span>
             </div>
+
+            <!-- ১২. লাহুম -->
             <div class="word-box">
                 <span class="arabic-word">لَهُمْ</span>
                 <span class="unverified-meaning">তাদের জন্য</span>
             </div>
+
+            <!-- ১৩. 'আজাবুন -->
             <div class="word-box">
                 <span class="arabic-word">عَذَابٌ</span>
                 <span class="unverified-meaning">শাস্তি</span>
             </div>
+
+            <!-- ১৪. শাদিদুন -->
             <div class="word-box">
                 <span class="arabic-word">شَدِيدٌ</span>
                 <span class="unverified-meaning">কঠিন</span>
             </div>
+
+            <!-- ১৫. ওয়াল্লাহু -->
             <div class="word-box">
                 <span class="arabic-word">وَاللَّهُ</span>
                 <span class="unverified-meaning">আর আল্লাহ</span>
             </div>
+
+            <!-- ১৬. 'আজিজুন -->
             <div class="word-box">
                 <span class="arabic-word">عَزِيزٌ</span>
                 <span class="unverified-meaning">পরাক্রমশালী</span>
             </div>
+
+            <!-- ১৭. জু -->
             <div class="word-box">
                 <span class="arabic-word">ذُو</span>
                 <span class="unverified-meaning">অধিকারী</span>
             </div>
+
+            <!-- ১৮. ইনতিক্বাম -->
             <div class="word-box">
                 <span class="arabic-word">انتِقَامٍ</span>
                 <span class="unverified-meaning">প্রতিশোধের</span>
             </div>
+
         </div>
 
         <div class="transliteration-box">
-            <strong>উচ্চারণ:</strong> মিন ক্বাবলু হুদাল লিন্নাাসি ওয়া আনযালাল ফুরক্বান, ইন্নাল্লাযীনা কাফারূ বিআয়াতিল্লাহি লাহুম ‘আযাবুন শাদীদ, ওয়াল্লাহু 'আযীযুন যুনতিক্বাম।
+            <strong>উচ্চারণ:</strong> মিন ক্বাবলু হুদাল লিন্নাসি ওয়া আনজালাল ফুরক্বানা, ইন্নাল্লাজিনা কাফারু বি-আয়া তিল্লাহি লাহুম 'আজাবুন শাদিদ, ওয়াল্লাহু 'আজিজুন জুন তিক্বাম।
         </div>
 
         <div class="full-translation">
-            "পূর্বে থেকে মানবসমষ্টির জন্য দিশা হিসেবে; এবং তিনি পার্থক্যকারী অবতীর্ণ করেছেন। নিশ্চয়ই যারা আল্লাহর নিদর্শনসমূহে আচ্ছাদন করেছে, তাদের জন্য কঠিন শাস্তি; আর আল্লাহ পরাক্রমশালী, প্রতিশোধের অধিকারী।"
+            "পূর্বে থেকে মানবসমষ্টির জন্য দিশা হিসেবে; এবং তিনি পার্থক্যকারী অবতীর্ণ করেছেন। নিশ্চয়ই যারা আল্লাহর নিদর্শনসমূহে আচ্ছাদন করেছে, তাদের জন্য কঠিন শাস্তি; আর আল্লাহ পরাক্রমশালী, প্রতিশোধের অধিকারী।"
         </div>
     </div>
-   <!-- আয়াত ৩:১৩৮ -->
-<div class="verse-card">
-    <div class="verse-num">৩:১৩৮</div>
-    <div class="word-by-word-container">
 
-        <!-- ১. হাজা -->
-        <div class="word-box">
-            <span class="arabic-word">هٰذَا</span>
-            <span class="verified-meaning">এটি</span>
+    <!-- আয়াত ৩:১৩৮ -->
+    <div class="verse-card">
+        <div class="verse-num">৩:১৩৮</div>
+        <div class="word-by-word-container">
+
+            <!-- ১. হাজা -->
+            <div class="word-box">
+                <span class="arabic-word">هٰذَا</span>
+                <span class="verified-meaning">এটি</span>
+            </div>
+
+            <!-- ২. বায়ানুন -->
+            <div class="word-box">
+                <span class="arabic-word">بَيَانٌ</span>
+                <span class="verified-meaning">স্পষ্টীকরণ</span>
+            </div>
+
+            <!-- ৩. লিন্নাসি -->
+            <div class="word-box">
+                <span class="arabic-word">لِّلنَّاسِ</span>
+                <span class="verified-meaning">মানবসমষ্টির জন্য</span>
+            </div>
+
+            <!-- ৪. ওয়া হুদান -->
+            <div class="word-box">
+                <span class="arabic-word">وَهُدًى</span>
+                <span class="verified-meaning">এবং দিশা</span>
+            </div>
+
+            <!-- ৫. ওয়া মাউ'ইজাতুন -->
+            <div class="word-box">
+                <span class="arabic-word">وَمَوْعِظَةٌ</span>
+                <span class="unverified-meaning">এবং উপদেশ</span>
+            </div>
+
+            <!-- ৬. লিল মুত্তাকীন -->
+            <div class="word-box">
+                <span class="arabic-word">لِّلْمُتَّقِينَ</span>
+                <span class="verified-meaning">আত্মরক্ষাকারীদের জন্য</span>
+            </div>
+
         </div>
 
-        <!-- ২. বায়ানুন -->
-        <div class="word-box">
-            <span class="arabic-word">بَيَانٌ</span>
-            <span class="verified-meaning">স্পষ্টীকরণ</span>
+        <div class="transliteration-box">
+            <strong>উচ্চারণ:</strong> হা-জা বা-যা-নুল লিন্নাসি ওয়া হুদাউ ওয়া মাউ'ইজাতুল লিল মুত্তাকীন।
         </div>
 
-        <!-- ৩. লিন্নাসি -->
-        <div class="word-box">
-            <span class="arabic-word">لِّلنَّاسِ</span>
-            <span class="verified-meaning">মানবসমষ্টির জন্য</span>
+        <div class="full-translation">
+            "এটি মানবসমষ্টির জন্য স্পষ্টীকরণ, এবং দিশা, এবং আত্মরক্ষাকারীদের জন্য উপদেশ।"
         </div>
-
-        <!-- ৪. ওয়া হুদান -->
-        <div class="word-box">
-            <span class="arabic-word">وَهُدًى</span>
-            <span class="verified-meaning">এবং দিশা</span>
-        </div>
-
-        <!-- ৫. ওয়া মাউ'ইজাতুন -->
-        <div class="word-box">
-            <span class="arabic-word">وَمَوْعِظَةٌ</span>
-            <span class="unverified-meaning">এবং উপদেশ</span>
-        </div>
-
-        <!-- ৬. লিল মুত্তাকীন -->
-        <div class="word-box">
-            <span class="arabic-word">لِّلْمُتَّقِينَ</span>
-            <span class="verified-meaning">আত্মরক্ষাকারীদের জন্য</span>
-        </div>
-
     </div>
 
-    <!-- উচ্চারণ বক্স (আপনার toggleTransliteration() সুইচের জন্য সঠিকভাবে কাজ করবে) -->
-    <div class="transliteration-box">
-        <strong>উচ্চারণ:</strong> হা-জা বা-যা-নুল লিন্নাসি ওয়া হুদাউ ওয়া মাউ'ইজাতুল লিল মুত্তাকীন।
-    </div>
-
-    <!-- পূর্ণাঙ্গ অনুবাদ বক্স -->
-    <div class="full-translation">
-        "এটি মানবসমষ্টির জন্য স্পষ্টীকরণ, এবং দিশা, এবং আত্মরক্ষাকারীদের জন্য উপদেশ।"
-    </div>
-</div>
-    
-    <!-- নেভিগেশন বাটন (পূর্ববর্তী, পরবর্তী ও সূরা তালিকা) -->
-    <div class="nav-container">
-        <div class="nav-left">
+    <!-- নেভিগেশন -->
+    <div class="navigation">
+        <div>
             <a href="surah-2.html" class="nav-btn">← পূর্ববর্তী সূরা</a>
             <a href="surah-4.html" class="nav-btn">পরবর্তী সূরা →</a>
         </div>
-        <div class="nav-right">
+        <div>
             <a href="../index.html" class="nav-btn">সূরা তালিকা</a>
         </div>
     </div>
-
 </div>
 
 <script>
@@ -366,7 +383,7 @@ function toggleTransliteration() {
     const btn = document.getElementById('transToggleBtn');
     
     if (transBoxes.length === 0) return;
-
+    
     const isHidden = window.getComputedStyle(transBoxes[0]).display === 'none';
     
     transBoxes.forEach(box => {
