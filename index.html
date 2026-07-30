@@ -254,12 +254,89 @@ body.dark-mode div[style*="background: linear-gradient(135deg, #f0fdf4"] strong[
 </header>
 
 <div class="container">
+  <!-- স্বাগতম ও প্রাসঙ্গিক কথা কার্ড -->
+<div class="welcome-card">
+    <h2>স্বাগতম</h2>
+    <p class="welcome-text">
+        কুরআন গবেষণা ও শব্দানুবাদ প্ল্যাটফর্মে আপনাকে স্বাগতম। কুরআনের অনুবাদ-নীতির উপর গবেষণা প্রস্তাব, মূল রুটভিত্তিক ব্যাকরণগত আলোচনা, বিষয়ভিত্তিক প্রবন্ধ ও ভিডিও গবেষণার সংকলনের মূল বিষয়বস্তুগুলোতে প্রবেশ করতে নিচের যেকোনো লিংকে ক্লিক করুন।
+    </p>
 
-    <div class="intro-box">
-        <h2>স্বাগতম</h2>
-        <p>কুরআন গবেষনা ও শব্দানুবাদ প্ল্যাটফর্মে আপনাকে স্বাগতম। কুরআনের অনুবাদ-নীতির উপর গবেষণা প্রস্তাব, মূল রুটভিত্তিক ব্যাকরণগত আলোচনা, বিষয়ভিত্তিক প্রবন্ধ ও ভিডিও গবেষণার সংকলনের মূল বিষয়বস্তুগুলোতে প্রবেশ করতে নিচের লিংকে ক্লিক করুন।</p>
+    <!-- হালকা অপাসিটির ডিভাইডার লাইন -->
+    <hr class="divider">
+
+    <div class="relevant-section">
+        <h3>📖 প্রাসঙ্গিক কথা</h3>
+        <p>গবেষণার মূল উদ্দেশ্য, নীতিমালা ও অনুবাদ সংক্রান্ত সংক্ষিপ্ত পরিচিতি।</p>
+        <a href="prasangik-kotha.html" class="read-btn">পড়ুন →</a>
     </div>
-            <!-- গবেষণা প্রস্তাব (Research Proposal) সেকশন -->
+</div>
+
+<style>
+/* স্বাগতম কার্ডের স্টাইল */
+.welcome-card {
+    background-color: #2d3748; /* আপনার সাইটের ডার্ক থিম অনুযায়ী ব্যাকগ্রাউন্ড */
+    border: 1px solid #4a5568;
+    border-radius: 10px;
+    padding: 24px;
+    margin-bottom: 25px;
+    color: #e2e8f0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-card h2 {
+    color: #48bb78; /* সবুজ হেডিং */
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.welcome-text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #cbd5e0;
+}
+
+/* ডিভাইডার লাইন (Opacity 0.2) */
+.divider {
+    border: 0;
+    height: 1px;
+    background-color: #e2e8f0;
+    opacity: 0.2;
+    margin: 20px 0;
+}
+
+/* প্রাসঙ্গিক কথা সেকশন */
+.relevant-section h3 {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.relevant-section p {
+    font-size: 14px;
+    color: #a0aec0;
+    margin-bottom: 12px;
+}
+
+/* পড়ুন বাটনের স্টাইল */
+.read-btn {
+    display: inline-block;
+    color: #48bb78;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.read-btn:hover {
+    color: #68d391;
+    transform: translateX(4px); /* মাউস নিলে সামান্য ডানপাশে সরবে */
+}
+</style>
+
+    <!-- গবেষণা প্রস্তাব (Research Proposal) সেকশন -->
         <a href="research-proposal.html" class="menu-card" style="margin-bottom: 25px; display: block; border-left: 5px solid #1a5d1a; text-decoration: none; color: inherit;">
             <div style="padding: 5px;">
                 <h3 style="color: #1a5d1a; margin-bottom: 8px;">📝 গবেষণা প্রস্তাব (Research Proposal)</h3>
@@ -271,15 +348,6 @@ body.dark-mode div[style*="background: linear-gradient(135deg, #f0fdf4"] strong[
         </a>
 
     <div class="menu-grid">
-
-        <!-- ১. প্রাসঙ্গিক কথা -->
-        <a href="about.html" class="menu-card">
-            <div>
-                <h3>📖 ১. প্রাসঙ্গিক কথা</h3>
-                <p>গবেষণার মূল উদ্দেশ্য, নীতিমালা ও অনুবাদ সংক্রান্ত সংক্ষিপ্ত পরিচিতি।</p>
-            </div>
-            <div class="card-btn">পড়ুন &rarr;</div>
-        </a>
 
         <!-- ২. বাংলা অনুবাদ (১১৪টি সূরার তালিকা) -->
         <a href="quran/index.html" class="menu-card">
