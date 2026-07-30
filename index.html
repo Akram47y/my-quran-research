@@ -295,22 +295,22 @@ body.dark-mode div[style*="background: linear-gradient(135deg, #f0fdf4"] strong[
 .welcome-text {
     font-size: 15px;
     line-height: 1.7;
-    color: #cbd5e0;
+    color: var(--text-color, #2d3748);
 }
 
-/* ডিভাইডার লাইন (Opacity 0.2) */
+/* বিভাজক লাইন */
 .divider {
     border: 0;
     height: 1px;
-    background-color: #e2e8f0;
-    opacity: 0.2;
+    background-color: #cbd5e0;
+    opacity: 0.3;
     margin: 20px 0;
 }
 
 /* প্রাসঙ্গিক কথা সেকশন */
 .relevant-section h3 {
     font-size: 18px;
-    color: #ffffff;
+    color: #48bb78 !important;
     margin-bottom: 8px;
     display: flex;
     align-items: center;
@@ -319,23 +319,23 @@ body.dark-mode div[style*="background: linear-gradient(135deg, #f0fdf4"] strong[
 
 .relevant-section p {
     font-size: 14px;
-    color: #a0aec0;
+    color: var(--text-muted, #4a5568);
     margin-bottom: 12px;
 }
 
-/* পড়ুন বাটনের স্টাইল */
+/* পড়া শুরু বাটন */
 .read-btn {
     display: inline-block;
-    color: #48bb78;
+    color: #22c55e !important;
     text-decoration: none;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 15px;
     transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .read-btn:hover {
-    color: #68d391;
-    transform: translateX(4px); /* মাউস নিলে সামান্য ডানপাশে সরবে */
+    color: #48bb78 !important;
+    transform: translateX(4px);
 }
 </style>
 
