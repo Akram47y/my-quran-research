@@ -225,25 +225,30 @@
             <a href="56.html" class="nav-btn">পরবর্তী সূরা →</a>
         </div>
     </div>
+<script>
 function togglePronunciation() {
     var pronunBoxes = document.querySelectorAll('.pronunciation-box');
     var btnText = document.getElementById('pronun-text');
     var btnIcon = document.getElementById('pronun-icon');
 
-    var isHidden = pronunBoxes[0].style.display === 'none' || pronunBoxes[0].style.display === '';
+    if (pronunBoxes.length === 0) return;
+
+    // চেক করা হচ্ছে বর্তমানে লুকানো আছে কি না
+    var isHidden = window.getComputedStyle(pronunBoxes[0]).display === 'none';
 
     pronunBoxes.forEach(function(box) {
         box.style.display = isHidden ? 'block' : 'none';
     });
 
     if (isHidden) {
-        btnText.textContent = 'উচ্চারণ লুকান';
-        btnIcon.textContent = '🙈';
+        if (btnText) btnText.textContent = 'উচ্চারণ লুকান';
+        if (btnIcon) btnIcon.textContent = '🙈';
     } else {
-        btnText.textContent = 'উচ্চারণ দেখান';
-        btnIcon.textContent = '👁️';
+        if (btnText) btnText.textContent = 'উচ্চারণ দেখান';
+        if (btnIcon) btnIcon.textContent = '👁️';
     }
 }
+</script>
     
 </body>
 </html>
