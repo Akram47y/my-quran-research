@@ -62,9 +62,10 @@
             margin-bottom: 12px;
             font-size: 16px;
         }
+        /* প্রতি লাইনে ৩টি শব্দ কার্ডের গ্রিড */
         .word-grid {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: 8px;
             direction: rtl;
             margin-bottom: 15px;
@@ -72,25 +73,27 @@
         .word-card {
             background-color: #f8fafc;
             border-radius: 6px;
-            padding: 8px 12px;
+            padding: 10px 6px;
             text-align: center;
-            min-width: 65px;
-            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         .arabic-word {
-            font-size: 22px;
+            font-size: 20px;
             color: #1a202c;
             margin-bottom: 6px;
             direction: rtl;
         }
         .meaning-word {
-            font-size: 14px;
-            color: #008744; /* উজ্জ্বল সবুজ রং */
+            font-size: 13px;
+            color: #008744; /* উজ্জ্বল সবুজ */
             font-weight: bold;
         }
         .meaning-word-black {
-            font-size: 14px;
-            color: #2d3748; /* সাধারণ কালো/ডার্ক রং */
+            font-size: 13px;
+            color: #2d3748; /* স্মরণিকার জন্য ডার্ক/কালো */
             font-weight: bold;
         }
         .pronunciation-box {
@@ -112,6 +115,31 @@
             color: #2d3748;
             line-height: 1.6;
         }
+        /* নেভিগেশন বাটন */
+        .nav-section {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .nav-left-btns {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .nav-btn {
+            background-color: #1a5d1a;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
@@ -131,7 +159,7 @@
     <div class="verse-box">
         <div class="verse-num">৮১:২৭</div>
         
-        <!-- শব্দে শব্দে অর্থ (Word by Word) -->
+        <!-- প্রতি সারিতে ৩টি করে কার্ড -->
         <div class="word-grid">
             <div class="word-card">
                 <div class="arabic-word">إِنْ</div>
@@ -165,26 +193,17 @@
             "এটি অবগতিসমূহের জন্য স্মরণিকা ব্যতীত নয়।"
         </div>
     </div>
-    <!-- নেভিগেশন বাটন সেকশন -->
-<div style="margin-top: 30px; display: flex; justify-content: space-between; align-items: flex-start; gap: 10px;">
-    <!-- বাম পাশের বাটনগুলো -->
-    <div style="display: flex; flex-direction: column; gap: 10px;">
-        <a href="surah-80.html" style="background-color: #1a5d1a; color: white; border: none; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: bold; text-align: center;">
-            &larr; পূর্ববর্তী সূরা
-        </a>
-        <a href="surah-82.html" style="background-color: #1a5d1a; color: white; border: none; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: bold; text-align: center;">
-            পরবর্তী সূরা &rarr;
-        </a>
-    </div>
 
-    <!-- ডান পাশের বাটন -->
-    <div>
-        <a href="index.html" style="background-color: #1a5d1a; color: white; border: none; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: bold; display: inline-block;">
-            সূরা তালিকা
-        </a>
+    <!-- নেভিগেশন বাটন সেকশন -->
+    <div class="nav-section">
+        <div class="nav-left-btns">
+            <a href="surah-80.html" class="nav-btn">&larr; পূর্ববর্তী সূরা</a>
+            <a href="surah-82.html" class="nav-btn">পরবর্তী সূরা &rarr;</a>
+        </div>
+        <div>
+            <a href="index.html" class="nav-btn">সূরা তালিকা</a>
+        </div>
     </div>
-</div>
-    
 </div>
 
 <script>
