@@ -62,9 +62,10 @@
             margin-bottom: 12px;
             font-size: 16px;
         }
+        /* প্রতি লাইনে ঠিক ৩টি করে কার্ডের গ্রিড লেআউট */
         .word-grid {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: 8px;
             direction: rtl;
             margin-bottom: 15px;
@@ -72,20 +73,22 @@
         .word-card {
             background-color: #f8fafc;
             border-radius: 6px;
-            padding: 8px 12px;
+            padding: 10px 6px;
             text-align: center;
-            min-width: 65px;
-            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         .arabic-word {
-            font-size: 22px;
+            font-size: 20px;
             color: #1a202c;
             margin-bottom: 6px;
             direction: rtl;
         }
         .meaning-word {
-            font-size: 14px;
-            color: #008744; /* সকল শব্দ কার্ডের জন্য উজ্জ্বল সবুজ রং */
+            font-size: 13px;
+            color: #008744; /* উজ্জ্বল সবুজ রং */
             font-weight: bold;
         }
         .pronunciation-box {
@@ -151,7 +154,7 @@
     <div class="verse-box">
         <div class="verse-num">২৬:২৩</div>
         
-        <!-- শব্দে শব্দে অর্থ (Word by Word) -->
+        <!-- প্রতি সারিতে ৩টি করে কার্ড (Word by Word) -->
         <div class="word-grid">
             <div class="word-card">
                 <div class="arabic-word">قَالَ</div>
@@ -175,7 +178,7 @@
             </div>
         </div>
 
-        <!-- উচ্চারণ (ডিফল্টভাবে দৃশ্যমান থাকবে) -->
+        <!-- উচ্চারণ -->
         <div class="pronunciation-box" style="display: block;">
             <strong style="color: #1a5d1a;">উচ্চারণ:</strong> ক্বালা ফির্‘আউনু ওয়া মা রব্বুল ‘আ-লামীন।
         </div>
@@ -186,7 +189,7 @@
         </div>
     </div>
 
-    <!-- ছবির মতো নেভিগেশন বাটন সেকশন -->
+    <!-- নেভিগেশন বাটন সেকশন -->
     <div class="nav-section">
         <div class="nav-left-btns">
             <a href="surah-25.html" class="nav-btn">&larr; পূর্ববর্তী সূরা</a>
