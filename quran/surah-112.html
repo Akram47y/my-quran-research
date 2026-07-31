@@ -146,6 +146,11 @@
         <!-- হেডার -->
         <div class="header">
             <h1>সূরা আল-ইখলাস</h1>
+            <div style="text-align: center; margin: 15px 0;">
+    <button id="pronun-toggle" onclick="togglePronunciation()" style="background-color: #1a5d1a; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: bold;">
+        <span id="pronun-icon">👁️</span> <span id="pronun-text">উচ্চারণ দেখান</span>
+    </button>
+            </div>
             <div class="meta-info">সূরা ১১২ | আয়াত: ৪ | মাক্কী</div>
         </div>
 
@@ -176,6 +181,12 @@
                     <span class="verified-meaning">একক</span>
                 </div>
             </div>
+            <!-- ১১০:১ উচ্চারণ সেকশন (যথাযথ পরিবর্তন করে ১১২:১ এর জন্য) -->
+<div class="pronunciation-box" style="display: none; background-color: #f8fafc; border-left: 3px solid #1a5d1a; padding: 12px 15px; margin-bottom: 10px; border-radius: 4px;">
+    <p style="margin: 0; font-size: 15px; color: #2d3748; line-height: 1.6;">
+        <strong style="color: #1a5d1a;">উচ্চারণ:</strong> ক্বুল হুওয়াল্লা-হু আহাদ।
+    </p>
+</div>
             <div class="full-translation">
                 "বলো, তিনিই আল্লাহ, একক।"
             </div>
@@ -194,6 +205,12 @@
                     <span class="verified-meaning">সর্বাশ্রয়</span>
                 </div>
             </div>
+            <!-- ১১২:২ উচ্চারণ সেকশন -->
+<div class="pronunciation-box" style="display: none; background-color: #f8fafc; border-left: 3px solid #1a5d1a; padding: 12px 15px; margin-bottom: 10px; border-radius: 4px;">
+    <p style="margin: 0; font-size: 15px; color: #2d3748; line-height: 1.6;">
+        <strong style="color: #1a5d1a;">উচ্চারণ:</strong> আল্লা-হুচ্ছামাদ।
+    </p>
+</div>
             <div class="full-translation">
                 "আল্লাহ, সর্বাশ্রয়।"
             </div>
@@ -220,6 +237,12 @@
                     <span class="verified-meaning">তিনি জন্ম নেন</span>
                 </div>
             </div>
+            <!-- ১১২:৩ উচ্চারণ সেকশন -->
+<div class="pronunciation-box" style="display: none; background-color: #f8fafc; border-left: 3px solid #1a5d1a; padding: 12px 15px; margin-bottom: 10px; border-radius: 4px;">
+    <p style="margin: 0; font-size: 15px; color: #2d3748; line-height: 1.6;">
+        <strong style="color: #1a5d1a;">উচ্চারণ:</strong> লাম ইয়ালিদ ওয়া লাম ইউলাদ।
+    </p>
+</div>
             <div class="full-translation">
                 "তিনি জন্ম দেননি এবং তিনি জন্ম নেননি।"
             </div>
@@ -250,6 +273,12 @@
                     <span class="verified-meaning">কেউ</span>
                 </div>
             </div>
+            <!-- ১১২:৪ উচ্চারণ সেকশন -->
+<div class="pronunciation-box" style="display: none; background-color: #f8fafc; border-left: 3px solid #1a5d1a; padding: 12px 15px; margin-bottom: 10px; border-radius: 4px;">
+    <p style="margin: 0; font-size: 15px; color: #2d3748; line-height: 1.6;">
+        <strong style="color: #1a5d1a;">উচ্চারণ:</strong> ওয়া লাম ইয়াকুল-লাহূ কুফুওয়ান আহাদ।
+    </p>
+</div>
             <div class="full-translation">
                 "এবং তাঁর জন্য সমকক্ষ কেউ হয়নি।"
             </div>
@@ -262,6 +291,29 @@
             <a href="surah-113.html" class="nav-btn">পরবর্তী সূরা →</a>
         </div>
     </div>
+<script>
+function togglePronunciation() {
+    var pronunBoxes = document.querySelectorAll('.pronunciation-box');
+    var btnText = document.getElementById('pronun-text');
+    var btnIcon = document.getElementById('pronun-icon');
 
+    if (pronunBoxes.length === 0) return;
+
+    var isHidden = window.getComputedStyle(pronunBoxes[0]).display === 'none';
+
+    pronunBoxes.forEach(function(box) {
+        box.style.display = isHidden ? 'block' : 'none';
+    });
+
+    if (isHidden) {
+        if (btnText) btnText.textContent = 'উচ্চারণ লুকান';
+        if (btnIcon) btnIcon.textContent = '🙈';
+    } else {
+        if (btnText) btnText.textContent = 'উচ্চারণ দেখান';
+        if (btnIcon) btnIcon.textContent = '👁️';
+    }
+}
+</script>
+    
 </body>
 </html>
