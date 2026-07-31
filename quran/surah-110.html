@@ -146,12 +146,11 @@
         <!-- হেডার -->
         <div class="header">
             <h1>সূরা আন-নাস্‌র</h1>
-            <!-- ১১০:১ উচ্চারণ সেকশন -->
-<div class="pronunciation-box" style="display: none; background-color: #f8fafc; border-left: 3px solid #1a5d1a; padding: 12px 15px; margin-bottom: 10px; border-radius: 4px;">
-    <p style="margin: 0; font-size: 15px; color: #2d3748; line-height: 1.6;">
-        <strong style="color: #1a5d1a;">উচ্চারণ:</strong> ইজ়া- জা-আ নাসরুল্লাহি ওয়াল ফাতহ।
-    </p>
-</div>
+            <div style="text-align: center; margin: 15px 0;">
+    <button id="pronun-toggle" onclick="togglePronunciation()" style="background-color: #1a5d1a; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: bold;">
+        <span id="pronun-icon">👁️</span> <span id="pronun-text">উচ্চারণ দেখান</span>
+    </button>
+            </div>
             <div class="meta-info">সূরা ১১০ | আয়াত: ৩ | মাদানী</div>
         </div>
 
@@ -186,6 +185,12 @@
                     <span class="verified-meaning">এবং সেই উন্মুক্ততা</span>
                 </div>
             </div>
+            <!-- ১১০:১ উচ্চারণ সেকশন -->
+<div class="pronunciation-box" style="display: none; background-color: #f8fafc; border-left: 3px solid #1a5d1a; padding: 12px 15px; margin-bottom: 10px; border-radius: 4px;">
+    <p style="margin: 0; font-size: 15px; color: #2d3748; line-height: 1.6;">
+        <strong style="color: #1a5d1a;">উচ্চারণ:</strong> ইজ়া- জা-আ নাসরুল্লাহি ওয়াল ফাতহ।
+    </p>
+</div>
             <div class="full-translation">
                 "যখন এলো আল্লাহর সহায়তা এবং সেই উন্মুক্ততা।"
             </div>
@@ -224,6 +229,12 @@
                     <span class="verified-meaning">দলে দলে</span>
                 </div>
             </div>
+            <!-- ১১০:২ উচ্চারণ সেকশন -->
+<div class="pronunciation-box" style="display: none; background-color: #f8fafc; border-left: 3px solid #1a5d1a; padding: 12px 15px; margin-bottom: 10px; border-radius: 4px;">
+    <p style="margin: 0; font-size: 15px; color: #2d3748; line-height: 1.6;">
+        <strong style="color: #1a5d1a;">উচ্চারণ:</strong> ওয়া রাআইতান-না-সা ইয়াদখুলূনা ফী দীনিল্লা-হি আফওয়া-জা-।
+    </p>
+</div>
             <div class="full-translation">
                 “এবং তুমি মানবসমষ্টিকে দেখবে আল্লাহর দায়বদ্ধতার মধ্যে দলে দলে প্রবেশ করতে।”
             </div>
@@ -262,6 +273,12 @@
                     <span class="verified-meaning">প্রত্যাবর্তনগ্রাহী</span>
                 </div>
             </div>
+            <!-- ১১০:৩ উচ্চারণ সেকশন -->
+<div class="pronunciation-box" style="display: none; background-color: #f8fafc; border-left: 3px solid #1a5d1a; padding: 12px 15px; margin-bottom: 10px; border-radius: 4px;">
+    <p style="margin: 0; font-size: 15px; color: #2d3748; line-height: 1.6;">
+        <strong style="color: #1a5d1a;">উচ্চারণ:</strong> ফাসাব্বিহ বিহামদি রাব্বিকা ওয়াস্তাগফিরহু, ইন্নাহূ কা-না তাউওয়া-বা-।
+    </p>
+</div>
             <div class="full-translation">
                 “সুতরাং তুমি সচল থাকো তোমার প্রতিপালকের প্রশংসাসহ এবং তাঁর ক্ষমা অন্বেষণ কর। নিশ্চয়ই তিনি হচ্ছেন প্রত্যাবর্তনগ্রাহী।"
             </div>
@@ -274,6 +291,29 @@
             <a href="111.html" class="nav-btn">পরবর্তী সূরা →</a>
         </div>
     </div>
+<script>
+function togglePronunciation() {
+    var pronunBoxes = document.querySelectorAll('.pronunciation-box');
+    var btnText = document.getElementById('pronun-text');
+    var btnIcon = document.getElementById('pronun-icon');
 
+    if (pronunBoxes.length === 0) return;
+
+    var isHidden = window.getComputedStyle(pronunBoxes[0]).display === 'none';
+
+    pronunBoxes.forEach(function(box) {
+        box.style.display = isHidden ? 'block' : 'none';
+    });
+
+    if (isHidden) {
+        if (btnText) btnText.textContent = 'উচ্চারণ লুকান';
+        if (btnIcon) btnIcon.textContent = '🙈';
+    } else {
+        if (btnText) btnText.textContent = 'উচ্চারণ দেখান';
+        if (btnIcon) btnIcon.textContent = '👁️';
+    }
+}
+</script>
+    
 </body>
 </html>
