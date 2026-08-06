@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ধাপ ৩: রুট (Root) ধারণার বাস্তবতা ও সীমাবদ্ধতা</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-color: #e0e0e0;
+            --accent-color: #00e676;
+            --border-color: #2a2a2a;
+        }
+
+        body {
+            font-family: 'SolaimanLipi', Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            color: var(--accent-color);
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-color);
+            opacity: 0.9;
+        }
+
+        .proposal-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--accent-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .proposal-card h2 {
+            color: var(--accent-color);
+            font-size: 18px;
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+
+        .proposal-card h3 {
+            color: var(--text-color);
+            font-size: 16px;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            line-height: 1.7;
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+
+        .proposal-list {
+            padding-left: 20px;
+        }
+
+        .proposal-list li {
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .footer-note {
+            font-style: italic;
+            background-color: rgba(0,0,0,0.2);
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px dashed var(--accent-color);
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .nav-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            gap: 8px;
+        }
+
+        .nav-btn {
+            display: inline-block;
+            background-color: var(--card-bg);
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+            padding: 10px 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        .nav-btn:hover {
+            background-color: var(--accent-color);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>রসমভিত্তিক প্রি-গ্রামাটিক্যাল কোর-সেমান্টিক পদ্ধতি</h1>
+        <div class="subtitle">"আরবি ভাষা ও কুরআনের শব্দার্থ বিশ্লেষণের একটি গবেষণা-প্রস্তাব"</div>
+    </header>
+
+    <!-- Card 1 -->
+    <div class="proposal-card">
+        <h2>ধাপ ৩. রুট (Root) ধারণার বাস্তবতা ও সীমাবদ্ধতা</h2>
+        
+        <h3>ভূমিকা</h3>
+        <p>গত ধাপ ২-এ আমরা দেখেছি কীভাবে প্রাতিষ্ঠানিক ব্যাকরণ কুরআনিক পাঠের মুক্ত ধারণাকে একটি নির্দিষ্ট ব্যাখ্যা কাঠামোর মধ্যে সীমাবদ্ধ করেছে। এখন প্রশ্ন হলো, ব্যাকরণ আসার আগে আরবি ভাষার মূল ভিত্তি কী ছিল? উত্তর হলো: <strong>শব্দের রুট (Root System) এবং এর কেন্দ্রীয় কোর-ভাব (Core Semantic Meaning)।</strong></p>
+        
+        <p>সেমেটিক ভাষাসমূহে, বিশেষ করে ক্লাসিক্যাল আরবিতে, প্রতিটি শব্দ সাধারণত তিন অক্ষরের একটি মূল বা রুট থেকে নির্গত হয়। প্রতিটি রুটের একটি মৌলিক ও সার্বজনীন অর্থ থাকে। তবে এই রুটভিত্তিক বিশ্লেষণে একটি সূক্ষ্ম কিন্তু অত্যন্ত গুরুত্বপূর্ণ ঝুঁকি রয়েছে— <em>শব্দের অর্থকে অতিরিক্ত প্রসারিত করা বা মূল কাঠামোর বাইর থেকে রূপক অর্থ বানিয়ে নেওয়া।</em></p>
+        
+        <p>এই গবেষণার প্রস্তাবনা হলো: রুটভিত্তিক অর্থ বিশ্লেষণ অবশ্যই করতে হবে, তবে তা হতে হবে কুরআনিক পাঠ ও রসমের নিজস্ব ব্যবহারের সীমানার মধ্যে।</p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="proposal-card">
+        <h2>রুটের কেন্দ্রীয় কোর-ধারণা (Core Meaning)</h2>
+        <p>যেকোনো সেমেটিক মূলে একটি কেন্দ্রীয় ভাব বা Core Meaning থাকে। যখন উক্ত রুট থেকে বিভিন্ন রূপ (Derivatives) বা ফর্ম তৈরি হয়, তখন সেই মৌলিক ভাবটি সব রূপেই বজায় থাকে।</p>
+        <p>উদাহরণস্বরূপ, রুট <strong>ক-ত-ব (ক-ত-ব)</strong>-এর মূল কোর-ধারণা হলো 'একত্রিত করা' বা 'লিপিবদ্ধ করা'। এই রুট থেকে গঠিত <em>কিতাাব</em> (বই), <em>কাতিব</em> (লেখক), <em>মাকতাব</em> (কার্যালয়) বা <em>কাতাবা</em> (সে লিখেছে)—সবগুলোর মধ্যেই একই মৌলিক ধারণা কার্যকর।</p>
+        <p>কুরআনের ভাষা বিশ্লেষণের ক্ষেত্রে এই কোর-ভাব চিহ্নিত করা অপরিহার্য, যাতে একটি রুট থেকে আসা বিভিন্ন আয়াতের শব্দগুলোকে একই সূত্রে অনুধাবন করা যায়।</p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="proposal-card">
+        <h2>বাংলা ভাষার দৃষ্টান্ত ও কোর-ভাবের প্রয়োগ</h2>
+        <p>এখন আমরা বাংলা ভাষা নিয়ে একটি ধারণা আলোচনা করব:</p>
+        <p>যেমন: <strong>"বল"</strong> শব্দটি বিবেচনা করা যাক।</p>
+        <p>এখানে থেকে বোঝা যাচ্ছে "বল" সাবজেক্ট নয়, বরং সাবজেক্টের সাথে সম্পর্কিত হয়ে অর্থ প্রকাশ পায়।</p>
+        <p>অতএব "বল" এখানে স্বাধীন সাবজেক্ট নয়। এটি একটি কোর-ধারণা যা স্থান ভেদে প্রয়োগ পায়।</p>
+        
+        <ul class="proposal-list">
+            <li>১) একটি রুটের একটি কেন্দ্রীয় ধারণা থাকে।</li>
+        </ul>
+
+        <div class="footer-note">
+            <strong>মজার ব্যাপার হলো:</strong> বাংলার এই "বল" শব্দটি বিভিন্ন ক্ষেত্রে ভিন্ন ভাব আনে:
+            <br>• খেলার বল: শক্তির প্রয়োগে চলে।
+            <br>• কথা বলা: মনের ভাবের প্রকাশ।
+            <br>• গায়ের বল: শক্তির প্রকাশ।
+        </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="proposal-card">
+        <h2>গবেষণার লক্ষ্য</h2>
+        <p>এই ধাপের উদ্দেশ্য রুট-ভিত্তিক বিশ্লেষণকে অস্বীকার করা নয়; বরং ব্যাকরণিক জটিলতার আগেই শব্দসমূহের মূল ধারায় ফিরে যাওয়া।</p>
+        <p>যদি এই নীতিটি পরীক্ষায় সমর্থিত হয়, তাহলে একই রুটের অধীনে আসা শব্দগুলোর মধ্যে একটি ধারাবাহিক শৃঙ্খলা খুঁজে পাওয়া সম্ভব হবে।</p>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="nav-navigation">
+        <a href="step2.html" class="nav-btn">&larr; ধাপ ২</a>
+        <a href="research-proposal.html" class="nav-btn">মূল তালিকায় ফিরুন</a>
+        <a href="step4.html" class="nav-btn">ধাপ ৪ &rarr;</a>
+    </div>
+</div>
+
+</body>
+</html>
