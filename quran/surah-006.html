@@ -178,86 +178,177 @@
     <div class="sura-meta">সূরা ৬ | আয়াত: ১৬৫ | মাক্কী</div>
   </div>
 
-      <div class="verse-card-container">
+          <style>
+      .verse-card {
+        border: 1px solid #f0f0f0;
+        border-radius: 12px;
+        padding: 16px 12px;
+        background-color: #ffffff;
+      }
+      .verse-number {
+        font-size: 18px;
+        font-weight: bold;
+        color: #333333;
+        margin-bottom: 12px;
+      }
+      .words-grid {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+        gap: 8px;
+        justify-content: flex-start;
+        margin-bottom: 16px;
+      }
+      .word-card {
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        padding: 12px 6px;
+        text-align: center;
+        width: calc(33.33% - 6px);
+        box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .arabic-text {
+        font-family: 'Amiri', serif;
+        font-size: 22px;
+        color: #222222;
+        margin-bottom: 6px;
+        direction: rtl;
+      }
+      .bangla-text {
+        font-size: 13px;
+        font-weight: bold;
+      }
+      .text-green {
+        color: #0f8a42;
+      }
+      .text-black {
+        color: #222222;
+      }
+      .info-box {
+        background-color: #f8f9fa;
+        border-left: 4px solid #115e2e;
+        padding: 12px 14px;
+        border-radius: 0 8px 8px 0;
+        font-size: 14px;
+        line-height: 1.6;
+        color: #333333;
+        margin-bottom: 10px;
+        text-align: left;
+      }
+      .pronunciation-title {
+        font-weight: bold;
+        color: #115e2e;
+      }
+      .navigation-section {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .nav-top-row {
+        display: flex;
+        gap: 8px;
+      }
+      .nav-btn {
+        background-color: #115e2e;
+        color: white;
+        border: none;
+        padding: 10px 12px;
+        border-radius: 6px;
+        font-size: 14px;
+        text-decoration: none;
+        text-align: center;
+        flex: 1;
+        display: inline-block;
+      }
+      .nav-btn-next {
+        width: 50%;
+      }
+    </style>
+
+    <div class="verse-card">
       <div class="verse-number">৬:৮৬</div>
-      
-      <div class="word-card-container">
-        <div class="word-box">
-          <span class="arabic-word">وَإِسْمَاعِيلَ</span>
-          <span class="verified-meaning">এবং ইসমাঈল</span>
+
+      <div class="words-grid">
+        <div class="word-card">
+          <div class="arabic-text">وَإِسْمَاعِيلَ</div>
+          <div class="bangla-text text-green">এবং ইসমাঈল</div>
         </div>
 
-        <div class="word-box">
-          <span class="arabic-word">وَالْيَسَعَ</span>
-          <span class="verified-meaning">ও আল-ইয়াসা‘</span>
+        <div class="word-card">
+          <div class="arabic-text">وَالْيَسَعَ</div>
+          <div class="bangla-text text-green">ও আল-ইয়াসা‘</div>
         </div>
 
-        <div class="word-box">
-          <span class="arabic-word">وَيُونُسَ</span>
-          <span class="verified-meaning">এবং ইউনুস</span>
+        <div class="word-card">
+          <div class="arabic-text">وَيُونُسَ</div>
+          <div class="bangla-text text-green">এবং ইউনুস</div>
         </div>
 
-        <div class="word-box">
-          <span class="arabic-word">وَلُوطًا</span>
-          <span class="verified-meaning">ও লূতকে</span>
+        <div class="word-card">
+          <div class="arabic-text">وَلُوطًا</div>
+          <div class="bangla-text text-green">ও লূতকে</div>
         </div>
 
-        <div class="word-box">
-          <span class="arabic-word">وَكُلًّا</span>
-          <span class="verified-meaning">এবং প্রত্যেককে</span>
+        <div class="word-card">
+          <div class="arabic-text">وَكُلًّا</div>
+          <div class="bangla-text text-green">এবং প্রত্যেককে</div>
         </div>
 
-        <div class="word-box">
-          <span class="arabic-word">فَضَّلْنَا</span>
-          <span class="verified-meaning" style="color: #222222;">আমরা শ্রেষ্ঠত্ব দিয়েছি</span>
+        <div class="word-card">
+          <div class="arabic-text">فَضَّلْنَا</div>
+          <div class="bangla-text text-black">আমরা শ্রেষ্ঠত্ব দিয়েছি</div>
         </div>
 
-        <div class="word-box">
-          <span class="arabic-word">عَلَى</span>
-          <span class="verified-meaning">উপর</span>
+        <div class="word-card">
+          <div class="arabic-text">عَلَى</div>
+          <div class="bangla-text text-green">উপর</div>
         </div>
 
-        <div class="word-box">
-          <span class="arabic-word">الْعَالَمِينَ</span>
-          <span class="verified-meaning">সর্ব-জগতসমূহের</span>
+        <div class="word-card">
+          <div class="arabic-text">الْعَالَمِينَ</div>
+          <div class="bangla-text text-green">সর্ব-জগতসমূহের</div>
         </div>
       </div>
 
-      <!-- উচ্চারণ বক্স -->
-      <div class="transliteration-box">
-        <strong>উচ্চারণ:</strong> ওয়া ইসমা'ঈলা ওয়াল-ইয়াছা'আ ওয়া ইউনুছা ওয়া লূত্বান, ওয়া কুল্লান ফাদ্বদ্বালনা 'আলাল-'আলামীন।
+      <div class="info-box" id="pronunciation-box">
+        <span class="pronunciation-title">উচ্চারণ:</span> ওয়া ইসমা'ঈলা ওয়াল-ইয়াছা'আ ওয়া ইউনুছা ওয়া লূত্বান, ওয়া কুল্লান ফাদ্বদ্বালনা 'আলাল-'আলামীন।
       </div>
 
-      <!-- পূর্ণাঙ্গ অনুবাদ -->
-      <div class="full-translation">
+      <div class="info-box">
         "এবং ইসমাঈল ও আল-ইয়াসা‘, এবং ইউনুস ও লূতকে। এবং প্রত্যেককে আমরা সর্ব-জগতসমূহের উপর শ্রেষ্ঠত্ব দিয়েছি।"
       </div>
     </div>
 
-    <!-- নেভিগেশন -->
-    <div class="navigation">
-      <a href="surah-005.html" class="nav-btn">← পূর্ববর্তী সূরা</a>
-      <a href="index.html" class="nav-btn">সূরা তালিকা</a>
-      <a href="surah-007.html" class="nav-btn">পরবর্তী সূরা →</a>
+    <div class="navigation-section">
+      <div class="nav-top-row">
+        <a href="surah-005.html" class="nav-btn">← পূর্ববর্তী সূরা</a>
+        <a href="index.html" class="nav-btn">সূরা তালিকা</a>
+      </div>
+      <a href="surah-007.html" class="nav-btn nav-btn-next">পরবর্তী সূরা →</a>
     </div>
 
 <script>
-function toggleTransliteration() {
-  const transBoxes = document.querySelectorAll('.transliteration-box');
-  const btn = document.getElementById('transToggleBtn');
+  let isPronunciationVisible = true;
 
-  if (transBoxes.length === 0) return;
+  function togglePronunciation() {
+    const pronunciationBox = document.getElementById('pronunciation-box');
+    const btnText = document.getElementById('btn-text');
 
-  const isHidden = window.getComputedStyle(transBoxes[0]).display === 'none';
+    isPronunciationVisible = !isPronunciationVisible;
 
-  transBoxes.forEach(box => {
-    box.style.display = isHidden ? 'block' : 'none';
-  });
-
-  if (btn) {
-    btn.innerHTML = isHidden ? '🙈 উচ্চারণ লুকান' : '👁️ উচ্চারণ দেখান';
+    if (isPronunciationVisible) {
+      pronunciationBox.style.display = 'block';
+      if(btnText) btnText.textContent = 'উচ্চারণ লুকান';
+    } else {
+      pronunciationBox.style.display = 'none';
+      if(btnText) btnText.textContent = 'উচ্চারণ দেখান';
+    }
   }
-}
 </script>
 
 </body>
