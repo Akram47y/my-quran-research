@@ -1,1 +1,282 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>সূরা আল-আন'আম - ৬:৮৬</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla:ital@0;1&family=Amiri&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Tiro Bangla', serif;
+    }
 
+    body {
+      background-color: #f4f5f7;
+      display: flex;
+      justify-content: center;
+      padding: 20px 10px;
+    }
+
+    .main-card {
+      background-color: #ffffff;
+      width: 100%;
+      max-width: 480px;
+      border-radius: 16px;
+      padding: 24px 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      border: 1px solid #eaeaea;
+    }
+
+    .header-section {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .sura-title {
+      color: #0f541e;
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .toggle-btn {
+      background-color: #0f541e;
+      color: #ffffff;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-size: 15px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
+    .sura-meta {
+      color: #666666;
+      font-size: 14px;
+    }
+
+    .verse-card {
+      border: 1px solid #f0f0f0;
+      border-radius: 12px;
+      padding: 16px 12px;
+      background-color: #fafafa;
+    }
+
+    .verse-number {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 12px;
+    }
+
+    .words-grid {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row-reverse; /* আরবি লেআউটের জন্য ডান থেকে বাম */
+      gap: 8px;
+      justify-content: flex-start;
+      margin-bottom: 16px;
+    }
+
+    .word-card {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 10px 6px;
+      text-align: center;
+      min-width: 85px;
+      flex: 1 1 calc(33.33% - 8px);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .arabic-text {
+      font-family: 'Amiri', serif;
+      font-size: 22px;
+      color: #222222;
+      margin-bottom: 4px;
+      direction: rtl;
+    }
+
+    .transliteration {
+      font-size: 11px;
+      color: #888888;
+      margin-bottom: 4px;
+      display: none; /* ডিফল্টভাবে লুকানো থাকবে */
+    }
+
+    .bangla-text {
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    /* টেক্সট কালার ক্লাস */
+    .text-green {
+      color: #0f541e;
+    }
+
+    .text-black {
+      color: #222222;
+    }
+
+    .full-translation-box {
+      background-color: #f5f5f5;
+      border-left: 4px solid #0f541e;
+      padding: 12px 14px;
+      border-radius: 0 8px 8px 0;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #333333;
+    }
+
+    .navigation-section {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .nav-top-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .nav-btn {
+      background-color: #0f541e;
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .nav-btn-next {
+      width: 48%;
+    }
+  </style>
+</head>
+<body>
+
+<div class="main-card">
+  <!-- হেডার সেকশন -->
+  <div class="header-section">
+    <h1 class="sura-title">সূরা আল-আন'আম</h1>
+    <button class="toggle-btn" onclick="togglePronunciation()">
+      👁️ <span id="btn-text">উচ্চারণ দেখান</span>
+    </button>
+    <div class="sura-meta">সূরা ৬ | আয়াত: ১৬৫ | মাক্কী</div>
+  </div>
+
+  <!-- আয়াত সেকশন -->
+  <div class="verse-card">
+    <div class="verse-number">৬:৮৬</div>
+
+    <!-- শব্দভিত্তিক গ্রিড (ডান থেকে বামে সাজানো) -->
+    <div class="words-grid">
+      
+      <!-- ১. وَإِسْمَاعِيلَ -->
+      <div class="word-card">
+        <div class="arabic-text">وَإِسْمَاعِيلَ</div>
+        <div class="transliteration">ওয়া ইসমা'ঈলা</div>
+        <div class="bangla-text text-green">এবং ইসমাঈল</div>
+      </div>
+
+      <!-- ২. وَالْيَسَعَ -->
+      <div class="word-card">
+        <div class="arabic-text">وَالْيَسَعَ</div>
+        <div class="transliteration">ওয়াল-ইয়াছা'আ</div>
+        <div class="bangla-text text-green">ও আল-ইয়াসা‘</div>
+      </div>
+
+      <!-- ৩. وَيُونُسَ -->
+      <div class="word-card">
+        <div class="arabic-text">وَيُونُسَ</div>
+        <div class="transliteration">ওয়া ইউনুছা</div>
+        <div class="bangla-text text-green">এবং ইউনুস</div>
+      </div>
+
+      <!-- ৪. وَلُوطًا -->
+      <div class="word-card">
+        <div class="arabic-text">وَلُوطًا</div>
+        <div class="transliteration">ওয়া লূত্বান</div>
+        <div class="bangla-text text-green">ও লূতকে</div>
+      </div>
+
+      <!-- ৫. وَكُلًّا -->
+      <div class="word-card">
+        <div class="arabic-text">وَكُلًّا</div>
+        <div class="transliteration">ওয়া কুল্লান</div>
+        <div class="bangla-text text-green">এবং প্রত্যেককে</div>
+      </div>
+
+      <!-- ৬. فَضَّلْنَا (কালো রঙের টেক্সট) -->
+      <div class="word-card">
+        <div class="arabic-text">فَضَّلْنَا</div>
+        <div class="transliteration">ফাদ্বদ্বালনা</div>
+        <div class="bangla-text text-black">আমরা শ্রেষ্ঠত্ব দিয়েছি</div>
+      </div>
+
+      <!-- ৭. عَلَى -->
+      <div class="word-card">
+        <div class="arabic-text">عَلَى</div>
+        <div class="transliteration">'আলা</div>
+        <div class="bangla-text text-green">উপর</div>
+      </div>
+
+      <!-- ৮. الْعَالَمِينَ -->
+      <div class="word-card">
+        <div class="arabic-text">الْعَالَمِينَ</div>
+        <div class="transliteration">আল-'আলামীন</div>
+        <div class="bangla-text text-green">সর্ব-জগতসমূহের</div>
+      </div>
+
+    </div>
+
+    <!-- পূর্ণাঙ্গ অনুবাদ -->
+    <div class="full-translation-box">
+      "এবং ইসমাঈল ও আল-ইয়াসা‘, এবং ইউনুস ও লূতকে। এবং প্রত্যেককে আমরা সর্ব-জগতসমূহের উপর শ্রেষ্ঠত্ব দিয়েছি।"
+    </div>
+  </div>
+
+  <!-- নেভিগেশন বাটন -->
+  <div class="navigation-section">
+    <div class="nav-top-row">
+      <button class="nav-btn">← পূর্ববর্তী সূরা</button>
+      <button class="nav-btn">সূরা তালিকা</button>
+    </div>
+    <button class="nav-btn nav-btn-next">পরবর্তী সূরা →</button>
+  </div>
+</div>
+
+<script>
+  let isPronunciationVisible = false;
+
+  function togglePronunciation() {
+    const transliterations = document.querySelectorAll('.transliteration');
+    const btnText = document.getElementById('btn-text');
+
+    isPronunciationVisible = !isPronunciationVisible;
+
+    transliterations.forEach(el => {
+      el.style.display = isPronunciationVisible ? 'block' : 'none';
+    });
+
+    btnText.textContent = isPronunciationVisible ? 'উচ্চারণ লুকান' : 'উচ্চারণ দেখান';
+  }
+</script>
+
+</body>
+</html>
