@@ -3,261 +3,334 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ধাপ ৪. কোর-সেমান্টিক মানচিত্র ও আরবি অক্ষরের ধারণাগত ধারা - কুরআন গবেষণা</title>
+    <title>ধাপ ৪. কোর-সেমান্টিক মানচিত্র ও আরবি অক্ষরের ধারণাগত ধারা</title>
     <style>
         :root {
-            --primary-color: #1b4332;
-            --accent-color: #2d6a4f;
-            --bg-color: #f8f9fa;
-            --card-bg: #ffffff;
-            --text-color: #212529;
-            --border-color: #e9ecef;
+            --bg-dark: #121212;
+            --card-bg: #1e1e1e;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --accent-green: #00e676;
+            --accent-green-dark: #00a854;
+            --border-green: #00e676;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'SolaimanLipi', 'Kalpurush', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            font-family: 'SolaimanLipi', 'Kalpurush', 'Segoe UI', Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
             line-height: 1.8;
             margin: 0;
-            padding: 20px;
+            padding: 15px;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
-        h1 {
-            color: var(--primary-color);
-            border-bottom: 3px solid var(--accent-color);
-            padding-bottom: 10px;
-            font-size: 1.8rem;
+        /* হেডার সেকশন */
+        .site-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .main-title {
+            color: var(--accent-green);
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .sub-title {
+            color: var(--text-muted);
+            font-size: 0.95rem;
             margin-top: 0;
         }
 
+        /* সেকশন কার্ড (সবুজ বাম বর্ডার সহ) */
+        .section-card {
+            background-color: var(--card-bg);
+            border-left: 4px solid var(--border-green);
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
         h2 {
-            color: var(--accent-color);
-            font-size: 1.4rem;
-            margin-top: 25px;
+            color: var(--accent-green);
+            font-size: 1.3rem;
+            margin-top: 0;
+            margin-bottom: 15px;
         }
 
-        .intro-box {
-            background-color: #e8f5e9;
-            border-left: 4px solid var(--accent-color);
-            padding: 15px 20px;
-            margin: 20px 0;
-            border-radius: 0 8px 8px 0;
+        p {
+            margin-bottom: 15px;
+            font-size: 1rem;
+            color: var(--text-main);
         }
 
-        .highlight-quote {
-            background-color: #fff3cd;
-            border: 1px solid #ffeeba;
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* নোট/হাইলাইট বক্স */
+        .note-box {
+            border: 1px dashed var(--border-green);
+            border-radius: 6px;
             padding: 15px;
-            border-radius: 8px;
-            margin: 20px 0;
-            font-weight: 500;
+            margin: 15px 0;
+            background-color: rgba(0, 230, 118, 0.05);
+            font-style: italic;
+            color: var(--text-main);
         }
 
-        .letters-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .letter-card {
-            background: #fdfdfd;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 12px 16px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .letter-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-            border-color: var(--accent-color);
-        }
-
-        .letter-title {
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            margin-bottom: 6px;
+        /* ২৮ অক্ষরের তালিকা */
+        .letters-list {
             display: flex;
-            align-items: center;
-            gap: 8px;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 15px;
         }
 
-        .arabic-char {
-            font-size: 1.4rem;
-            color: var(--accent-color);
-            font-family: 'Amiri', 'Traditional Arabic', serif;
+        .letter-item {
+            background-color: #252525;
+            border: 1px solid #333;
+            border-radius: 6px;
+            padding: 12px 15px;
+        }
+
+        .letter-name {
+            color: var(--accent-green);
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 4px;
         }
 
         .letter-desc {
+            color: #ccc;
             font-size: 0.95rem;
-            color: #495057;
         }
 
-        footer {
+        /* নেভিগেশন বার - ছবিতে দেখানো লেআউট অনুযায়ী */
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
             margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border-color);
-            font-size: 0.95rem;
-            color: #495057;
+            margin-bottom: 20px;
         }
 
-        @media (max-width: 600px) {
-            body { padding: 10px; }
-            .container { padding: 15px; }
-            .letters-grid { grid-template-columns: 1fr; }
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 14px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: bold;
+            transition: all 0.2s ease;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--accent-green);
+            color: var(--accent-green);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(0, 230, 118, 0.1);
+        }
+
+        .btn-solid {
+            background-color: var(--accent-green);
+            color: #000;
+            border: 1px solid var(--accent-green);
+        }
+
+        .btn-solid:hover {
+            background-color: var(--accent-green-dark);
+            color: #fff;
+        }
+
+        @media (max-width: 480px) {
+            .navigation {
+                gap: 6px;
+            }
+            .nav-btn {
+                padding: 8px 10px;
+                font-size: 0.82rem;
+            }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>ধাপ ৪. কোর-সেমান্টিক মানচিত্র ও আরবি অক্ষরের ধারণাগত ধারা</h1>
 
-    <h2>ভূমিকা</h2>
-    <div class="intro-box">
+    <!-- হেডার -->
+    <div class="site-header">
+        <div class="main-title">রসমভিত্তিক প্রাক-গ্রাম্যাটিক্যাল কোর-সেমান্টিক পদ্ধতি</div>
+        <div class="sub-title">"আরবি ভাষা ও কুরআনের শব্দার্থ বিশ্লেষণের একটি গবেষণা-প্রস্তাব"</div>
+    </div>
+
+    <!-- মূল কার্ড -->
+    <div class="section-card">
+        <div class="main-title" style="text-align: left; margin-bottom: 20px;">ধাপ ৪. কোর-সেমান্টিক মানচিত্র ও আরবি অক্ষরের ধারণাগত ধারা</div>
+
+        <h2>ভূমিকা</h2>
         <p>পূর্ববর্তী ধাপগুলোতে আলোচনা করা হয়েছে যে, রসম-ভিত্তিক প্রাথমিক আরবি ভাষায় শব্দই ছিল অর্থের প্রত্যক্ষ বাহক এবং রুট ছিল একটি বিশ্লেষণী কাঠামো। এখন প্রশ্ন হলো— <strong>শব্দের সেই কেন্দ্রীয় ধারণা (Conceptual Core) কীভাবে গঠিত হয়?</strong></p>
         <p>এই গবেষণায় একটি ব্যাখ্যামূলক (interpretive) মডেল প্রস্তাব করা হচ্ছে, যেখানে আরবি বর্ণমালার প্রতিটি অক্ষরকে একটি সম্ভাব্য ধারণাগত দিক (semantic direction) হিসেবে বিবেচনা করা হয়েছে। এই মডেল কোনো প্রতিষ্ঠিত ঐতিহাসিক সত্য হিসেবে নয়; বরং একটি পুনর্গঠনমূলক (reconstructive) সেমান্টিক মডেল হিসেবে উপস্থাপিত হচ্ছে, যার কার্যকারিতা কুরআনের শব্দসমূহে ধারাবাহিকভাবে প্রয়োগ করে পরীক্ষা করা যেতে পারে।</p>
     </div>
 
-    <h2>কোর-সেমান্টিক মানচিত্র ও ২৮ অক্ষরের আদি শক্তি</h2>
-    <p>নিচের ২৮ অক্ষরের কোর-সেমান্টিক মানচিত্রটি আমার গবেষণাভিত্তিক একটি reconstructive semantic model। এটি প্রতিষ্ঠিত আরবি ভাষাবিজ্ঞানের স্বীকৃত তত্ত্ব নয়; বরং কুরআনিক শব্দগুলোর অভ্যন্তরীণ সামঞ্জস্য পরীক্ষা করার জন্য প্রস্তাবিত একটি বিশ্লেষণী কাঠামো। এই ২৮টি অক্ষরের প্রস্তাবিত সেমান্টিক মানচিত্রকে আরবি ভাষার একটি সম্ভাব্য প্রি-গ্রাম্যাটিকাল কোর-ধারা হিসেবে দেখা যেতে পারে, যা শব্দগঠনের পুনরাবৃত্ত প্যাটার্ন ব্যাখ্যায় কার্যকর একটি বিশ্লেষণী মডেল প্রদান করে। যে ধারায় আরবি শব্দ বারবার নিজেকে প্রকাশ করে।</p>
-    <p>আরবি ভাষার ২৮টি মূল অক্ষর নিচে দেওয়া হলো এবং প্রতিটি অক্ষরের পাশে নির্দিষ্ট, সংক্ষিপ্ত ধারার সম্ভাব্য শব্দগুচ্ছ চিহ্নিত করা হয়েছে। এগুলোকে কোর ধারা হিসেবে দেখা যেতে পারে:</p>
+    <!-- মানচিত্র কার্ড -->
+    <div class="section-card">
+        <h2>কোর-সেমান্টিক মানচিত্র ও ২৮ অক্ষরের আদি শক্তি</h2>
+        <p>নিচের ২৮ অক্ষরের কোর-সেমান্টিক মানচিত্রটি আমার গবেষণাভিত্তিক একটি reconstructive semantic model। এটি প্রতিষ্ঠিত আরবি ভাষাবিজ্ঞানের স্বীকৃত তত্ত্ব নয়; বরং কুরআনিক শব্দগুলোর অভ্যন্তরীণ সামঞ্জস্য পরীক্ষা করার জন্য প্রস্তাবিত একটি বিশ্লেষণী কাঠামো। এই ২৮টি অক্ষরের প্রস্তাবিত সেমান্টিক মানচিত্রকে আরবি ভাষার একটি সম্ভাব্য প্রি-গ্রাম্যাটিকাল কোর-ধারা হিসেবে দেখা যেতে পারে, যা শব্দগঠনের পুনরাবৃত্ত প্যাটার্ন ব্যাখ্যায় কার্যকর একটি বিশ্লেষণী মডেল প্রদান করে। যে ধারায় আরবি শব্দ বারবার নিজেকে প্রকাশ করে।</p>
+        <p>আরবি ভাষার ২৮টি মূল অক্ষর নিচে দেওয়া হলো এবং প্রতিটি অক্ষরের পাশে নির্দিষ্ট, সংক্ষিপ্ত ধারার সম্ভাব্য শব্দগুচ্ছ। এগুলোকে কোর ধারা হিসেবে দেখা যেতে পারে:</p>
 
-    <!-- ২৮টি অক্ষরের তালিকা (Grid layout) -->
-    <div class="letters-grid">
-        <div class="letter-card">
-            <div class="letter-title"><span class="arabic-char">ا</span> ১) আলিফ (ا)</div>
-            <div class="letter-desc">অস্তিত্ব / সূচনা / প্রতিষ্ঠা / দাঁড়িয়ে থাকা / লক্ষ্য / অভিমুখ / উপস্থিতির ঘোষণা / সরল উত্থান / কেন্দ্রীয় দণ্ড।</div>
+        <!-- ২৮টি অক্ষরের তালিকা -->
+        <div class="letters-list">
+            <div class="letter-item">
+                <div class="letter-name">১) আলিফ (ا)</div>
+                <div class="letter-desc">অস্তিত্ব / সূচনা / প্রতিষ্ঠা / দাঁড়িয়ে থাকা / লক্ষ্য / অভিমুখ / উপস্থিতির ঘোষণা / সরল উত্থান / কেন্দ্রীয় দণ্ড।</div>
+            </div>
+            <div class="letter-item">
+                <div class="letter-name">২) বা (ب)</div>
+                <div class="letter-desc">সংযুক্তি / সংলগ্নতা / ভেতরে প্রবেশ / ধারণের ভিতর / আশ্রয় / মাধ্যম / অবস্থানগত নিকটতা / পরিবেষ্টিত থাকা।</div>
+            </div>
+            <div class="letter-item">
+                <div class="letter-name">৩) তা (ت)</div>
+                <div class="letter-desc">চলন / কার্যপ্রবাহ / সক্রিয়তা / ক্রিয়া-উৎপত্তি / ধারাবাহিক কর্ম / রূপান্তরমুখী গতি / কাজের সূচনা।</div>
+            </div>
+            <div class="letter-item">
+                <div class="letter-name">৪) ছা (ث)</div>
+                <div class="letter-desc">বিস্তার / বহুগুণ / সংখ্যাগত বৃদ্ধি / ছড়িয়ে যাওয়া / পুনরুৎপাদন / স্তরবৃদ্ধি / প্রসারিত পুনরাবৃত্তি।</div>
+            </div>
+            <div class="letter-item">
+                <div class="letter-name">৫) জীম (ج)</div>
+                <div class="letter-desc">সংগ্রহ / একত্রকরণ / আবরণ / ভেতরে ধরে রাখা / সংহত সঞ্চয় / গোপন ধারক / আবদ্ধ সমষ্টি।</div>
+            </div>
+            <div class="letter-item">
+                <div class="letter-name">৬) হা (ح)</div>
+                <div class="letter-desc">জীবন্ততা / উষ্ণ উপস্থিতি / প্রাণশক্তি / কোমল স্পন্দন / সজীব প্রবাহ / জীবনীশক্তির প্রকাশ।</div>
+            </div>
+            <div class="letter-item">
+                <div class="letter-name">৭) খা (خ)</div>
+                <div class="letter-desc">বহির্গমন / ভেদ করে বের হওয়া / অন্তর ভাঙন / আভ্যন্তরীণ থেকে বাহিরে গমন / উন্মোচন / বিচ্ছিন্ন উদ্গমন।</div>
+            </div>
+            <div class="letter-item">
+                <div class="letter-name">৮) দাল (د)</div>
+                <div class="letter-desc">নির্দেশ / ঠেলা / ইঙ্গিতমূলক অগ্রগতি / দিকনির্দেশনা / ধাক্কা দিয়ে এগোনো / চালনাশক্তি।</div>
+            </div>
+            <div class="letter-item">
+                <div class="letter-name">৯) যাল (ذ)</div>
+                <div class="letter-desc">ইঙ্গিত / স্মরণযোগ্যতা / চিহ্নিত উপস্থিতি / লক্ষণ / অবশিষ্ট চিহ্ন / মনে জাগ্রত করা।</div>
+            </div>
+            <div class="letter-item">
+                <div class="letter-name">১০) রা (ر)</div>
+                <div class="letter-desc">প্রবাহ / পুনরাবৃত্ত গতি / ঘূর্ণন / চলমান সম্পর্ক / ধারাবাহিক প্রত্যাবর্তন / গতিশীল সংযোগ।</div>
+            </div>
+            <div class="letter-item">
+                <div class="letter-name">১১) ঝা (ز)</div>
+                <div class="letter-desc">কম্পন / তাড়না / উত্তেজিত স্পন্দন / সঞ্চালিত শক্তি / উদ্দীপক নড়াচড়া।</div>
+            </div>
+            <div class="letter-item">
+                <div class="letter-name">১২) সীন (س)</div>
+                <div class="letter-desc">ধারাবাহিক গতি / মসৃণ অগ্রসরতা / নিয়মিত চলন / ধাপে ধাপে অগ্রগতি / স্থিতিশীল প্রবাহ।</div>
+            </div>
+            <div class="letter-item">
+                <div class="letter-name">১৩) শীন (ش)</div>
+                <div class="letter-desc">ছড়িয়ে পড়া / বিকিরণ / বিস্ফোরিত বিস্তার / বহু দিকে ছড়ানো / অপ্রতিরুদ্ধ সম্প্রসারণ।</div>
+            </div>
+            <div class="letter-item">
+                <div class="letter-name">১৪) সদ (ص)</div>
+                <div class="letter-desc">সংহত চাপ / কেন্দ্রীভূত শক্তি / নিয়ন্ত্রিত বল / দমনমূলক স্থায়িত্ব / একমুখী জোর।</div>
+            </div>
+            <div class="letter-item">
+                <div class="letter-name">১৫) দদ (ض)</div>
+                <div class="letter-desc">বিরোধী চাপ / বিপরীত বল / সংঘর্ষমূলক প্রতিক্রিয়া / প্রতিহতকারী শক্তি / বিপরীতমুখী চাপ।</div>
+            </div>
+            <div class="letter-item">
+                <div class="letter-name">১৬) ত্বা (ط)</div>
+                <div class="letter-desc">আবদ্ধ শক্তি / কর্তৃত্ব / নিয়ন্ত্রিত আধিপত্য / কঠোর নিয়ামক বল / বদ্ধ ক্ষমতা।</div>
+            </div>
+            <div class="letter-item">
+                <div class="letter-name">১৭) য্বা (ظ)</div>
+                <div class="letter-desc">আচ্ছাদিত কর্তৃত্ব / ছায়াঘেরা শক্তি / অস্পষ্ট আধিপত্য / পরোক্ষ নিয়ন্ত্রণ / আড়ালকৃত ক্ষমতা।</div>
+            </div>
+            <div class="letter-item">
+                <div class="letter-name">১৮) আইন (ع)</div>
+                <div class="letter-desc">উৎস / চোখ / উন্মুক্ত গভীরতা / প্রত্যক্ষ উপলব্ধি / দৃশ্যমান গভীর কেন্দ্র / নির্গমনের মূলবিন্দু।</div>
+            </div>
+            <div class="letter-item">
+                <div class="letter-name">১৯) গ়াইন (غ)</div>
+                <div class="letter-desc">আড়াল / অদৃশ্য গভীরতা / লুকায়িত উৎস / পর্দাবৃত গভীরতা / অপ্রকাশিত স্তর।</div>
+            </div>
+            <div class="letter-item">
+                <div class="letter-name">২০) ফা (ف)</div>
+                <div class="letter-desc">বিচ্ছেদ / ফলন / উদ্গম / আলাদা হয়ে বের হওয়া / সিদ্ধান্তমূলক ফল / তাত্ক্ষণিক উৎপাদ।</div>
+            </div>
+            <div class="letter-item">
+                <div class="letter-name">২১) ক্বাফ (ق)</div>
+                <div class="letter-desc">গভীর আঘাত / চূড়ান্ত সীমা / কেন্দ্রীয় সংঘাত / গভীর থেকে সৃষ্ট প্রতিক্রিয়া / শক্ত সংযোগবিন্দু।</div>
+            </div>
+            <div class="letter-item">
+                <div class="letter-name">২২) কাফ (ك)</div>
+                <div class="letter-desc">ধারণক্ষমতা / আকৃতি দেওয়া / ছাঁচ নির্মাণ / সক্ষমতা / কাঠামোগত ধারণ।</div>
+            </div>
+            <div class="letter-item">
+                <div class="letter-name">২৩) লাম (ل)</div>
+                <div class="letter-desc">সংযোগ / প্রবাহমান সংলগ্নতা / উদ্দেশ্যগত সংযোগ / ধারাবাহিক লিংক / দিকযুক্ত সম্পর্ক।</div>
+            </div>
+            <div class="letter-item">
+                <div class="letter-name">২৪) মীম (م)</div>
+                <div class="letter-desc">আবদ্ধতা / পরিবেষ্টন / সীমানাবদ্ধ ধারণ / বেষ্টিত অবস্থা / ধারণকারী ক্ষেত্র।</div>
+            </div>
+            <div class="letter-item">
+                <div class="letter-name">২৫) নূন (ن)</div>
+                <div class="letter-desc">উদ্ভব / বীজ / প্রাথমিক চিহ্ন / সূচনামূলক অস্তিত্ব / সম্ভাবনার চিহ্ন।</div>
+            </div>
+            <div class="letter-item">
+                <div class="letter-name">২৬) হা (ه)</div>
+                <div class="letter-desc">উপস্থিতি / নির্দেশ / অস্তিত্বের ইশারা / দূরবর্তী সত্তার সংকেত / পরিচয়ের আভাস।</div>
+            </div>
+            <div class="letter-item">
+                <div class="letter-name">২৭) ওয়াও (و)</div>
+                <div class="letter-desc">সংযোগ / বহির্মুখী প্রসার / যোগসূত্র / সমান্তরাল যুক্তি / সম্প্রসারিত সম্পর্ক।</div>
+            </div>
+            <div class="letter-item">
+                <div class="letter-name">২৮) ইয়া (ي)</div>
+                <div class="letter-desc">নিকটতা / অন্তর্মুখী টান / ঘনিষ্ঠ সংযোগ / অভ্যন্তরীণ আকর্ষণ / অন্তর্লীন সম্পর্ক।</div>
+            </div>
         </div>
-        <div class="letter-card">
-            <div class="letter-title"><span class="arabic-char">ب</span> ২) বা (ب)</div>
-            <div class="letter-desc">সংযুক্তি / সংলগ্নতা / ভেতরে প্রবেশ / ধারণের ভিতর / আশ্রয় / মাধ্যম / অবস্থানগত নিকটতা / পরিবেষ্টিত থাকা।</div>
+
+        <div class="note-box">
+            খুব গুরুত্বপূর্ণ কথা হলো, এই ধারাগুলো অর্থ না, এগুলো অর্থের দিক। <strong>অক্ষর = শব্দ নয়। অক্ষর = দিক। রুট = দিকগুলোর নির্দিষ্ট জ্যামিতি। শব্দ = সেই জ্যামিতির বাস্তব রূপ।</strong> যাকে আমরা শব্দার্থ বলে জানি।
         </div>
-        <div class="letter-card">
-            <div class="letter-title"><span class="arabic-char">ت</span> ৩) তা (ت)</div>
-            <div class="letter-desc">চলন / কার্যপ্রবাহ / সক্রিয়তা / ক্রিয়া-উৎপত্তি / ধারাবাহিক কর্ম / রূপান্তরমুখী গতি / কাজের সূচনা।</div>
-        </div>
-        <div class="letter-card">
-            <div class="letter-title"><span class="arabic-char">ث</span> ৪) ছা (ث)</div>
-            <div class="letter-desc">বিস্তার / বহুগুণ / সংখ্যাগত বৃদ্ধি / ছড়িয়ে যাওয়া / পুনরুৎপাদন / স্তরবৃদ্ধি / প্রসারিত পুনরাবৃত্তি।</div>
-        </div>
-        <div class="letter-card">
-            <div class="letter-title"><span class="arabic-char">ج</span> ৫) জীম (ج)</div>
-            <div class="letter-desc">সংগ্রহ / একত্রকরণ / আবরণ / ভেতরে ধরে রাখা / সংহত সঞ্চয় / গোপন ধারক / আবদ্ধ সমষ্টি।</div>
-        </div>
-        <div class="letter-card">
-            <div class="letter-title"><span class="arabic-char">ح</span> ৬) হা (ح)</div>
-            <div class="letter-desc">জীবন্ততা / উষ্ণ উপস্থিতি / প্রাণশক্তি / কোমল স্পন্দন / সজীব প্রবাহ / জীবনীশক্তির প্রকাশ।</div>
-        </div>
-        <div class="letter-card">
-            <div class="letter-title"><span class="arabic-char">خ</span> ৭) খা (خ)</div>
-            <div class="letter-desc">বহির্গমন / ভেদ করে বের হওয়া / অন্তর ভাঙন / আভ্যন্তরীণ থেকে বাহিরে গমন / উন্মোচন / বিচ্ছিন্ন উদ্গমন।</div>
-        </div>
-        <div class="letter-card">
-            <div class="letter-title"><span class="arabic-char">د</span> ৮) দাল (د)</div>
-            <div class="letter-desc">নির্দেশ / ঠেলা / ইঙ্গিতমূলক অগ্রগতি / দিকনির্দেশনা / ধাক্কা দিয়ে এগোনো / চালনাশক্তি।</div>
-        </div>
-        <div class="letter-card">
-            <div class="letter-title"><span class="arabic-char">ذ</span> ৯) যাল (ذ)</div>
-            <div class="letter-desc">ইঙ্গিত / স্মরণযোগ্যতা / চিহ্নিত উপস্থিতি / লক্ষণ / অবশিষ্ট চিহ্ন / মনে জাগ্রত করা।</div>
-        </div>
-        <div class="letter-card">
-            <div class="letter-title"><span class="arabic-char">ر</span> ১০) রা (ر)</div>
-            <div class="letter-desc">প্রবাহ / পুনরাবৃত্ত গতি / ঘূর্ণন / চলমান সম্পর্ক / ধারাবাহিক প্রত্যাবর্তন / গতিশীল সংযোগ।</div>
-        </div>
-        <div class="letter-card">
-            <div class="letter-title"><span class="arabic-char">ز</span> ১১) ঝা (ز)</div>
-            <div class="letter-desc">কম্পন / তাড়না / উত্তেজিত স্পন্দন / সঞ্চালিত শক্তি / উদ্দীপক নড়াচড়া।</div>
-        </div>
-        <div class="letter-card">
-            <div class="letter-title"><span class="arabic-char">س</span> ১২) সীন (س)</div>
-            <div class="letter-desc">ধারাবাহিক গতি / মসৃণ অগ্রসরতা / নিয়মিত চলন / ধাপে ধাপে অগ্রগতি / স্থিতিশীল প্রবাহ।</div>
-        </div>
-        <div class="letter-card">
-            <div class="letter-title"><span class="arabic-char">ش</span> ১৩) শীন (ش)</div>
-            <div class="letter-desc">ছড়িয়ে পড়া / বিকিরণ / বিস্ফোরিত বিস্তার / বহু দিকে ছড়ানো / অপ্রতিরুদ্ধ সম্প্রসারণ।</div>
-        </div>
-        <div class="letter-card">
-            <div class="letter-title"><span class="arabic-char">ص</span> ১৪) সদ (ص)</div>
-            <div class="letter-desc">সংহত চাপ / কেন্দ্রীভূত শক্তি / নিয়ন্ত্রিত বল / দমনমূলক স্থায়িত্ব / একমুখী জোর।</div>
-        </div>
-        <div class="letter-card">
-            <div class="letter-title"><span class="arabic-char">ض</span> ১৫) দদ (ض)</div>
-            <div class="letter-desc">বিরোধী চাপ / বিপরীত বল / সংঘর্ষমূলক প্রতিক্রিয়া / প্রতিহতকারী শক্তি / বিপরীতমুখী চাপ।</div>
-        </div>
-        <div class="letter-card">
-            <div class="letter-title"><span class="arabic-char">ط</span> ১৬) ত্বা (ط)</div>
-            <div class="letter-desc">আবদ্ধ শক্তি / কর্তৃত্ব / নিয়ন্ত্রিত আধিপত্য / কঠোর নিয়ামক বল / বদ্ধ ক্ষমতা।</div>
-        </div>
-        <div class="letter-card">
-            <div class="letter-title"><span class="arabic-char">ظ</span> ১৭) য্বা (ظ)</div>
-            <div class="letter-desc">আচ্ছাদিত কর্তৃত্ব / ছায়াঘেরা শক্তি / অস্পষ্ট আধিপত্য / পরোক্ষ নিয়ন্ত্রণ / আড়ালকৃত ক্ষমতা।</div>
-        </div>
-        <div class="letter-card">
-            <div class="letter-title"><span class="arabic-char">ع</span> ১৮) আইন (ع)</div>
-            <div class="letter-desc">উৎস / চোখ / উন্মুক্ত গভীরতা / প্রত্যক্ষ উপলব্ধি / দৃশ্যমান গভীর কেন্দ্র / নির্গমনের মূলবিন্দু।</div>
-        </div>
-        <div class="letter-card">
-            <div class="letter-title"><span class="arabic-char">غ</span> ১৯) গ়াইন (غ)</div>
-            <div class="letter-desc">আড়াল / অদৃশ্য গভীরতা / লুকায়িত উৎস / পর্দাবৃত গভীরতা / অপ্রকাশিত স্তর।</div>
-        </div>
-        <div class="letter-card">
-            <div class="letter-title"><span class="arabic-char">ف</span> ২০) ফা (ف)</div>
-            <div class="letter-desc">বিচ্ছেদ / ফলন / উদ্গম / আলাদা হয়ে বের হওয়া / সিদ্ধান্তমূলক ফল / তাত্ক্ষণিক উৎপাদ।</div>
-        </div>
-        <div class="letter-card">
-            <div class="letter-title"><span class="arabic-char">ق</span> ২১) ক্বাফ (ق)</div>
-            <div class="letter-desc">গভীর আঘাত / চূড়ান্ত সীমা / কেন্দ্রীয় সংঘাত / গভীর থেকে সৃষ্ট প্রতিক্রিয়া / শক্ত সংযোগবিন্দু।</div>
-        </div>
-        <div class="letter-card">
-            <div class="letter-title"><span class="arabic-char">ك</span> ২২) কাফ (ك)</div>
-            <div class="letter-desc">ধারণক্ষমতা / আকৃতি দেওয়া / ছাঁচ নির্মাণ / সক্ষমতা / কাঠামোগত ধারণ।</div>
-        </div>
-        <div class="letter-card">
-            <div class="letter-title"><span class="arabic-char">ل</span> ২৩) লাম (ل)</div>
-            <div class="letter-desc">সংযোগ / প্রবাহমান সংলগ্নতা / উদ্দেশ্যগত সংযোগ / ধারাবাহিক লিংক / দিকযুক্ত সম্পর্ক।</div>
-        </div>
-        <div class="letter-card">
-            <div class="letter-title"><span class="arabic-char">م</span> ২৪) মীম (م)</div>
-            <div class="letter-desc">আবদ্ধতা / পরিবেষ্টন / সীমানাবদ্ধ ধারণ / বেষ্টিত অবস্থা / ধারণকারী ক্ষেত্র।</div>
-        </div>
-        <div class="letter-card">
-            <div class="letter-title"><span class="arabic-char">ن</span> ২৫) নূন (ن)</div>
-            <div class="letter-desc">উদ্ভব / বীজ / প্রাথমিক চিহ্ন / সূচনামূলক অস্তিত্ব / সম্ভাবনার চিহ্ন।</div>
-        </div>
-        <div class="letter-card">
-            <div class="letter-title"><span class="arabic-char">ه</span> ২৬) হা (ه)</div>
-            <div class="letter-desc">উপস্থিতি / নির্দেশ / অস্তিত্বের ইশারা / দূরবর্তী সত্তার সংকেত / পরিচয়ের আভাস।</div>
-        </div>
-        <div class="letter-card">
-            <div class="letter-title"><span class="arabic-char">و</span> ২৭) ওয়াও (و)</div>
-            <div class="letter-desc">সংযোগ / বহির্মুখী প্রসার / যোগসূত্র / সমান্তরাল যুক্তি / সম্প্রসারিত সম্পর্ক।</div>
-        </div>
-        <div class="letter-card">
-            <div class="letter-title"><span class="arabic-char">ي</span> ২৮) ইয়া (ي)</div>
-            <div class="letter-desc">নিকটতা / অন্তর্মুখী টান / ঘনিষ্ঠ সংযোগ / অভ্যন্তরীণ আকর্ষণ / অন্তর্লীন সম্পর্ক।</div>
-        </div>
+
+        <p style="margin-top: 15px; font-size: 0.95rem; color: #b0b0b0;">
+            তাই “এক শব্দ = এক রুট = এক ধারা” সম্ভব, কিন্তু “এক অক্ষর = এক শব্দ” সম্ভব নয়। এখানে ‘এক রুট = এক শব্দ’ বলতে একটি স্থির ধারণাগত কোর (conceptual core) বোঝানো হয়েছে, কোনো একক ভাষিক রূপ নয়। এই কোরটি বিভিন্ন আয়াতে প্রয়োগভেদে রূপান্তরিত হলেও তার মৌলিক অর্থধারা অপরিবর্তিত থাকে। এটা করলে ভাষা ভেঙে পড়েনা। প্রি-গ্রাম্যাটিকাল আরবিতে শব্দের গঠন (structural composition) অর্থ নির্ধারণে একটি মৌলিক ভূমিকা পালন করত। ব্যাকরণ ছিল পরবর্তী বিশ্লেষণী স্তর। যদি এই মডেল ধারাবাহিকভাবে পরীক্ষায় সমর্থিত হয়, তবে প্রতিটি রুটের জন্য একটি স্থিতিশীল বাংলা কোর-ধারণা নির্ধারণ করা সম্ভব হতে পারে। এই ২৮ অক্ষরের মানচিত্র ব্যবহার করলে, কুরআনের বিভিন্ন আয়াতে একই রুটের প্রয়োগে অধিক ধারাবাহিকতা ও অভ্যন্তরীণ সামঞ্জস্য প্রদর্শন করতে সক্ষম হতে পারে। একটি রুটের জন্য একটি স্থিতিশীল কোর নির্ধারণ সব আয়াতে প্রয়োগ পরীক্ষাযোগ্য। ফলে একই রুটের জন্য প্রসঙ্গভেদে সম্পূর্ণ ভিন্ন ভিন্ন অর্থ আরোপের প্রয়োজন কমে যেতে পারে। তবে অতিরিক্ত অক্ষর, শব্দগঠন পরিবর্তনের ফলে অর্থের স্বাভাবিক শব্দার্থ পরিবর্তন ঘটতে পারে। যদি না মূল রুট অক্ষরের সাথে অতিরিক্ত অক্ষর যুক্ত হয়। এই প্রস্তাবিত মানচিত্রের মূল্যায়নের প্রধান মানদণ্ড হবে এর অভ্যন্তরীণ সামঞ্জস্য (internal consistency) এবং কুরআনের শব্দসমূহে এর ধারাবাহিক প্রয়োগযোগ্যতা এবং ব্যাখ্যাগত সক্ষমতা। ভবিষ্যতে যদি অন্য কোনো মডেল একই বা অধিক মাত্রার ধারাবাহিকতা ও ব্যাখ্যাগত সামঞ্জস্য প্রদর্শন করতে পারে, তবে সেটিও সমানভাবে বিবেচনার যোগ্য হবে।
+        </p>
     </div>
 
-    <div class="highlight-quote">
-        খুব গুরুত্বপূর্ণ কথা হলো, এই ধারাগুলো অর্থ না, এগুলো অর্থের দিক। <strong>অক্ষর = শব্দ নয়। অক্ষর = দিক। রুট = দিকগুলোর নির্দিষ্ট জ্যামিতি। শব্দ = সেই জ্যামিতির বাস্তব রূপ।</strong> যাকে আমরা শব্দার্থ বলে জানি।
+    <!-- নেভিগেশন বোতাম (বাম: ধাপ ৩, মাঝ: মূল তালিকা, ডান: ধাপ ৫) -->
+    <div class="navigation">
+        <a href="step3.html" class="nav-btn btn-outline">&larr; ধাপ ৩</a>
+        <a href="index.html" class="nav-btn btn-outline">&larr; মূল তালিকায় ফিরুন</a>
+        <a href="step5.html" class="nav-btn btn-solid">ধাপ ৫ &rarr;</a>
     </div>
 
-    <footer>
-        <p>তাই “এক শব্দ = এক রুট = এক ধারা” সম্ভব, কিন্তু “এক অক্ষর = এক শব্দ” সম্ভব নয়। এখানে ‘এক রুট = এক শব্দ’ বলতে একটি স্থির ধারণাগত কোর (conceptual core) বোঝানো হয়েছে, কোনো একক ভাষিক রূপ নয়। এই কোরটি বিভিন্ন আয়াতে প্রয়োগভেদে রূপান্তরিত হলেও তার মৌলিক অর্থধারা অপরিবর্তিত থাকে। এটা করলে ভাষা ভেঙে পড়েনা। প্রি-গ্রাম্যাটিকাল আরবিতে শব্দের গঠন (structural composition) অর্থ নির্ধারণে একটি মৌলিক ভূমিকা পালন করত। ব্যাকরণ ছিল পরবর্তী বিশ্লেষণী স্তর। যদি এই মডেল ধারাবাহিকভাবে পরীক্ষায় সমর্থিত হয়, তবে প্রতিটি রুটের জন্য একটি স্থিতিশীল বাংলা কোর-ধারণা নির্ধারণ করা সম্ভব হতে পারে। এই ২৮ অক্ষরের মানচিত্র ব্যবহার করলে, কুরআনের বিভিন্ন আয়াতে একই রুটের প্রয়োগে অধিক ধারাবাহিকতা ও অভ্যন্তরীণ সামঞ্জস্য প্রদর্শন করতে সক্ষম হতে পারে। একটি রুটের জন্য একটি স্থিতিশীল কোর নির্ধারণ সব আয়াতে প্রয়োগ পরীক্ষাযোগ্য। ফলে একই রুটের জন্য প্রসঙ্গভেদে সম্পূর্ণ ভিন্ন ভিন্ন অর্থ আরোপের প্রয়োজন কমে যেতে পারে। তবে অতিরিক্ত অক্ষর, শব্দগঠন পরিবর্তনের ফলে অর্থের স্বাভাবিক শব্দার্থ পরিবর্তন ঘটতে পারে। যদি না মূল রুট অক্ষরের সাথে অতিরিক্ত অক্ষর যুক্ত হয়। এই প্রস্তাবিত মানচিত্রের মূল্যায়নের প্রধান মানদণ্ড হবে এর অভ্যন্তরীণ সামঞ্জস্য (internal consistency) এবং কুরআনের শব্দসমূহে এর ধারাবাহিক প্রয়োগযোগ্যতা এবং ব্যাখ্যাগত সক্ষমতা। ভবিষ্যতে যদি অন্য কোনো মডেল একই বা অধিক মাত্রার ধারাবাহিকতা ও ব্যাখ্যাগত সামঞ্জস্য প্রদর্শন করতে পারে, তবে সেটিও সমানভাবে বিবেчения যোগ্য হবে।</p>
-    </footer>
 </div>
 
 </body>
