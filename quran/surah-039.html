@@ -1,1 +1,259 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>সূরা আজ-যুমার | আয়াত: ১৪</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #f4f5f7;
+            color: #333333;
+            font-family: 'SolaimanLipi', Arial, sans-serif;
+            margin: 0;
+            padding: 20px 10px;
+            display: flex;
+            justify-content: center;
+        }
+        .main-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 25px 18px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        .sura-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sura-name {
+            color: #1b5e20;
+            font-size: 28px;
+            font-weight: bold;
+            margin: 0 0 5px 0;
+        }
+        .toggle-btn {
+            background-color: #1b5e20;
+            color: #ffffff;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 12px;
+            transition: background-color 0.2s;
+        }
+        .toggle-btn:hover {
+            background-color: #144417;
+        }
+        .sura-meta {
+            color: #666666;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+        .verse-container {
+            border: 1px solid #edf0f2;
+            border-radius: 10px;
+            padding: 16px;
+            margin-top: 15px;
+            margin-bottom: 25px;
+        }
+        .verse-number {
+            font-weight: bold;
+            font-size: 16px;
+            color: #333333;
+            margin-bottom: 15px;
+        }
+        .word-grid {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row-reverse;
+            gap: 10px;
+            margin-bottom: 20px;
+            justify-content: flex-start;
+        }
+        .word-box {
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            padding: 12px 8px;
+            min-width: 85px;
+            flex: 1 1 calc(33.33% - 10px);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .arabic-word {
+            font-size: 24px;
+            color: #333333;
+            direction: rtl;
+            margin-bottom: 6px;
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+        }
+        .verified-meaning {
+            font-size: 14px;
+            color: #008053; /* সবুজ রঙ */
+            font-weight: bold;
+            line-height: 1.3;
+        }
+        .meaning-word-black {
+            font-size: 14px;
+            color: #2d3748; /* সাধারণ কালো রঙ */
+            font-weight: bold;
+            line-height: 1.3;
+        }
+        .pronunciation-box {
+            background-color: #f8f9fa;
+            border-left: 3px solid #1b5e20;
+            border-radius: 4px;
+            padding: 12px 15px;
+            font-size: 15px;
+            color: #333333;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 12px;
+            display: none;
+        }
+        .pronunciation-box strong {
+            color: #1b5e20;
+            font-style: normal;
+        }
+        .translation-box {
+            background-color: #f8f9fa;
+            border-left: 3px solid #1b5e20;
+            border-radius: 4px;
+            padding: 12px 15px;
+            font-size: 15px;
+            color: #333333;
+            line-height: 1.6;
+        }
+        .nav-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 15px;
+            gap: 10px;
+        }
+        .nav-left-btns {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .nav-btn {
+            background-color: #1b5e20;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 14px;
+            border-radius: 5px;
+            font-size: 13px;
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.2s;
+            display: inline-block;
+        }
+        .nav-btn:hover {
+            background-color: #144417;
+        }
+    </style>
+</head>
+<body>
 
+<div class="main-card">
+    <!-- সূরা হেডার -->
+    <div class="sura-header">
+        <h1 class="sura-name">সূরা আজ-যুমার</h1>
+        <button class="toggle-btn" id="transToggleBtn" onclick="togglePronunciation()">
+            <span id="prunun-icon">👁️</span> <span id="prunun-text">উচ্চারণ দেখান</span>
+        </button>
+        <div class="sura-meta">সূরা ৩৯ | আয়াত: ১৪ | মাক্কী</div>
+    </div>
+
+    <!-- আয়াতের মূল বক্স -->
+    <div class="verse-container">
+        <div class="verse-number">৩৯:১৪</div>
+
+        <!-- আরবি ও বাংলা পাশে পাশে গ্রিড -->
+        <div class="word-grid">
+            <div class="word-box">
+                <span class="arabic-word">قُلِ</span>
+                <span class="verified-meaning">বলো</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">اللَّهَ</span>
+                <span class="verified-meaning">আল্লাহর</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">أَعْبُدُ</span>
+                <span class="verified-meaning">আমি দাসত্ব করি</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">مُخْلِصًا</span>
+                <span class="meaning-word-black">একনিষ্ঠভাবে</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">لَهُ</span>
+                <span class="verified-meaning">তাঁর জন্য</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">دِينِي</span>
+                <span class="verified-meaning">আমার দায়বদ্ধতা</span>
+            </div>
+        </div>
+
+        <!-- উচ্চারণ বক্স -->
+        <div class="pronunciation-box">
+            <strong>উচ্চারণ:</strong> কুলিল্লাহা আ'বুদু মুখলিসাল লাহু দীনী।
+        </div>
+
+        <!-- পূর্ণাঙ্গ অনুবাদ -->
+        <div class="translation-box">
+            “বলো, আমি আল্লাহর দাসত্ব করি, তাঁর জন্য একনিষ্ঠভাবে আমার দায়বদ্ধতা।”
+        </div>
+    </div>
+
+    <!-- নেভিগেশন বাটন সেকশন -->
+    <div class="nav-section">
+        <div class="nav-left-btns">
+            <a href="surah-038.html" class="nav-btn">&larr; পূর্ববর্তী সূরা</a>
+            <a href="surah-040.html" class="nav-btn">পরবর্তী সূরা &rarr;</a>
+        </div>
+        <div>
+            <a href="index.html" class="nav-btn">সূরা তালিকা</a>
+        </div>
+    </div>
+</div>
+
+<script>
+function togglePronunciation() {
+    var pronunBoxes = document.querySelectorAll('.pronunciation-box');
+    var btnText = document.getElementById('prunun-text');
+    var btnIcon = document.getElementById('prunun-icon');
+
+    if (pronunBoxes.length === 0) return;
+
+    var isHidden = window.getComputedStyle(pronunBoxes[0]).display === 'none';
+
+    pronunBoxes.forEach(function(box) {
+        box.style.display = isHidden ? 'block' : 'none';
+    });
+
+    if (isHidden) {
+        if (btnText) btnText.textContent = 'উচ্চারণ লুকান';
+        if (btnIcon) btnIcon.textContent = '🙈';
+    } else {
+        if (btnText) btnText.textContent = 'উচ্চারণ দেখান';
+        if (btnIcon) btnIcon.textContent = '👁️';
+    }
+}
+</script>
+
+</body>
+</html>
