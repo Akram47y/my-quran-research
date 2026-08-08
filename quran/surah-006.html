@@ -178,7 +178,7 @@
     <div class="sura-meta">সূরা ৬ | আয়াত: ১৬৫ | মাক্কী</div>
   </div>
 
-          <style>
+             <style>
       .verse-card {
         border: 1px solid #f0f0f0;
         border-radius: 12px;
@@ -233,9 +233,10 @@
         border-left: 4px solid #115e2e;
         padding: 12px 14px;
         border-radius: 0 8px 8px 0;
-        font-size: 14px;
+        font-size: 16px;
+        font-weight: 500;
         line-height: 1.6;
-        color: #333333;
+        color: #222222;
         margin-bottom: 10px;
         text-align: left;
       }
@@ -315,7 +316,7 @@
         </div>
       </div>
 
-      <div class="info-box" id="pronunciation-box">
+      <div class="info-box" id="pronunciation-box" style="display: none;">
         <span class="pronunciation-title">উচ্চারণ:</span> ওয়া ইসমা'ঈলা ওয়াল-ইয়াছা'আ ওয়া ইউনুছা ওয়া লূত্বান, ওয়া কুল্লান ফাদ্বদ্বালনা 'আলাল-'আলামীন।
       </div>
 
@@ -333,7 +334,7 @@
     </div>
 
 <script>
-  let isPronunciationVisible = true;
+  let isPronunciationVisible = false;
 
   function togglePronunciation() {
     const pronunciationBox = document.getElementById('pronunciation-box');
