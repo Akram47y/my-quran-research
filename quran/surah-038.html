@@ -115,7 +115,7 @@
             font-family: 'Amiri', 'Traditional Arabic', serif;
         }
 
-        /* শব্দ কার্ডের বাংলা অর্থ (নির্দিষ্ট উজ্জ্বল সবুজ রং) */
+        /* শব্দ কার্ডের বাংলা অর্থ (সবুজ রং) */
         .verified-meaning {
             font-size: 14px;
             color: #008053;
@@ -123,55 +123,62 @@
             line-height: 1.3;
         }
 
-        /* উচ্চারণ বক্স */
-        .transliteration-box {
+        /* উচ্চারণ বক্স (ইতালিক ফন্ট) */
+        .pronunciation-box {
             background-color: #f8f9fa;
             border-left: 3px solid #1b5e20;
             border-radius: 4px;
             padding: 12px 15px;
             font-size: 15px;
-            color: #4a4a4a;
+            color: #333333;
+            font-style: italic;
             line-height: 1.6;
             margin-bottom: 12px;
             display: none;
         }
 
-        .transliteration-box strong {
+        .pronunciation-box strong {
             color: #1b5e20;
+            font-style: normal;
         }
 
         /* অনুবাদ বক্স */
-        .full-translation {
+        .translation-box {
             background-color: #f8f9fa;
             border-left: 3px solid #1b5e20;
             border-radius: 4px;
             padding: 12px 15px;
             font-size: 15px;
-            color: #4a4a4a;
+            color: #333333;
             line-height: 1.6;
         }
 
-        /* নেভিগেশন */
-        .navigation {
+        /* নেভিগেশন সেকশন (ছবি অনুযায়ী দুই পাশে বাটন) */
+        .nav-section {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            gap: 8px;
+            align-items: flex-start;
             margin-top: 15px;
+            gap: 10px;
+        }
+
+        .nav-left-btns {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
 
         .nav-btn {
             background-color: #1b5e20;
             color: #ffffff;
             text-decoration: none;
-            padding: 8px 10px;
+            padding: 8px 14px;
             border-radius: 5px;
             font-size: 13px;
             font-weight: bold;
             text-align: center;
-            flex: 1;
             transition: background-color 0.2s;
-            white-space: nowrap;
+            display: inline-block;
         }
 
         .nav-btn:hover {
@@ -185,8 +192,8 @@
     <!-- হেডার -->
     <div class="sura-header">
         <h1 class="sura-name">সূরা সোয়াদ</h1>
-        <button class="toggle-btn" id="transToggleBtn" onclick="toggleTransliteration()">
-            👁 উচ্চারণ দেখান
+        <button class="toggle-btn" id="transToggleBtn" onclick="togglePronunciation()">
+            <span id="pronun-icon">👁</span> <span id="pronun-text">উচ্চারণ দেখান</span>
         </button>
         <div class="sura-meta">সূরা ৩৮ | আয়াত: ৮৮ | মাক্কী</div>
     </div>
@@ -231,41 +238,48 @@
         </div>
 
         <!-- উচ্চারণ বক্স -->
-        <div class="transliteration-box">
+        <div class="pronunciation-box">
             <strong>উচ্চারণ:</strong> ওয়া ইন্না 'আলাইকা লা'নাতি ইলা ইয়াওমিদ দ্বীন।
         </div>
 
-        <!-- সম্পূর্ণ অনুবাদ -->
-        <div class="full-translation">
+        <!-- পূর্ণাঙ্গ অনুবাদ -->
+        <div class="translation-box">
             "এবং নিশ্চয়ই দায়বদ্ধতার সময়ের অভিমুখে তোমার উপর আমার অভিশাপ।"
         </div>
     </div>
 
-    <!-- নেভিগেশন -->
-    <div class="navigation">
-        <a href="surah-037.html" class="nav-btn">&larr; পূর্ববর্তী সূরা</a>
-        <a href="../index.html" class="nav-btn">সূরা তালিকা</a>
-        <a href="surah-039.html" class="nav-btn">পরবর্তী সূরা &rarr;</a>
+    <!-- নেভিগেশন বাটন সেকশন -->
+    <div class="nav-section">
+        <div class="nav-left-btns">
+            <a href="surah-037.html" class="nav-btn">&larr; পূর্ববর্তী সূরা</a>
+            <a href="surah-039.html" class="nav-btn">পরবর্তী সূরা &rarr;</a>
+        </div>
+        <div>
+            <a href="index.html" class="nav-btn">সূরা তালিকা</a>
+        </div>
     </div>
 </div>
 
 <script>
-function toggleTransliteration() {
-    const transBoxes = document.querySelectorAll('.transliteration-box');
-    const btn = document.getElementById('transToggleBtn');
+function togglePronunciation() {
+    var pronunBoxes = document.querySelectorAll('.pronunciation-box');
+    var btnText = document.getElementById('pronun-text');
+    var btnIcon = document.getElementById('pronun-icon');
 
-    if (transBoxes.length === 0) return;
+    if (pronunBoxes.length === 0) return;
 
-    const isHidden = window.getComputedStyle(transBoxes[0]).display === 'none';
+    var isHidden = window.getComputedStyle(pronunBoxes[0]).display === 'none';
 
-    transBoxes.forEach(box => {
+    pronunBoxes.forEach(function(box) {
         box.style.display = isHidden ? 'block' : 'none';
     });
 
     if (isHidden) {
-        btn.innerHTML = '🙈 উচ্চারণ লুকান';
+        if (btnText) btnText.textContent = 'উচ্চারণ লুকান';
+        if (btnIcon) btnIcon.textContent = '🙈';
     } else {
-        btn.innerHTML = '👁 উচ্চারণ দেখান';
+        if (btnText) btnText.textContent = 'উচ্চারণ দেখান';
+        if (btnIcon) btnIcon.textContent = '👁';
     }
 }
 </script>
