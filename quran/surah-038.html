@@ -76,7 +76,7 @@
         }
         .bismillah-meaning {
             font-size: 15px;
-            color: #008053;
+            color: #1b5e20; /* গাঢ় সবুজ */
             font-weight: bold;
             line-height: 1.4;
         }
@@ -122,7 +122,7 @@
         }
         .verified-meaning {
             font-size: 14px;
-            color: #008053;
+            color: #1b5e20; /* গাঢ় সবুজ */
             font-weight: bold;
             line-height: 1.3;
         }
@@ -154,13 +154,12 @@
         .nav-section {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
+            align-items: center;
             margin-top: 15px;
             gap: 10px;
         }
         .nav-left-btns {
             display: flex;
-            flex-direction: column;
             gap: 8px;
         }
         .nav-btn {
@@ -187,7 +186,7 @@
     <div class="sura-header">
         <h1 class="sura-name">সূরা সোয়াদ</h1>
         <button class="toggle-btn" id="transToggleBtn" onclick="togglePronunciation()">
-            <span id="prunun-icon">🙈</span> <span id="prunun-text">উচ্চারণ লুকান</span>
+            <span id="prunun-icon">👁️</span> <span id="prunun-text">উচ্চারণ দেখান</span>
         </button>
         <div class="sura-meta">সূরা ৩৮ | আয়াত: ৮৮ | মাক্কী</div>
     </div>
@@ -231,7 +230,7 @@
         </div>
 
         <!-- উচ্চারণ বক্স -->
-        <div class="pronunciation-box" style="display: block;">
+        <div class="pronunciation-box">
             <strong>উচ্চারণ:</strong> ওয়া ইন্না 'আলাইকা লা'নাতি ইলা ইয়াওমিদ দ্বীন।
         </div>
 
@@ -245,10 +244,8 @@
     <div class="nav-section">
         <div class="nav-left-btns">
             <a href="surah-037.html" class="nav-btn">&larr; পূর্ববর্তী সূরা</a>
-            <a href="surah-039.html" class="nav-btn">পরবর্তী সূরা &rarr;</a>
-        </div>
-        <div>
             <a href="index.html" class="nav-btn">সূরা তালিকা</a>
+            <a href="surah-039.html" class="nav-btn">পরবর্তী সূরা &rarr;</a>
         </div>
     </div>
 </div>
