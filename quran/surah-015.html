@@ -36,7 +36,7 @@
 
         .sura-name {
             color: #1b5e20;
-            font-size: 26px;
+            font-size: 28px;
             font-weight: bold;
             margin: 0 0 15px 0;
         }
@@ -97,8 +97,8 @@
         .word-box {
             background-color: #f8f9fa;
             border-radius: 6px;
-            padding: 12px 10px;
-            min-width: 80px;
+            padding: 12px 8px;
+            min-width: 85px;
             flex: 1 1 calc(33.33% - 10px);
             text-align: center;
             display: flex;
@@ -108,39 +108,39 @@
         }
 
         .arabic-word {
-            font-size: 22px;
-            color: #1b5e20;
+            font-size: 26px;
+            color: #333333;
             direction: rtl;
             margin-bottom: 6px;
             font-family: 'Amiri', 'Traditional Arabic', serif;
         }
 
-        .meaning-text {
-            font-size: 13px;
+        .verified-meaning {
+            font-size: 15px;
             color: #1b5e20;
             font-weight: bold;
             line-height: 1.3;
         }
 
-        /* উচ্চারণ বক্স (ছবি অনুযায়ী অন/অফ হবে) */
-        .pronunciation-box {
+        /* উচ্চারণ বক্স (গিটহাব কোড অনুযায়ী) */
+        .transliteration-box {
             background-color: #f8f9fa;
             border-left: 3px solid #1b5e20;
             border-radius: 4px;
             padding: 12px 15px;
             font-size: 14px;
-            color: #1b5e20;
+            color: #333333;
             line-height: 1.6;
             margin-bottom: 12px;
-            display: none; /* ডিফল্টভাবে হাইড থাকবে */
+            display: none; /* ডিফল্টভাবে লুকানো */
         }
 
-        .show-pronunciation .pronunciation-box {
-            display: block; /* সুইচ অন করলে দেখাবে */
+        .transliteration-box strong {
+            color: #1b5e20;
         }
 
-        /* সম্পূর্ণ অনুবাদ বক্স */
-        .translation-box {
+        /* অনুবাদ বক্স (গিটহাব কোড অনুযায়ী) */
+        .full-translation {
             background-color: #f8f9fa;
             border-left: 3px solid #1b5e20;
             border-radius: 4px;
@@ -150,30 +150,27 @@
             line-height: 1.6;
         }
 
-        /* নিচের নেভিগেশন এলাকা */
-        .nav-container {
+        /* নেভিগেশন (ছবি অনুযায়ী ৩টি বাটন পাশাপাশি) */
+        .navigation {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 10px;
-        }
-
-        .nav-column {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+            gap: 8px;
+            margin-top: 15px;
         }
 
         .nav-btn {
             background-color: #1b5e20;
             color: #ffffff;
             text-decoration: none;
-            padding: 8px 14px;
+            padding: 8px 10px;
             border-radius: 5px;
             font-size: 13px;
             font-weight: bold;
             text-align: center;
+            flex: 1;
             transition: background-color 0.2s;
+            white-space: nowrap;
         }
 
         .nav-btn:hover {
@@ -187,89 +184,91 @@
     <!-- হেডার -->
     <div class="sura-header">
         <h1 class="sura-name">সূরা আল-হিজর</h1>
-        <button class="toggle-btn" onclick="togglePronunciation()">
-            <span id="btn-icon">👁</span> <span id="btn-text">উচ্চারণ দেখান</span>
+        <button class="toggle-btn" id="transToggleBtn" onclick="toggleTransliteration()">
+            👁 উচ্চারণ দেখান
         </button>
         <div class="sura-meta">সূরা ১৫ | আয়াত: ৯৯ | মাক্কী</div>
     </div>
 
     <!-- আয়াতের মূল বক্স -->
-    <div class="verse-container" id="verse-box">
+    <div class="verse-container">
         <div class="verse-number">১৫:৩৫</div>
 
         <!-- আরবি ও বাংলা শব্দে শব্দে গ্রিড -->
         <div class="word-grid">
             
             <div class="word-box">
-                <div class="arabic-word">وَإِنَّ</div>
-                <div class="meaning-text">এবং নিশ্চয়ই</div>
+                <span class="arabic-word">وَإِنَّ</span>
+                <span class="verified-meaning">এবং নিশ্চয়ই</span>
             </div>
 
             <div class="word-box">
-                <div class="arabic-word">عَلَيْكَ</div>
-                <div class="meaning-text">তোমার উপর</div>
+                <span class="arabic-word">عَلَيْكَ</span>
+                <span class="verified-meaning">তোমার উপর</span>
             </div>
 
             <div class="word-box">
-                <div class="arabic-word">اللَّعْنَةَ</div>
-                <div class="meaning-text">অভিশাপ</div>
+                <span class="arabic-word">اللَّعْنَةَ</span>
+                <span class="verified-meaning">অভিশাপ</span>
             </div>
 
             <div class="word-box">
-                <div class="arabic-word">إِلَىٰ</div>
-                <div class="meaning-text">অভিমুখে</div>
+                <span class="arabic-word">إِلَىٰ</span>
+                <span class="verified-meaning">অভিমুখে</span>
             </div>
 
             <div class="word-box">
-                <div class="arabic-word">يَوْمِ</div>
-                <div class="meaning-text">সময়ের</div>
+                <span class="arabic-word">يَوْمِ</span>
+                <span class="verified-meaning">সময়ের</span>
             </div>
 
             <div class="word-box">
-                <div class="arabic-word">الدِّينِ</div>
-                <div class="meaning-text">দায়বদ্ধতার</div>
+                <span class="arabic-word">الدِّينِ</span>
+                <span class="verified-meaning">দায়বদ্ধতার</span>
             </div>
 
         </div>
 
-        <!-- উচ্চারণ বক্স (ছবি অনুযায়ী) -->
-        <div class="pronunciation-box">
+        <!-- উচ্চারণ বক্স -->
+        <div class="transliteration-box">
             <strong>উচ্চারণ:</strong> ওয়া ইন্না 'আলাইকাল লা'নাতা ইলা ইয়াওমিদ দ্বীন।
         </div>
 
-        <!-- বাংলা অনুবাদ -->
-        <div class="translation-box">
+        <!-- সম্পূর্ণ অনুবাদ -->
+        <div class="full-translation">
             "এবং নিশ্চয়ই দায়বদ্ধতার সময়ের অভিমুখে তোমার উপর অভিশাপ।"
         </div>
     </div>
 
-    <!-- নিচের নেভিগেশন বাটন -->
-    <div class="nav-container">
-        <div class="nav-column">
-            <a href="surah-014.html" class="nav-btn">&larr; পূর্ববর্তী সূরা</a>
-            <a href="surah-016.html" class="nav-btn">পরবর্তী সূরা &rarr;</a>
-        </div>
-        <a href="../index.html" class="nav-btn">সূরা তালিকা</a>
+    <!-- নেভিগেশন (ছবি অনুযায়ী) -->
+    <div class="navigation">
+        <a href="surah-014.html" class="nav-btn">&larr; পূর্ববর্তী সূরা</a>
+        <a href="index.html" class="nav-btn">সূরা তালিকা</a>
+        <a href="surah-016.html" class="nav-btn">পরবর্তী সূরা &rarr;</a>
     </div>
 </div>
 
 <script>
-    function togglePronunciation() {
-        const verseBox = document.getElementById('verse-box');
-        const btnText = document.getElementById('btn-text');
-        const btnIcon = document.getElementById('btn-icon');
-        
-        verseBox.classList.toggle('show-pronunciation');
-        
-        if (verseBox.classList.contains('show-pronunciation')) {
-            btnText.innerText = "উচ্চারণ লুকান";
-            btnIcon.innerText = "🙈";
-        } else {
-            btnText.innerText = "উচ্চারণ দেখান";
-            btnIcon.innerText = "👁";
-        }
+function toggleTransliteration() {
+    const transBoxes = document.querySelectorAll('.transliteration-box');
+    const btn = document.getElementById('transToggleBtn');
+
+    if (transBoxes.length === 0) return;
+
+    const isHidden = window.getComputedStyle(transBoxes[0]).display === 'none';
+
+    transBoxes.forEach(box => {
+        box.style.display = isHidden ? 'block' : 'none';
+    });
+
+    if (isHidden) {
+        btn.innerHTML = '🙈 উচ্চারণ লুকান';
+    } else {
+        btn.innerHTML = '👁 উচ্চারণ দেখান';
     }
+}
 </script>
 
 </body>
 </html>
+
