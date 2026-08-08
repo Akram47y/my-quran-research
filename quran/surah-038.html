@@ -1,1 +1,274 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>সূরা সোয়াদ | আয়াত ৭৮</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
+        body {
+            background-color: #f4f5f7;
+            color: #333333;
+            font-family: 'SolaimanLipi', Arial, sans-serif;
+            margin: 0;
+            padding: 20px 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .main-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 25px 18px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        /* সূরার শিরোনাম এলাকা */
+        .sura-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .sura-name {
+            color: #1b5e20;
+            font-size: 28px;
+            font-weight: bold;
+            margin: 0 0 15px 0;
+        }
+
+        /* উচ্চারণ দেখান/লুকান বাটন */
+        .toggle-btn {
+            background-color: #1b5e20;
+            color: #ffffff;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 12px;
+            transition: background-color 0.2s;
+        }
+
+        .toggle-btn:hover {
+            background-color: #144417;
+        }
+
+        .sura-meta {
+            color: #666666;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        /* আয়াত কনটেইনার */
+        .verse-container {
+            border: 1px solid #edf0f2;
+            border-radius: 10px;
+            padding: 16px;
+            margin-top: 15px;
+            margin-bottom: 25px;
+        }
+
+        .verse-number {
+            font-weight: bold;
+            font-size: 16px;
+            color: #333333;
+            margin-bottom: 15px;
+        }
+
+        /* শব্দে শব্দে গ্রিড (ডান থেকে বাম) */
+        .word-grid {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row-reverse;
+            gap: 10px;
+            margin-bottom: 20px;
+            justify-content: flex-start;
+        }
+
+        .word-box {
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            padding: 12px 8px;
+            min-width: 85px;
+            flex: 1 1 calc(33.33% - 10px);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .arabic-word {
+            font-size: 24px;
+            color: #333333;
+            direction: rtl;
+            margin-bottom: 6px;
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+        }
+
+        /* শব্দ কার্ডের বাংলা অর্থ (নির্দিষ্ট উজ্জ্বল সবুজ রং) */
+        .verified-meaning {
+            font-size: 14px;
+            color: #008053;
+            font-weight: bold;
+            line-height: 1.3;
+        }
+
+        /* উচ্চারণ বক্স */
+        .transliteration-box {
+            background-color: #f8f9fa;
+            border-left: 3px solid #1b5e20;
+            border-radius: 4px;
+            padding: 12px 15px;
+            font-size: 15px;
+            color: #4a4a4a;
+            line-height: 1.6;
+            margin-bottom: 12px;
+            display: none;
+        }
+
+        .transliteration-box strong {
+            color: #1b5e20;
+        }
+
+        /* অনুবাদ বক্স */
+        .full-translation {
+            background-color: #f8f9fa;
+            border-left: 3px solid #1b5e20;
+            border-radius: 4px;
+            padding: 12px 15px;
+            font-size: 15px;
+            color: #4a4a4a;
+            line-height: 1.6;
+        }
+
+        /* নেভিগেশন */
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .nav-btn {
+            background-color: #1b5e20;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 10px;
+            border-radius: 5px;
+            font-size: 13px;
+            font-weight: bold;
+            text-align: center;
+            flex: 1;
+            transition: background-color 0.2s;
+            white-space: nowrap;
+        }
+
+        .nav-btn:hover {
+            background-color: #144417;
+        }
+    </style>
+</head>
+<body>
+
+<div class="main-card">
+    <!-- হেডার -->
+    <div class="sura-header">
+        <h1 class="sura-name">সূরা সোয়াদ</h1>
+        <button class="toggle-btn" id="transToggleBtn" onclick="toggleTransliteration()">
+            👁 উচ্চারণ দেখান
+        </button>
+        <div class="sura-meta">সূরা ৩৮ | আয়াত: ৮৮ | মাক্কী</div>
+    </div>
+
+    <!-- আয়াতের মূল বক্স -->
+    <div class="verse-container">
+        <div class="verse-number">৩৮:৭৮</div>
+
+        <!-- আরবি ও বাংলা শব্দে শব্দে গ্রিড -->
+        <div class="word-grid">
+            
+            <div class="word-box">
+                <span class="arabic-word">وَإِنَّ</span>
+                <span class="verified-meaning">এবং নিশ্চয়ই</span>
+            </div>
+
+            <div class="word-box">
+                <span class="arabic-word">عَلَيْكَ</span>
+                <span class="verified-meaning">তোমার উপর</span>
+            </div>
+
+            <div class="word-box">
+                <span class="arabic-word">لَعْنَتِي</span>
+                <span class="verified-meaning">আমার অভিশাপ</span>
+            </div>
+
+            <div class="word-box">
+                <span class="arabic-word">إِلَىٰ</span>
+                <span class="verified-meaning">অভিমুখে</span>
+            </div>
+
+            <div class="word-box">
+                <span class="arabic-word">يَوْمِ</span>
+                <span class="verified-meaning">সময়ের</span>
+            </div>
+
+            <div class="word-box">
+                <span class="arabic-word">الدِّينِ</span>
+                <span class="verified-meaning">দায়বদ্ধতার</span>
+            </div>
+
+        </div>
+
+        <!-- উচ্চারণ বক্স -->
+        <div class="transliteration-box">
+            <strong>উচ্চারণ:</strong> ওয়া ইন্না 'আলাইকা লা'নাতি ইলা ইয়াওমিদ দ্বীন।
+        </div>
+
+        <!-- সম্পূর্ণ অনুবাদ -->
+        <div class="full-translation">
+            "এবং নিশ্চয়ই দায়বদ্ধতার সময়ের অভিমুখে তোমার উপর আমার অভিশাপ।"
+        </div>
+    </div>
+
+    <!-- নেভিগেশন -->
+    <div class="navigation">
+        <a href="surah-037.html" class="nav-btn">&larr; পূর্ববর্তী সূরা</a>
+        <a href="index.html" class="nav-btn">সূরা তালিকা</a>
+        <a href="surah-039.html" class="nav-btn">পরবর্তী সূরা &rarr;</a>
+    </div>
+</div>
+
+<script>
+function toggleTransliteration() {
+    const transBoxes = document.querySelectorAll('.transliteration-box');
+    const btn = document.getElementById('transToggleBtn');
+
+    if (transBoxes.length === 0) return;
+
+    const isHidden = window.getComputedStyle(transBoxes[0]).display === 'none';
+
+    transBoxes.forEach(box => {
+        box.style.display = isHidden ? 'block' : 'none';
+    });
+
+    if (isHidden) {
+        btn.innerHTML = '🙈 উচ্চারণ লুকান';
+    } else {
+        btn.innerHTML = '👁 উচ্চারণ দেখান';
+    }
+}
+</script>
+
+</body>
+</html>
