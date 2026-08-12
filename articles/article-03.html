@@ -16,6 +16,8 @@
             --btn-hover: #30363d;
             --quote-bg: #1c2128;
             --quote-border: #2ea043;
+            --disabled-bg: #21262d;
+            --disabled-text: #8b949e;
         }
 
         [data-theme="light"] {
@@ -29,6 +31,8 @@
             --btn-hover: #e5e7eb;
             --quote-bg: #f0fdf4;
             --quote-border: #1f883d;
+            --disabled-bg: #e5e7eb;
+            --disabled-text: #656d76;
         }
 
         body {
@@ -119,15 +123,34 @@
             font-style: italic;
         }
 
+        /* লেখকের মন্তব্য বক্সে সঠিক সবুজ বর্ডার ও হেডার স্টাইল */
         .author-box {
             background-color: var(--card-bg);
-            border: 1px solid var(--text-secondary);
+            border: 1px solid var(--card-border) !important;
             border-radius: 8px;
-            padding: 15px;
+            padding: 20px;
             margin-top: 30px;
             margin-bottom: 20px;
-            font-size: 14px;
-            color: var(--text-secondary);
+            font-size: 15px;
+            color: var(--text-primary);
+        }
+
+        .author-box h2 {
+            color: var(--header-color) !important;
+            font-size: 18px;
+            margin-top: 0;
+            margin-bottom: 12px;
+            border-bottom: 1px solid var(--btn-bg);
+            padding-bottom: 6px;
+        }
+
+        .author-info {
+            margin-top: 15px;
+            line-height: 1.6;
+        }
+
+        .author-info p {
+            margin: 4px 0;
         }
 
         .navigation {
@@ -152,11 +175,13 @@
             flex: 1;
         }
 
+        /* নিষ্ক্রিয় বাটন স্টাইল সংশোধন */
         .nav-btn.disabled {
-            background-color: var(--btn-bg) !important;
-            color: var(--text-secondary) !important;
+            background-color: var(--disabled-bg) !important;
+            color: var(--disabled-text) !important;
+            border: 1px solid var(--btn-hover) !important;
             cursor: not-allowed;
-            opacity: 0.6;
+            opacity: 1;
         }
 
         footer {
@@ -358,7 +383,7 @@
         <p>কোনো আয়াত যদি প্রস্তাবিত কোর-ধারণার সঙ্গে অসামঞ্জস্যপূর্ণ ফল দেয়, তবে সেই ফলকেও গবেষণার অংশ হিসেবে গ্রহণ করা হবে।</p>
     </div>
 
-     <!-- লেখকের মন্তব্য -->
+    <!-- লেখকের মন্তব্য -->
     <div class="author-box">
         <h2>লেখকের ব্যক্তিগত উপলব্ধি:</h2>
         <p>এই লেখাটি কারও বিশ্বাসকে আঘাত করার উদ্দেশ্যে নয়। আমি কুরআনের শব্দ, রুট ও পাঠকে সর্বোচ্চ গুরুত্ব দিয়ে বিষয়গুলো বোঝার চেষ্টা করেছি।</p>
@@ -372,15 +397,15 @@
             <p><strong>লেখক:</strong> আকরামুল ইসলাম (আকরাম)</p>
             <p><strong>লেখার ধরন:</strong> গবেষণামূলক</p>
             <p><strong>প্রধান সূত্র:</strong> কুরআন</p>
-            <p><strong>তারিখ:</strong> ১৮/০৭/২০২৫ ইং</p>
+            <p><strong>তারিখ:</strong> ১৮/০র্থ/২০২৫ ইং</p>
         </div>
     </div>
 
-     <!-- নেভিগেশন -->
+    <!-- নেভিগেশন -->
     <div class="navigation">
         <a href="article-02.html" class="nav-btn">← পূর্ববর্তী প্রবন্ধ</a>
-        <a href="index.html" class="nav-btn">মূল তালিকায় ফিরুন</a>
-        <a href="article-04.html" class="nav-btn disabled">পরবর্তী প্রবন্ধ →</a>
+        <a href="../index.html" class="nav-btn">মূল তালিকায় ফিরুন</a>
+        <a href="#" class="nav-btn disabled">পরবর্তী প্রবন্ধ →</a>
     </div>
 
     <!-- ফুটার -->
