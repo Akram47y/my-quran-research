@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>সূরা আস-সাফফাত: ২০</title>
+    <title>সূরা আস-সাফফাত - কুরআন গবেষণা ও শিক্ষা</title>
     <style>
         * {
             box-sizing: border-box;
@@ -11,162 +11,160 @@
             padding: 0;
         }
         body {
-            background-color: #f8f9fa;
-            color: #333333;
-            font-family: 'SolaimanLipi', Arial, sans-serif;
-            padding: 20px 15px;
-            display: flex;
-            justify-content: center;
+            font-family: 'SolaimanLipi', 'Kalpurush', Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #2c3e50;
+            line-height: 1.8;
+            padding: 15px;
         }
         .container {
-            width: 100%;
-            max-width: 480px;
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
-
-        /* হেডার */
-        .surah-header {
+        .header {
             text-align: center;
+            border-bottom: 2px solid #eef2f5;
+            padding-bottom: 15px;
             margin-bottom: 20px;
         }
-        .surah-title {
-            color: #1b5e20;
-            font-size: 30px;
-            font-weight: bold;
-            margin-bottom: 12px;
+        .header h1 {
+            font-size: 26px;
+            color: #1b4332;
+            margin-bottom: 5px;
         }
-        .toggle-btn {
-            background-color: #1b5e20;
-            color: #ffffff;
-            border: none;
-            padding: 8px 18px;
-            border-radius: 6px;
-            font-size: 15px;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 15px;
-            font-family: inherit;
+        .header .meta-info {
+            color: #666;
+            font-size: 14px;
         }
-
-        .surah-info {
-            font-size: 13px;
-            color: #777777;
-        }
-
-        /* বিসমিল্লাহ বক্স */
         .bismillah-box {
             background-color: #f8f9fa;
-            border-radius: 12px;
-            padding: 25px 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 15px;
             text-align: center;
-            margin-bottom: 20px;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+            margin-bottom: 25px;
         }
-        .bismillah-ar {
-            font-family: 'Amiri', 'Traditional Arabic', serif;
-            font-size: 28px;
-            color: #333333;
-            margin-bottom: 10px;
-            direction: rtl;
+        .bismillah-arabic {
+            font-family: 'Meaney', 'Amiri', 'Traditional Arabic', serif;
+            font-size: 24px;
+            color: #1b4332;
+            margin-bottom: 5px;
+            display: block;
         }
-        .bismillah-bn {
-            color: #1b5e20;
+        .bismillah-meaning {
             font-size: 15px;
+            color: #28a745;
             font-weight: bold;
         }
-
-        /* প্রধান আয়াত বক্স */
-        .verse-box {
+        .verse-card {
+            border: 1px solid #e0e6ed;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
             background-color: #ffffff;
-            border: 1px solid #eef0f2;
-            border-radius: 12px;
-            padding: 20px 16px;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
         }
-        .verse-number {
+        .verse-num {
+            font-size: 14px;
             font-weight: bold;
-            font-size: 17px;
-            color: #333333;
-            margin-bottom: 18px;
+            color: #1b4332;
+            margin-bottom: 12px;
         }
-
-        /* শব্দ গ্রিড */
-        .words-grid {
+        .word-by-word-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
             direction: rtl;
-            margin-bottom: 18px;
+            justify-content: flex-start;
+            gap: 6px;
+            margin-bottom: 15px;
         }
-        .word-card {
-            background-color: #f7f9f7;
-            border-radius: 8px;
-            padding: 14px 6px;
-            flex: 1 1 calc(33.333% - 10px);
-            text-align: center;
+        .word-box {
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
+            background-color: #f8f9fa;
+            border: 1px solid #edf2f7;
+            padding: 6px 4px;
+            border-radius: 6px;
+            flex: 1 1 calc(33.333% - 6px);
+            max-width: calc(33.333% - 6px);
+            box-sizing: border-box;
         }
-        .ar-word {
-            font-family: 'Amiri', 'Traditional Arabic', serif;
-            font-size: 24px;
-            color: #333333;
-            margin-bottom: 8px;
-            line-height: 1.2;
+        .arabic-word {
+            font-family: 'Meaney', 'Amiri', 'Traditional Arabic', serif;
+            font-size: 20px;
+            color: #1b4332;
+            margin-bottom: 4px;
         }
-        .bn-word {
-            font-size: 14px;
-            color: #1b5e20;
+        .verified-meaning {
+            font-size: 13.5px;
+            color: #28a745;
             font-weight: bold;
+            direction: ltr;
+            text-align: center;
         }
-
-        /* উচ্চারণ বক্স (আলাদা) */
-        .pronunciation-box {
-            background-color: #f7f9f7;
-            border-left: 4px solid #1b5e20;
-            padding: 14px 16px;
-            border-radius: 0 8px 8px 0;
-            font-size: 15px;
-            color: #333333;
-            margin-bottom: 12px;
-            line-height: 1.6;
+        .full-translation {
+            background-color: #f8f9fa;
+            border-left: 4px solid #1b4332;
+            padding: 12px 15px;
+            border-radius: 0 6px 6px 0;
+            font-size: 15.5px;
+            color: #2c3e50;
+            direction: ltr;
         }
-        .pronunciation-box strong {
-            color: #1b5e20;
-        }
-
-        /* অনুবাদ বক্স */
-        .translation-box {
-            background-color: #f7f9f7;
-            border-left: 4px solid #1b5e20;
-            padding: 14px 16px;
-            border-radius: 0 8px 8px 0;
-            font-size: 15px;
-            color: #333333;
-            line-height: 1.6;
-        }
-
-        /* নেভিগেশন */
         .navigation {
             display: flex;
             justify-content: space-between;
-            gap: 8px;
-            margin-top: 20px;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 2px solid #eef2f5;
+            gap: 10px;
+            flex-wrap: wrap;
         }
         .nav-btn {
-            background-color: #1b5e20;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #1b4332;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .nav-btn:hover {
+            background-color: #0d3b2e;
+        }
+        /* উচ্চারণ দেখান/লুকান এবং এর বাক্সের স্টাইল */
+        .transliteration-box {
+            display: none;
+            margin-top: 8px;
+            margin-bottom: 5px;
+            padding: 6px 12px;
+            background-color: #f8f9fa;
+            border-left: 3px solid #1b4332;
+            border-radius: 4px;
+            font-style: italic;
+            font-size: 0.95em;
+            color: #2c3e50;
+        }
+        .trans-toggle-btn {
+            background-color: #1b4332;
             color: #ffffff;
             border: none;
-            padding: 10px 8px;
+            padding: 6px 14px;
             border-radius: 6px;
-            text-decoration: none;
-            font-size: 14px;
-            text-align: center;
-            flex: 1;
-            font-weight: 500;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: bold;
+            transition: background 0.2s;
+            margin-top: 4px;
+            margin-bottom: 6px;
+        }
+        .trans-toggle-btn:hover {
+            background-color: #0d3b2e;
         }
     </style>
 </head>
@@ -174,82 +172,65 @@
 
 <div class="container">
     <!-- হেডার -->
-    <div class="surah-header">
-        <h1 class="surah-title">সূরা আস-সাফফাত</h1>
-        <button class="toggle-btn" id="toggleBtn" onclick="togglePronunciation()">
-            🙈 উচ্চারণ লুকান
-        </button>
-        <div class="surah-info">সূরা ৩৭ | আয়াত: ১৮২ | মাক্কী</div>
+    <div class="header">
+        <h1>সূরা আস-সাফফাত</h1>
+        <button class="trans-toggle-btn" onclick="toggleTransliteration()" id="transToggleBtn">👁️ উচ্চারণ দেখান</button>
+        <div class="meta-info">সূরা ৩৭ | আয়াত: ১৮২ | মাক্কী</div>
     </div>
 
     <!-- বিসমিল্লাহ -->
     <div class="bismillah-box">
-        <div class="bismillah-ar">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
-        <div class="bismillah-bn">"পরম মমতাময়, সদামমতাবদ্ধ আল্লাহর নামে।"</div>
+        <span class="bismillah-arabic">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</span>
+        <div class="bismillah-meaning">পরম মমতাময়, সদামমতাবদ্ধ আল্লাহর নামে।</div>
     </div>
 
-    <!-- আয়াত কার্ড -->
-    <div class="verse-box">
-        <div class="verse-number">৩৭: ২০</div>
-
-        <!-- শব্দ কার্ডগুলো -->
-        <div class="words-grid">
-            <div class="word-card">
-                <div class="ar-word">وَقَالُوا</div>
-                <div class="bn-word">এবং তারা বলল</div>
-            </div>
-
-            <div class="word-card">
-                <div class="ar-word">يَا وَيْلَنَا</div>
-                <div class="bn-word">‘হায় আমাদের দুর্ভোগ!</div>
-            </div>
-
-            <div class="word-card">
-                <div class="ar-word">هَٰذَا</div>
-                <div class="bn-word">এটি</div>
-            </div>
-
-            <div class="word-card">
-                <div class="ar-word">يَوْمُ الدِّينِ</div>
-                <div class="bn-word">দায়বদ্ধতার সময়।’</div>
-            </div>
+    <!-- আয়াত প্লেসহোল্ডার (পরবর্তীতে আয়াত অনুবাদ বসানোর জন্য প্রস্তুত) -->
+    <!-- উদাহরণস্বরূপ ৩৭:১ আয়াত কাঠামোর টেমপ্লেট -->
+    <div class="verse-card">
+        <div class="verse-num">৩৭:১</div>
+        <div class="word-by-word-container">
+            <!-- শব্দ কার্ডসমূহ পরবর্তীতে এখানে বসবে -->
+        </div>
+        
+        <div class="transliteration-box">
+            <strong>উচ্চারণ:</strong> [এখানে আয়াতের সম্পূর্ণ উচ্চারণ থাকবে]
         </div>
 
-        <!-- আলাদা উচ্চারণ বক্স -->
-        <div class="pronunciation-box" id="pronounceBox">
-            <strong>উচ্চারণ:</strong> ওয়া ক্বালু 'য়া ওয়াইলানা হাযা ইয়াওমুদ দীন।
-        </div>
-
-        <!-- অনুবাদ বক্স -->
-        <div class="translation-box">
-            "এবং তারা বলল, ‘হায় আমাদের দুর্ভোগ! এটি দায়বদ্ধতার সময়।’"
+        <div class="full-translation">
+            [এখানে সম্পূর্ণ অনুবাদের বাক্য থাকবে]
         </div>
     </div>
 
-    <!-- নেভিগেশন বাটনসমূহ -->
+    <!-- নেভিগেশন -->
     <div class="navigation">
-        <a href="surah-036" class="nav-btn">&larr; পূর্ববর্তী সূরা</a>
+        <a href="surah-036.html" class="nav-btn">&larr; সূরা আল-মাউন</a>
         <a href="index.html" class="nav-btn">সূরা তালিকা</a>
-        <a href="surah-038" class="nav-btn">পরবর্তী সূরা &rarr;</a>
+        <a href="surah-038.html" class="nav-btn">পরবর্তী সূরা &rarr;</a>
     </div>
 </div>
 
 <script>
-    function togglePronunciation() {
-        const box = document.getElementById('pronounceBox');
-        const btn = document.getElementById('toggleBtn');
-        
-        if (box.style.display === 'none') {
-            box.style.display = 'block';
-            btn.innerHTML = '🙈 উচ্চারণ লুকান';
-        } else {
-            box.style.display = 'none';
-            btn.innerHTML = '👁️ উচ্চারণ দেখান';
-        }
+function toggleTransliteration() {
+    const transBoxes = document.querySelectorAll('.transliteration-box');
+    const btn = document.getElementById('transToggleBtn');
+
+    if (transBoxes.length === 0) return;
+
+    // বর্তমান অবস্থা চেক করা (দেখা যাচ্ছে কি না)
+    const isHidden = window.getComputedStyle(transBoxes[0]).display === 'none';
+
+    transBoxes.forEach(box => {
+        box.style.display = isHidden ? 'block' : 'none';
+    });
+
+    // বাটনের টেক্সট পরিবর্তন
+    if (isHidden) {
+        btn.innerHTML = '🙈 উচ্চারণ লুকান';
+    } else {
+        btn.innerHTML = '👁️ উচ্চারণ দেখান';
     }
+}
 </script>
 
 </body>
 </html>
-
-
