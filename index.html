@@ -250,11 +250,123 @@ body.dark-mode div[style*="background: linear-gradient(135deg, #f0fdf4"] strong[
         body.dark-mode .surah-meaning {
             color: #4ade80 !important;
         }
-    
+    /* ========================================== */
+/* প্রগ্রেস বার স্টাইল */
+/* ========================================== */
+.progress-container {
+    background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #3b82f6;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.progress-label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1e40af;
+}
+.progress-percentage {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1e3a8a;
+}
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 12px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6 0%, #1d4ed8 100%);
+    border-radius: 10px;
+    transition: width 0.5s ease;
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+}
+.progress-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: #6b7280;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+.progress-details strong {
+    color: #1e3a8a;
+}
+body.dark-mode .progress-container {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-color: #334155;
+    border-left-color: #3b82f6;
+}
+body.dark-mode .progress-label {
+    color: #60a5fa;
+}
+body.dark-mode .progress-percentage {
+    color: #93c5fd;
+}
+body.dark-mode .progress-bar {
+    background: #334155;
+}
+body.dark-mode .progress-fill {
+    background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%);
+}
+body.dark-mode .progress-details {
+    color: #94a3b8;
+}
+body.dark-mode .progress-details strong {
+    color: #60a5fa;
+}
+@media (max-width: 480px) {
+    .progress-container {
+        padding: 15px;
+    }
+    .progress-header {
+        margin-bottom: 10px;
+    }
+    .progress-label {
+        font-size: 14px;
+    }
+    .progress-percentage {
+        font-size: 16px;
+    }
+    .progress-details {
+        font-size: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+        }
     </style>
 </head>
 <body>
-
+<!-- প্রগ্রেস বার -->
+<div class="progress-container">
+    <div class="progress-header">
+        <span class="progress-label">📊 কাজের অগ্রগতি</span>
+        <span class="progress-percentage">০%</span>
+    </div>
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+    <div class="progress-details">
+        <span>১১৪টি সূরার মধ্যে <strong id="completedSurahs">০</strong>টি সম্পন্ন</span>
+        <span>•</span>
+        <span>৬,২৩৬টি আয়াতের মধ্যে <strong id="completedAyahs">০</strong>টি</span>
+    </div>
+</div>
 <header>
     <!-- নতুন নেভিগেশন বার -->
 <header class="main-header">
@@ -693,6 +805,32 @@ document.getElementById('searchInput').addEventListener('keypress', function(e) 
         }
     }
 });
+        // ==========================================
+// প্রগ্রেস বার আপডেট ফাংশন
+// ==========================================
+const currentProgress = {
+    completedSurahs: 0,
+    totalSurahs: 114,
+    completedAyahs: 0,
+    totalAyahs: 6236
+};
+
+function updateProgressBar() {
+    const surahPercentage = Math.round((currentProgress.completedSurahs / currentProgress.totalSurahs) * 100);
+    const progressFill = document.getElementById('progressFill');
+    if (progressFill) progressFill.style.width = surahPercentage + '%';
+    
+    const percentageText = document.querySelector('.progress-percentage');
+    if (percentageText) percentageText.textContent = surahPercentage + '%';
+    
+    const completedSurahsEl = document.getElementById('completedSurahs');
+    if (completedSurahsEl) completedSurahsEl.textContent = currentProgress.completedSurahs;
+    
+    const completedAyahsEl = document.getElementById('completedAyahs');
+    if (completedAyahsEl) completedAyahsEl.textContent = currentProgress.completedAyahs.toLocaleString('bn-BD');
+}
+
+document.addEventListener('DOMContentLoaded', updateProgressBar);
     </script>
 <script src="dark-mode.js"></script>
 </body>
