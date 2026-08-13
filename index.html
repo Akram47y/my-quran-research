@@ -256,15 +256,67 @@ body.dark-mode div[style*="background: linear-gradient(135deg, #f0fdf4"] strong[
 <body>
 
 <header>
-    <h1>কুরআন গবেষণা ও শব্দানুবাদ</h1>
-    <p>বিশুদ্ধ টেক্সট ও শব্দমূল (Root Word) ভিত্তিক গবেষণা প্ল্যাটফর্ম</p>
-    <!-- ডার্ক মোড টগল বাটন -->
-<button id="dark-mode-toggle" onclick="toggleDarkMode()" style="position: absolute; top: 20px; right: 20px; background: rgba(255,255,255,0.2); border: 2px solid rgba(255,255,255,0.3); color: white; padding: 8px 15px; border-radius: 25px; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease; z-index: 1000;">
-    <span id="dark-mode-icon"></span>
-    <span id="dark-mode-text">ডার্ক মোড</span>
-</button>
+    <!-- নতুন নেভিগেশন বার -->
+<header class="main-header">
+    <div class="header-top">
+        <div class="header-container">
+            <!-- লোগো -->
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-text">কুরআন গবেষণা</span>
+                    <span class="logo-subtitle">ও শব্দানুবাদ</span>
+                </a>
+            </div>
+
+            <!-- ডান পাশের বাটনসমূহ -->
+            <div class="header-actions">
+                <!-- প্রবেশ করুন -->
+                <button class="btn-login" onclick="alert('লগইন সিস্টেম শীঘ্রই আসছে')">প্রবেশ করুন</button>
+                
+                <!-- ভাষা (বাংলাদেশ পতাকা) -->
+                <button class="btn-lang" onclick="toggleLanguage()" title="ভাষা পরিবর্তন">
+                    <img src="https://flagcdn.com/w40/bd.png" alt="বাংলাদেশ" class="flag-icon">
+                </button>
+
+                <!-- ডার্ক মোড টগল -->
+                <button id="dark-mode-toggle" onclick="toggleDarkMode()" style="background: rgba(255,255,255,0.15); border: 1.5px solid rgba(255,255,255,0.3); color: white; padding: 6px 12px; border-radius: 20px; cursor: pointer; font-size: 14px; display: flex; align-items: center; gap: 6px;">
+                    <span id="dark-mode-icon"></span>
+                    <span id="dark-mode-text">ডার্ক মোড</span>
+                </button>
+
+                <!-- ৩টি দাগ (মোবাইল মেনু) -->
+                <button class="btn-menu" onclick="toggleMenu()" aria-label="মেনু">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- সার্চ বার -->
+    <div class="search-section">
+        <div class="search-container">
+            <div class="search-box">
+                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
+                <input type="text" class="search-input" placeholder="সূরা নাম বা নম্বর দিয়ে অনুসন্ধান করুন..." id="searchInput">
+            </div>
+        </div>
+    </div>
 </header>
 
+<!-- মোবাইল মেনু -->
+<div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-nav">
+        <a href="index.html">🏠 হোম</a>
+        <a href="quran/index.html"> ১১৪টি সূরার তালিকা</a>
+        <a href="research-proposal.html">📝 গবেষণা প্রস্তাব</a>
+        <a href="root-analysis/index.html">🔍 রুট বিশ্লেষণ</a>
+        <a href="articles/index.html">✏️ বিষয় ভিত্তিক প্রবন্ধ</a>
+        <a href="videos/index.html">🎬 ভিডিও গ্যালারি</a>
+        <a href="prasangik-kotha.html">📌 প্রাসঙ্গিক কথা</a>
+    </nav>
+</div>
 <div class="container">
               <div class="intro-box">
     <h2 class="intro-title">স্বাগতম</h2>
