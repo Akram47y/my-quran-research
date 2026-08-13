@@ -410,6 +410,35 @@ body.dark-mode div[style*="background: linear-gradient(135deg, #f0fdf4"] strong[
             </a>
         </div>
     </footer>
+    <script>
+// মোবাইল মেনু খোলা/বন্ধ করার ফাংশন
+function toggleMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenu.classList.toggle('active');
+}
+
+// মেনুর বাইরে ক্লিক করলে মেনু বন্ধ হয়ে যাবে
+document.addEventListener('click', function(e) {
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuBtn = document.querySelector('.btn-menu');
+    
+    if (mobileMenu.classList.contains('active') && 
+        !mobileMenu.contains(e.target) && 
+        !menuBtn.contains(e.target)) {
+        mobileMenu.classList.remove('active');
+    }
+});
+
+// সার্চ বারে Enter চাপলে কাজ করার ফাংশন
+document.getElementById('searchInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        let query = this.value.trim();
+        if(query) {
+            alert('আপনি অনুসন্ধান করছেন: ' + query + '\n(সার্চ ফিচারটি শীঘ্রই চালু হবে)');
+        }
+    }
+});
+    </script>
 <script src="dark-mode.js"></script>
 </body>
     
