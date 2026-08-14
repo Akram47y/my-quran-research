@@ -804,13 +804,32 @@ document.addEventListener('click', function(e) {
     }
 });
 // সার্চ বক্সে Enter চাপলে কাজ করার ফাংশন
+// সার্চ ইভেন্ট - event bubbling বন্ধ করা
 document.getElementById('searchInput').addEventListener('keypress', function(e) {
+    e.stopPropagation();
     if (e.key === 'Enter') {
+        e.preventDefault();
         let query = this.value.trim();
         if (query) {
             searchSurah(query);
         }
     }
+});
+
+// সার্চ বক্সে ক্লিক করলেও event বন্ধ
+document.getElementById('searchInput').addEventListener('click', function(e) {
+    e.stopPropagation();
+});
+
+// সার্চ বক্সের parent এও ক্লিক বন্ধ
+document.querySelector('.search-box').addEventListener('click', function(e) {
+    e.stopPropagation();
+});
+document.querySelector('.search-container').addEventListener('click', function(e) {
+    e.stopPropagation();
+});
+document.querySelector('.search-section').addEventListener('click', function(e) {
+    e.stopPropagation();
 });
 
 // সার্চ ফাংশন
