@@ -1,8 +1,8 @@
 const CACHE_NAME = 'quran-research-v1';
 const urlsToCache = [
   '/',
-  '/index.html',
-  '/prasangkik-kotha.html', // আপনার ফাইলের নাম অনুযায়ী এটি পরিবর্তন করুন (যেমন: about.html)
+  'index.html',
+  'prasangkik-kotha.html', // আপনার ফাইলের নাম অনুযায়ী এটি পরিবর্তন করুন (যেমন: about.html)
   '/dark-mode.js',
   '/manifest.json'
 ];
