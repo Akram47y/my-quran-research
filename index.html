@@ -803,34 +803,7 @@ document.addEventListener('click', function(e) {
         mobileMenu.classList.remove('active');
     }
 });
-// সার্চ বক্সে Enter চাপলে কাজ করার ফাংশন
-// সার্চ ইভেন্ট - event bubbling বন্ধ করা
-document.getElementById('searchInput').addEventListener('keypress', function(e) {
-    e.stopPropagation();
-    if (e.key === 'Enter') {
-        e.preventDefault();
-        let query = this.value.trim();
-        if (query) {
-            searchSurah(query);
-        }
-    }
-});
 
-// সার্চ বক্সে ক্লিক করলেও event বন্ধ
-document.getElementById('searchInput').addEventListener('click', function(e) {
-    e.stopPropagation();
-});
-
-// সার্চ বক্সের parent এও ক্লিক বন্ধ
-document.querySelector('.search-box').addEventListener('click', function(e) {
-    e.stopPropagation();
-});
-document.querySelector('.search-container').addEventListener('click', function(e) {
-    e.stopPropagation();
-});
-document.querySelector('.search-section').addEventListener('click', function(e) {
-    e.stopPropagation();
-});
 
 // সার্চ ফাংশন
 function searchSurah() {
@@ -922,11 +895,11 @@ function searchSurah() {
         alert('দুঃখিত, "' + query + '" নামে কোনো সূরা পাওয়া যায়নি।\n\nউদাহরণ:\n• ফাতিহা\n• ইমরান\n• ৫৫\n• রহমান');
     }
 }
-
-// সার্চ বক্সে Enter চাপলে
-document.getElementById('searchInput').addEventListener('keypress', function(e) {
+// সার্চ বক্সে Enter চাপলে (শুধু একবার)
+document.getElementById('searchInput').addEventListener('keydown', function(e) {
     if (e.key === 'Enter') {
         e.preventDefault();
+        e.stopPropagation();
         searchSurah();
     }
 });
@@ -934,7 +907,11 @@ document.getElementById('searchInput').addEventListener('keypress', function(e) 
 // সার্চ আইকনে ক্লিক করলে
 const searchIcon = document.querySelector('.search-icon');
 if (searchIcon) {
-    searchIcon.addEventListener('click', searchSurah);
+    searchIcon.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        searchSurah();
+    });
         }
 
         // ==========================================
