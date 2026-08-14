@@ -813,11 +813,20 @@ document.getElementById('searchInput').addEventListener('keypress', function(e) 
     }
 });
 
-// সূরা খোঁজার ফাংশন
-function searchSurah(query) {
+// সার্চ ফাংশন
+function searchSurah() {
+    const searchInput = document.getElementById('searchInput');
+    const query = searchInput.value.trim();
+    
+    if (!query) {
+        alert('অনুগ্রহ করে সূরার নাম বা নম্বর লিখুন');
+        return;
+    }
+    
     // সংখ্যা হলে সরাসরি সেই সূরায় যান
-    if (!isNaN(query) && query >= 1 && query <= 114) {
-        window.location.href = 'quran/' + query + '.html';
+    const numQuery = parseInt(query);
+    if (!isNaN(numQuery) && numQuery >= 1 && numQuery <= 114) {
+        window.location.href = 'quran/' + numQuery + '.html';
         return;
     }
     
@@ -891,8 +900,22 @@ function searchSurah(query) {
     if (found) {
         window.location.href = 'quran/' + found.num + '.html';
     } else {
-        alert('দুঃখিত, "' + query + '" নামে কোনো সূরা পাওয়া যায়নি।\nসূরার নাম (যেমন: ফাতিহা, ইমরান) বা নম্বর (১-১১৪) দিয়ে চেষ্টা করুন।');
+        alert('দুঃখিত, "' + query + '" নামে কোনো সূরা পাওয়া যায়নি।\n\nউদাহরণ:\n• ফাতিহা\n• ইমরান\n• ৫৫\n• রহমান');
     }
+}
+
+// সার্চ বক্সে Enter চাপলে
+document.getElementById('searchInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        searchSurah();
+    }
+});
+
+// সার্চ আইকনে ক্লিক করলে
+const searchIcon = document.querySelector('.search-icon');
+if (searchIcon) {
+    searchIcon.addEventListener('click', searchSurah);
         }
 
         // ==========================================
