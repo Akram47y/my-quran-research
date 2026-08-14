@@ -1,83 +1,77 @@
-const CACHE_NAME = 'quran-research-v3';
-const urlsToCache = [
-  '/',
-  '/index.html',
-  '/about.html',
-  '/prasangkik-kotha.html',
-  '/research-proposal.html',
-  '/dark-mode.js',
-  '/manifest.json',
-  '/icon-192.png',
-  '/icon-512.png'
-];
+const CACHE_NAME = 'quran-research-v4';
 
-// Install event
+// Install event - শুধু মূল ফাইলগুলো ক্যাশে রাখুন
 self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => {
-        console.log('Opened cache');
-        return cache.addAll(urlsToCache);
-      })
-      .catch(err => {
-        console.log('Cache addAll failed:', err);
-      })
+    caches.open(CACHE_NAME).then(cache => {
+      return cache.addAll([
+        '/',
+        '/index.html',
+        '/manifest.json',
+        '/icon-192.png',
+        '/icon-512.png'
+      ]);
+    })
   );
-});
-
-// Fetch event - এটিই মূল সমস্যার সমাধান
-self.addEventListener('fetch', event => {
-  // শুধুমাত্র GET request handle করুন
-  if (event.request.method !== 'GET') {
-    return;
-  }
-
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        // ক্যাশে পেলে ক্যাশ থেকে দেখাও
-        if (response) {
-          return response;
-        }
-
-        // ক্যাশে না থাকলে নেটওয়ার্ক থেকে আনো
-        return fetch(event.request)
-          .then(response => {
-            // সঠিক response না আসলে
-            if (!response || response.status !== 200 || response.type !== 'basic') {
-              return response;
-            }
-
-            // ক্যাশে জমা করো
-            const responseToCache = response.clone();
-            caches.open(CACHE_NAME)
-              .then(cache => {
-                cache.put(event.request, responseToCache);
-              });
-
-            return response;
-          })
-          .catch(() => {
-            // নেটওয়ার্কও না থাকলে মূল index.html দেখাও (SPA fallback)
-            return caches.match('/index.html');
-          });
-      })
-  );
+  self.skipWaiting();
 });
 
 // Activate event - পুরনো ক্যাশ মুছে ফেলুন
 self.addEventListener('activate', event => {
-  const cacheWhitelist = [CACHE_NAME];
   event.waitUntil(
     caches.keys().then(cacheNames => {
       return Promise.all(
-        cacheNames.map(cacheName => {
-          if (cacheWhitelist.indexOf(cacheName) === -1) {
-            console.log('Deleting old cache:', cacheName);
-            return caches.delete(cacheName);
-          }
-        })
+        cacheNames
+          .filter(name => name !== CACHE_NAME)
+          .map(name => caches.delete(name))
       );
+    })
+  );
+  self.clients.claim();
+});
+
+// Fetch event - Network First strategy
+self.addEventListener('fetch', event => {
+  const request = event.request;
+  
+  // শুধু GET request handle করুন
+  if (request.method !== 'GET') return;
+
+  // HTML পেজের জন্য Network First (সবসময় নেটওয়ার্ক চেক করবে)
+  if (request.headers.get('accept')?.includes('text/html')) {
+    event.respondWith(
+      fetch(request)
+        .then(response => {
+          if (response.status === 200) {
+            const clone = response.clone();
+            caches.open(CACHE_NAME).then(cache => {
+              cache.put(request, clone);
+            });
+          }
+          return response;
+        })
+        .catch(() => {
+          return caches.match(request).then(cached => {
+            return cached || caches.match('/index.html');
+          });
+        })
+    );
+    return;
+  }
+
+  // Static assets (CSS, JS, images) এর জন্য Cache First
+  event.respondWith(
+    caches.match(request).then(cached => {
+      if (cached) return cached;
+      return fetch(request).then(response => {
+        if (response.status === 200) {
+          const clone = response.clone();
+          caches.open(CACHE_NAME).then(cache => {
+            cache.put(request, clone);
+          });
+        }
+        return response;
+      });
     })
   );
 });
