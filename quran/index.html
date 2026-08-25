@@ -134,15 +134,14 @@
     <div class="search-box">
         <input type="text" id="searchInput" onkeyup="filterSurahs()" placeholder="সূরার নাম বা নম্বর লিখে খুঁজুন...">
     </div>
-<!-- সর্বশেষ পড়েছিলেন সেকশন -->
-<div id="last-read-container" style="display: none; margin-bottom: 20px;">
-  <p style="font-weight: bold; font-size: 16px; color: #2d3748; margin-bottom: 8px;">সর্বশেষ পড়েছিলেন</p>
-  <a id="last-read-link" href="#" style="text-decoration: none;">
-    <button id="last-read-btn" style="padding: 8px 16px; border-radius: 20px; border: 1px solid #cbd5e0; background: #ffffff; color: #2d3748; font-size: 14px; cursor: pointer;">
-      <!-- এখানে নাম চলে আসবে -->
-    </button>
-  </a>
-</div>
+  <!-- সর্বশেষ পড়েছিলেন সেকশন -->
+  <div id="last-read-container" style="display: none; margin-bottom: 20px;">
+    <p style="font-weight: bold; font-size: 16px; color: #2d3748; margin-bottom: 8px;">সর্বশেষ পড়েছিলেন</p>
+    <div id="last-read-list" style="display: flex; gap: 8px; overflow-x: auto; padding-bottom: 5px;">
+      <!-- এখানে গতিশীলভাবে একাধিক বাটন চলে আসবে -->
+    </div>
+  </div>
+    
     <!-- সূরার গ্রিড -->
     <div class="surah-grid" id="surahGrid">
 
@@ -1090,24 +1089,34 @@
     }
   }
 
-  // বাটন দেখানোর ফাংশন (ফাংশনের বাইরে)
+  // একাধিক পড়া সূরা দেখানোর ফাংশন
   function checkLastRead() {
-    const savedData = localStorage.getItem('lastReadQuran');
-    if (savedData) {
-      const data = JSON.parse(savedData);
-      const container = document.getElementById('last-read-container');
-      const btn = document.getElementById('last-read-btn');
-      const link = document.getElementById('last-read-link');
+    const listContainer = document.getElementById('last-read-list');
+    const container = document.getElementById('last-read-container');
+    const savedData = localStorage.getItem('lastReadQuranList');
 
-      if (container && btn && link) {
+    if (savedData && listContainer) {
+      const surahList = JSON.parse(savedData);
+      if (surahList.length > 0) {
         container.style.display = 'block';
-        btn.innerText = data.surahName;
-        link.href = data.surahUrl;
+        listContainer.innerHTML = ''; // আগের জিনিস পরিষ্কার করা
+
+        surahList.forEach(item => {
+          const link = document.createElement('a');
+          link.href = item.surahUrl;
+          link.style.textDecoration = 'none';
+
+          const btn = document.createElement('button');
+          btn.innerText = item.surahName;
+          btn.style.cssText = 'padding: 8px 16px; border-radius: 20px; border: 1px solid #cbd5e0; background: #ffffff; color: #2d3748; font-size: 14px; cursor: pointer; white-space: nowrap;';
+
+          link.appendChild(btn);
+          listContainer.appendChild(link);
+        });
       }
     }
   }
 
-  // পেজ লোড হলে এবং ব্যাক করে ফিরে আসলে রান হবে
   window.addEventListener('load', checkLastRead);
   window.addEventListener('pageshow', checkLastRead);
 </script>
