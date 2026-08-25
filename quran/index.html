@@ -1070,37 +1070,46 @@
 </footer>
 
 <script>
-    function filterSurahs() {
-        var input = document.getElementById('searchInput');
-        var filter = input.value.toLowerCase();
-        var grid = document.getElementById('surahGrid');
-        var cards = grid.getElementsByClassName('surah-card');
+  function filterSurahs() {
+    var input = document.getElementById('searchInput');
+    var filter = input.value.toLowerCase();
+    var grid = document.getElementById('surahGrid');
+    var cards = grid.getElementsByClassName('surah-card');
 
-        for (var i = 0; i < cards.length; i++) {
-            var title = cards[i].getElementsByTagName('h3')[0];
-            var num = cards[i].getElementsByClassName('surah-number')[0];
-            var txtValue = title.textContent || title.innerText;
-            var numValue = num.textContent || num.innerText;
+    for (var i = 0; i < cards.length; i++) {
+      var title = cards[i].getElementsByTagName('h3')[0];
+      var num = cards[i].getElementsByClassName('surah-number')[0];
+      var txtValue = title.textContent || title.innerText;
+      var numValue = num.textContent || num.innerText;
 
-            if (txtValue.toLowerCase().indexOf(filter) > -1 || numValue.indexOf(filter) > -1) {
-                cards[i].style.display = "";
-            } else {
-                cards[i].style.display = "none";
-            }
-        }
-        
-  window.addEventListener('DOMContentLoaded', () => {
+      if (txtValue.toLowerCase().indexOf(filter) > -1 || numValue.indexOf(filter) > -1) {
+        cards[i].style.display = "";
+      } else {
+        cards[i].style.display = "none";
+      }
+    }
+  }
+
+  // বাটন দেখানোর ফাংশন (ফাংশনের বাইরে)
+  function checkLastRead() {
     const savedData = localStorage.getItem('lastReadQuran');
-    
     if (savedData) {
       const data = JSON.parse(savedData);
-      
-      // সেভ থাকা ডাটা থাকলে বাটনটি ভিজিবল করবে
-      document.getElementById('last-read-container').style.display = 'block';
-      document.getElementById('last-read-btn').innerText = data.surahName;
-      document.getElementById('last-read-link').href = data.surahUrl;
+      const container = document.getElementById('last-read-container');
+      const btn = document.getElementById('last-read-btn');
+      const link = document.getElementById('last-read-link');
+
+      if (container && btn && link) {
+        container.style.display = 'block';
+        btn.innerText = data.surahName;
+        link.href = data.surahUrl;
+      }
     }
-  });
+  }
+
+  // পেজ লোড হলে এবং ব্যাক করে ফিরে আসলে রান হবে
+  window.addEventListener('load', checkLastRead);
+  window.addEventListener('pageshow', checkLastRead);
 </script>
 
 </body>
