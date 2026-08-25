@@ -1088,7 +1088,19 @@
                 cards[i].style.display = "none";
             }
         }
+        
+  window.addEventListener('DOMContentLoaded', () => {
+    const savedData = localStorage.getItem('lastReadQuran');
+    
+    if (savedData) {
+      const data = JSON.parse(savedData);
+      
+      // সেভ থাকা ডাটা থাকলে বাটনটি ভিজিবল করবে
+      document.getElementById('last-read-container').style.display = 'block';
+      document.getElementById('last-read-btn').innerText = data.surahName;
+      document.getElementById('last-read-link').href = data.surahUrl;
     }
+  });
 </script>
 
 </body>
