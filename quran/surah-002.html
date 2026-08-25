@@ -908,26 +908,18 @@
             <span class="arabic-word">الْمَشْرِقُ</span>
             <span class="verified-meaning" style="color: #2d3748;">উদয়স্থান</span>
         </div>
-        
-        <!-- وَالْمَغْرِبُ - ও অস্তস্থান (কালো) -->
         <div class="word-box">
             <span class="arabic-word">وَالْمَغْرِبُ</span>
             <span class="verified-meaning" style="color: #2d3748;">ও অস্তস্থান</span>
         </div>
-        
-        <!-- يَهْدِي - দিশা দেন (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">يَهْدِي</span>
             <span class="verified-meaning" style="color: #008744;">দিশা দেন</span>
         </div>
-        
-        <!-- مَن - যাকে (কালো) -->
         <div class="word-box">
             <span class="arabic-word">مَن</span>
             <span class="verified-meaning" style="color: #2d3748;">যাকে</span>
         </div>
-        
-        <!-- يَشَاءُ - চান (কালো) -->
         <div class="word-box">
             <span class="arabic-word">يَشَاءُ</span>
             <span class="verified-meaning" style="color: #2d3748;">চান</span>
@@ -1413,7 +1405,6 @@
             <span class="arabic-word">وَلَعَلَّكُمْ</span>
             <span class="verified-meaning" style="color: #2d3748;">আর যাতে তোমরা</span>
         </div>
-        <!-- تَشْكُرُونَ - কৃতজ্ঞ হও (কালো) -->
         <div class="word-box">
             <span class="arabic-word">تَشْكُرُونَ</span>
             <span class="verified-meaning" style="color: #2d3748;">কৃতজ্ঞ হও</span>
@@ -1458,21 +1449,23 @@ function toggleTransliteration() {
         btn.innerHTML = '👁️ উচ্চারণ দেখান';
     }
 }
-      // সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
-  const currentSurah = {
-    surahName: ""সূরা আল-বাক্বারাহ",
-    surahUrl: "surah-002.html"
-  };
+        // সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
+  window.addEventListener('DOMContentLoaded', () => {
+    const currentSurah = {
+      surahName: "সূরা আল-বাক্বারাহ",
+      surahUrl: "surah-002.html"
+    };
 
-  let surahList = JSON.parse(localStorage.getItem('lastReadQuranList')) || [];
-  surahList = surahList.filter(item => item.surahName !== currentSurah.surahName);
-  surahList.unshift(currentSurah);
+    let surahList = JSON.parse(localStorage.getItem('lastReadQuranList')) || [];
+    surahList = surahList.filter(item => item.surahName !== currentSurah.surahName);
+    surahList.unshift(currentSurah);
 
-  if (surahList.length > 5) {
-    surahList.pop();
-  }
+    if (surahList.length > 5) {
+      surahList.pop();
+    }
 
-  localStorage.setItem('lastReadQuranList', JSON.stringify(surahList));
+    localStorage.setItem('lastReadQuranList', JSON.stringify(surahList));
+  });
 
 </script>
     
