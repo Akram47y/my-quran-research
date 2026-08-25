@@ -363,38 +363,26 @@
     <div class="verse-card">
         <div class="verse-num">৩:১৩৮</div>
         <div class="word-by-word-container">
-
-            <!-- ১. হাজা -->
             <div class="word-box">
                 <span class="arabic-word">هٰذَا</span>
                 <span class="verified-meaning">এটি</span>
             </div>
-
-            <!-- ২. বায়ানুন -->
             <div class="word-box">
                 <span class="arabic-word">بَيَانٌ</span>
                 <span class="verified-meaning">স্পষ্টীকরণ</span>
             </div>
-
-            <!-- ৩. লিন্নাসি -->
             <div class="word-box">
                 <span class="arabic-word">لِّلنَّاسِ</span>
                 <span class="verified-meaning">মানবসমষ্টির জন্য</span>
             </div>
-
-            <!-- ৪. ওয়া হুদান -->
             <div class="word-box">
                 <span class="arabic-word">وَهُدًى</span>
                 <span class="verified-meaning">এবং দিশা</span>
             </div>
-
-            <!-- ৫. ওয়া মাউ'ইজাতুন -->
             <div class="word-box">
                 <span class="arabic-word">وَمَوْعِظَةٌ</span>
                 <span class="unverified-meaning">এবং উপদেশ</span>
             </div>
-
-            <!-- ৬. লিল মুত্তাকীন -->
             <div class="word-box">
                 <span class="arabic-word">لِّلْمُتَّقِينَ</span>
                 <span class="verified-meaning">আত্মরক্ষাকারীদের জন্য</span>
@@ -445,6 +433,24 @@ function toggleTransliteration() {
         btn.innerHTML = '👁️ উচ্চারণ দেখান';
     }
 }
+      // সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
+  window.addEventListener('DOMContentLoaded', () => {
+    const currentSurah = {
+      surahName: "সূরা আল-ইমরান",
+      surahUrl: "surah-003.html"
+    };
+
+    let surahList = JSON.parse(localStorage.getItem('lastReadQuranList')) || [];
+    surahList = surahList.filter(item => item.surahName !== currentSurah.surahName);
+    surahList.unshift(currentSurah);
+
+    if (surahList.length > 5) {
+      surahList.pop();
+    }
+
+    localStorage.setItem('lastReadQuranList', JSON.stringify(surahList));
+  });
+    
 </script>
 
 </body>
