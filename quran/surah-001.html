@@ -408,12 +408,21 @@ function toggleTransliteration() {
         btn.innerHTML = '👁️ উচ্চারণ দেখান';
     }
 }
-  // সর্বশেষ পঠিত সূরার তথ্য সেভ করা
-  const lastReadData = {
+    // সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
+  const currentSurah = {
     surahName: "সূরা আল-ফাতিহা",
     surahUrl: "surah-001.html"
   };
-  localStorage.setItem('lastReadQuran', JSON.stringify(lastReadData));
+
+  let surahList = JSON.parse(localStorage.getItem('lastReadQuranList')) || [];
+  surahList = surahList.filter(item => item.surahName !== currentSurah.surahName);
+  surahList.unshift(currentSurah);
+
+  if (surahList.length > 5) {
+    surahList.pop();
+  }
+
+  localStorage.setItem('lastReadQuranList', JSON.stringify(surahList));
 
 </script>
     
