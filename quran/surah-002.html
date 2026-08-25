@@ -1535,6 +1535,13 @@ function toggleTransliteration() {
         btn.innerHTML = '👁️ উচ্চারণ দেখান';
     }
 }
+    // সর্বশেষ পঠিত সূরার তথ্য সেভ করা
+  const lastReadData = {
+    surahName: "সূরা আল-বাক্বারাহ",
+    surahUrl: "surah-002.html""
+  };
+  localStorage.setItem('lastReadQuran', JSON.stringify(lastReadData));
+
 </script>
     
 </body>
