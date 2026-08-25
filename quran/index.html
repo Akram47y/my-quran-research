@@ -134,7 +134,15 @@
     <div class="search-box">
         <input type="text" id="searchInput" onkeyup="filterSurahs()" placeholder="সূরার নাম বা নম্বর লিখে খুঁজুন...">
     </div>
-
+<!-- সর্বশেষ পড়েছিলেন সেকশন -->
+<div id="last-read-container" style="display: none; margin-bottom: 20px;">
+  <p style="font-weight: bold; font-size: 16px; color: #2d3748; margin-bottom: 8px;">সর্বশেষ পড়েছিলেন</p>
+  <a id="last-read-link" href="#" style="text-decoration: none;">
+    <button id="last-read-btn" style="padding: 8px 16px; border-radius: 20px; border: 1px solid #cbd5e0; background: #ffffff; color: #2d3748; font-size: 14px; cursor: pointer;">
+      <!-- এখানে নাম চলে আসবে -->
+    </button>
+  </a>
+</div>
     <!-- সূরার গ্রিড -->
     <div class="surah-grid" id="surahGrid">
 
