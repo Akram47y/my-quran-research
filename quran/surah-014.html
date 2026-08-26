@@ -190,28 +190,22 @@
 <div class="verse-card">
     <div class="verse-num">১৪:২</div>
     <div class="word-by-word-container">
-        
-        <!-- اللَّهُ - আল্লাহ (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">اللَّهُ</span>
             <span class="verified-meaning" style="color: #008744;">আল্লাহ</span>
         </div>
-        <!-- الَّذِي - যিনি (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">الَّذِي</span>
             <span class="verified-meaning" style="color: #008744;">যিনি</span>
         </div>
-        <!-- لَهُ - তাঁর জন্য (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">لَهُ</span>
             <span class="verified-meaning" style="color: #008744;">তাঁর জন্য</span>
         </div>
-        <!-- مَا - যা (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">مَا</span>
             <span class="verified-meaning" style="color: #008744;">যা</span>
         </div>
-        <!-- فِي - মধ্যে (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">فِي</span>
             <span class="verified-meaning" style="color: #008744;">মধ্যে</span>
@@ -221,12 +215,10 @@
             <span class="arabic-word">السَّمَاوَاتِ</span>
             <span class="verified-meaning" style="color: #2d3748;">আকাশসমূহের</span>
         </div>
-        <!-- وَمَا - এবং যা (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">وَمَا</span>
             <span class="verified-meaning" style="color: #008744;">এবং যা</span>
         </div>
-        <!-- فِي - মধ্যে (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">فِي</span>
             <span class="verified-meaning" style="color: #008744;">মধ্যে</span>
@@ -236,17 +228,14 @@
             <span class="arabic-word">الْأَرْضِ</span>
             <span class="verified-meaning" style="color: #2d3748;">জমিনের</span>
         </div>
-        <!-- وَيْلٌ - দুর্ভোগ (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">وَيْلٌ</span>
             <span class="verified-meaning" style="color: #008744;">দুর্ভোগ</span>
         </div>
-        <!-- لِّلْكَافِرِينَ - আচ্ছাদনকারীদের জন্য (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">لِّلْكَافِرِينَ</span>
             <span class="verified-meaning" style="color: #008744;">আচ্ছাদনকারীদের জন্য</span>
         </div>
-        <!-- مِنْ - থেকে (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">مِنْ</span>
             <span class="verified-meaning" style="color: #008744;">থেকে</span>
@@ -304,6 +293,24 @@ function toggleTransliteration() {
         btn.innerHTML = '👁️ উচ্চারণ দেখান';
     }
 }
+      // সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
+  window.addEventListener('DOMContentLoaded', () => {
+    const currentSurah = {
+      surahName: "সূরা ইব্রাহিম",
+      surahUrl: "surah-014.html"
+    };
+
+    let surahList = JSON.parse(localStorage.getItem('lastReadQuranList')) || [];
+    surahList = surahList.filter(item => item.surahName !== currentSurah.surahName);
+    surahList.unshift(currentSurah);
+
+    if (surahList.length > 5) {
+      surahList.pop();
+    }
+
+    localStorage.setItem('lastReadQuranList', JSON.stringify(surahList));
+  });
+    
 </script>
 
 </body>
