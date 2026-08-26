@@ -201,7 +201,6 @@
             <span class="arabic-word">الْأَحْزَابُ</span>
             <span class="verified-meaning" style="color: #2d3748;">দলসমূহ</span>
         </div>
-        <!-- مِن - থেকে (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">مِن</span>
             <span class="verified-meaning" style="color: #008744;">থেকে</span>
@@ -211,22 +210,18 @@
             <span class="arabic-word">بَيْنِهِمْ</span>
             <span class="verified-meaning" style="color: #2d3748;">তাদের মধ্যে</span>
         </div>
-        <!-- فَوَيْلٌ - সুতরাং দুর্ভোগ (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">فَوَيْلٌ</span>
             <span class="verified-meaning" style="color: #008744;">সুতরাং দুর্ভোগ</span>
         </div>
-        <!-- لِّلَّذِينَ - তাদের জন্য যারা (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">لِّلَّذِينَ</span>
             <span class="verified-meaning" style="color: #008744;">তাদের জন্য যারা</span>
         </div>
-        <!-- كَفَرُوا - আচ্ছাদন করেছে (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">كَفَرُوا</span>
             <span class="verified-meaning" style="color: #008744;">আচ্ছাদন করেছে</span>
         </div>
-        <!-- مِن - থেকে (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">مِن</span>
             <span class="verified-meaning" style="color: #008744;">থেকে</span>
@@ -236,7 +231,6 @@
             <span class="arabic-word">مَّشْهَدِ</span>
             <span class="verified-meaning" style="color: #2d3748;">প্রত্যক্ষতা</span>
         </div>
-        <!-- يَوْمٍ - সময়ের (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">يَوْمٍ</span>
             <span class="verified-meaning" style="color: #008744;">সময়ের</span>
@@ -289,6 +283,24 @@ function toggleTransliteration() {
         btn.innerHTML = '👁️ উচ্চারণ দেখান';
     }
 }
+      // সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
+  window.addEventListener('DOMContentLoaded', () => {
+    const currentSurah = {
+      surahName: "সূরা মারইয়াম",
+      surahUrl: "surah-019.html"
+    };
+
+    let surahList = JSON.parse(localStorage.getItem('lastReadQuranList')) || [];
+    surahList = surahList.filter(item => item.surahName !== currentSurah.surahName);
+    surahList.unshift(currentSurah);
+
+    if (surahList.length > 5) {
+      surahList.pop();
+    }
+
+    localStorage.setItem('lastReadQuranList', JSON.stringify(surahList));
+  });
+    
 </script>
 
 </body>
