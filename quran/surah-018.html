@@ -196,7 +196,6 @@
             <span class="arabic-word">وَوُضِعَ</span>
             <span class="verified-meaning" style="color: #2d3748;">এবং স্থাপন করা হবে</span>
         </div>
-        <!-- الْكِتَابُ - নথি (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">الْكِتَابُ</span>
             <span class="verified-meaning" style="color: #008744;">নথি</span>
@@ -216,47 +215,38 @@
             <span class="arabic-word">مُشْفِقِينَ</span>
             <span class="verified-meaning" style="color: #2d3748;">শঙ্কিত</span>
         </div>
-        <!-- مِمَّا - যা থেকে (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">مِمَّا</span>
             <span class="verified-meaning" style="color: #008744;">যা থেকে</span>
         </div> 
-        <!-- فِيهِ - তার মধ্যে আছে (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">فِيهِ</span>
             <span class="verified-meaning" style="color: #008744;">তার মধ্যে আছে</span>
         </div>
-        <!-- وَيَقُولُونَ - এবং তারা বলে (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">وَيَقُولُونَ</span>
             <span class="verified-meaning" style="color: #008744;">এবং তারা বলে</span>
         </div>
-        <!-- يَا - হে (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">يَا</span>
             <span class="verified-meaning" style="color: #008744;">হে</span>
         </div>
-        <!-- وَيْلَتَنَا - আমাদের দুর্ভোগ (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">وَيْلَتَنَا</span>
             <span class="verified-meaning" style="color: #008744;">আমাদের দুর্ভোগ</span>
         </div> 
-        <!-- مَالِ - জন্য কী (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">مَالِ</span>
             <span class="verified-meaning" style="color: #008744;">জন্য কী</span>
         </div>
-        <!-- هَٰذَا - এই (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">هَٰذَا</span>
             <span class="verified-meaning" style="color: #008744;">এই</span>
         </div>   
-        <!-- الْكِتَابِ - নথির (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">الْكِتَابِ</span>
             <span class="verified-meaning" style="color: #008744;">নথির</span>
         </div> 
-        <!-- لَا - না (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">لَا</span>
             <span class="verified-meaning" style="color: #008744;">না</span>
@@ -271,7 +261,6 @@
             <span class="arabic-word">صَغِيرَةً</span>
             <span class="verified-meaning" style="color: #2d3748;">ছোটকে</span>
         </div>
-        <!-- وَلَا - এবং না (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">وَلَا</span>
             <span class="verified-meaning" style="color: #008744;">এবং না</span>
@@ -281,7 +270,6 @@
             <span class="arabic-word">كَبِيرَةً</span>
             <span class="verified-meaning" style="color: #2d3748;">বড়কে</span>
         </div>
-        <!-- إِلَّا - ব্যতীত (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">إِلَّا</span>
             <span class="verified-meaning" style="color: #008744;">ব্যতীত</span>
@@ -296,7 +284,6 @@
             <span class="arabic-word">وَوَجَدُوا</span>
             <span class="verified-meaning" style="color: #2d3748;">এবং তারা পেল</span>
         </div>
-        <!-- مَا - যা (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">مَا</span>
             <span class="verified-meaning" style="color: #008744;">যা</span>
@@ -311,7 +298,6 @@
             <span class="arabic-word">حَاضِرًا</span>
             <span class="verified-meaning" style="color: #2d3748;">উপস্থিত</span>
         </div>
-        <!-- وَلَا - এবং না (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">وَلَا</span>
             <span class="verified-meaning" style="color: #008744;">এবং না</span>
@@ -321,7 +307,6 @@
             <span class="arabic-word">يَظْلِمُ</span>
             <span class="verified-meaning" style="color: #2d3748;">অন্যায় করেন</span>
         </div>
-        <!-- رَبُّكَ - তোমার প্রতিপালক (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">رَبُّكَ</span>
             <span class="verified-meaning" style="color: #008744;">তোমার প্রতিপালক</span>
@@ -374,6 +359,24 @@ function toggleTransliteration() {
         btn.innerHTML = '👁️ উচ্চারণ দেখান';
     }
 }
+      // সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
+  window.addEventListener('DOMContentLoaded', () => {
+    const currentSurah = {
+      surahName: "সূরা আল-কাহফ",
+      surahUrl: "surah-018.html"
+    };
+
+    let surahList = JSON.parse(localStorage.getItem('lastReadQuranList')) || [];
+    surahList = surahList.filter(item => item.surahName !== currentSurah.surahName);
+    surahList.unshift(currentSurah);
+
+    if (surahList.length > 5) {
+      surahList.pop();
+    }
+
+    localStorage.setItem('lastReadQuranList', JSON.stringify(surahList));
+  });
+    
 </script>
 
 </body>
