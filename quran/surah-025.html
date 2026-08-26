@@ -186,24 +186,55 @@
 
     <!-- আয়াত প্লেসহোল্ডার (পরবর্তীতে আয়াত অনুবাদ বসানোর জন্য প্রস্তুত) -->
     <!-- উদাহরণস্বরূপ ২৫:১ আয়াত কাঠামোর টেমপ্লেট -->
-    <div class="verse-card">
-        <div class="verse-num">২৫:১</div>
-        <div class="word-by-word-container">
-            <!-- শব্দ কার্ডসমূহ পরবর্তীতে এখানে বসবে -->
+    <!-- সূরা ২৫:২৮ আয়াত -->
+<div class="verse-card">
+    <div class="verse-num">২৫:২৮</div>
+    <div class="word-by-word-container">
+        <div class="word-box">
+            <span class="arabic-word">يَا</span>
+            <span class="verified-meaning" style="color: #008744;">হে</span>
+        </div>
+        <div class="word-box">
+            <span class="arabic-word">لَيْتَنِي</span>
+            <span class="verified-meaning" style="color: #008744;">আমার দুর্ভোগ</span>
+        </div>
+        <!-- لَمْ - না (কালো) -->
+        <div class="word-box">
+            <span class="arabic-word">لَمْ</span>
+            <span class="verified-meaning" style="color: #2d3748;">না</span>
+        </div>
+        <!-- أَتَّخِذْ - গ্রহণ করতাম (কালো) -->
+        <div class="word-box">
+            <span class="arabic-word">أَتَّخِذْ</span>
+            <span class="verified-meaning" style="color: #2d3748;">গ্রহণ করতাম</span>
+        </div>
+        <!-- فُلَانًا - অমুককে (কালো) -->
+        <div class="word-box">
+            <span class="arabic-word">فُلَانًا</span>
+            <span class="verified-meaning" style="color: #2d3748;">অমুককে</span>
+        </div>
+        <!-- خَلِيلًا - বন্ধুরূপে (কালো) -->
+        <div class="word-box">
+            <span class="arabic-word">خَلِيلًا</span>
+            <span class="verified-meaning" style="color: #2d3748;">বন্ধুরূপে</span>
         </div>
         
-        <div class="transliteration-box">
-            <strong>উচ্চারণ:</strong> [এখানে আয়াতের সম্পূর্ণ উচ্চারণ থাকবে]
-        </div>
-
-        <div class="full-translation">
-            [এখানে সম্পূর্ণ অনুবাদের বাক্য থাকবে]
-        </div>
     </div>
+    
+    <!-- উচ্চারণ -->
+    <div class="transliteration-box">
+        <strong>উচ্চারণ:</strong> ইয়া লাইতানী লাম আত্তাখিয ফুলানান খালীলা
+    </div>
+    
+    <!-- পূর্ণ অনুবাদ -->
+    <div class="full-translation">
+        হে আমার দুর্ভোগ! আমি যদি অমুককে বন্ধুরূপে গ্রহণ না করতাম!
+    </div>
+</div>
 
     <!-- নেভিগেশন -->
     <div class="navigation">
-        <a href="surah-024.html" class="nav-btn">&larr; সূরা আন-নূর</a>
+        <a href="surah-024.html" class="nav-btn">&larr; পূর্ববর্তী সূরা</a>
         <a href="index.html" class="nav-btn">সূরা তালিকা</a>
         <a href="surah-026.html" class="nav-btn">পরবর্তী সূরা &rarr;</a>
     </div>
@@ -230,6 +261,24 @@ function toggleTransliteration() {
         btn.innerHTML = '👁️ উচ্চারণ দেখান';
     }
 }
+      // সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
+  window.addEventListener('DOMContentLoaded', () => {
+    const currentSurah = {
+      surahName: "সূরা আল-ফুরকান",
+      surahUrl: "surah-025.html"
+    };
+
+    let surahList = JSON.parse(localStorage.getItem('lastReadQuranList')) || [];
+    surahList = surahList.filter(item => item.surahName !== currentSurah.surahName);
+    surahList.unshift(currentSurah);
+
+    if (surahList.length > 5) {
+      surahList.pop();
+    }
+
+    localStorage.setItem('lastReadQuranList', JSON.stringify(surahList));
+  });
+    
 </script>
 
 </body>
