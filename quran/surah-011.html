@@ -190,18 +190,14 @@
 <div class="verse-card">
     <div class="verse-num">১১:৭২</div>
     <div class="word-by-word-container">
-        
-        <!-- قَالَتْ - সে বলল (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">قَالَتْ</span>
             <span class="verified-meaning" style="color: #008744;">সে বলল</span>
         </div>
-        <!-- يَا - হে (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">يَا</span>
             <span class="verified-meaning" style="color: #008744;">হে</span>
         </div>
-        <!-- وَيْلَتَىٰ - আমার দুর্ভোগ (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">وَيْلَتَىٰ</span>
             <span class="verified-meaning" style="color: #008744;">আমার দুর্ভোগ</span>
@@ -211,10 +207,9 @@
             <span class="arabic-word">أَأَلِدُ</span>
             <span class="verified-meaning" style="color: #2d3748;">আমি কি জন্ম দেব</span>
         </div>
-        <!-- وَأَنَا - এবং আমি (কালো) -->
         <div class="word-box">
             <span class="arabic-word">وَأَنَا</span>
-            <span class="verified-meaning" style="color: #2d3748;">এবং আমি</span>
+            <span class="verified-meaning" style="color: #008744;">এবং আমি</span>
         </div>
         <!-- عَجُوزٌ - বৃদ্ধা (কালো) -->
         <div class="word-box">
@@ -236,7 +231,6 @@
             <span class="arabic-word">شَيْخٌ</span>
             <span class="verified-meaning" style="color: #2d3748;">বৃদ্ধ</span>
         </div>
-        <!-- إِنَّ - নিশ্চয়ই (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">إِنَّ</span>
             <span class="verified-meaning" style="color: #008744;">নিশ্চয়ই</span>
@@ -299,6 +293,24 @@ function toggleTransliteration() {
         btn.innerHTML = '👁️ উচ্চারণ দেখান';
     }
 }
+      // সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
+  window.addEventListener('DOMContentLoaded', () => {
+    const currentSurah = {
+      surahName: "সূরা হূদ",
+      surahUrl: "surah-011.html"
+    };
+
+    let surahList = JSON.parse(localStorage.getItem('lastReadQuranList')) || [];
+    surahList = surahList.filter(item => item.surahName !== currentSurah.surahName);
+    surahList.unshift(currentSurah);
+
+    if (surahList.length > 5) {
+      surahList.pop();
+    }
+
+    localStorage.setItem('lastReadQuranList', JSON.stringify(surahList));
+  });
+    
 </script>
 
 </body>
