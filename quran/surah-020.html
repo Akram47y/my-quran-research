@@ -190,28 +190,22 @@
 <div class="verse-card">
     <div class="verse-num">২০:৬১</div>
     <div class="word-by-word-container">
-        
-        <!-- قَالَ - বলল (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">قَالَ</span>
             <span class="verified-meaning" style="color: #008744;">বলল</span>
         </div>
-        <!-- لَهُم - তাদের (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">لَهُم</span>
             <span class="verified-meaning" style="color: #008744;">তাদের</span>
         </div>
-        <!-- مُّوسَىٰ - মূসা (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">مُّوسَىٰ</span>
             <span class="verified-meaning" style="color: #008744;">মূসা</span>
         </div>
-        <!-- وَيْلَكُمْ - তোমাদের জন্য দুর্ভোগ (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">وَيْلَكُمْ</span>
             <span class="verified-meaning" style="color: #008744;">তোমাদের জন্য দুর্ভোগ</span>
         </div>
-        <!-- لَا - না (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">لَا</span>
             <span class="verified-meaning" style="color: #008744;">না</span>
@@ -221,12 +215,10 @@
             <span class="arabic-word">تَفْتَرُوا</span>
             <span class="verified-meaning" style="color: #2d3748;">তোমরা উদ্ভাবন করো</span>
         </div>
-        <!-- عَلَى - উপর (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">عَلَى</span>
             <span class="verified-meaning" style="color: #008744;">উপর</span>
         </div>
-        <!-- اللَّهِ - আল্লাহর (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">اللَّهِ</span>
             <span class="verified-meaning" style="color: #008744;">আল্লাহর</span>
@@ -256,7 +248,6 @@
             <span class="arabic-word">خَابَ</span>
             <span class="verified-meaning" style="color: #2d3748;">ব্যর্থ হয়েছে</span>
         </div>
-        <!-- مَنِ - যে (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">مَنِ</span>
             <span class="verified-meaning" style="color: #008744;">যে</span>
@@ -309,6 +300,24 @@ function toggleTransliteration() {
         btn.innerHTML = '👁️ উচ্চারণ দেখান';
     }
 }
+      // সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
+  window.addEventListener('DOMContentLoaded', () => {
+    const currentSurah = {
+      surahName: "সূরা তা-হা",
+      surahUrl: "surah-020.html"
+    };
+
+    let surahList = JSON.parse(localStorage.getItem('lastReadQuranList')) || [];
+    surahList = surahList.filter(item => item.surahName !== currentSurah.surahName);
+    surahList.unshift(currentSurah);
+
+    if (surahList.length > 5) {
+      surahList.pop();
+    }
+
+    localStorage.setItem('lastReadQuranList', JSON.stringify(surahList));
+  });
+    
 </script>
 
 </body>
