@@ -190,8 +190,6 @@
 <div class="verse-card">
     <div class="verse-num">৪৫:৭</div>
     <div class="word-by-word-container">
-        
-        <!-- وَيْلٌ - দুর্ভোগ (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">وَيْلٌ</span>
             <span class="verified-meaning" style="color: #008744;">দুর্ভোগ</span>
@@ -257,6 +255,24 @@ function toggleTransliteration() {
         btn.innerHTML = '👁️ উচ্চারণ দেখান';
     }
 }
+      // সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
+  window.addEventListener('DOMContentLoaded', () => {
+    const currentSurah = {
+      surahName: "সূরা আল-জাসিয়াহ",
+      surahUrl: "surah-045.html"
+    };
+
+    let surahList = JSON.parse(localStorage.getItem('lastReadQuranList')) || [];
+    surahList = surahList.filter(item => item.surahName !== currentSurah.surahName);
+    surahList.unshift(currentSurah);
+
+    if (surahList.length > 5) {
+      surahList.pop();
+    }
+
+    localStorage.setItem('lastReadQuranList', JSON.stringify(surahList));
+  });
+    
 </script>
 
 </body>
