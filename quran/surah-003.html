@@ -126,20 +126,36 @@
             gap: 10px;
             margin-top: 12px;
         }
-        .action-btn {
-            background-color: #eef2f5;
-            color: #1b4332;
-            border: 1px solid #cbd5e1;
-            padding: 6px 12px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 13px;
-            font-weight: bold;
-            transition: all 0.2s;
-        }
-        .action-btn:hover {
+        .btn-copy {
             background-color: #1b4332;
             color: #ffffff;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13.5px;
+            font-weight: bold;
+            transition: opacity 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .btn-share {
+            background-color: #2b3445;
+            color: #ffffff;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13.5px;
+            font-weight: bold;
+            transition: opacity 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .btn-copy:hover, .btn-share:hover {
+            opacity: 0.9;
         }
         .navigation {
             display: flex;
@@ -296,8 +312,8 @@
         </div>
 
         <div class="action-buttons">
-            <button class="action-btn" onclick="copyVerse('verse-3-4', '৩:৪')">📋 কপি</button>
-            <button class="action-btn" onclick="shareVerse('verse-3-4', '৩:৪')">🔗 শেয়ার</button>
+            <button class="btn-copy" onclick="copyVerse('verse-3-4', '৩:৪')">📋 কপি</button>
+            <button class="btn-share" onclick="shareVerse('verse-3-4', '৩:৪')">🔗 শেয়ার</button>
         </div>
     </div>
 
@@ -348,8 +364,8 @@
         </div>
 
         <div class="action-buttons">
-            <button class="action-btn" onclick="copyVerse('verse-3-51', '৩:৫১')">📋 কপি</button>
-            <button class="action-btn" onclick="shareVerse('verse-3-51', '৩:৫১')">🔗 শেয়ার</button>
+            <button class="btn-copy" onclick="copyVerse('verse-3-51', '৩:৫১')">📋 কপি</button>
+            <button class="btn-share" onclick="shareVerse('verse-3-51', '৩:৫১')">🔗 শেয়ার</button>
         </div>
     </div>
 
@@ -392,8 +408,8 @@
         </div>
 
         <div class="action-buttons">
-            <button class="action-btn" onclick="copyVerse('verse-3-138', '৩:১৩৮')">📋 কপি</button>
-            <button class="action-btn" onclick="shareVerse('verse-3-138', '৩:১৩৮')">🔗 শেয়ার</button>
+            <button class="btn-copy" onclick="copyVerse('verse-3-138', '৩:১৩৮')">📋 কপি</button>
+            <button class="btn-share" onclick="shareVerse('verse-3-138', '৩:১৩৮')">🔗 শেয়ার</button>
         </div>
     </div>
 
