@@ -118,7 +118,6 @@ body {
     max-width: calc(33.333% - 6px);
     box-sizing: border-box;
     transition: background-color 0.2s;
-    opacity: 1 !important;
 }
 
 .word-box:hover {
@@ -128,21 +127,28 @@ body {
 .arabic-word {
     font-family: 'Meaney', 'Amiri', 'Traditional Arabic', serif;
     font-size: 22px;
-    color: #ffffff !important;
+    color: #e6edf3 !important;
     margin-bottom: 4px;
     direction: rtl;
     text-align: center;
 }
 
+/* অবিন্যস্ত/সাধারণ অনুবাদের কালার (আবছা ছাই রঙ) */
 .verified-meaning {
     font-size: 13.5px;
-    color: #3fb950 !important;
-    font-weight: bold;
+    color: #8b949e;
     direction: ltr;
     text-align: center;
     line-height: 1.4;
 }
 
+/* বিশ্লেষণ করা ভেরিফাইড অনুবাদের কালার (উজ্জ্বল সবুজ) */
+.verified-meaning[style*="#28a745"],
+.verified-meaning[style*="rgb(40, 167, 69)"],
+.verified-meaning span[style*="#28a745"] {
+    color: #3fb950 !important;
+    font-weight: bold;
+}
 
 /* 8. Transliteration (Pronunciation) Box */
 .transliteration-box {
