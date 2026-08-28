@@ -151,11 +151,11 @@ span[style*="rgb(0, 135, 68)"] {
 span[style*="#2d3748"],
 span[style*="rgb(45, 55, 72)"] {
     font-size: 13.5px;
-    color: #1a1a1a !important; /* আরও গাঢ় স্পষ্ট রঙ */
+    color: #1a1a1a !important;
     direction: ltr;
     text-align: center;
     line-height: 1.4;
-    font-weight: 600 !important; /* হালকা বোল্ড যাতে মোবাইলে স্পষ্ট ফুটে ওঠে */
+    font-weight: 600 !important;
 }
 
 /* 9. Transliteration & Full Translation */
@@ -196,7 +196,38 @@ span[style*="rgb(45, 55, 72)"] {
     line-height: 1.8;
 }
 
-/* 10. Navigation Buttons */
+/* 10. Copy & Share Action Buttons (Fix for FontAwesome Icons) */
+.action-buttons {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.action-btn, 
+button[onclick*="copyVerse"], 
+button[onclick*="shareVerse"] {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    background-color: #f1f5f9 !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #1b4332 !important;
+    padding: 6px 12px !important;
+    border-radius: 6px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    line-height: 1 !important;
+}
+
+.action-btn i, 
+button[onclick*="copyVerse"] i, 
+button[onclick*="shareVerse"] i {
+    font-size: 14px !important;
+    color: #1b4332 !important;
+}
+
+/* 11. Navigation Buttons */
 .navigation {
     display: flex;
     justify-content: space-between;
