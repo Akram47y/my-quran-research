@@ -115,6 +115,45 @@
             color: #2c3e50;
             direction: ltr;
         }
+
+        /* কপি ও শেয়ার বাটন স্টাইল */
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .btn-copy {
+            background-color: #1b4332;
+            color: #ffffff;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13.5px;
+            font-weight: bold;
+            transition: opacity 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .btn-share {
+            background-color: #2b3445;
+            color: #ffffff;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13.5px;
+            font-weight: bold;
+            transition: opacity 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .btn-copy:hover, .btn-share:hover {
+            opacity: 0.9;
+        }
+
         .navigation {
             display: flex;
             justify-content: space-between;
@@ -184,107 +223,111 @@
         <div class="bismillah-meaning">পরম মমতাময়, সদামমতাবদ্ধ আল্লাহর নামে।</div>
     </div>
 
-    <!-- আয়াত প্লেসহোল্ডার (পরবর্তীতে আয়াত অনুবাদ বসানোর জন্য প্রস্তুত) -->
-    <!-- উদাহরণস্বরূপ ২৮:১ আয়াত কাঠামোর টেমপ্লেট -->
     <!-- সূরা ২৮:৮০ আয়াত -->
-<div class="verse-card">
-    <div class="verse-num">২৮:৮০</div>
-    <div class="word-by-word-container">
-        <div class="word-box">
-            <span class="arabic-word">وَقَالَ</span>
-            <span class="verified-meaning" style="color: #008744;">এবং তারা বলল</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">الَّذِينَ</span>
-            <span class="verified-meaning" style="color: #008744;">যারা</span>
+    <div class="verse-card">
+        <div class="verse-num">২৮:৮০</div>
+        <div class="word-by-word-container">
+            <div class="word-box">
+                <span class="arabic-word">وَقَالَ</span>
+                <span class="verified-meaning" style="color: #008744;">এবং তারা বলল</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">الَّذِينَ</span>
+                <span class="verified-meaning" style="color: #008744;">যারা</span>
+            </div>
+            
+            <!-- أُوتُوا - দেওয়া হয়েছে (কালো) -->
+            <div class="word-box">
+                <span class="arabic-word">أُوتُوا</span>
+                <span class="verified-meaning" style="color: #2d3748;">দেওয়া হয়েছে</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">الْعِلْمَ</span>
+                <span class="verified-meaning" style="color: #008744;">জ্ঞান</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">وَيْلَكُمْ</span>
+                <span class="verified-meaning" style="color: #008744;">তোমাদের দুর্ভোগ</span>
+            </div>
+            
+            <!-- ثَوَابُ - প্রতিদান (কালো) -->
+            <div class="word-box">
+                <span class="arabic-word">ثَوَابُ</span>
+                <span class="verified-meaning" style="color: #2d3748;">প্রতিদান</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">اللَّهِ</span>
+                <span class="verified-meaning" style="color: #008744;">আল্লাহর</span>
+            </div>
+            
+            <!-- خَيْرٌ - উত্তম (কালো) -->
+            <div class="word-box">
+                <span class="arabic-word">خَيْرٌ</span>
+                <span class="verified-meaning" style="color: #2d3748;">উত্তম</span>
+            </div>
+            
+            <!-- لِّمَنْ - তার জন্য যে (কালো) -->
+            <div class="word-box">
+                <span class="arabic-word">لِّمَنْ</span>
+                <span class="verified-meaning" style="color: #2d3748;">তার জন্য যে</span>
+            </div>
+            
+            <!-- آمَنَ - নিরাপদ হয়েছে/ঈমান এনেছে (কালো) -->
+            <div class="word-box">
+                <span class="arabic-word">آمَنَ</span>
+                <span class="verified-meaning" style="color: #2d3748;">নিরাপদ হয়েছে</span>
+            </div>
+            
+            <!-- وَعَمِلَ - এবং করেছে (কালো) -->
+            <div class="word-box">
+                <span class="arabic-word">وَعَمِلَ</span>
+                <span class="verified-meaning" style="color: #2d3748;">এবং করেছে</span>
+            </div>
+            
+            <!-- صَالِحًا - সৎ কাজ (কালো) -->
+            <div class="word-box">
+                <span class="arabic-word">صَالِحًا</span>
+                <span class="verified-meaning" style="color: #2d3748;">সৎ কাজ</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">وَلَا</span>
+                <span class="verified-meaning" style="color: #008744;">এবং না</span>
+            </div>
+            
+            <!-- يُلَقَّاهَا - তা প্রাপ্ত হয় (কালো) -->
+            <div class="word-box">
+                <span class="arabic-word">يُلَقَّاهَا</span>
+                <span class="verified-meaning" style="color: #2d3748;">তা প্রাপ্ত হয়</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">إِلَّا</span>
+                <span class="verified-meaning" style="color: #008744;">ব্যতীত</span>
+            </div>
+            
+            <!-- الصَّابِرُونَ - ধৈর্যশীলরা (কালো) -->
+            <div class="word-box">
+                <span class="arabic-word">الصَّابِرُونَ</span>
+                <span class="verified-meaning" style="color: #2d3748;">ধৈর্যশীলরা</span>
+            </div>
         </div>
         
-        <!-- أُوتُوا - দেওয়া হয়েছে (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">أُوتُوا</span>
-            <span class="verified-meaning" style="color: #2d3748;">দেওয়া হয়েছে</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">الْعِلْمَ</span>
-            <span class="verified-meaning" style="color: #008744;">জ্ঞান</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">وَيْلَكُمْ</span>
-            <span class="verified-meaning" style="color: #008744;">তোমাদের দুর্ভোগ</span>
+        <!-- উচ্চারণ -->
+        <div class="transliteration-box">
+            <strong>উচ্চারণ:</strong> ওয়া ক্বালাল্লাযীনা উতুল 'ইলমা ওয়াইলাকুম সাওয়াবুল্লাহি খাইরুল লিমান আমানা ওয়া 'আমিলা সালিহান, ওয়ালা ইউলাক্বকাহা ইল্লাস সাবিরূন
         </div>
         
-        <!-- ثَوَابُ - প্রতিদান (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">ثَوَابُ</span>
-            <span class="verified-meaning" style="color: #2d3748;">প্রতিদান</span>
+        <!-- পূর্ণ অনুবাদ -->
+        <div class="full-translation">
+            এবং যাদের জ্ঞান দেওয়া হয়েছে তারা বলল, 'তোমাদের দুর্ভোগ! আল্লাহর প্রতিদান উত্তম তার জন্য যে নিরাপদ হয়েছে এবং সৎ কাজ করেছে; এবং ধৈর্যশীলরা ব্যতীত তা প্রাপ্ত হয় না।'
         </div>
-        <div class="word-box">
-            <span class="arabic-word">اللَّهِ</span>
-            <span class="verified-meaning" style="color: #008744;">আল্লাহর</span>
+
+        <!-- কপি ও শেয়ার বাটন -->
+        <div class="action-buttons">
+            <button class="btn-copy" onclick="copyVerse(this)">📋 কপি</button>
+            <button class="btn-share" onclick="shareVerse(this)">🔗 শেয়ার</button>
         </div>
-        
-        <!-- خَيْرٌ - উত্তম (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">خَيْرٌ</span>
-            <span class="verified-meaning" style="color: #2d3748;">উত্তম</span>
-        </div>
-        
-        <!-- لِّمَنْ - তার জন্য যে (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">لِّمَنْ</span>
-            <span class="verified-meaning" style="color: #2d3748;">তার জন্য যে</span>
-        </div>
-        
-        <!-- آمَنَ - নিরাপদ হয়েছে/ঈমান এনেছে (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">آمَنَ</span>
-            <span class="verified-meaning" style="color: #2d3748;">নিরাপদ হয়েছে</span>
-        </div>
-        
-        <!-- وَعَمِلَ - এবং করেছে (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">وَعَمِلَ</span>
-            <span class="verified-meaning" style="color: #2d3748;">এবং করেছে</span>
-        </div>
-        
-        <!-- صَالِحًا - সৎ কাজ (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">صَالِحًا</span>
-            <span class="verified-meaning" style="color: #2d3748;">সৎ কাজ</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">وَلَا</span>
-            <span class="verified-meaning" style="color: #008744;">এবং না</span>
-        </div>
-        
-        <!-- يُلَقَّاهَا - তা প্রাপ্ত হয় (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">يُلَقَّاهَا</span>
-            <span class="verified-meaning" style="color: #2d3748;">তা প্রাপ্ত হয়</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">إِلَّا</span>
-            <span class="verified-meaning" style="color: #008744;">ব্যতীত</span>
-        </div>
-        
-        <!-- الصَّابِرُونَ - ধৈর্যশীলরা (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">الصَّابِرُونَ</span>
-            <span class="verified-meaning" style="color: #2d3748;">ধৈর্যশীলরা</span>
-        </div>
-        
     </div>
-    
-    <!-- উচ্চারণ -->
-    <div class="transliteration-box">
-        <strong>উচ্চারণ:</strong> ওয়া ক্বালাল্লাযীনা উতুল 'ইলমা ওয়াইলাকুম সাওয়াবুল্লাহি খাইরুল লিমান আমানা ওয়া 'আমিলা সালিহান, ওয়ালা ইউলাক্বকাহা ইল্লাস সাবিরূন
-    </div>
-    
-    <!-- পূর্ণ অনুবাদ -->
-    <div class="full-translation">
-        এবং যাদের জ্ঞান দেওয়া হয়েছে তারা বলল, 'তোমাদের দুর্ভোগ! আল্লাহর প্রতিদান উত্তম তার জন্য যে নিরাপদ হয়েছে এবং সৎ কাজ করেছে; এবং ধৈর্যশীলরা ব্যতীত তা প্রাপ্ত হয় না।'
-    </div>
-</div>
+
     <!-- নেভিগেশন -->
     <div class="navigation">
         <a href="surah-027.html" class="nav-btn">&larr; পূর্ববর্তী সূরা</a>
@@ -314,8 +357,51 @@ function toggleTransliteration() {
         btn.innerHTML = '👁️ উচ্চারণ দেখান';
     }
 }
-      // সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
-  window.addEventListener('DOMContentLoaded', () => {
+
+// আয়াত কপি করার ফাংশন
+function copyVerse(button) {
+    const card = button.closest('.verse-card');
+    const verseNum = card.querySelector('.verse-num').innerText.trim();
+    
+    // আরবি শব্দগুলো সাজানো
+    const arabicWords = Array.from(card.querySelectorAll('.arabic-word'))
+                             .map(el => el.innerText.trim())
+                             .join(' ');
+    
+    // পূর্ণ অনুবাদ নেওয়া
+    const translation = card.querySelector('.full-translation').innerText.trim();
+    
+    const textToCopy = `সূরা আল-কাসাস [${verseNum}]\n\n${arabicWords}\n\nঅনুবাদ: ${translation}`;
+
+    navigator.clipboard.writeText(textToCopy).then(() => {
+        alert(`আয়াত ${verseNum} সফলভাবে কপি হয়েছে!`);
+    }).catch(err => {
+        console.error('কপি করতে সমস্যা হয়েছে: ', err);
+    });
+}
+
+// আয়াত শেয়ার করার ফাংশন
+function shareVerse(button) {
+    const card = button.closest('.verse-card');
+    const verseNum = card.querySelector('.verse-num').innerText.trim();
+    const translation = card.querySelector('.full-translation').innerText.trim();
+    const shareText = `সূরা আল-কাসাস [আয়াত ${verseNum}]\n${translation}`;
+    const shareUrl = window.location.href;
+
+    if (navigator.share) {
+        navigator.share({
+            title: `সূরা আল-কাসাস - আয়াত ${verseNum}`,
+            text: shareText,
+            url: shareUrl
+        }).catch(err => console.log('শেয়ার বাতিল করা হয়েছে', err));
+    } else {
+        navigator.clipboard.writeText(`${shareText}\n${shareUrl}`);
+        alert('আপনার ব্রাউজারে সরাসরি শেয়ার সাপোর্ট করে না। আয়াতের তথ্য ও লিংক কপি করা হয়েছে!');
+    }
+}
+
+// সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
+window.addEventListener('DOMContentLoaded', () => {
     const currentSurah = {
       surahName: "সূরা আল-কাসাস",
       surahUrl: "surah-028.html"
@@ -330,9 +416,9 @@ function toggleTransliteration() {
     }
 
     localStorage.setItem('lastReadQuranList', JSON.stringify(surahList));
-  });
-    
+});
 </script>
 
 </body>
 </html>
+
