@@ -138,7 +138,7 @@
         .nav-btn:hover {
             background-color: #0d3b2e;
         }
-                /* উচ্চারণ দেখান/লুকান বক্স এবং বাটনের স্টাইল */
+        /* উচ্চারণ দেখান/লুকান বক্স এবং বাটনের স্টাইল */
         .transliteration-box {
             display: none;
             margin-top: 8px;
@@ -177,9 +177,9 @@
         <!-- হেডার -->
         <div class="header">
             <h1>সূরা আল-বাক্বারা</h1>
-                    <button class="trans-toggle-btn" onclick="toggleTransliteration()" id="transToggleBtn">
-            👁️ উচ্চারণ দেখান
-                    </button>
+            <button class="trans-toggle-btn" onclick="toggleTransliteration()" id="transToggleBtn">
+                👁️ উচ্চারণ দেখান
+            </button>
             <div class="meta-info">সূরা ২ | আয়াত: ২৮৬ | মাদানী</div>
         </div>
 
@@ -190,1238 +190,1098 @@
         </div>
 
         <!-- আয়াত ২:১ -->
-<div class="verse-card">
-    <div class="verse-num">২:১</div>
-    <div class="word-by-word-container">
-        <div class="word-box">
-            <span class="arabic-word">الم</span>
-            <span class="verified-meaning">আলিফ-লাম-মীম</span>
-        </div>
-    </div>
+        <div class="verse-card">
+            <div class="verse-num">২:১</div>
+            <div class="word-by-word-container">
+                <div class="word-box">
+                    <span class="arabic-word">الم</span>
+                    <span class="verified-meaning">আলিফ-লাম-মীম</span>
+                </div>
+            </div>
 
-    <div class="transliteration-box">
-        <strong>উচ্চারণ:</strong> আলিফ-লাম-মীম।
-    </div>
+            <div class="transliteration-box">
+                <strong>উচ্চারণ:</strong> আলিফ-লাম-মীম।
+            </div>
 
-    <div class="full-translation">
-        "আলিফ-লাম-মীম,"
-    </div>
-</div>
-    <!-- আয়াত ২:২ -->
-<div class="verse-card">
-    <div class="verse-num">২:২</div>
-    <div class="word-by-word-container">
-        <div class="word-box">
-            <span class="arabic-word">ذَٰلِكَ</span>
-            <span class="verified-meaning">এটি</span>
+            <div class="full-translation">
+                "আলিফ-লাম-মীম,"
+            </div>
+            <div class="action-buttons" style="display: flex; gap: 8px; margin-top: 10px;">
+                <button class="trans-toggle-btn" style="margin: 0;" onclick="copyVerse(this)">📋 কপি</button>
+                <button class="trans-toggle-btn" style="margin: 0; background-color: #2d3748;" onclick="shareVerse(this)">🔗 শেয়ার</button>
+            </div>
         </div>
-        <div class="word-box">
-            <span class="arabic-word">الْكِتَابُ</span>
-            <span class="verified-meaning">নথি</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">لَا</span>
-            <span class="verified-meaning">নেই</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">رَيْبَ</span>
-            <span class="unverified-meaning">কোনো সন্দেহ</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">فِيهِ</span>
-            <span class="verified-meaning">এতে</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">هُدًى</span>
-            <span class="verified-meaning">দিশা</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">لِّلْمُتَّقِينَ</span>
-            <span class="verified-meaning">আত্মরক্ষাকারীদের জন্য</span>
-        </div>
-    </div>
 
-    <div class="transliteration-box">
-        <strong>উচ্চারণ:</strong> যালিকাল কিতাবু লা রাইবা ফীহি হুদাল লিলমুত্তাকীন।
-    </div>
+        <!-- আয়াত ২:২ -->
+        <div class="verse-card">
+            <div class="verse-num">২:২</div>
+            <div class="word-by-word-container">
+                <div class="word-box">
+                    <span class="arabic-word">ذَٰلِكَ</span>
+                    <span class="verified-meaning">এটি</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">الْكِتَابُ</span>
+                    <span class="verified-meaning">নথি</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">لَا</span>
+                    <span class="verified-meaning">নেই</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">رَيْبَ</span>
+                    <span class="unverified-meaning">কোনো সন্দেহ</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">فِيهِ</span>
+                    <span class="verified-meaning">এতে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">هُدًى</span>
+                    <span class="verified-meaning">দিশা</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">لِّلْمُتَّقِينَ</span>
+                    <span class="verified-meaning">আত্মরক্ষাকারীদের জন্য</span>
+                </div>
+            </div>
 
-    <div class="full-translation">
-        "এটি সেই নথি, এতে কোনো সন্দেহ নেই, আত্মরক্ষাকারীদের জন্য দিশা।"
-    </div>
-</div>
-     <!-- আয়াত ২:৫ -->
-<div class="verse-card">
-    <div class="verse-num">২:৫</div>
-    <div class="word-by-word-container">
-        <div class="word-box">
-            <span class="arabic-word">أُولَٰئِكَ</span>
-            <span class="verified-meaning">তারাই</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">عَلَىٰ</span>
-            <span class="verified-meaning">উপর</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">هُدًى</span>
-            <span class="verified-meaning">দিশার</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">مِّن</span>
-            <span class="verified-meaning">থেকে</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">رَّبِّهِمْ</span>
-            <span class="verified-meaning">তাদের প্রতিপালক</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">وَأُولَٰئِكَ</span>
-            <span class="verified-meaning">এবং তারাই</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">هُمُ</span>
-            <span class="verified-meaning">তারা</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">الْمُفْلِحُونَ</span>
-            <span class="unverified-meaning">সফলকামগণ</span>
-        </div>
-    </div>
+            <div class="transliteration-box">
+                <strong>উচ্চারণ:</strong> যালিকাল কিতাবু লা রাইবা ফীহি হুদাল লিলমুত্তাকীন।
+            </div>
 
-    <div class="transliteration-box">
-        <strong>উচ্চারণ:</strong> উলা-ইকা ‘আলা হুদাম মির রব্বিহিম ওয়া উলা-ইকা হুমুল মুফলিহূন।
-    </div>
+            <div class="full-translation">
+                "এটি সেই নথি, এতে কোনো সন্দেহ নেই, আত্মরক্ষাকারীদের জন্য দিশা।"
+            </div>
+            <div class="action-buttons" style="display: flex; gap: 8px; margin-top: 10px;">
+                <button class="trans-toggle-btn" style="margin: 0;" onclick="copyVerse(this)">📋 কপি</button>
+                <button class="trans-toggle-btn" style="margin: 0; background-color: #2d3748;" onclick="shareVerse(this)">🔗 শেয়ার</button>
+            </div>
+        </div>
 
-    <div class="full-translation">
-        "তারাই তাদের প্রতিপালক থেকে দিশার উপর, এবং তারাই সফলকাম।"
-    </div>
-</div>
-    <!-- আয়াত ২:১৬ -->
-<div class="verse-card">
-    <div class="verse-num">২:১৬</div>
-    <div class="word-by-word-container">
-        <div class="word-box">
-            <span class="arabic-word">أُولَٰئِكَ</span>
-            <span class="verified-meaning">তারাই</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">الَّذِينَ</span>
-            <span class="verified-meaning">যারা</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">اشْتَرَوُا</span>
-            <span class="unverified-meaning">ক্রয় করেছে</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">الضَّلَالَةَ</span>
-            <span class="unverified-meaning">বিভ্রান্তি</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">بِالْهُدَىٰ</span>
-            <span class="verified-meaning">দিশার বদলে</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">فَمَا</span>
-            <span class="verified-meaning">সুতরাং না</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">رَبِحَت</span>
-            <span class="unverified-meaning">লাভ করেছে</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">تِّجَارَتُهُمْ</span>
-            <span class="unverified-meaning">তাদের বাণিজ্য</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">وَمَا</span>
-            <span class="verified-meaning">এবং না</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">كَانُوا</span>
-            <span class="verified-meaning">তারা ছিল</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">مُهْتَدِينَ</span>
-            <span class="verified-meaning">দিশাপ্রাপ্ত</span>
-        </div>
-    </div>
+        <!-- আয়াত ২:৫ -->
+        <div class="verse-card">
+            <div class="verse-num">২:৫</div>
+            <div class="word-by-word-container">
+                <div class="word-box">
+                    <span class="arabic-word">أُولَٰئِكَ</span>
+                    <span class="verified-meaning">তারাই</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">عَلَىٰ</span>
+                    <span class="verified-meaning">উপর</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">هُدًى</span>
+                    <span class="verified-meaning">দিশার</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">مِّن</span>
+                    <span class="verified-meaning">থেকে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">رَّبِّهِمْ</span>
+                    <span class="verified-meaning">তাদের প্রতিপালক</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">وَأُولَٰئِكَ</span>
+                    <span class="verified-meaning">এবং তারাই</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">هُمُ</span>
+                    <span class="verified-meaning">তারা</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">الْمُفْلِحُونَ</span>
+                    <span class="unverified-meaning">সফলকামগণ</span>
+                </div>
+            </div>
 
-    <div class="transliteration-box">
-        <strong>উচ্চারণ:</strong> উলা-ইকাল্লাযীনাশ তারাযুদ্দলা-লাতা বিলহুদা, ফামা রবিহাত তিজারাতুহুম ওয়া মা কানু মুহতাদীন।
-    </div>
+            <div class="transliteration-box">
+                <strong>উচ্চারণ:</strong> উলা-ইকা ‘আলা হুদাম মির রব্বিহিম ওয়া উলা-ইকা হুমুল মুফলিহূন।
+            </div>
 
-    <div class="full-translation">
-        "তারাই যারা দিশার বদলে বিভ্রান্তি ক্রয় করেছে; সুতরাং তাদের বাণিজ্য লাভ করেনি, এবং তারা দিশাপ্রাপ্ত ছিল না।"
-    </div>
-</div>
-          <!-- আয়াত ২:৩২ -->
-<div class="verse-card">
-    <div class="verse-num">২:৩২</div>
-    <div class="word-by-word-container">
-        <div class="word-box">
-            <span class="arabic-word">قَالُوا</span>
-            <span class="verified-meaning">তারা বলল</span>
+            <div class="full-translation">
+                "তারাই তাদের প্রতিপালক থেকে দিশার উপর, এবং তারাই সফলকাম।"
+            </div>
+            <div class="action-buttons" style="display: flex; gap: 8px; margin-top: 10px;">
+                <button class="trans-toggle-btn" style="margin: 0;" onclick="copyVerse(this)">📋 কপি</button>
+                <button class="trans-toggle-btn" style="margin: 0; background-color: #2d3748;" onclick="shareVerse(this)">🔗 শেয়ার</button>
+            </div>
         </div>
-        <div class="word-box">
-            <span class="arabic-word">سُبْحَانَكَ</span>
-            <span class="verified-meaning">তোমার সক্রিয়তায়</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">لَا</span>
-            <span class="verified-meaning">নেই</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">عِلْمَ</span>
-            <span class="verified-meaning">জ্ঞাততা</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">لَنَا</span>
-            <span class="verified-meaning">আমাদের জন্য</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">إِلَّا</span>
-            <span class="verified-meaning">ব্যতীত</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">مَا</span>
-            <span class="verified-meaning">যা</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">عَلَّمْتَنَا</span>
-            <span class="verified-meaning">তুমি আমাদের অবগত করিয়েছ</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">إِنَّكَ</span>
-            <span class="verified-meaning">নিশ্চয়ই তুমিই</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">أَنتَ</span>
-            <span class="verified-meaning">তুমি</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">الْعَلِيمُ</span>
-            <span class="verified-meaning">সর্ব-জ্ঞাত</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">الْحَكِيمُ</span>
-            <span class="verified-meaning">সর্ব-নিয়ন্ত্রক</span>
-        </div>
-    </div>
 
-    <div class="transliteration-box">
-        <strong>উচ্চারণ:</strong> কালূ সুবহা-নাকা লা ‘ইলমা লানা ইল্লা মা ‘আল্লাহ তানা, ইন্নাকা আনতাল ‘আলীমুল হাকীম।
-    </div>
+        <!-- আয়াত ২:১৬ -->
+        <div class="verse-card">
+            <div class="verse-num">২:১৬</div>
+            <div class="word-by-word-container">
+                <div class="word-box">
+                    <span class="arabic-word">أُولَٰئِكَ</span>
+                    <span class="verified-meaning">তারাই</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">الَّذِينَ</span>
+                    <span class="verified-meaning">যারা</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">اشْتَرَوُا</span>
+                    <span class="unverified-meaning">ক্রয় করেছে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">الضَّلَالَةَ</span>
+                    <span class="unverified-meaning">বিভ্রান্তি</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">بِالْهُدَىٰ</span>
+                    <span class="verified-meaning">দিশার বদলে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">فَمَا</span>
+                    <span class="verified-meaning">সুতরাং না</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">رَبِحَت</span>
+                    <span class="unverified-meaning">লাভ করেছে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">تِّجَارَتُهُمْ</span>
+                    <span class="unverified-meaning">তাদের বাণিজ্য</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">وَمَا</span>
+                    <span class="verified-meaning">এবং না</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">كَانُوا</span>
+                    <span class="verified-meaning">তারা ছিল</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">مُهْتَدِينَ</span>
+                    <span class="verified-meaning">দিশাপ্রাপ্ত</span>
+                </div>
+            </div>
 
-    <div class="full-translation">
-        "তারা বলল, 'তোমার সক্রিয়তায়! আমাদের জন্য জ্ঞাততা নেই ব্যতীত যা তুমি আমাদের অবগত করিয়েছ। নিশ্চয়ই তুমিই সর্ব-জ্ঞাত, সর্ব-নিয়ন্ত্রক।'"
-    </div>
-</div>
+            <div class="transliteration-box">
+                <strong>উচ্চারণ:</strong> উলা-ইকাল্লাযীনাশ তারাযুদ্দলা-লাতা বিলহুদা, ফামা রবিহাত তিজারাতুহুম ওয়া মা কানু মুহতাদীন।
+            </div>
+
+            <div class="full-translation">
+                "তারাই যারা দিশার বদলে বিভ্রান্তি ক্রয় করেছে; সুতরাং তাদের বাণিজ্য লাভ করেনি, এবং তারা দিশাপ্রাপ্ত ছিল না।"
+            </div>
+            <div class="action-buttons" style="display: flex; gap: 8px; margin-top: 10px;">
+                <button class="trans-toggle-btn" style="margin: 0;" onclick="copyVerse(this)">📋 কপি</button>
+                <button class="trans-toggle-btn" style="margin: 0; background-color: #2d3748;" onclick="shareVerse(this)">🔗 শেয়ার</button>
+            </div>
+        </div>
+
+        <!-- আয়াত ২:৩২ -->
+        <div class="verse-card">
+            <div class="verse-num">২:৩২</div>
+            <div class="word-by-word-container">
+                <div class="word-box">
+                    <span class="arabic-word">قَالُوا</span>
+                    <span class="verified-meaning">তারা বলল</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">سُبْحَانَكَ</span>
+                    <span class="verified-meaning">তোমার সক্রিয়তায়</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">لَا</span>
+                    <span class="verified-meaning">নেই</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">عِلْمَ</span>
+                    <span class="verified-meaning">জ্ঞাততা</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">لَنَا</span>
+                    <span class="verified-meaning">আমাদের জন্য</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">إِلَّا</span>
+                    <span class="verified-meaning">ব্যতীত</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">مَا</span>
+                    <span class="verified-meaning">যা</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">عَلَّمْتَنَا</span>
+                    <span class="verified-meaning">তুমি আমাদের অবগত করিয়েছ</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">إِنَّكَ</span>
+                    <span class="verified-meaning">নিশ্চয়ই তুমিই</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">أَنتَ</span>
+                    <span class="verified-meaning">তুমি</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">الْعَلِيمُ</span>
+                    <span class="verified-meaning">সর্ব-জ্ঞাত</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">الْحَكِيمُ</span>
+                    <span class="verified-meaning">সর্ব-নিয়ন্ত্রক</span>
+                </div>
+            </div>
+
+            <div class="transliteration-box">
+                <strong>উচ্চারণ:</strong> কালূ সুবহা-নাকা লা ‘ইলমা লানা ইল্লা মা ‘আল্লাহ তানা, ইন্নাকা আনতাল ‘আলীমুল হাকীম।
+            </div>
+
+            <div class="full-translation">
+                "তারা বলল, 'তোমার সক্রিয়তায়! আমাদের জন্য জ্ঞাততা নেই ব্যতীত যা তুমি আমাদের অবগত করিয়েছ। নিশ্চয়ই তুমিই সর্ব-জ্ঞাত, সর্ব-নিয়ন্ত্রক।'"
+            </div>
+            <div class="action-buttons" style="display: flex; gap: 8px; margin-top: 10px;">
+                <button class="trans-toggle-btn" style="margin: 0;" onclick="copyVerse(this)">📋 কপি</button>
+                <button class="trans-toggle-btn" style="margin: 0; background-color: #2d3748;" onclick="shareVerse(this)">🔗 শেয়ার</button>
+            </div>
+        </div>
+
         <!-- আয়াত ২:৩৮ -->
-<div class="verse-card">
-    <div class="verse-num">২:৩৮</div>
-    <div class="word-by-word-container">
-        <div class="word-box">
-            <span class="arabic-word">قُلْنَا</span>
-            <span class="verified-meaning">আমরা বললাম</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">اهْبِطُوا</span>
-            <span class="verified-meaning">তোমরা</span>
-            <span class="unverified-meaning">নেমে যাও</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">مِنْهَا</span>
-            <span class="verified-meaning">তা থেকে</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">جَمِيعًا</span>
-            <span class="unverified-meaning">সবাই</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">فَإِمَّا</span>
-            <span class="verified-meaning">অতঃপর যদি</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">يَأْتِيَنَّكُم</span>
-            <span class="verified-meaning">তোমাদের কাছে আসে</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">مِّنِّي</span>
-            <span class="verified-meaning">আমার থেকে</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">هُدًى</span>
-            <span class="verified-meaning">দিশা</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">فَمَن</span>
-            <span class="verified-meaning">অতঃপর যে</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">تَبِعَ</span>
-            <span class="unverified-meaning">অনুসরণ করবে</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">هُدَايَ</span>
-            <span class="verified-meaning">আমার দিশা</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">فَلَا</span>
-            <span class="verified-meaning">সুতরাং না</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">خَوْفٌ</span>
-            <span class="unverified-meaning">কোনো ভয়</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">عَلَيْهِمْ</span>
-            <span class="verified-meaning">তাদের ওপর</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">وَلَا</span>
-            <span class="verified-meaning">এবং না</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">هُمْ</span>
-            <span class="verified-meaning">তারা</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">يَحْزَنُونَ</span>
-            <span class="unverified-meaning">দুঃখিত হবে</span>
-        </div>
-    </div>
+        <div class="verse-card">
+            <div class="verse-num">২:৩৮</div>
+            <div class="word-by-word-container">
+                <div class="word-box">
+                    <span class="arabic-word">قُلْنَا</span>
+                    <span class="verified-meaning">আমরা বললাম</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">اهْبِطُوا</span>
+                    <span class="verified-meaning">তোমরা</span>
+                    <span class="unverified-meaning">নেমে যাও</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">مِنْهَا</span>
+                    <span class="verified-meaning">তা থেকে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">جَمِيعًا</span>
+                    <span class="unverified-meaning">সবাই</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">فَإِمَّا</span>
+                    <span class="verified-meaning">অতঃপর যদি</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">يَأْتِيَنَّكُم</span>
+                    <span class="verified-meaning">তোমাদের কাছে আসে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">مِّنِّي</span>
+                    <span class="verified-meaning">আমার থেকে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">هُدًى</span>
+                    <span class="verified-meaning">দিশা</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">فَمَن</span>
+                    <span class="verified-meaning">অতঃপর যে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">تَبِعَ</span>
+                    <span class="unverified-meaning">অনুসরণ করবে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">هُدَايَ</span>
+                    <span class="verified-meaning">আমার দিশা</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">فَلَا</span>
+                    <span class="verified-meaning">সুতরাং না</span>
+          </div>
+                <div class="word-box">
+                    <span class="arabic-word">خَوْفٌ</span>
+                    <span class="unverified-meaning">কোনো ভয়</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">عَلَيْهِمْ</span>
+                    <span class="verified-meaning">তাদের ওপর</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">وَلَا</span>
+                    <span class="verified-meaning">এবং না</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">هُمْ</span>
+                    <span class="verified-meaning">তারা</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">يَحْزَنُونَ</span>
+                    <span class="unverified-meaning">দুঃখিত হবে</span>
+                </div>
+            </div>
 
-    <div class="transliteration-box">
-        <strong>উচ্চারণ:</strong> কুলনাহ বিত্বূ মিনহা জামী‘আ, ফা-ইম্মা ইয়া’তিয়ান্নাকুম মিন্নী হুদান ফামান তাবি‘আ হুদায়া ফালা খওফুন ‘আলাইহিম ওয়া লা হুম ইয়াহযানূন।
-    </div>
+            <div class="transliteration-box">
+                <strong>উচ্চারণ:</strong> কুলনাহ বিত্বূ মিনহা জামী‘আ, ফা-ইম্মা ইয়া’তিয়ান্নাকুম মিন্নী হুদান ফামান তাবি‘আ হুদায়া ফালা খওফুন ‘আলাইহিম ওয়া লা হুম ইয়াহযানূন।
+            </div>
 
-    <div class="full-translation">
-        "আমরা বললাম, তোমরা সবাই তা থেকে নেমে যাও। অতঃপর যদি আমার থেকে তোমাদের কাছে দিশা আসে, সুতরাং যে আমার দিশা অনুসরণ করবে, তাদের ওপর কোনো ভয় থাকবে না এবং তারা দুঃখিত হবে না।"
-    </div>
-</div>
-     <!-- আয়াত ২:৫৩ -->
-<div class="verse-card">
-    <div class="verse-num">২:৫৩</div>
-    <div class="word-by-word-container">
-        <div class="word-box">
-            <span class="arabic-word">وَإِذْ</span>
-            <span class="verified-meaning">এবং যখন</span>
+            <div class="full-translation">
+                "আমরা বললাম, তোমরা সবাই তা থেকে নেমে যাও। অতঃপর যদি আমার থেকে তোমাদের কাছে দিশা আসে, সুতরাং যে আমার দিশা অনুসরণ করবে, তাদের ওপর কোনো ভয় থাকবে না এবং তারা দুঃখিত হবে না।"
+            </div>
+            <div class="action-buttons" style="display: flex; gap: 8px; margin-top: 10px;">
+                <button class="trans-toggle-btn" style="margin: 0;" onclick="copyVerse(this)">📋 কপি</button>
+                <button class="trans-toggle-btn" style="margin: 0; background-color: #2d3748;" onclick="shareVerse(this)">🔗 শেয়ার</button>
+            </div>
         </div>
-        <div class="word-box">
-            <span class="arabic-word">آتَيْنَا</span>
-            <span class="verified-meaning">আমরা দিয়েছিলাম</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">مُوسَى</span>
-            <span class="verified-meaning">মূসাকে</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">الْكِتَابَ</span>
-            <span class="verified-meaning">নথি</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">وَالْفُرْقَانَ</span>
-            <span class="unverified-meaning">ও পার্থক্যকারী</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">لَعَلَّكُمْ</span>
-            <span class="verified-meaning">যাতে তোমরা</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">تَهْتَدُونَ</span>
-            <span class="verified-meaning">দিশাপ্রাপ্ত হও</span>
-        </div>
-    </div>
 
-    <div class="transliteration-box">
-        <strong>উচ্চারণ:</strong> ওয়া ইয আতায়না মূসাল কিতাবা ওয়াল ফুরকানা লা‘আল্লাহুম তাহতাদূন।
-    </div>
+        <!-- আয়াত ২:৫৩ -->
+        <div class="verse-card">
+            <div class="verse-num">২:৫৩</div>
+            <div class="word-by-word-container">
+                <div class="word-box">
+                    <span class="arabic-word">وَإِذْ</span>
+                    <span class="verified-meaning">এবং যখন</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">آتَيْنَا</span>
+                    <span class="verified-meaning">আমরা দিয়েছিলাম</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">مُوسَى</span>
+                    <span class="verified-meaning">মূসাকে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">الْكِتَابَ</span>
+                    <span class="verified-meaning">নথি</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">وَالْفُرْقَانَ</span>
+                    <span class="unverified-meaning">ও পার্থক্যকারী</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">لَعَلَّكُمْ</span>
+                    <span class="verified-meaning">যাতে তোমরা</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">تَهْتَدُونَ</span>
+                    <span class="verified-meaning">দিশাপ্রাপ্ত হও</span>
+                </div>
+            </div>
 
-    <div class="full-translation">
-        "এবং যখন আমরা মূসাকে নথি ও পার্থক্যকারী দিয়েছিলাম, যাতে তোমরা দিশাপ্রাপ্ত হও।"
-    </div>
-</div>
+            <div class="transliteration-box">
+                <strong>উচ্চারণ:</strong> ওয়া ইয আতায়না মূসাল কিতাবা ওয়াল ফুরকানা লা‘আল্লাহুম তাহতাদূন।
+            </div>
+
+            <div class="full-translation">
+                "এবং যখন আমরা মূসাকে নথি ও পার্থক্যকারী দিয়েছিলাম, যাতে তোমরা দিশাপ্রাপ্ত হও।"
+            </div>
+            <div class="action-buttons" style="display: flex; gap: 8px; margin-top: 10px;">
+                <button class="trans-toggle-btn" style="margin: 0;" onclick="copyVerse(this)">📋 কপি</button>
+                <button class="trans-toggle-btn" style="margin: 0; background-color: #2d3748;" onclick="shareVerse(this)">🔗 শেয়ার</button>
+            </div>
+        </div>
         <!-- সূরা :৭০ আয়াত -->
-<div class="verse-card">
-    <div class="verse-num">২:৭০</div>
-    <div class="word-by-word-container">
-        
-        <!-- قَالُوا - তারা বলল (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">قَالُوا</span>
-            <span class="verified-meaning" style="color: #008744;">তারা বলল</span>
+        <div class="verse-card">
+            <div class="verse-num">২:৭০</div>
+            <div class="word-by-word-container">
+                <div class="word-box">
+                    <span class="arabic-word">قَالُوا</span>
+                    <span class="verified-meaning" style="color: #008744;">তারা বলল</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">ادْعُ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">আহ্বান করো</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">لَنَا</span>
+                    <span class="verified-meaning" style="color: #008744;">আমাদের জন্য</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">رَّبَّكَ</span>
+                    <span class="verified-meaning" style="color: #008744;">তোমার প্রতিপালককে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">يُبَيِّن</span>
+                    <span class="verified-meaning" style="color: #2d3748;">স্পষ্ট করেন</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">لَّنَا</span>
+                    <span class="verified-meaning" style="color: #008744;">আমাদের জন্য</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">مَا</span>
+                    <span class="verified-meaning" style="color: #008744;">কী</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">هِيَ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">সেটি</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">إِنَّ</span>
+                    <span class="verified-meaning" style="color: #008744;">নিশ্চয়ই</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">الْبَقَرَ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">গাভীগুলো</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">تَشَابَهَ</span>
+                    <span class="verified-meaning" style="color: #008744;">সাদৃশ্যপূর্ণ হয়েছে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">عَلَيْنَا</span>
+                    <span class="verified-meaning" style="color: #008744;">আমাদের ওপর</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">وَإِنَّا</span>
+                    <span class="verified-meaning" style="color: #008744;">এবং নিশ্চয়ই আমরা</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">إِن</span>
+                    <span class="verified-meaning" style="color: #008744;">যদি</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">شَاءَ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">চান</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">اللَّهُ</span>
+                    <span class="verified-meaning" style="color: #008744;">আল্লাহ</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">لَمُهْتَدُونَ</span>
+                    <span class="verified-meaning" style="color: #008744;">অবশ্যই দিশাপ্রাপ্ত হব</span>
+                </div>
+            </div>
+            
+            <div class="transliteration-box">
+                <strong>উচ্চারণ:</strong> ক্বালুদ'উ লানা রাব্বাকা ইউবায়্যিন লানা মা হিয়া ইন্নাল বাক্বারা তাশাবাহা 'আলাইনা ওয়া ইন্না ইন শাআল্লাহু লামুহতাদূন
+            </div>
+            
+            <div class="full-translation">
+                তারা বলল, 'তোমার প্রতিপালককে আমাদের জন্য আহ্বান করো, তিনি আমাদের জন্য স্পষ্ট করেন, সেটি কী; নিশ্চয়ই গাভীগুলো আমাদের ওপর সাদৃশ্যপূর্ণ হয়েছে; এবং নিশ্চয়ই আমরা, যদি আল্লাহ চান, অবশ্যই দিশাপ্রাপ্ত হব।'
+            </div>
+            <div class="action-buttons" style="display: flex; gap: 8px; margin-top: 10px;">
+                <button class="trans-toggle-btn" style="margin: 0;" onclick="copyVerse(this)">📋 কপি</button>
+                <button class="trans-toggle-btn" style="margin: 0; background-color: #2d3748;" onclick="shareVerse(this)">🔗 শেয়ার</button>
+            </div>
         </div>
-        
-        <!-- ادْعُ - আহ্বান করো (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">ادْعُ</span>
-            <span class="verified-meaning" style="color: #2d3748;">আহ্বান করো</span>
-        </div>
-        
-        <!-- لَنَا - আমাদের জন্য (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">لَنَا</span>
-            <span class="verified-meaning" style="color: #008744;">আমাদের জন্য</span>
-        </div>
-        
-        <!-- رَبَّكَ - তোমার প্রতিপালককে (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">رَبَّكَ</span>
-            <span class="verified-meaning" style="color: #008744;">তোমার প্রতিপালককে</span>
-        </div>
-        
-        <!-- يُبَيِّن - স্পষ্ট করেন (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">يُبَيِّن</span>
-            <span class="verified-meaning" style="color: #2d3748;">স্পষ্ট করেন</span>
-        </div>
-        
-        <!-- لَّنَا - আমাদের জন্য (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">لَّنَا</span>
-            <span class="verified-meaning" style="color: #008744;">আমাদের জন্য</span>
-        </div>
-        
-        <!-- مَا - কী (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">مَا</span>
-            <span class="verified-meaning" style="color: #008744;">কী</span>
-        </div>
-        
-        <!-- هِيَ - সেটি (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">هِيَ</span>
-            <span class="verified-meaning" style="color: #2d3748;">সেটি</span>
-        </div>
-        
-        <!-- إِنَّ - নিশ্চয়ই (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">إِنَّ</span>
-            <span class="verified-meaning" style="color: #008744;">নিশ্চয়ই</span>
-        </div>
-        
-        <!-- الْبَقَرَ - গাভীগুলো (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">الْبَقَرَ</span>
-            <span class="verified-meaning" style="color: #2d3748;">গাভীগুলো</span>
-        </div>
-        
-        <!-- تَشَابَهَ - সাদৃশ্যপূর্ণ হয়েছে (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">تَشَابَهَ</span>
-            <span class="verified-meaning" style="color: #008744;">সাদৃশ্যপূর্ণ হয়েছে</span>
-        </div>
-        
-        <!-- عَلَيْنَا - আমাদের ওপর (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">عَلَيْنَا</span>
-            <span class="verified-meaning" style="color: #008744;">আমাদের ওপর</span>
-        </div>
-        
-        <!-- وَإِنَّا - এবং নিশ্চয়ই আমরা (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">وَإِنَّا</span>
-            <span class="verified-meaning" style="color: #008744;">এবং নিশ্চয়ই আমরা</span>
-        </div>
-        
-        <!-- إِن - যদি (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">إِن</span>
-            <span class="verified-meaning" style="color: #008744;">যদি</span>
-        </div>
-        
-        <!-- شَاءَ - চান (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">شَاءَ</span>
-            <span class="verified-meaning" style="color: #2d3748;">চান</span>
-        </div>
-        
-        <!-- اللَّهُ - আল্লাহ (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">اللَّهُ</span>
-            <span class="verified-meaning" style="color: #008744;">আল্লাহ</span>
-        </div>
-        
-        <!-- لَمُهْتَدُونَ - অবশ্যই দিশাপ্রাপ্ত হব (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">لَمُهْتَدُونَ</span>
-            <span class="verified-meaning" style="color: #008744;">অবশ্যই দিশাপ্রাপ্ত হব</span>
-        </div>
-        
-    </div>
-    
-    <!-- উচ্চারণ -->
-    <div class="transliteration-box">
-        <strong>উচ্চারণ:</strong> ক্বালুদ'উ লানা রাব্বাকা ইউবায়্যিন লানা মা হিয়া ইন্নাল বাক্বারা তাশাবাহা 'আলাইনা ওয়া ইন্না ইন শাআল্লাহু লামুহতাদূন
-    </div>
-    
-    <!-- পূর্ণ অনুবাদ -->
-    <div class="full-translation">
-        তারা বলল, 'তোমার প্রতিপালককে আমাদের জন্য আহ্বান করো, তিনি আমাদের জন্য স্পষ্ট করেন, সেটি কী; নিশ্চয়ই গাভীগুলো আমাদের ওপর সাদৃশ্যপূর্ণ হয়েছে; এবং নিশ্চয়ই আমরা, যদি আল্লাহ চান, অবশ্যই দিশাপ্রাপ্ত হব।'
-    </div>
-</div>
         <!-- সূরা ২:৭৯ আয়াত -->
-<div class="verse-card">
-    <div class="verse-num">২:৭৯</div>
-    <div class="word-by-word-container">
-        
-        <!-- فَوَيْلٌ - সুতরাং দুর্ভোগ (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">فَوَيْلٌ</span>
-            <span class="verified-meaning" style="color: #008744;">সুতরাং দুর্ভোগ</span>
+        <div class="verse-card">
+            <div class="verse-num">২:৭৯</div>
+            <div class="word-by-word-container">
+                <div class="word-box">
+                    <span class="arabic-word">فَوَيْلٌ</span>
+                    <span class="verified-meaning" style="color: #008744;">সুতরাং দুর্ভোগ</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">لِّلَّذِينَ</span>
+                    <span class="verified-meaning" style="color: #008744;">যাদের জন্য</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">يَكْتُبُونَ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">লিখে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">الْكِتَابَ</span>
+                    <span class="verified-meaning" style="color: #008744;">নথি</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">بِأَيْدِيهِمْ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">তাদের হাত দিয়ে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">ثُمَّ</span>
+                    <span class="verified-meaning" style="color: #008744;">অতঃপর</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">يَقُولُونَ</span>
+                    <span class="verified-meaning" style="color: #008744;">তারা বলে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">هَٰذَا</span>
+                    <span class="verified-meaning" style="color: #2d3748;">এটি</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">مِنْ</span>
+                    <span class="verified-meaning" style="color: #008744;">থেকে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">عِندِ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">কাছ</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">اللَّهِ</span>
+                    <span class="verified-meaning" style="color: #008744;">আল্লাহর</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">لِيَشْتَرُوا</span>
+                    <span class="verified-meaning" style="color: #2d3748;">যাতে ক্রয় করতে পারে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">بِهِ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">এর দ্বারা</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">ثَمَنًا</span>
+                    <span class="verified-meaning" style="color: #2d3748;">মূল্য</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">قَلِيلًا</span>
+                    <span class="verified-meaning" style="color: #2d3748;">সামান্য</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">فَوَيْلٌ</span>
+                    <span class="verified-meaning" style="color: #008744;">সুতরাং দুর্ভোগ</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">لَّهُم</span>
+                    <span class="verified-meaning" style="color: #008744;">তাদের জন্য</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">مِّمَّا</span>
+                    <span class="verified-meaning" style="color: #2d3748;">যা থেকে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">كَتَبَتْ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">লিখেছে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">أَيْدِيهِمْ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">তাদের হাত</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">وَوَيْلٌ</span>
+                    <span class="verified-meaning" style="color: #008744;">এবং দুর্ভোগ</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">لَّهُم</span>
+                    <span class="verified-meaning" style="color: #008744;">তাদের জন্য</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">مِّمَّا</span>
+                    <span class="verified-meaning" style="color: #2d3748;">যা থেকে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">يَكْسِبُونَ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">তারা অর্জন করে</span>
+                </div>
+            </div>
+            
+            <div class="transliteration-box">
+                <strong>উচ্চারণ:</strong> ফাওয়াইলুল লিল্লাযীনা ইয়াকতুবূনাল কিতাবা বিআইদীহিম সুম্মা ইয়াকূলূনা হাযা মিন 'ইন্দিল্লাহি লিইয়াশতারূ বিহী সামানান ক্বালীলা, ফাওয়াইলুল লাহুম মিম্মা কাতাবাত আইদীহিম ওয়াওয়াইলুল লাহুম মিম্মা ইয়াকসিবূন
+            </div>
+            
+            <div class="full-translation">
+                সুতরাং তাদের জন্য দুর্ভোগ, যারা তাদের হাত দিয়ে নথি লিখে, অতঃপর তারা বলে, 'এটি আল্লাহর কাছ থেকে', যাতে এর দ্বারা সামান্য মূল্য ক্রয় করতে পারে। সুতরাং তাদের জন্য দুর্ভোগ যা তাদের হাত লিখেছে তা থেকে, এবং তাদের জন্য দুর্ভোগ যা তারা অর্জন করে তা থেকে।
+            </div>
+            <div class="action-buttons" style="display: flex; gap: 8px; margin-top: 10px;">
+                <button class="trans-toggle-btn" style="margin: 0;" onclick="copyVerse(this)">📋 কপি</button>
+                <button class="trans-toggle-btn" style="margin: 0; background-color: #2d3748;" onclick="shareVerse(this)">🔗 শেয়ার</button>
+            </div>
         </div>
-        
-        <!-- لِّلَّذِينَ - যাদের জন্য / যারা (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">لِّلَّذِينَ</span>
-            <span class="verified-meaning" style="color: #008744;">যাদের জন্য</span>
-        </div>
-        
-        <!-- يَكْتُبُونَ - লিখে (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">يَكْتُبُونَ</span>
-            <span class="verified-meaning" style="color: #2d3748;">লিখে</span>
-        </div>
-        
-        <!-- الْكِتَابَ - নথি (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">الْكِتَابَ</span>
-            <span class="verified-meaning" style="color: #008744;">নথি</span>
-        </div>
-        
-        <!-- بِأَيْدِيهِمْ - তাদের হাত দিয়ে (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">بِأَيْدِيهِمْ</span>
-            <span class="verified-meaning" style="color: #2d3748;">তাদের হাত দিয়ে</span>
-        </div>
-        
-        <!-- ثُمَّ - অতঃপর (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">ثُمَّ</span>
-            <span class="verified-meaning" style="color: #008744;">অতঃপর</span>
-        </div>
-        
-        <!-- يَقُولُونَ - তারা বলে (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">يَقُولُونَ</span>
-            <span class="verified-meaning" style="color: #008744;">তারা বলে</span>
-        </div>
-        
-        <!-- هَٰذَا - এটি (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">هَٰذَا</span>
-            <span class="verified-meaning" style="color: #2d3748;">এটি</span>
-        </div>
-        
-        <!-- مِنْ - থেকে (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">مِنْ</span>
-            <span class="verified-meaning" style="color: #008744;">থেকে</span>
-        </div>
-        
-        <!-- عِندِ - কাছ (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">عِندِ</span>
-            <span class="verified-meaning" style="color: #2d3748;">কাছ</span>
-        </div>
-        
-        <!-- اللَّهِ - আল্লাহর (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">اللَّهِ</span>
-            <span class="verified-meaning" style="color: #008744;">আল্লাহর</span>
-        </div>
-        
-        <!-- لِيَشْتَرُوا - যাতে ক্রয় করতে পারে (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">لِيَشْتَرُوا</span>
-            <span class="verified-meaning" style="color: #2d3748;">যাতে ক্রয় করতে পারে</span>
-        </div>
-        
-        <!-- بِهِ - এর দ্বারা (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">بِهِ</span>
-            <span class="verified-meaning" style="color: #2d3748;">এর দ্বারা</span>
-        </div>
-        
-        <!-- ثَمَنًا - মূল্য (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">ثَمَنًا</span>
-            <span class="verified-meaning" style="color: #2d3748;">মূল্য</span>
-        </div>
-        
-        <!-- قَلِيلًا - সামান্য (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">قَلِيلًا</span>
-            <span class="verified-meaning" style="color: #2d3748;">সামান্য</span>
-        </div>
-        
-        <!-- فَوَيْلٌ - সুতরাং দুর্ভোগ (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">فَوَيْلٌ</span>
-            <span class="verified-meaning" style="color: #008744;">সুতরাং দুর্ভোগ</span>
-        </div>
-        
-        <!-- لَّهُم - তাদের জন্য (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">لَّهُم</span>
-            <span class="verified-meaning" style="color: #008744;">তাদের জন্য</span>
-        </div>
-        
-        <!-- مِّمَّا - যা থেকে (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">مِّمَّا</span>
-            <span class="verified-meaning" style="color: #2d3748;">যা থেকে</span>
-        </div>
-        
-        <!-- كَتَبَتْ - লিখেছে (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">كَتَبَتْ</span>
-            <span class="verified-meaning" style="color: #2d3748;">লিখেছে</span>
-        </div>
-        
-        <!-- أَيْدِيهِمْ - তাদের হাত (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">أَيْدِيهِمْ</span>
-            <span class="verified-meaning" style="color: #2d3748;">তাদের হাত</span>
-        </div>
-        
-        <!-- وَوَيْلٌ - এবং দুর্ভোগ (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">وَوَيْلٌ</span>
-            <span class="verified-meaning" style="color: #008744;">এবং দুর্ভোগ</span>
-        </div>
-        
-        <!-- لَّهُم - তাদের জন্য (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">لَّهُم</span>
-            <span class="verified-meaning" style="color: #008744;">তাদের জন্য</span>
-        </div>
-        
-        <!-- مِّمَّا - যা থেকে (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">مِّمَّا</span>
-            <span class="verified-meaning" style="color: #2d3748;">যা থেকে</span>
-        </div>
-        
-        <!-- يَكْسِبُونَ - তারা অর্জন করে (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">يَكْسِبُونَ</span>
-            <span class="verified-meaning" style="color: #2d3748;">তারা অর্জন করে</span>
-        </div>
-        
-    </div>
-    
-    <!-- উচ্চারণ -->
-    <div class="transliteration-box">
-        <strong>উচ্চারণ:</strong> ফাওয়াইলুল লিল্লাযীনা ইয়াকতুবূনাল কিতাবা বিআইদীহিম সুম্মা ইয়াকূলূনা হাযা মিন 'ইন্দিল্লাহি লিইয়াশতারূ বিহী সামানান ক্বালীলা, ফাওয়াইলুল লাহুম মিম্মা কাতাবাত আইদীহিম ওয়াওয়াইলুল লাহুম মিম্মা ইয়াকসিবূন
-    </div>
-    
-    <!-- পূর্ণ অনুবাদ -->
-    <div class="full-translation">
-        সুতরাং তাদের জন্য দুর্ভোগ, যারা তাদের হাত দিয়ে নথি লিখে, অতঃপর তারা বলে, 'এটি আল্লাহর কাছ থেকে', যাতে এর দ্বারা সামান্য মূল্য ক্রয় করতে পারে। সুতরাং তাদের জন্য দুর্ভোগ যা তাদের হাত লিখেছে তা থেকে, এবং তাদের জন্য দুর্ভোগ যা তারা অর্জন করে তা থেকে।
-    </div>
-</div>
         <!-- সূরা ২:১৪২ আয়াত -->
-<div class="verse-card">
-    <div class="verse-num">২:১৪২</div>
-    <div class="word-by-word-container">
-        
-        <!-- سَيَقُولُ - শীঘ্রই বলবে (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">سَيَقُولُ</span>
-            <span class="verified-meaning" style="color: #2d3748;">শীঘ্রই বলবে</span>
+        <div class="verse-card">
+            <div class="verse-num">২:১৪২</div>
+            <div class="word-by-word-container">
+                <div class="word-box">
+                    <span class="arabic-word">سَيَقُولُ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">শীঘ্রই বলবে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">السُّفَهَاءُ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">নির্বোধরা</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">مِنَ</span>
+                    <span class="verified-meaning" style="color: #008744;">থেকে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">النَّاسِ</span>
+                    <span class="verified-meaning" style="color: #008744;">মানবসমষ্টি</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">مَا</span>
+                    <span class="verified-meaning" style="color: #008744;">কী</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">وَلَّاهُمْ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">তাদেরকে ফিরিয়ে দিয়েছে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">عَن</span>
+                    <span class="verified-meaning" style="color: #2d3748;">থেকে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">قِبْلَتِهِمُ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">তাদের সম্মুখদিক</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">الَّتِي</span>
+                    <span class="verified-meaning" style="color: #2d3748;">যে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">كَانُوا</span>
+                    <span class="verified-meaning" style="color: #2d3748;">তারা ছিল</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">عَلَيْهَا</span>
+                    <span class="verified-meaning" style="color: #008744;">উপর</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">قُل</span>
+                    <span class="verified-meaning" style="color: #008744;">বল</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">لِلَّهِ</span>
+                    <span class="verified-meaning" style="color: #008744;">আল্লাহর জন্য</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">الْمَشْرِقُ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">উদয়স্থান</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">وَالْمَغْرِبُ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">ও অস্তস্থান</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">يَهْدِي</span>
+                    <span class="verified-meaning" style="color: #008744;">দিশা দেন</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">مَن</span>
+                    <span class="verified-meaning" style="color: #2d3748;">যাকে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">يَشَاءُ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">চান</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">إِلَىٰ</span>
+                    <span class="verified-meaning" style="color: #008744;">অভিমুখে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">صِرَاطٍ</span>
+                    <span class="verified-meaning" style="color: #008744;">পথের</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">مُّسْتَقِيمٍ</span>
+                    <span class="verified-meaning" style="color: #008744;">সুদৃঢ়</span>
+                </div>
+            </div>
+            
+            <div class="transliteration-box">
+                <strong>উচ্চারণ:</strong> সাইয়াকূলুস সুফাহাউ মিনান নাসি মা ওয়াল্লাহুম 'আন কিবলাতিহিমুল্লাতী কানূ 'আলাইহা, কুল লিল্লাহিল মাশরিকু ওয়াল মাগরিব, ইয়াদী মান ইয়াশাউ ইলা সিরাতিন মুসতাক্বীম
+            </div>
+            
+            <div class="full-translation">
+                শীঘ্রই মানবসমষ্টি থেকে নির্বোধরা বলবে, 'কী তাদেরকে তাদের সম্মুখদিক থেকে ফিরিয়ে দিয়েছে, যার উপর তারা ছিল?' বল, 'উদয়স্থান ও অস্তস্থান আল্লাহর জন্য। তিনি যাকে চান, সুদৃঢ় পথের অভিমুখে দিশা দেন।'
+            </div>
+            <div class="action-buttons" style="display: flex; gap: 8px; margin-top: 10px;">
+                <button class="trans-toggle-btn" style="margin: 0;" onclick="copyVerse(this)">📋 কপি</button>
+                <button class="trans-toggle-btn" style="margin: 0; background-color: #2d3748;" onclick="shareVerse(this)">🔗 শেয়ার</button>
+            </div>
         </div>
-        
-        <!-- السُّفَهَاءُ - নির্বোধরা (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">السُّفَهَاءُ</span>
-            <span class="verified-meaning" style="color: #2d3748;">নির্বোধরা</span>
-        </div>
-        
-        <!-- مِنَ - থেকে (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">مِنَ</span>
-            <span class="verified-meaning" style="color: #008744;">থেকে</span>
-        </div>
-        
-        <!-- النَّاسِ - মানবসমষ্টি (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">النَّاسِ</span>
-            <span class="verified-meaning" style="color: #008744;">মানবসমষ্টি</span>
-        </div>
-        
-        <!-- مَا - কী (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">مَا</span>
-            <span class="verified-meaning" style="color: #008744;">কী</span>
-        </div>
-        
-        <!-- وَلَّاهُمْ - তাদেরকে ফিরিয়ে দিয়েছে (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">وَلَّاهُمْ</span>
-            <span class="verified-meaning" style="color: #2d3748;">তাদেরকে ফিরিয়ে দিয়েছে</span>
-        </div>
-        
-        <!-- عَن - থেকে (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">عَن</span>
-            <span class="verified-meaning" style="color: #2d3748;">থেকে</span>
-        </div>
-        
-        <!-- قِبْلَتِهِمُ - তাদের সম্মুখদিক (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">قِبْلَتِهِمُ</span>
-            <span class="verified-meaning" style="color: #2d3748;">তাদের সম্মুখদিক</span>
-        </div>
-        
-        <!-- الَّتِي - যে (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">الَّتِي</span>
-            <span class="verified-meaning" style="color: #2d3748;">যে</span>
-        </div>
-        
-        <!-- كَانُوا - তারা ছিল (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">كَانُوا</span>
-            <span class="verified-meaning" style="color: #2d3748;">তারা ছিল</span>
-        </div>
-        
-        <!-- عَلَيْهَا - উপর (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">عَلَيْهَا</span>
-            <span class="verified-meaning" style="color: #008744;">উপর</span>
-        </div>
-        
-        <!-- قُل - বল (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">قُل</span>
-            <span class="verified-meaning" style="color: #008744;">বল</span>
-        </div>
-        
-        <!-- لِلَّهِ - আল্লাহর জন্য (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">لِلَّهِ</span>
-            <span class="verified-meaning" style="color: #008744;">আল্লাহর জন্য</span>
-        </div>
-        
-        <!-- الْمَشْرِقُ - উদয়স্থান (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">الْمَشْرِقُ</span>
-            <span class="verified-meaning" style="color: #2d3748;">উদয়স্থান</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">وَالْمَغْرِبُ</span>
-            <span class="verified-meaning" style="color: #2d3748;">ও অস্তস্থান</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">يَهْدِي</span>
-            <span class="verified-meaning" style="color: #008744;">দিশা দেন</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">مَن</span>
-            <span class="verified-meaning" style="color: #2d3748;">যাকে</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">يَشَاءُ</span>
-            <span class="verified-meaning" style="color: #2d3748;">চান</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">إِلَىٰ</span>
-            <span class="verified-meaning" style="color: #008744;">অভিমুখে</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">صِرَاطٍ</span>
-            <span class="verified-meaning" style="color: #008744;">পথের</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">مُّسْتَقِيمٍ</span>
-            <span class="verified-meaning" style="color: #008744;">সুদৃঢ়</span>
-        </div>
-        
-    </div>
-    
-    <!-- উচ্চারণ -->
-    <div class="transliteration-box">
-        <strong>উচ্চারণ:</strong> সাইয়াকূলুস সুফাহাউ মিনান নাসি মা ওয়াল্লাহুম 'আন কিবলাতিহিমুল্লাতী কানূ 'আলাইহা, কুল লিল্লাহিল মাশরিকু ওয়াল মাগরিব, ইয়াদী মান ইয়াশাউ ইলা সিরাতিন মুসতাক্বীম
-    </div>
-    
-    <!-- পূর্ণ অনুবাদ -->
-    <div class="full-translation">
-        শীঘ্রই মানবসমষ্টি থেকে নির্বোধরা বলবে, 'কী তাদেরকে তাদের সম্মুখদিক থেকে ফিরিয়ে দিয়েছে, যার উপর তারা ছিল?' বল, 'উদয়স্থান ও অস্তস্থান আল্লাহর জন্য। তিনি যাকে চান, সুদৃঢ় পথের অভিমুখে দিশা দেন।'
-    </div>
-</div>
+
         <!-- আয়াত ২:১৫৭ -->
-<div class="verse-card">
-    <div class="verse-num">২:১৫৭</div>
-    <div class="word-by-word-container">
-        <div class="word-box">
-            <span class="arabic-word">أُولَٰئِكَ</span>
-            <span class="verified-meaning">তারাই</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">عَلَيْهِمْ</span>
-            <span class="verified-meaning">যাদের ওপর</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">صَلَوَاتٌ</span>
-            <span class="verified-meaning">সংযোগসমূহ</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">مِّن</span>
-            <span class="verified-meaning">থেকে</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">رَّبِّهِمْ</span>
-            <span class="verified-meaning">তাদের প্রতিপালকের</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">وَرَحْمَةٌ</span>
-            <span class="verified-meaning">ও মমতা</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">وَأُولَٰئِكَ</span>
-            <span class="verified-meaning">এবং তারাই</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">هُمُ</span>
-            <span class="verified-meaning">তারা</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">الْمُهْتَدُونَ</span>
-            <span class="verified-meaning">দিশাপ্রাপ্তগণ</span>
-        </div>
-    </div>
+        <div class="verse-card">
+            <div class="verse-num">২:১৫৭</div>
+            <div class="word-by-word-container">
+                <div class="word-box">
+                    <span class="arabic-word">أُولَٰئِكَ</span>
+                    <span class="verified-meaning">তারাই</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">عَلَيْهِمْ</span>
+                    <span class="verified-meaning">যাদের ওপর</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">صَلَوَاتٌ</span>
+                    <span class="verified-meaning">সংযোগসমূহ</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">مِّن</span>
+                    <span class="verified-meaning">থেকে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">رَّبِّهِمْ</span>
+                    <span class="verified-meaning">তাদের প্রতিপালকের</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">وَرَحْمَةٌ</span>
+                    <span class="verified-meaning">ও মমতা</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">وَأُولَٰئِكَ</span>
+                    <span class="verified-meaning">এবং তারাই</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">هُمُ</span>
+                    <span class="verified-meaning">তারা</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">الْمُهْتَدُونَ</span>
+                    <span class="verified-meaning">দিশাপ্রাপ্তগণ</span>
+                </div>
+            </div>
 
-    <div class="transliteration-box">
-        <strong>উচ্চারণ:</strong> উলা-ইকা ‘আলাইহিম সালাওয়াতুম মির্ রব্বিহিম ওয়া রহমাতুওঁ ওয়া উলা-ইকা হুমুল মুহতাদূন।
-    </div>
+            <div class="transliteration-box">
+                <strong>উচ্চারণ:</strong> উলা-ইকা ‘আলাইহিম সালাওয়াতুম মির্ রব্বিহিম ওয়া রহমাতুওঁ ওয়া উলা-ইকা হুমুল মুহতাদূন।
+            </div>
 
-    <div class="full-translation">
-        "তারাই, যাদের ওপর তাদের প্রতিপালকের থেকে সংযোগসমূহ ও মমতা; এবং তারাই দিশাপ্রাপ্ত।"
-    </div>
-</div>
+            <div class="full-translation">
+                "তারাই, যাদের ওপর তাদের প্রতিপালকের থেকে সংযোগসমূহ ও মমতা; এবং তারাই দিশাপ্রাপ্ত।"
+            </div>
+            <div class="action-buttons" style="display: flex; gap: 8px; margin-top: 10px;">
+                <button class="trans-toggle-btn" style="margin: 0;" onclick="copyVerse(this)">📋 কপি</button>
+                <button class="trans-toggle-btn" style="margin: 0; background-color: #2d3748;" onclick="shareVerse(this)">🔗 শেয়ার</button>
+            </div>
+        </div>
         <!-- সূরা :১৫৯ আয়াত -->
-<div class="verse-card">
-    <div class="verse-num">২:১৫৯</div>
-    <div class="word-by-word-container">
-        
-        <!-- إِنَّ - নিশ্চয়ই (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">إِنَّ</span>
-            <span class="verified-meaning" style="color: #008744;">নিশ্চয়ই</span>
+        <div class="verse-card">
+            <div class="verse-num">২:১৫৯</div>
+            <div class="word-by-word-container">
+                <div class="word-box">
+                    <span class="arabic-word">إِنَّ</span>
+                    <span class="verified-meaning" style="color: #008744;">নিশ্চয়ই</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">الَّذِينَ</span>
+                    <span class="verified-meaning" style="color: #008744;">যারা</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">يَكْتُمُونَ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">গোপন করে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">مَا</span>
+                    <span class="verified-meaning" style="color: #008744;">যা</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">أَنزَلْنَا</span>
+                    <span class="verified-meaning" style="color: #008744;">আমরা অবতীর্ণ করেছি</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">مِنَ</span>
+                    <span class="verified-meaning" style="color: #008744;">থেকে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">الْبَيِّنَاتِ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">স্পষ্ট প্রমাণসমূহ</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">وَالْهُدَىٰ</span>
+                    <span class="verified-meaning" style="color: #008744;">এবং দিশা</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">مِن بَعْدِ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">পরে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">مَا</span>
+                    <span class="verified-meaning" style="color: #008744;">যা</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">بَيَّنَّاهُ</span>
+                    <span class="verified-meaning" style="color: #008744;">আমরা স্পষ্ট করেছি</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">لِلنَّاسِ</span>
+                    <span class="verified-meaning" style="color: #008744;">মানবসমষ্টির জন্য</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">فِي</span>
+                    <span class="verified-meaning" style="color: #008744;">মধ্যে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">الْكِتَابِ</span>
+                    <span class="verified-meaning" style="color: #008744;">নথি</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">أُولَٰئِكَ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">তারাই</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">يَلْعَنُهُمُ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">তাদের অভিশাপ দেন</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">اللَّهُ</span>
+                    <span class="verified-meaning" style="color: #008744;">আল্লাহ</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">وَيَلْعَنُهُمُ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">এবং অভিশাপ দেন</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">اللَّاعِنُونَ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">অভিশাপকারীরা</span>
+                </div>
+            </div>
+            
+            <div class="transliteration-box">
+                <strong>উচ্চারণ:</strong> ইন্নাল্লাযীনা ইয়াকতুমূনা মা আনযালনা মিনাল বায়্যিনাতি ওয়াল হুদা মিম বা'দি মা বাইয়্যানাহু লিন্নাসি ফিল কিতাবি উলাইকা ইয়াল'আনুহুমুল্লাহু ওয়া ইয়াল'আনুহুমুল লা'িনূন
+            </div>
+            
+            <div class="full-translation">
+                নিশ্চয়ই যারা গোপন করে যা আমরা অবতীর্ণ করেছি স্পষ্ট প্রমাণসমূহ থেকে এবং দিশা থেকে, যা আমরা মানবসমষ্টির জন্য নথির মধ্যে তা স্পষ্ট করার পরে তারাই, আল্লাহ তাদের অভিশাপ দেন এবং অভিশাপকারীরা তাদের অভিশাপ দেয়।
+            </div>
+            <div class="action-buttons" style="display: flex; gap: 8px; margin-top: 10px;">
+                <button class="trans-toggle-btn" style="margin: 0;" onclick="copyVerse(this)">📋 কপি</button>
+                <button class="trans-toggle-btn" style="margin: 0; background-color: #2d3748;" onclick="shareVerse(this)">🔗 শেয়ার</button>
+            </div>
         </div>
-        <!-- الَّذِينَ - যারা (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">الَّذِينَ</span>
-            <span class="verified-meaning" style="color: #008744;">যারা</span>
-        </div>
-        <!-- يَكْتُمُونَ - গোপন করে (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">يَكْتُمُونَ</span>
-            <span class="verified-meaning" style="color: #2d3748;">গোপন করে</span>
-        </div>
-        <!-- مَا - যা (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">مَا</span>
-            <span class="verified-meaning" style="color: #008744;">যা</span>
-        </div>
-        <!-- أَنزَلْنَا - আমরা অবতীর্ণ করেছি (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">أَنزَلْنَا</span>
-            <span class="verified-meaning" style="color: #008744;">আমরা অবতীর্ণ করেছি</span>
-        </div>
-        <!-- مِنَ - থেকে (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">مِنَ</span>
-            <span class="verified-meaning" style="color: #008744;">থেকে</span>
-        </div>
-        <!-- الْبَيِّنَاتِ - স্পষ্ট প্রমাণসমূহ (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">الْبَيِّنَاتِ</span>
-            <span class="verified-meaning" style="color: #2d3748;">স্পষ্ট প্রমাণসমূহ</span>
-        </div>
-        <!-- وَالْهُدَىٰ - এবং দিশা (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">وَالْهُدَىٰ</span>
-            <span class="verified-meaning" style="color: #008744;">এবং দিশা</span>
-        </div>
-        <!-- مِن بَعْدِ - পরে (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">مِن بَعْدِ</span>
-            <span class="verified-meaning" style="color: #2d3748;">পরে</span>
-        </div>
-        <!-- مَا - যা (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">مَا</span>
-            <span class="verified-meaning" style="color: #008744;">যা</span>
-        </div>
-        <!-- بَيَّنَّاهُ - আমরা স্পষ্ট করেছি (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">بَيَّنَّاهُ</span>
-            <span class="verified-meaning" style="color: #008744;">আমরা স্পষ্ট করেছি</span>
-        </div>
-        <!-- لِلنَّاسِ - মানবসমষ্টির জন্য (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">لِلنَّاسِ</span>
-            <span class="verified-meaning" style="color: #008744;">মানবসমষ্টির জন্য</span>
-        </div>
-        <!-- فِي - মধ্যে (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">فِي</span>
-            <span class="verified-meaning" style="color: #008744;">মধ্যে</span>
-        </div>
-        <!-- الْكِتَابِ - নথি (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">الْكِتَابِ</span>
-            <span class="verified-meaning" style="color: #008744;">নথি</span>
-        </div>
-        <!-- أُولَٰئِكَ - তারাই (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">أُولَٰئِكَ</span>
-            <span class="verified-meaning" style="color: #2d3748;">তারাই</span>
-        </div>
-        <!-- يَلْعَنُهُمُ - তাদের অভিশাপ দেন (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">يَلْعَنُهُمُ</span>
-            <span class="verified-meaning" style="color: #2d3748;">তাদের অভিশাপ দেন</span>
-        </div>
-        <!-- اللَّهُ - আল্লাহ (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">اللَّهُ</span>
-            <span class="verified-meaning" style="color: #008744;">আল্লাহ</span>
-        </div>
-        <!-- وَيَلْعَنُهُمُ - এবং অভিশাপ দেন (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">وَيَلْعَنُهُمُ</span>
-            <span class="verified-meaning" style="color: #2d3748;">এবং অভিশাপ দেন</span>
-        </div>
-        <!-- اللَّاعِنُونَ - অভিশাপকারীরা (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">اللَّاعِنُونَ</span>
-            <span class="verified-meaning" style="color: #2d3748;">অভিশাপকারীরা</span>
-        </div>
-        
-    </div>
-    
-    <!-- উচ্চারণ -->
-    <div class="transliteration-box">
-        <strong>উচ্চারণ:</strong> ইন্নাল্লাযীনা ইয়াকতুমূনা মা আনযালনা মিনাল বায়্যিনাতি ওয়াল হুদা মিম বা'দি মা বাইয়্যানাহু লিন্নাসি ফিল কিতাবি উলাইকা ইয়াল'আনুহুমুল্লাহু ওয়া ইয়াল'আনুহুমুল লা'িনূন
-    </div>
-    
-    <!-- পূর্ণ অনুবাদ -->
-    <div class="full-translation">
-        নিশ্চয়ই যারা গোপন করে যা আমরা অবতীর্ণ করেছি স্পষ্ট প্রমাণসমূহ থেকে এবং দিশা থেকে, যা আমরা মানবসমষ্টির জন্য নথির মধ্যে তা স্পষ্ট করার পরে তারাই, আল্লাহ তাদের অভিশাপ দেন এবং অভিশাপকারীরা তাদের অভিশাপ দেয়।
-    </div>
-</div>
+
         <!-- সূরা ২:১৭৫ আয়াত -->
-<div class="verse-card">
-    <div class="verse-num">২:১৭৫</div>
-    <div class="word-by-word-container">
-        
-        <!-- أُولَٰئِكَ - তারাই (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">أُولَٰئِكَ</span>
-            <span class="verified-meaning" style="color: #008744;">তারাই</span>
+        <div class="verse-card">
+            <div class="verse-num">২:১৭৫</div>
+            <div class="word-by-word-container">
+                <div class="word-box">
+                    <span class="arabic-word">أُولَٰئِكَ</span>
+                    <span class="verified-meaning" style="color: #008744;">তারাই</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">الَّذِينَ</span>
+                    <span class="verified-meaning" style="color: #008744;">যারা</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">اشْتَرَوُا</span>
+                    <span class="verified-meaning" style="color: #2d3748;">ক্রয় করেছে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">الضَّلَالَةَ</span>
+                    <span class="verified-meaning" style="color: #008744;">ভ্রান্তি</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">بِالْهُدَىٰ</span>
+                    <span class="verified-meaning" style="color: #008744;">দিশার দ্বারা</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">وَالْعَذَابَ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">এবং শাস্তি</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">بِالْمَغْفِرَةِ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">ক্ষমার দ্বারা</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">فَمَا</span>
+                    <span class="verified-meaning" style="color: #008744;">অতএব কী</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">أَصْبَرَهُمْ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">তাদের ধৈর্য</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">عَلَى</span>
+                    <span class="verified-meaning" style="color: #008744;">ওপর</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">النَّارِ</span>
+                    <span class="verified-meaning" style="color: #008744;">আগুনের</span>
+                </div>
+            </div>
+            
+            <div class="transliteration-box">
+                <strong>উচ্চারণ:</strong> উলাইকাল্লাযীনাশতারউদ দ্বালালাতা বিল হুদা ওয়াল 'আযাবা বিল মাগফিরাহ, ফামা আসবারাহুম 'আলান নার
+            </div>
+            
+            <div class="full-translation">
+                তারাই যারা দিশার দ্বারা ভ্রান্তি ক্রয় করেছে এবং ক্ষমার দ্বারা শাস্তি; অতএব আগুনের ওপর তাদের কী ধৈর্য!
+            </div>
+            <div class="action-buttons" style="display: flex; gap: 8px; margin-top: 10px;">
+                <button class="trans-toggle-btn" style="margin: 0;" onclick="copyVerse(this)">📋 কপি</button>
+                <button class="trans-toggle-btn" style="margin: 0; background-color: #2d3748;" onclick="shareVerse(this)">🔗 শেয়ার</button>
+            </div>
         </div>
-        <!-- الَّذِينَ - যারা (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">الَّذِينَ</span>
-            <span class="verified-meaning" style="color: #008744;">যারা</span>
-        </div>
-        <!-- اشْتَرَوُا - ক্রয় করেছে (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">اشْتَرَوُا</span>
-            <span class="verified-meaning" style="color: #2d3748;">ক্রয় করেছে</span>
-        </div>
-        <!-- الضَّلَالَةَ - ভ্রান্তি (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">الضَّلَالَةَ</span>
-            <span class="verified-meaning" style="color: #008744;">ভ্রান্তি</span>
-        </div>
-        <!-- بِالْهُدَىٰ - দিশার দ্বারা (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">بِالْهُدَىٰ</span>
-            <span class="verified-meaning" style="color: #008744;">দিশার দ্বারা</span>
-        </div>
-        <!-- وَالْعَذَابَ - এবং শাস্তি (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">وَالْعَذَابَ</span>
-            <span class="verified-meaning" style="color: #2d3748;">এবং শাস্তি</span>
-        </div>
-        <!-- بِالْمَغْفِرَةِ - ক্ষমার দ্বারা (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">بِالْمَغْفِرَةِ</span>
-            <span class="verified-meaning" style="color: #2d3748;">ক্ষমার দ্বারা</span>
-        </div>
-        <!-- فَمَا - অতএব কী (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">فَمَا</span>
-            <span class="verified-meaning" style="color: #008744;">অতএব কী</span>
-        </div>
-        <!-- أَصْبَرَهُمْ - তাদের ধৈর্য (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">أَصْبَرَهُمْ</span>
-            <span class="verified-meaning" style="color: #2d3748;">তাদের ধৈর্য</span>
-        </div>
-        <!-- عَلَى - ওপর (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">عَلَى</span>
-            <span class="verified-meaning" style="color: #008744;">ওপর</span>
-        </div>
-        <!-- النَّارِ - আগুনের (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">النَّارِ</span>
-            <span class="verified-meaning" style="color: #008744;">আগুনের</span>
-        </div>
-        
-    </div>
-    
-    <!-- উচ্চারণ -->
-    <div class="transliteration-box">
-        <strong>উচ্চারণ:</strong> উলাইকাল্লাযীনাশতারউদ দ্বালালাতা বিল হুদা ওয়াল 'আযাবা বিল মাগফিরাহ, ফামা আসবারাহুম 'আলান নার
-    </div>
-    
-    <!-- পূর্ণ অনুবাদ -->
-    <div class="full-translation">
-        তারাই যারা দিশার দ্বারা ভ্রান্তি ক্রয় করেছে এবং ক্ষমার দ্বারা শাস্তি; অতএব আগুনের ওপর তাদের কী ধৈর্য!
-    </div>
-</div>
         <!-- সূরা ২:১৮৫ আয়াত -->
-<div class="verse-card">
-    <div class="verse-num">২:১৮৫</div>
-    <div class="word-by-word-container">
-        
-        <!-- شَهْرُ - মাস (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">شَهْرُ</span>
-            <span class="verified-meaning" style="color: #008744;">মাস</span>
+        <div class="verse-card">
+            <div class="verse-num">২:১৮৫</div>
+            <div class="word-by-word-container">
+                <div class="word-box">
+                    <span class="arabic-word">شَهْرُ</span>
+                    <span class="verified-meaning" style="color: #008744;">মাস</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">رَمَضَانَ</span>
+                    <span class="verified-meaning" style="color: #008744;">রমযান</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">الَّذِي</span>
+                    <span class="verified-meaning" style="color: #008744;">যাতে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">أُنزِلَ</span>
+                    <span class="verified-meaning" style="color: #008744;">অবতীর্ণ করা হয়েছে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">فِيهِ</span>
+                    <span class="verified-meaning" style="color: #008744;">তাতে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">الْقُرْآنُ</span>
+                    <span class="verified-meaning" style="color: #008744;">কুরআন</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">هُدًى</span>
+                    <span class="verified-meaning" style="color: #008744;">দিশা</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">لِّلنَّاسِ</span>
+                    <span class="verified-meaning" style="color: #008744;">মানবসমষ্টির জন্য</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">وَبَيِّنَاتٍ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">এবং স্পষ্ট প্রমাণসমূহ</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">مِّنَ</span>
+                    <span class="verified-meaning" style="color: #008744;">থেকে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">الْهُدَىٰ</span>
+                    <span class="verified-meaning" style="color: #008744;">দিশার</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">وَالْفُرْقَانِ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">এবং পার্থক্যকারী</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">فَمَن</span>
+                    <span class="verified-meaning" style="color: #008744;">অতএব যে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">شَهِدَ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">প্রত্যক্ষ করে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">مِنكُمُ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">তোমাদের মধ্যে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">الشَّهْرَ</span>
+                    <span class="verified-meaning" style="color: #008744;">মাসকে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">فَلْيَصُمْهُ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">সুতরাং সে যেন এতে সংযম করে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">وَمَن</span>
+                    <span class="verified-meaning" style="color: #2d3748;">এবং যে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">كَانَ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">হয়েছে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">مَرِيضًا</span>
+                    <span class="verified-meaning" style="color: #2d3748;">অসুস্থ</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">أَوْ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">অথবা</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">عَلَىٰ</span>
+                    <span class="verified-meaning" style="color: #008744;">উপর</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">سَفَرٍ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">সফরে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">فَعِدَّةٌ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">তবে গণনা</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">مِّنْ</span>
+                    <span class="verified-meaning" style="color: #008744;">থেকে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">أَيَّامٍ</span>
+                    <span class="verified-meaning" style="color: #008744;">সময়সমূহ</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">أُخَرَ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">অন্য</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">يُرِيدُ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">চান</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">اللَّهُ</span>
+                    <span class="verified-meaning" style="color: #008744;">আল্লাহ</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">بِكُمُ</span>
+                    <span class="verified-meaning" style="color: #008744;">তোমাদের জন্য</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">الْيُسْرَ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">স্বাচ্ছন্দ্য</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">وَلَا</span>
+                    <span class="verified-meaning" style="color: #008744;">এবং না</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">يُرِيدُ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">চান</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">بِكُمُ</span>
+                    <span class="verified-meaning" style="color: #008744;">তোমাদের জন্য</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">الْعُسْرَ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">কষ্ট</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">وَلِتُكْمِلُوا</span>
+                    <span class="verified-meaning" style="color: #2d3748;">এবং যাতে তোমরা পূর্ণ করো</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">الْعِدَّةَ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">গণনা</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">وَلِتُكَبِّرُوا</span>
+                    <span class="verified-meaning" style="color: #2d3748;">এবং ঘোষণা করো</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">اللَّهَ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">আল্লাহর মহত্ত্ব</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">عَلَىٰ</span>
+                    <span class="verified-meaning" style="color: #008744;">উপর</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">مَا</span>
+                    <span class="verified-meaning" style="color: #008744;">যা</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">هَدَاكُمْ</span>
+                    <span class="verified-meaning" style="color: #008744;">তিনি তোমাদেরকে দিশা দিয়েছেন</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">وَلَعَلَّكُمْ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">আর যাতে তোমরা</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">تَشْكُرُونَ</span>
+                    <span class="verified-meaning" style="color: #2d3748;">কৃতজ্ঞ হও</span>
+                </div>
+            </div>
+            
+            <div class="transliteration-box">
+                <strong>উচ্চারণ:</strong> শাহরু রামাদ্বানাল্লাযী উনযিলা ফীহিল কুরআনু হুদাল লিন্নাসি ওয়া বায়্যিনাতিন মিনাল হুদা ওয়াল ফুরক্বানি, ফামান শাহিদা মিনকুমুশ শাহরা ফালইয়াসুমহু, ওয়া মাম কানা মারীদ্বান আও আলা সাফারিন ফা'ইদ্দাতুম মিন আইয়ামিন উখার, ইউরীদুল্লাহু বিকুমুল ইউসরা ওয়ালা ইউরীদু বিকুমুল 'উসরা ওয়া লিতুকমিলুল 'ইদ্দাতা ওয়া লিতুকাব্বিরুল্লাহা 'আলা মা হাদাকুম ওয়া লা'আল্লাকুম তাশকুরূন
+            </div>
+            
+            <div class="full-translation">
+                রমযান মাস, যাতে কুরআন অবতীর্ণ করা হয়েছে, মানবসমষ্টির জন্য দিশা এবং দিশার স্পষ্ট প্রমাণসমূহ হতে ও পার্থক্যকারী। অতএব তোমাদের মধ্যে যে এই মাসকে প্রত্যক্ষ করে, সুতরাং সে যেন এতে সংযম করে। এবং যে অসুস্থ হয়েছে অথবা সফরে, তবে অন্য সময়সমূহ থেকে গণনা করবে। আল্লাহ তোমাদের জন্য স্বাচ্ছন্দ্য চান এবং তোমাদের জন্য কষ্ট চান না; আর যাতে তোমরা গণনা পূর্ণ করো এবং তিনি তোমাদেরকে যে দিশা দিয়েছেন তার উপর আল্লাহর মহত্ত্ব ঘোষণা করো, আর যাতে তোমরা কৃতজ্ঞ হও।
+            </div>
+            <div class="action-buttons" style="display: flex; gap: 8px; margin-top: 10px;">
+                <button class="trans-toggle-btn" style="margin: 0;" onclick="copyVerse(this)">📋 কপি</button>
+                <button class="trans-toggle-btn" style="margin: 0; background-color: #2d3748;" onclick="shareVerse(this)">🔗 শেয়ার</button>
+            </div>
         </div>
-        <!-- رَمَضَانَ - রমযান (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">رَمَضَانَ</span>
-            <span class="verified-meaning" style="color: #008744;">রমযান</span>
-        </div>
-        <!-- الَّذِي - যাতে (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">الَّذِي</span>
-            <span class="verified-meaning" style="color: #008744;">যাতে</span>
-        </div>
-        <!-- أُنزِلَ - অবতীর্ণ করা হয়েছে (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">أُنزِلَ</span>
-            <span class="verified-meaning" style="color: #008744;">অবতীর্ণ করা হয়েছে</span>
-        </div>
-        <!-- فِيهِ - তাতে (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">فِيهِ</span>
-            <span class="verified-meaning" style="color: #008744;">তাতে</span>
-        </div>
-        <!-- الْقُرْآنُ - কুরআন (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">الْقُرْآنُ</span>
-            <span class="verified-meaning" style="color: #008744;">কুরআন</span>
-        </div>
-        <!-- هُدًى - দিশা (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">هُدًى</span>
-            <span class="verified-meaning" style="color: #008744;">দিশা</span>
-        </div>
-        <!-- لِّلنَّاسِ - মানবসমষ্টির জন্য (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">لِّلنَّاسِ</span>
-            <span class="verified-meaning" style="color: #008744;">মানবসমষ্টির জন্য</span>
-        </div>
-        <!-- وَبَيِّنَاتٍ - এবং স্পষ্ট প্রমাণসমূহ (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">وَبَيِّنَاتٍ</span>
-            <span class="verified-meaning" style="color: #2d3748;">এবং স্পষ্ট প্রমাণসমূহ</span>
-        </div>
-        <!-- مِّنَ - থেকে (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">مِّنَ</span>
-            <span class="verified-meaning" style="color: #008744;">থেকে</span>
-        </div>
-        <!-- الْهُدَىٰ - দিশার (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">الْهُدَىٰ</span>
-            <span class="verified-meaning" style="color: #008744;">দিশার</span>
-        </div>
-        <!-- وَالْفُرْقَانِ - এবং পার্থক্যকারী (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">وَالْفُرْقَانِ</span>
-            <span class="verified-meaning" style="color: #2d3748;">এবং পার্থক্যকারী</span>
-        </div>
-        <!-- فَمَن - অতএব যে (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">فَمَن</span>
-            <span class="verified-meaning" style="color: #008744;">অতএব যে</span>
-        </div>
-        <!-- شَهِدَ - প্রত্যক্ষ করে (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">شَهِدَ</span>
-            <span class="verified-meaning" style="color: #2d3748;">প্রত্যক্ষ করে</span>
-        </div>
-        <!-- مِنكُمُ - তোমাদের মধ্যে (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">مِنكُمُ</span>
-            <span class="verified-meaning" style="color: #2d3748;">তোমাদের মধ্যে</span>
-        </div>
-        <!-- الشَّهْرَ - মাসকে (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">الشَّهْرَ</span>
-            <span class="verified-meaning" style="color: #008744;">মাসকে</span>
-        </div>
-        <!-- فَلْيَصُمْهُ - সুতরাং সে যেন এতে সংযম করে (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">فَلْيَصُمْهُ</span>
-            <span class="verified-meaning" style="color: #2d3748;">সুতরাং সে যেন এতে সংযম করে</span>
-        </div>
-        <!-- وَمَن - এবং যে (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">وَمَن</span>
-            <span class="verified-meaning" style="color: #2d3748;">এবং যে</span>
-        </div>
-        <!-- كَانَ - হয়েছে (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">كَانَ</span>
-            <span class="verified-meaning" style="color: #2d3748;">হয়েছে</span>
-        </div>
-        <!-- مَرِيضًا - অসুস্থ (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">مَرِيضًا</span>
-            <span class="verified-meaning" style="color: #2d3748;">অসুস্থ</span>
-        </div>
-        <!-- أَوْ - অথবা (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">أَوْ</span>
-            <span class="verified-meaning" style="color: #2d3748;">অথবা</span>
-        </div>
-        <!-- عَلَىٰ - উপর (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">عَلَىٰ</span>
-            <span class="verified-meaning" style="color: #008744;">উপর</span>
-        </div>
-        <!-- سَفَرٍ - সফরে (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">سَفَرٍ</span>
-            <span class="verified-meaning" style="color: #2d3748;">সফরে</span>
-        </div>
-        <!-- فَعِدَّةٌ - তবে গণনা (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">فَعِدَّةٌ</span>
-            <span class="verified-meaning" style="color: #2d3748;">তবে গণনা</span>
-        </div>
-        <!-- مِّنْ - থেকে (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">مِّنْ</span>
-            <span class="verified-meaning" style="color: #008744;">থেকে</span>
-        </div>
-        <!-- أَيَّامٍ - সময়সমূহ (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">أَيَّامٍ</span>
-            <span class="verified-meaning" style="color: #008744;">সময়সমূহ</span>
-        </div>
-        <!-- أُخَرَ - অন্য (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">أُخَرَ</span>
-            <span class="verified-meaning" style="color: #2d3748;">অন্য</span>
-        </div>
-        <!-- يُرِيدُ - চান (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">يُرِيدُ</span>
-            <span class="verified-meaning" style="color: #2d3748;">চান</span>
-        </div>
-        <!-- اللَّهُ - আল্লাহ (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">اللَّهُ</span>
-            <span class="verified-meaning" style="color: #008744;">আল্লাহ</span>
-        </div>
-        <!-- بِكُمُ - তোমাদের জন্য (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">بِكُمُ</span>
-            <span class="verified-meaning" style="color: #008744;">তোমাদের জন্য</span>
-        </div>
-        <!-- الْيُسْرَ - স্বাচ্ছন্দ্য (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">الْيُسْرَ</span>
-            <span class="verified-meaning" style="color: #2d3748;">স্বাচ্ছন্দ্য</span>
-        </div>
-        <!-- وَلَا - এবং না (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">وَلَا</span>
-            <span class="verified-meaning" style="color: #008744;">এবং না</span>
-        </div>
-        <!-- يُرِيدُ - চান (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">يُرِيدُ</span>
-            <span class="verified-meaning" style="color: #2d3748;">চান</span>
-        </div>
-        <!-- بِكُمُ - তোমাদের জন্য (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">بِكُمُ</span>
-            <span class="verified-meaning" style="color: #008744;">তোমাদের জন্য</span>
-        </div>
-        <!-- الْعُسْرَ - কষ্ট (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">الْعُسْرَ</span>
-            <span class="verified-meaning" style="color: #2d3748;">কষ্ট</span>
-        </div>
-        <!-- وَلِتُكْمِلُوا - এবং যাতে তোমরা পূর্ণ করো (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">وَلِتُكْمِلُوا</span>
-            <span class="verified-meaning" style="color: #2d3748;">এবং যাতে তোমরা পূর্ণ করো</span>
-        </div>
-        <!-- الْعِدَّةَ - গণনা (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">الْعِدَّةَ</span>
-            <span class="verified-meaning" style="color: #2d3748;">গণনা</span>
-        </div>
-        <!-- وَلِتُكَبِّرُوا - এবং ঘোষণা করো (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">وَلِتُكَبِّرُوا</span>
-            <span class="verified-meaning" style="color: #2d3748;">এবং ঘোষণা করো</span>
-        </div>
-        <!-- اللَّهَ - আল্লাহর মহত্ত্ব (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">اللَّهَ</span>
-            <span class="verified-meaning" style="color: #2d3748;">আল্লাহর মহত্ত্ব</span>
-        </div>
-        <!-- عَلَىٰ - উপর (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">عَلَىٰ</span>
-            <span class="verified-meaning" style="color: #008744;">উপর</span>
-        </div>
-        <!-- مَا - যা (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">مَا</span>
-            <span class="verified-meaning" style="color: #008744;">যা</span>
-        </div>
-        <!-- هَدَاكُمْ - তিনি তোমাদেরকে দিশা দিয়েছেন (সবুজ) -->
-        <div class="word-box">
-            <span class="arabic-word">هَدَاكُمْ</span>
-            <span class="verified-meaning" style="color: #008744;">তিনি তোমাদেরকে দিশা দিয়েছেন</span>
-        </div>
-        <!-- وَلَعَلَّكُمْ - আর যাতে তোমরা (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">وَلَعَلَّكُمْ</span>
-            <span class="verified-meaning" style="color: #2d3748;">আর যাতে তোমরা</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">تَشْكُرُونَ</span>
-            <span class="verified-meaning" style="color: #2d3748;">কৃতজ্ঞ হও</span>
-        </div>
-        
-    </div>
-    
-    <!-- উচ্চারণ -->
-    <div class="transliteration-box">
-        <strong>উচ্চারণ:</strong> শাহরু রামাদ্বানাল্লাযী উনযিলা ফীহিল কুরআনু হুদাল লিন্নাসি ওয়া বায়্যিনাতিন মিনাল হুদা ওয়াল ফুরক্বানি, ফামান শাহিদা মিনকুমুশ শাহরা ফালইয়াসুমহু, ওয়া মাম কানা মারীদ্বান আও আলা সাফারিন ফা'ইদ্দাতুম মিন আইয়ামিন উখার, ইউরীদুল্লাহু বিকুমুল ইউসরা ওয়ালা ইউরীদু বিকুমুল 'উসরা ওয়া লিতুকমিলুল 'ইদ্দাতা ওয়া লিতুকাব্বিরুল্লাহা 'আলা মা হাদাকুম ওয়া লা'আল্লাকুম তاشকুরূন
-    </div>
-    
-    <!-- পূর্ণ অনুবাদ -->
-    <div class="full-translation">
-        রমযান মাস, যাতে কুরআন অবতীর্ণ করা হয়েছে, মানবসমষ্টির জন্য দিশা এবং দিশার স্পষ্ট প্রমাণসমূহ হতে ও পার্থক্যকারী। অতএব তোমাদের মধ্যে যে এই মাসকে প্রত্যক্ষ করে, সুতরাং সে যেন এতে সংযম করে। এবং যে অসুস্থ হয়েছে অথবা সফরে, তবে অন্য সময়সমূহ থেকে গণনা করবে। আল্লাহ তোমাদের জন্য স্বাচ্ছন্দ্য চান এবং তোমাদের জন্য কষ্ট চান না; আর যাতে তোমরা গণনা পূর্ণ করো এবং তিনি তোমাদেরকে যে দিশা দিয়েছেন তার উপর আল্লাহর মহত্ত্ব ঘোষণা করো, আর যাতে তোমরা কৃতজ্ঞ হও।
-    </div>
-</div>
         
         <!-- নেভিগেশন -->
         <div class="navigation">
@@ -1430,6 +1290,7 @@
             <a href="surah-003.html" class="nav-btn">পরবর্তী সূরা →</a>
         </div>
     </div>
+
 <script>
 function toggleTransliteration() {
     const transBoxes = document.querySelectorAll('.transliteration-box');
@@ -1449,11 +1310,55 @@ function toggleTransliteration() {
         btn.innerHTML = '👁️ উচ্চারণ দেখান';
     }
 }
-        // সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
-  window.addEventListener('DOMContentLoaded', () => {
+
+// কপি করার ফাংশন
+function copyVerse(button) {
+    const card = button.closest('.verse-card');
+    const verseNum = card.querySelector('.verse-num')?.innerText || '';
+    const fullTranslation = card.querySelector('.full-translation')?.innerText || '';
+    
+    const wordBoxes = card.querySelectorAll('.word-box');
+    let wordMeanings = [];
+    wordBoxes.forEach(box => {
+        const ar = box.querySelector('.arabic-word')?.innerText || '';
+        const bn = box.querySelector('.verified-meaning, .unverified-meaning')?.innerText || '';
+        if(ar && bn) wordMeanings.push(`${ar} (${bn})`);
+    });
+
+    const textToCopy = `আয়াত: ${verseNum}\nশব্দানুবাদ: ${wordMeanings.join(' ')}\nঅনুবাদ: ${fullTranslation}\n— কুরআন গবেষণা ও শব্দানুবাদ`;
+
+    navigator.clipboard.writeText(textToCopy).then(() => {
+        const originalText = button.innerText;
+        button.innerText = '✅ কপি হয়েছে!';
+        setTimeout(() => { button.innerText = originalText; }, 2000);
+    });
+}
+
+// শেয়ার করার ফাংশন
+function shareVerse(button) {
+    const card = button.closest('.verse-card');
+    const verseNum = card.querySelector('.verse-num')?.innerText || '';
+    const fullTranslation = card.querySelector('.full-translation')?.innerText || '';
+
+    const shareData = {
+        title: `সূরা আল-বাক্বারা - আয়াত ${verseNum}`,
+        text: `আয়াত ${verseNum}: ${fullTranslation}`,
+        url: window.location.href
+    };
+
+    if (navigator.share) {
+        navigator.share(shareData).catch(() => {});
+    } else {
+        navigator.clipboard.writeText(`${shareData.text}\n${shareData.url}`);
+        alert('আয়াতের লিংক ও অনুবাদ কপি করা হয়েছে!');
+    }
+}
+
+// সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
+window.addEventListener('DOMContentLoaded', () => {
     const currentSurah = {
-      surahName: "সূরা আল-বাক্বারাহ",
-      surahUrl: "surah-002.html"
+        surahName: "সূরা আল-বাক্বারাহ",
+        surahUrl: "surah-002.html"
     };
 
     let surahList = JSON.parse(localStorage.getItem('lastReadQuranList')) || [];
@@ -1461,12 +1366,11 @@ function toggleTransliteration() {
     surahList.unshift(currentSurah);
 
     if (surahList.length > 5) {
-      surahList.pop();
+        surahList.pop();
     }
 
     localStorage.setItem('lastReadQuranList', JSON.stringify(surahList));
-  });
-
+});
 </script>
     
 </body>
