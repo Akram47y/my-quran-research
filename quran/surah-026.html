@@ -115,6 +115,45 @@
             color: #2c3e50;
             direction: ltr;
         }
+
+        /* কপি ও শেয়ার বাটন স্টাইল */
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .btn-copy {
+            background-color: #1b4332;
+            color: #ffffff;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13.5px;
+            font-weight: bold;
+            transition: opacity 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .btn-share {
+            background-color: #2b3445;
+            color: #ffffff;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13.5px;
+            font-weight: bold;
+            transition: opacity 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .btn-copy:hover, .btn-share:hover {
+            opacity: 0.9;
+        }
+
         .navigation {
             display: flex;
             justify-content: space-between;
@@ -184,42 +223,46 @@
         <div class="bismillah-meaning">পরম মমতাময়, সদামমতাবদ্ধ আল্লাহর নামে।</div>
     </div>
 
-    <!-- আয়াত প্লেসহোল্ডার (পরবর্তীতে আয়াত অনুবাদ বসানোর জন্য প্রস্তুত) -->
-    <!-- উদাহরণস্বরূপ ৩৭:১ আয়াত কাঠামোর টেমপ্লেট -->
-            <!-- ২৬:২৩ আয়াত -->
-        <div class="verse-card">
-            <div class="verse-num">২৬:২৩</div>
-            <div class="word-by-word-container">
-                <div class="word-box">
-                    <span class="arabic-word">قَالَ</span>
-                    <span class="verified-meaning">বলল</span>
-                </div>
-                <div class="word-box">
-                    <span class="arabic-word">فِرْعَوْنُ</span>
-                    <span class="verified-meaning">ফেরাউন</span>
-                </div>
-                <div class="word-box">
-                    <span class="arabic-word">وَمَا</span>
-                    <span class="verified-meaning">আর কী</span>
-                </div>
-                <div class="word-box">
-                    <span class="arabic-word">رَبُّ</span>
-                    <span class="verified-meaning">প্রতিপালক</span>
-                </div>
-                <div class="word-box">
-                    <span class="arabic-word">الْعَالَمِينَ</span>
-                    <span class="verified-meaning">সর্ব-জগতসমূহের</span>
-                </div>
+    <!-- ২৬:২৩ আয়াত -->
+    <div class="verse-card">
+        <div class="verse-num">২৬:২৩</div>
+        <div class="word-by-word-container">
+            <div class="word-box">
+                <span class="arabic-word">قَالَ</span>
+                <span class="verified-meaning">বলল</span>
             </div>
-
-            <div class="transliteration-box">
-                <strong>উচ্চারণ:</strong> ক্বালা ফির্‌‘আউনু ওয়া মা রব্বুল ‘আলামীন।
+            <div class="word-box">
+                <span class="arabic-word">فِرْعَوْنُ</span>
+                <span class="verified-meaning">ফেরাউন</span>
             </div>
-
-            <div class="full-translation">
-                ফেরাউন বলল, 'আর সর্ব-জগতসমূহের প্রতিপালক কী?'
+            <div class="word-box">
+                <span class="arabic-word">وَمَا</span>
+                <span class="verified-meaning">আর কী</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">رَبُّ</span>
+                <span class="verified-meaning">প্রতিপালক</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">الْعَالَمِينَ</span>
+                <span class="verified-meaning">সর্ব-জগতসমূহের</span>
             </div>
         </div>
+
+        <div class="transliteration-box">
+            <strong>উচ্চারণ:</strong> ক্বালা ফির্‌‘আউনু ওয়া মা রব্বুল ‘আলামীন।
+        </div>
+
+        <div class="full-translation">
+            ফেরাউন বলল, 'আর সর্ব-জগতসমূহের প্রতিপালক কী?'
+        </div>
+
+        <!-- কপি ও শেয়ার বাটন -->
+        <div class="action-buttons">
+            <button class="btn-copy" onclick="copyVerse(this)">📋 কপি</button>
+            <button class="btn-share" onclick="shareVerse(this)">🔗 শেয়ার</button>
+        </div>
+    </div>
     
     <!-- নেভিগেশন -->
     <div class="navigation">
@@ -250,8 +293,51 @@ function toggleTransliteration() {
         btn.innerHTML = '👁️ উচ্চারণ দেখান';
     }
 }
-      // সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
-  window.addEventListener('DOMContentLoaded', () => {
+
+// আয়াত কপি করার ফাংশন
+function copyVerse(button) {
+    const card = button.closest('.verse-card');
+    const verseNum = card.querySelector('.verse-num').innerText.trim();
+    
+    // আরবি শব্দগুলো সাজানো
+    const arabicWords = Array.from(card.querySelectorAll('.arabic-word'))
+                             .map(el => el.innerText.trim())
+                             .join(' ');
+    
+    // পূর্ণ অনুবাদ নেওয়া
+    const translation = card.querySelector('.full-translation').innerText.trim();
+    
+    const textToCopy = `সূরা আশ-শু‘আরা [${verseNum}]\n\n${arabicWords}\n\nঅনুবাদ: ${translation}`;
+
+    navigator.clipboard.writeText(textToCopy).then(() => {
+        alert(`আয়াত ${verseNum} সফলভাবে কপি হয়েছে!`);
+    }).catch(err => {
+        console.error('কপি করতে সমস্যা হয়েছে: ', err);
+    });
+}
+
+// আয়াত শেয়ার করার ফাংশন
+function shareVerse(button) {
+    const card = button.closest('.verse-card');
+    const verseNum = card.querySelector('.verse-num').innerText.trim();
+    const translation = card.querySelector('.full-translation').innerText.trim();
+    const shareText = `সূরা আশ-শু‘আরা [আয়াত ${verseNum}]\n${translation}`;
+    const shareUrl = window.location.href;
+
+    if (navigator.share) {
+        navigator.share({
+            title: `সূরা আশ-শু‘আরা - আয়াত ${verseNum}`,
+            text: shareText,
+            url: shareUrl
+        }).catch(err => console.log('শেয়ার বাতিল করা হয়েছে', err));
+    } else {
+        navigator.clipboard.writeText(`${shareText}\n${shareUrl}`);
+        alert('আপনার ব্রাউজারে সরাসরি শেয়ার সাপোর্ট করে না। আয়াতের তথ্য ও লিংক কপি করা হয়েছে!');
+    }
+}
+
+// সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
+window.addEventListener('DOMContentLoaded', () => {
     const currentSurah = {
       surahName: "সূরা আশ-শু'আরা",
       surahUrl: "surah-026.html"
@@ -266,8 +352,7 @@ function toggleTransliteration() {
     }
 
     localStorage.setItem('lastReadQuranList', JSON.stringify(surahList));
-  });
-    
+});
 </script>
 
 </body>
