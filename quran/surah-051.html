@@ -115,6 +115,45 @@
             color: #2c3e50;
             direction: ltr;
         }
+
+        /* কপি ও শেয়ার বাটন স্টাইল */
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .btn-copy {
+            background-color: #1b4332;
+            color: #ffffff;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13.5px;
+            font-weight: bold;
+            transition: opacity 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .btn-share {
+            background-color: #2b3445;
+            color: #ffffff;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13.5px;
+            font-weight: bold;
+            transition: opacity 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .btn-copy:hover, .btn-share:hover {
+            opacity: 0.9;
+        }
+
         .navigation {
             display: flex;
             justify-content: space-between;
@@ -171,126 +210,130 @@
 <body>
 
 <div class="container">
-    <!-- হেডার -->
     <div class="header">
         <h1>সূরা আয-যারিয়াত</h1>
         <button class="trans-toggle-btn" onclick="toggleTransliteration()" id="transToggleBtn">👁️ উচ্চারণ দেখান</button>
         <div class="meta-info">সূরা ৫১ | আয়াত: ৬০ | মাক্কী</div>
     </div>
 
-    <!-- বিসমিল্লাহ -->
     <div class="bismillah-box">
         <span class="bismillah-arabic">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</span>
         <div class="bismillah-meaning">পরম মমতাময়, সদামমতাবদ্ধ আল্লাহর নামে।</div>
     </div>
 
-    <!-- আয়াত প্লেসহোল্ডার (পরবর্তীতে আয়াত অনুবাদ বসানোর জন্য প্রস্তুত) -->
-    <!-- উদাহরণস্বরূপ ৫১:১ আয়াত কাঠামোর টেমপ্লেট -->
     <div class="verse-card">
-    <div class="verse-num">৫১:৬</div>
-    <div class="word-by-word-container">
-        <div class="word-box">
-            <span class="arabic-word">وَإِنَّ</span>
-            <span class="verified-meaning">এবং নিশ্চয়ই</span>
+        <div class="verse-num">৫১:৬</div>
+        <div class="word-by-word-container">
+            <div class="word-box">
+                <span class="arabic-word">وَإِنَّ</span>
+                <span class="verified-meaning">এবং নিশ্চয়ই</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">ٱلدِّينَ</span>
+                <span class="verified-meaning">জবাবদিহিতা</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">لَوَٰقِعٌ</span>
+                <span class="verified-meaning">অবশ্যই ঘটবে</span>
+            </div>
         </div>
-        <div class="word-box">
-            <span class="arabic-word">ٱلدِّينَ</span>
-            <span class="verified-meaning">জবাবদিহিতা</span>
+        
+        <div class="transliteration-box">
+            <strong>উচ্চারণ:</strong> ওয়া ইন্নাদ্-দ্বীনা লাওয়াক্বি'উন।
         </div>
-        <div class="word-box">
-            <span class="arabic-word">لَوَٰقِعٌ</span>
-            <span class="verified-meaning">অবশ্যই ঘটবে</span>
+
+        <div class="full-translation">
+            এবং নিশ্চয়ই জবাবদিহিতা অবশ্যই ঘটবে।
         </div>
-    </div>
-    
-    <div class="transliteration-box">
-        <strong>উচ্চারণ:</strong> ওয়া ইন্নাদ্-দ্বীনা লাওয়াক্বি'উন।
+
+        <div class="action-buttons">
+            <button class="btn-copy" onclick="copyVerse(this)">📋 কপি</button>
+            <button class="btn-share" onclick="shareVerse(this)">🔗 শেয়ার</button>
+        </div>
     </div>
 
-    <div class="full-translation">
-        এবং নিশ্চয়ই জবাবদিহিতা অবশ্যই ঘটবে।
-    </div>
-    </div>
     <div class="verse-card">
-    <div class="verse-num">৫১:১২</div>
-    <div class="word-by-word-container">
-        <div class="word-box">
-            <span class="arabic-word">يَسْـَٔلُونَ</span>
-            <span class="verified-meaning">তারা জিজ্ঞেস করে</span>
+        <div class="verse-num">৫১:১২</div>
+        <div class="word-by-word-container">
+            <div class="word-box">
+                <span class="arabic-word">يَسْـَٔلُونَ</span>
+                <span class="verified-meaning">তারা জিজ্ঞেস করে</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">أَيَّانَ</span>
+                <span class="verified-meaning">কবে</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">يَوْمُ</span>
+                <span class="verified-meaning">সময়</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">ٱلدِّينِ</span>
+                <span class="verified-meaning">দায়বদ্ধতার</span>
+            </div>
         </div>
-        <div class="word-box">
-            <span class="arabic-word">أَيَّانَ</span>
-            <span class="verified-meaning">কবে</span>
+        
+        <div class="transliteration-box">
+            <strong>উচ্চারণ:</strong> ইয়াস'আলূনা আইয়ানা ইয়াওমুদ্দীন।
         </div>
-        <div class="word-box">
-            <span class="arabic-word">يَوْمُ</span>
-            <span class="verified-meaning">সময়</span>
+
+        <div class="full-translation">
+            তারা জিজ্ঞেস করে, দায়বদ্ধতার সময় কবে?
         </div>
-        <div class="word-box">
-            <span class="arabic-word">ٱلدِّينِ</span>
-            <span class="verified-meaning">দায়বদ্ধতার</span>
+
+        <div class="action-buttons">
+            <button class="btn-copy" onclick="copyVerse(this)">📋 কপি</button>
+            <button class="btn-share" onclick="shareVerse(this)">🔗 শেয়ার</button>
         </div>
-    </div>
-    
-    <div class="transliteration-box">
-        <strong>উচ্চারণ:</strong> ইয়াস'আলূনা আইয়ানা ইয়াওমুদ্দীন।
     </div>
 
-    <div class="full-translation">
-        তারা জিজ্ঞেস করে, দায়বদ্ধতার সময় কবে?
-    </div>
-    </div>
-    <!-- সূরা ৫১:৬০ আয়াত -->
-<div class="verse-card">
-    <div class="verse-num">৫১:৬০</div>
-    <div class="word-by-word-container">
-        <div class="word-box">
-            <span class="arabic-word">فَوَيْلٌ</span>
-            <span class="verified-meaning" style="color: #008744;">অতএব দুর্ভোগ</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">لِّلَّذِينَ</span>
-            <span class="verified-meaning" style="color: #008744;">যারা</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">كَفَرُوا</span>
-            <span class="verified-meaning" style="color: #008744;">আচ্ছাদন করেছে</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">مِن</span>
-            <span class="verified-meaning" style="color: #008744;">থেকে</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">يَوْمِهِمُ</span>
-            <span class="verified-meaning" style="color: #008744;">সেই সময়</span>
-        </div>
-        
-        <!-- الَّذِي - যার (কালো - বিশেষ অংশ) -->
-        <div class="word-box">
-            <span class="arabic-word">الَّذِي</span>
-            <span class="verified-meaning" style="color: #008744;">যার</span>
+    <div class="verse-card">
+        <div class="verse-num">৫১:৬০</div>
+        <div class="word-by-word-container">
+            <div class="word-box">
+                <span class="arabic-word">فَوَيْلٌ</span>
+                <span class="verified-meaning" style="color: #008744;">অতএব দুর্ভোগ</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">لِّلَّذِينَ</span>
+                <span class="verified-meaning" style="color: #008744;">যারা</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">كَفَرُوا</span>
+                <span class="verified-meaning" style="color: #008744;">আচ্ছাদন করেছে</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">مِن</span>
+                <span class="verified-meaning" style="color: #008744;">থেকে</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">يَوْمِهِمُ</span>
+                <span class="verified-meaning" style="color: #008744;">সেই সময়</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">الَّذِي</span>
+                <span class="verified-meaning" style="color: #008744;">যার</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">يُوعَدُونَ</span>
+                <span class="verified-meaning" style="color: #2d3748;">প্রতিশ্রুতি দেওয়া হচ্ছে</span>
+            </div>
         </div>
         
-        <!-- يُوعَدُونَ - প্রতিশ্রুতি দেওয়া হচ্ছে (কালো - বিশেষ অংশ) -->
-        <div class="word-box">
-            <span class="arabic-word">يُوعَدُونَ</span>
-            <span class="verified-meaning" style="color: #2d3748;">প্রতিশ্রুতি দেওয়া হচ্ছে</span>
+        <div class="transliteration-box">
+            <strong>উচ্চারণ:</strong> ফাওয়াইলুল লিল্লাযীনা কাফারূ মিন ইয়াওমিহিমুল্লাযী ইউও'আদূন
         </div>
         
-    </div>
-    
-    <!-- উচ্চারণ -->
-    <div class="transliteration-box">
-        <strong>উচ্চারণ:</strong> ফাওয়াইলুল লিল্লাযীনা কাফারূ মিন ইয়াওমিহিমুল্লাযী ইউও'আদূন
-    </div>
-    
-    <!-- পূর্ণ অনুবাদ -->
-    <div class="full-translation">
-        অতএব যারা আচ্ছাদন করেছে, তাদের জন্য সেই সময় থেকে দুর্ভোগ, যার প্রতিশ্রুতি তাদের দেওয়া হচ্ছে।
-    </div>
-</div>
+        <div class="full-translation">
+            অতএব যারা আচ্ছাদন করেছে, তাদের জন্য সেই সময় থেকে দুর্ভোগ, যার প্রতিশ্রুতি তাদের দেওয়া হচ্ছে।
+        </div>
 
-    <!-- নেভিগেশন -->
+        <div class="action-buttons">
+            <button class="btn-copy" onclick="copyVerse(this)">📋 কপি</button>
+            <button class="btn-share" onclick="shareVerse(this)">🔗 শেয়ার</button>
+        </div>
+    </div>
+
     <div class="navigation">
         <a href="surah-050.html" class="nav-btn">&larr; পূর্ববর্তী সূরা</a>
         <a href="index.html" class="nav-btn">সূরা তালিকা</a>
@@ -319,8 +362,51 @@ function toggleTransliteration() {
         btn.innerHTML = '👁️ উচ্চারণ দেখান';
     }
 }
-      // সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
-  window.addEventListener('DOMContentLoaded', () => {
+
+// আয়াত কপি করার ফাংশন
+function copyVerse(button) {
+    const card = button.closest('.verse-card');
+    const verseNum = card.querySelector('.verse-num').innerText.trim();
+    
+    // আরবি শব্দগুলো সাজানো
+    const arabicWords = Array.from(card.querySelectorAll('.arabic-word'))
+                             .map(el => el.innerText.trim())
+                             .join(' ');
+    
+    // পূর্ণ অনুবাদ নেওয়া
+    const translation = card.querySelector('.full-translation').innerText.trim();
+    
+    const textToCopy = `সূরা আয-যারিয়াত [${verseNum}]\n\n${arabicWords}\n\nঅনুবাদ: ${translation}`;
+
+    navigator.clipboard.writeText(textToCopy).then(() => {
+        alert(`আয়াত ${verseNum} সফলভাবে কপি হয়েছে!`);
+    }).catch(err => {
+        console.error('কপি করতে সমস্যা হয়েছে: ', err);
+    });
+}
+
+// আয়াত শেয়ার করার ফাংশন
+function shareVerse(button) {
+    const card = button.closest('.verse-card');
+    const verseNum = card.querySelector('.verse-num').innerText.trim();
+    const translation = card.querySelector('.full-translation').innerText.trim();
+    const shareText = `সূরা আয-যারিয়াত [আয়াত ${verseNum}]\n${translation}`;
+    const shareUrl = window.location.href;
+
+    if (navigator.share) {
+        navigator.share({
+            title: `সূরা আয-যারিয়াত - আয়াত ${verseNum}`,
+            text: shareText,
+            url: shareUrl
+        }).catch(err => console.log('শেয়ার বাতিল করা হয়েছে', err));
+    } else {
+        navigator.clipboard.writeText(`${shareText}\n${shareUrl}`);
+        alert('আপনার ব্রাউজারে সরাসরি শেয়ার সাপোর্ট করে না। আয়াতের তথ্য ও লিংক কপি করা হয়েছে!');
+    }
+}
+
+// সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
+window.addEventListener('DOMContentLoaded', () => {
     const currentSurah = {
       surahName: "সূরা আয-যারিয়াত",
       surahUrl: "surah-051.html"
@@ -335,9 +421,9 @@ function toggleTransliteration() {
     }
 
     localStorage.setItem('lastReadQuranList', JSON.stringify(surahList));
-  });
-    
+});
 </script>
 
 </body>
 </html>
+
