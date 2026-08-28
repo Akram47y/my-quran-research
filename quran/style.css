@@ -3,10 +3,10 @@
    Forced Pure Light Theme Stylesheet (style.css)
    ========================================== */
 
-/* 1. Force Browser Light Mode (ডার্ক মোডের প্রভাব সম্পূর্ণ বন্ধ করার জন্য) */
+/* 1. Force Browser Light Mode */
 :root {
-    color-scheme: light strictly;
-    supported-color-schemes: light;
+    color-scheme: light strictly !important;
+    supported-color-schemes: light !important;
 }
 
 /* 2. Reset & Global Box Sizing */
@@ -19,7 +19,7 @@
 /* 3. Base Setup (Light Background) */
 html, body {
     background-color: #f4f6f8 !important;
-    color: #2c3e50 !important;
+    color: #000000 !important;
     font-family: 'SolaimanLipi', 'Kalpurush', 'Segoe UI', Arial, sans-serif;
     line-height: 1.8;
     padding: 15px;
@@ -51,7 +51,7 @@ html, body {
 }
 
 .header .meta-info {
-    color: #666666 !important;
+    color: #555555 !important;
     font-size: 14px;
     margin-top: 6px;
 }
@@ -88,9 +88,6 @@ html, body {
     padding: 15px;
     margin-bottom: 20px;
     background-color: #ffffff !important;
-    content-visibility: auto;
-    contain-intrinsic-size: 0 250px;
-    scroll-margin-top: 20px;
 }
 
 .verse-num {
@@ -100,7 +97,7 @@ html, body {
     margin-bottom: 12px;
 }
 
-/* 8. Word-by-Word Grid (Strictly 3 boxes per row) */
+/* 8. Word-by-Word Grid */
 .word-by-word-container {
     display: flex;
     flex-wrap: wrap;
@@ -122,11 +119,6 @@ html, body {
     width: calc(33.333% - 6px);
     max-width: calc(33.333% - 6px);
     box-sizing: border-box;
-    transition: background-color 0.2s;
-}
-
-.word-box:hover {
-    background-color: #f8f9fa !important;
 }
 
 .arabic-word {
@@ -138,24 +130,22 @@ html, body {
     text-align: center;
 }
 
-/* অবিন্যস্ত/সাধারণ অনুবাদ (গাঢ় কালো স্পষ্ট বর্ণ) */
+/* সকল শব্দের অনুবাদ গাঢ় কালো স্পষ্ট অক্ষরে দেখানো */
+.word-box span:nth-child(2),
 .verified-meaning,
-.verified-meaning[style*="#008744"] {
+.unverified-meaning {
     font-size: 13.5px;
-    color: #000000 !important;
+    color: #000000 !important; /* সম্পূর্ণ গাঢ় কালো */
     direction: ltr;
     text-align: center;
     line-height: 1.4;
-    font-weight: normal;
+    font-weight: bold !important;
 }
 
-/* বিশ্লেষণ করা ভেরিফাইড শব্দ (উজ্জ্বল সবুজ রঙ) */
-.verified-meaning[style*="#2d3748"],
-.verified-meaning[style*="#28a745"],
-.verified-meaning[style*="rgb(40, 167, 69)"],
-.verified-meaning[style*="green"] {
+/* শুধুমাত্র সবুজ সংজ্ঞায়িত শ্রেণির জন্য সবুজ কালার */
+.green-text,
+.verified-meaning[style*="#008744"] {
     color: #008744 !important;
-    font-weight: bold;
 }
 
 /* 9. Transliteration Box */
@@ -169,7 +159,7 @@ html, body {
     border-radius: 4px;
     font-style: italic;
     font-size: 0.95em;
-    color: #2c3e50 !important;
+    color: #000000 !important;
 }
 
 .trans-toggle-btn {
@@ -181,13 +171,8 @@ html, body {
     cursor: pointer;
     font-size: 13px;
     font-weight: bold;
-    transition: background 0.2s;
     margin-top: 4px;
     margin-bottom: 6px;
-}
-
-.trans-toggle-btn:hover {
-    background-color: #0d3b2e !important;
 }
 
 /* 10. Full Sentence Translation */
@@ -197,23 +182,12 @@ html, body {
     padding: 12px 15px;
     border-radius: 0 6px 6px 0;
     font-size: 15.5px;
-    color: #2c3e50 !important;
+    color: #000000 !important;
     direction: ltr;
     line-height: 1.8;
 }
 
-/* 11. Copy / Share Buttons */
-.action-buttons {
-    display: flex;
-    gap: 8px;
-    margin-top: 10px;
-}
-
-.action-buttons .trans-toggle-btn {
-    margin: 0;
-}
-
-/* 12. Navigation Buttons */
+/* 11. Navigation Buttons */
 .navigation {
     display: flex;
     justify-content: space-between;
@@ -232,10 +206,4 @@ html, body {
     border-radius: 6px;
     font-size: 14px;
     font-weight: bold;
-    transition: background 0.2s;
 }
-
-.nav-btn:hover {
-    background-color: #0d3b2e !important;
-}
-
