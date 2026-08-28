@@ -121,6 +121,26 @@
             color: #2c3e50;
             direction: ltr;
         }
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .action-btn {
+            background-color: #eef2f5;
+            color: #1b4332;
+            border: 1px solid #cbd5e1;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+        .action-btn:hover {
+            background-color: #1b4332;
+            color: #ffffff;
+        }
         .navigation {
             display: flex;
             justify-content: space-between;
@@ -179,7 +199,7 @@
     <!-- হেডার -->
     <div class="header">
         <h1>সূরা আল-ইমরান</h1>
-        <button class="trans-toggle-btn" onclick="toggleTransliteration()" id="transToggleBtn">👁️ উচ্চারণ লুকান</button>
+        <button class="trans-toggle-btn" onclick="toggleTransliteration()" id="transToggleBtn">👁️ উচ্চারণ দেখান</button>
         <div class="meta-info">সূরা ৩ | আয়াত: ২০০ | মাদানী</div>
     </div>
 
@@ -190,118 +210,81 @@
     </div>
 
     <!-- আয়াত ৩:৪ -->
-    <div class="verse-card">
+    <div class="verse-card" id="verse-3-4">
         <div class="verse-num">৩:৪</div>
         <div class="word-by-word-container">
-
-            <!-- ১. মিন -->
             <div class="word-box">
                 <span class="arabic-word">مِن</span>
                 <span class="verified-meaning">থেকে</span>
             </div>
-
-            <!-- ২. ক্বাবলু -->
             <div class="word-box">
                 <span class="arabic-word">قَبْلُ</span>
                 <span class="verified-meaning">পূর্বে</span>
             </div>
-
-            <!-- ৩. হুদান -->
             <div class="word-box">
                 <span class="arabic-word">هُدًى</span>
                 <span class="verified-meaning">দিশা</span>
             </div>
-
-            <!-- ৪. লিন্নাসি -->
             <div class="word-box">
                 <span class="arabic-word">لِّلنَّاسِ</span>
                 <span class="verified-meaning">মানবসমষ্টির জন্য</span>
             </div>
-
-            <!-- ৫. ওয়া আনজালা -->
             <div class="word-box">
                 <span class="arabic-word">وَأَنزَلَ</span>
                 <span class="unverified-meaning">এবং তিনি অবতীর্ণ করেছেন</span>
             </div>
-
-            <!-- ৬. আল-ফুরক্বান -->
             <div class="word-box">
                 <span class="arabic-word">الْفُرْقَانَ</span>
                 <span class="unverified-meaning">পার্থক্যকারী</span>
             </div>
-
-            <!-- ৭. ইন্না -->
             <div class="word-box">
                 <span class="arabic-word">إِنَّ</span>
                 <span class="verified-meaning">নিশ্চয়ই</span>
             </div>
-
-            <!-- ৮. আল্লাজিনা -->
             <div class="word-box">
                 <span class="arabic-word">الَّذِينَ</span>
                 <span class="verified-meaning">যারা</span>
             </div>
-
-            <!-- ৯. কাফারু -->
             <div class="word-box">
                 <span class="arabic-word">كَفَرُوا</span>
                 <span class="verified-meaning">আচ্ছাদন করেছে</span>
             </div>
-
-            <!-- ১০. বি-আয়াতি -->
             <div class="word-box">
                 <span class="arabic-word">بِآيَاتِ</span>
                 <span class="verified-meaning">নিদর্শনসমূহে</span>
             </div>
-
-            <!-- ১১. আল্লাহি -->
             <div class="word-box">
                 <span class="arabic-word">اللَّهِ</span>
                 <span class="verified-meaning">আল্লাহর</span>
             </div>
-
-            <!-- ১২. লাহুম -->
             <div class="word-box">
                 <span class="arabic-word">لَهُمْ</span>
                 <span class="verified-meaning">তাদের জন্য</span>
             </div>
-
-            <!-- ১৩. 'আজাবুন -->
             <div class="word-box">
                 <span class="arabic-word">عَذَابٌ</span>
                 <span class="unverified-meaning">শাস্তি</span>
             </div>
-
-            <!-- ১৪. শাদিদুন -->
             <div class="word-box">
                 <span class="arabic-word">شَدِيدٌ</span>
                 <span class="unverified-meaning">কঠিন</span>
             </div>
-
-            <!-- ১৫. ওয়াল্লাহু -->
             <div class="word-box">
                 <span class="arabic-word">وَاللَّهُ</span>
                 <span class="verified-meaning">আর আল্লাহ</span>
             </div>
-
-            <!-- ১৬. 'আজিজুন -->
             <div class="word-box">
                 <span class="arabic-word">عَزِيزٌ</span>
                 <span class="unverified-meaning">পরাক্রমশালী</span>
             </div>
-
-            <!-- ১৭. জু -->
             <div class="word-box">
                 <span class="arabic-word">ذُو</span>
                 <span class="unverified-meaning">অধিকারী</span>
             </div>
-
-            <!-- ১৮. ইনতিক্বাম -->
             <div class="word-box">
                 <span class="arabic-word">انتِقَامٍ</span>
                 <span class="unverified-meaning">প্রতিশোধের</span>
             </div>
-
         </div>
 
         <div class="transliteration-box">
@@ -311,56 +294,67 @@
         <div class="full-translation">
             "পূর্বে থেকে মানবসমষ্টির জন্য দিশা হিসেবে; এবং তিনি পার্থক্যকারী অবতীর্ণ করেছেন। নিশ্চয়ই যারা আল্লাহর নিদর্শনসমূহে আচ্ছাদন করেছে, তাদের জন্য কঠিন শাস্তি; আর আল্লাহ পরাক্রমশালী, প্রতিশোধের অধিকারী।"
         </div>
+
+        <div class="action-buttons">
+            <button class="action-btn" onclick="copyVerse('verse-3-4', '৩:৪')">📋 কপি</button>
+            <button class="action-btn" onclick="shareVerse('verse-3-4', '৩:৪')">🔗 শেয়ার</button>
+        </div>
     </div>
-            <!-- আয়াত ৩:৫১ -->
-        <div class="verse-card">
-            <div class="verse-num">৩:৫১</div>
-            <div class="word-by-word-container">
-                <div class="word-box">
-                    <span class="arabic-word">إِنَّ</span>
-                    <span class="verified-meaning" style="color: #008744 !important;">নিশ্চয়ই</span>
-                </div>
-                <div class="word-box">
-                    <span class="arabic-word">اللَّهَ</span>
-                    <span class="verified-meaning" style="color: #008744 !important;">আল্লাহ</span>
-                </div>
-                <div class="word-box">
-                    <span class="arabic-word">رَبِّي</span>
-                    <span class="verified-meaning" style="color: #008744 !important;">আমার প্রতিপালক</span>
-                </div>
-                <div class="word-box">
-                    <span class="arabic-word">وَرَبُّكُمْ</span>
-                    <span class="verified-meaning" style="color: #008744 !important;">এবং তোমাদের প্রতিপালক</span>
-                </div>
-                <div class="word-box">
-                    <span class="arabic-word">فَاعْبُدُوهُ</span>
-                    <span class="verified-meaning" style="color: #008744 !important;">অতএব তাঁর দাসত্ব করো</span>
-                </div>
-                <div class="word-box">
-                    <span class="arabic-word">هَٰذَا</span>
-                    <span class="verified-meaning" style="color: #008744 !important;">এটাই</span>
-                </div>
-                <div class="word-box">
-                    <span class="arabic-word">صِرَاطٌ</span>
-                    <span class="verified-meaning" style="color: #008744 !important;">পথ</span>
-                </div>
-                <div class="word-box">
-                    <span class="arabic-word">مُّسْتَقِيمٌ</span>
-                    <span class="verified-meaning" style="color: #2d3748 !important;">সুদৃঢ়</span>
-                </div>
-            </div>
 
-            <div class="transliteration-box">
-                <strong>উচ্চারণ:</strong> ইন্নাল্লা-হা রব্বী ওয়া রব্বুকুম ফা‘বুদূহু, হা-জা- সিরা-তুম মুস্তাক্বীম।
+    <!-- আয়াত ৩:৫১ -->
+    <div class="verse-card" id="verse-3-51">
+        <div class="verse-num">৩:৫১</div>
+        <div class="word-by-word-container">
+            <div class="word-box">
+                <span class="arabic-word">إِنَّ</span>
+                <span class="verified-meaning" style="color: #008744 !important;">নিশ্চয়ই</span>
             </div>
-
-            <div class="full-translation">
-                "নিশ্চয়ই আল্লাহ আমার প্রতিপালক এবং তোমাদের প্রতিপালক। অতএব তাঁর দাসত্ব করো। এটাই সুদৃঢ় পথ।"
+            <div class="word-box">
+                <span class="arabic-word">اللَّهَ</span>
+                <span class="verified-meaning" style="color: #008744 !important;">আল্লাহ</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">رَبِّي</span>
+                <span class="verified-meaning" style="color: #008744 !important;">আমার প্রতিপালক</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">وَرَبُّكُمْ</span>
+                <span class="verified-meaning" style="color: #008744 !important;">এবং তোমাদের প্রতিপালক</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">فَاعْبُدُوهُ</span>
+                <span class="verified-meaning" style="color: #008744 !important;">অতএব তাঁর দাসত্ব করো</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">هَٰذَا</span>
+                <span class="verified-meaning" style="color: #008744 !important;">এটাই</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">صِرَاطٌ</span>
+                <span class="verified-meaning" style="color: #008744 !important;">পথ</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">مُّسْتَقِيمٌ</span>
+                <span class="verified-meaning" style="color: #2d3748 !important;">সুদৃঢ়</span>
             </div>
         </div>
 
+        <div class="transliteration-box">
+            <strong>উচ্চারণ:</strong> ইন্নাল্লা-হা রব্বী ওয়া রব্বুকুম ফা‘বুদূহু, হা-জা- সিরা-তুম মুস্তাক্বীম।
+        </div>
+
+        <div class="full-translation">
+            "নিশ্চয়ই আল্লাহ আমার প্রতিপালক এবং তোমাদের প্রতিপালক। অতএব তাঁর দাসত্ব করো। এটাই সুদৃঢ় পথ।"
+        </div>
+
+        <div class="action-buttons">
+            <button class="action-btn" onclick="copyVerse('verse-3-51', '৩:৫১')">📋 কপি</button>
+            <button class="action-btn" onclick="shareVerse('verse-3-51', '৩:৫১')">🔗 শেয়ার</button>
+        </div>
+    </div>
+
     <!-- আয়াত ৩:১৩৮ -->
-    <div class="verse-card">
+    <div class="verse-card" id="verse-3-138">
         <div class="verse-num">৩:১৩৮</div>
         <div class="word-by-word-container">
             <div class="word-box">
@@ -387,7 +381,6 @@
                 <span class="arabic-word">لِّلْمُتَّقِينَ</span>
                 <span class="verified-meaning">আত্মরক্ষাকারীদের জন্য</span>
             </div>
-
         </div>
 
         <div class="transliteration-box">
@@ -397,9 +390,14 @@
         <div class="full-translation">
             "এটি মানবসমষ্টির জন্য স্পষ্টীকরণ, এবং দিশা, এবং আত্মরক্ষাকারীদের জন্য উপদেশ।"
         </div>
+
+        <div class="action-buttons">
+            <button class="action-btn" onclick="copyVerse('verse-3-138', '৩:১৩৮')">📋 কপি</button>
+            <button class="action-btn" onclick="shareVerse('verse-3-138', '৩:১৩৮')">🔗 শেয়ার</button>
+        </div>
     </div>
 
-        <!-- নেভিগেশন -->
+    <!-- নেভিগেশন -->
     <div class="navigation">
         <div>
             <a href="surah-002.html" class="nav-btn">← পূর্ববর্তী সূরা</a>
@@ -410,11 +408,10 @@
             <a href="index.html" class="nav-btn">সূরা তালিকা</a>
         </div>
     </div>
-        </div>
-    </div>
 </div>
 
 <script>
+// উচ্চারণ দেখানো ও লুকানোর ফাংশন
 function toggleTransliteration() {
     const transBoxes = document.querySelectorAll('.transliteration-box');
     const btn = document.getElementById('transToggleBtn');
@@ -433,11 +430,53 @@ function toggleTransliteration() {
         btn.innerHTML = '👁️ উচ্চারণ দেখান';
     }
 }
-      // সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
-  window.addEventListener('DOMContentLoaded', () => {
+
+// আয়াত কপি করার ফাংশন
+function copyVerse(verseId, verseNum) {
+    const card = document.getElementById(verseId);
+    
+    // আরবি শব্দসমূহ একত্রিত করা
+    const arabicWords = Array.from(card.querySelectorAll('.arabic-word'))
+                             .map(el => el.innerText.trim())
+                             .join(' ');
+    
+    // পূর্ণাঙ্গ অনুবাদ নেওয়া
+    const translation = card.querySelector('.full-translation').innerText.trim();
+    
+    const textToCopy = `সূরা আল-ইমরান [${verseNum}]\n\n${arabicWords}\n\nঅনুবাদ: ${translation}`;
+
+    navigator.clipboard.writeText(textToCopy).then(() => {
+        alert(`আয়াত ${verseNum} সফলভাবে কপি হয়েছে!`);
+    }).catch(err => {
+        console.error('কপি করতে সমস্যা হয়েছে: ', err);
+    });
+}
+
+// আয়াত শেয়ার করার ফাংশন
+function shareVerse(verseId, verseNum) {
+    const card = document.getElementById(verseId);
+    const translation = card.querySelector('.full-translation').innerText.trim();
+    const shareText = `সূরা আল-ইমরান [আয়াত ${verseNum}]\n${translation}`;
+    const shareUrl = window.location.href;
+
+    if (navigator.share) {
+        navigator.share({
+            title: `সূরা আল-ইমরান - আয়াত ${verseNum}`,
+            text: shareText,
+            url: shareUrl
+        }).catch(err => console.log('শেয়ার বাতিল করা হয়েছে', err));
+    } else {
+        // ওয়েব শেয়ার এপিআই না থাকলে লিংক এবং তথ্য কপি করে নোটিফিকেশন দেবে
+        navigator.clipboard.writeText(`${shareText}\n${shareUrl}`);
+        alert('আপনার ব্রাউজারে ডায়রেক্ট শেয়ার সাপোর্ট করে না। আয়াতের তথ্য ও লিংক কপি করা হয়েছে!');
+    }
+}
+
+// সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
+window.addEventListener('DOMContentLoaded', () => {
     const currentSurah = {
-      surahName: "সূরা আল-ইমরান",
-      surahUrl: "surah-003.html"
+        surahName: "সূরা আল-ইমরান",
+        surahUrl: "surah-003.html"
     };
 
     let surahList = JSON.parse(localStorage.getItem('lastReadQuranList')) || [];
@@ -445,12 +484,11 @@ function toggleTransliteration() {
     surahList.unshift(currentSurah);
 
     if (surahList.length > 5) {
-      surahList.pop();
+        surahList.pop();
     }
 
     localStorage.setItem('lastReadQuranList', JSON.stringify(surahList));
-  });
-    
+});
 </script>
 
 </body>
