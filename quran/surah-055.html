@@ -137,7 +137,6 @@
         .nav-btn:hover {
             background-color: #0d3b2e;
         }
-        /* উচ্চারণ দেখান/লুকান এবং এর বাক্সের স্টাইল */
         .transliteration-box {
             display: none;
             margin-top: 8px;
@@ -184,9 +183,7 @@
         <div class="bismillah-meaning">পরম মমতাময়, সদামমতাবদ্ধ আল্লাহর নামে।</div>
     </div>
 
-    <!-- আয়াত প্লেসহোল্ডার (পরবর্তীতে আয়াত অনুবাদ বসানোর জন্য প্রস্তুত) -->
-    <!-- উদাহরণস্বরূপ ৫৫:১ আয়াত কাঠামোর টেমপ্লেট -->
-        <!-- ৫৫:১ -->
+    <!-- ৫৫:১ -->
     <div class="verse-card">
         <div class="verse-num">৫৫:১</div>
         <div class="word-by-word-container">
@@ -197,11 +194,16 @@
         </div>
         
         <div class="transliteration-box">
-            <strong>উচ্চারণ:</strong> আর-রহমান।
+            <strong>উCTAssert:</strong> আর-রহমান।
         </div>
 
         <div class="full-translation">
             পরম মমতাময়।
+        </div>
+
+        <div class="action-buttons" style="display: flex; gap: 8px; margin-top: 10px;">
+            <button class="trans-toggle-btn" style="margin: 0;" onclick="copyVerse(this)">📋 কপি</button>
+            <button class="trans-toggle-btn" style="margin: 0; background-color: #2d3748;" onclick="shareVerse(this)">🔗 শেয়ার</button>
         </div>
     </div>
 
@@ -226,6 +228,11 @@
         <div class="full-translation">
             এই পাঠ্যের জ্ঞান দিলেন।
         </div>
+
+        <div class="action-buttons" style="display: flex; gap: 8px; margin-top: 10px;">
+            <button class="trans-toggle-btn" style="margin: 0;" onclick="copyVerse(this)">📋 কপি</button>
+            <button class="trans-toggle-btn" style="margin: 0; background-color: #2d3748;" onclick="shareVerse(this)">🔗 শেয়ার</button>
+        </div>
     </div>
 
     <!-- ৫৫:৪ -->
@@ -249,6 +256,11 @@
         <div class="full-translation">
             তাকে স্পষ্টতার জ্ঞান দিয়েছেন।
         </div>
+
+        <div class="action-buttons" style="display: flex; gap: 8px; margin-top: 10px;">
+            <button class="trans-toggle-btn" style="margin: 0;" onclick="copyVerse(this)">📋 কপি</button>
+            <button class="trans-toggle-btn" style="margin: 0; background-color: #2d3748;" onclick="shareVerse(this)">🔗 শেয়ার</button>
+        </div>
     </div>
 
     <!-- নেভিগেশন -->
@@ -266,22 +278,64 @@ function toggleTransliteration() {
 
     if (transBoxes.length === 0) return;
 
-    // বর্তমান অবস্থা চেক করা (দেখা যাচ্ছে কি না)
     const isHidden = window.getComputedStyle(transBoxes[0]).display === 'none';
 
     transBoxes.forEach(box => {
         box.style.display = isHidden ? 'block' : 'none';
     });
 
-    // বাটনের টেক্সট পরিবর্তন
     if (isHidden) {
         btn.innerHTML = '🙈 উচ্চারণ লুকান';
     } else {
         btn.innerHTML = '👁️ উচ্চারণ দেখান';
     }
 }
-      // সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
-  window.addEventListener('DOMContentLoaded', () => {
+
+// কপি করার ফাংশন
+function copyVerse(button) {
+    const card = button.closest('.verse-card');
+    const verseNum = card.querySelector('.verse-num')?.innerText || '';
+    const fullTranslation = card.querySelector('.full-translation')?.innerText || '';
+    
+    const wordBoxes = card.querySelectorAll('.word-box');
+    let wordMeanings = [];
+    wordBoxes.forEach(box => {
+        const ar = box.querySelector('.arabic-word')?.innerText || '';
+        const bn = box.querySelector('.verified-meaning')?.innerText || '';
+        if(ar && bn) wordMeanings.push(`${ar} (${bn})`);
+    });
+
+    const textToCopy = `আয়াত: ${verseNum}\nশব্দানুবাদ: ${wordMeanings.join(' ')}\nঅনুবাদ: ${fullTranslation}\n— কুরআন গবেষণা ও শিক্ষা`;
+
+    navigator.clipboard.writeText(textToCopy).then(() => {
+        const originalText = button.innerText;
+        button.innerText = '✅ কপি হয়েছে!';
+        setTimeout(() => { button.innerText = originalText; }, 2000);
+    });
+}
+
+// শেয়ার করার ফাংশন
+function shareVerse(button) {
+    const card = button.closest('.verse-card');
+    const verseNum = card.querySelector('.verse-num')?.innerText || '';
+    const fullTranslation = card.querySelector('.full-translation')?.innerText || '';
+
+    const shareData = {
+        title: `সূরা আর-রাহমান - আয়াত ${verseNum}`,
+        text: `আয়াত ${verseNum}: ${fullTranslation}`,
+        url: window.location.href
+    };
+
+    if (navigator.share) {
+        navigator.share(shareData).catch(() => {});
+    } else {
+        navigator.clipboard.writeText(`${shareData.text}\n${shareData.url}`);
+        alert('আয়াতের লিংক ও অনুবাদ কপি করা হয়েছে!');
+    }
+}
+
+// সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
+window.addEventListener('DOMContentLoaded', () => {
     const currentSurah = {
       surahName: "সূরা আর-রাহমান",
       surahUrl: "surah-055.html"
@@ -296,8 +350,7 @@ function toggleTransliteration() {
     }
 
     localStorage.setItem('lastReadQuranList', JSON.stringify(surahList));
-  });
-    
+});
 </script>
 
 </body>
