@@ -1,22 +1,22 @@
 /* ==========================================
    Quran Research & Translation Project
-   Forced Pure Light Theme Stylesheet (style.css)
+   Strict Light Mode Setup (style.css)
    ========================================== */
 
-/* 1. Force Browser Light Mode */
+/* 1. Standard Light Mode Rules */
 :root {
     color-scheme: light strictly !important;
     supported-color-schemes: light !important;
 }
 
-/* 2. Reset & Global Box Sizing */
+/* 2. Global Reset */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* 3. Base Setup (Light Background) */
+/* 3. Base Body Setup */
 html, body {
     background-color: #f4f6f8 !important;
     color: #000000 !important;
@@ -35,7 +35,7 @@ html, body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
-/* 5. Surah Header Section */
+/* 5. Header Section */
 .header {
     text-align: center;
     border-bottom: 2px solid #eef2f5;
@@ -81,7 +81,7 @@ html, body {
     font-weight: bold;
 }
 
-/* 7. Verse Card */
+/* 7. Verse Card Setup */
 .verse-card {
     border: 1px solid #e0e6ed !important;
     border-radius: 8px;
@@ -97,7 +97,7 @@ html, body {
     margin-bottom: 12px;
 }
 
-/* 8. Word-by-Word Grid */
+/* 8. Word Box Structure */
 .word-by-word-container {
     display: flex;
     flex-wrap: wrap;
@@ -130,25 +130,35 @@ html, body {
     text-align: center;
 }
 
-/* সকল শব্দের অনুবাদ গাঢ় কালো স্পষ্ট অক্ষরে দেখানো */
-.word-box span:nth-child(2),
+/* -------------------------------------------------------------
+   শব্দের অর্থ নির্দেশক কালার নিয়ম (Color System Rule)
+   ------------------------------------------------------------- */
+
+/* ক) যে শব্দগুলো বিশ্লেষণ করা হয়েছে (Verified) = উজ্জ্বল সবুজ রঙ */
 .verified-meaning,
-.unverified-meaning {
+span[style*="#008744"],
+span[style*="rgb(0, 135, 68)"] {
     font-size: 13.5px;
-    color: #000000 !important; /* সম্পূর্ণ গাঢ় কালো */
+    color: #008744 !important;
     direction: ltr;
     text-align: center;
     line-height: 1.4;
     font-weight: bold !important;
 }
 
-/* শুধুমাত্র সবুজ সংজ্ঞায়িত শ্রেণির জন্য সবুজ কালার */
-.green-text,
-.verified-meaning[style*="#008744"] {
-    color: #008744 !important;
+/* খ) যে শব্দগুলো এখনো বিশ্লেষণ করা হয়নি (Unverified/অসম্পূর্ণ) = গাঢ় কালো রঙ */
+.unverified-meaning,
+span[style*="#2d3748"],
+span[style*="rgb(45, 55, 72)"] {
+    font-size: 13.5px;
+    color: #000000 !important; /* সম্পূর্ণ স্পষ্ট কালো */
+    direction: ltr;
+    text-align: center;
+    line-height: 1.4;
+    font-weight: normal !important;
 }
 
-/* 9. Transliteration Box */
+/* 9. Transliteration & Full Translation */
 .transliteration-box {
     display: none;
     margin-top: 8px;
@@ -175,7 +185,6 @@ html, body {
     margin-bottom: 6px;
 }
 
-/* 10. Full Sentence Translation */
 .full-translation {
     background-color: #f8f9fa !important;
     border-left: 4px solid #1b4332 !important;
@@ -187,7 +196,7 @@ html, body {
     line-height: 1.8;
 }
 
-/* 11. Navigation Buttons */
+/* 10. Navigation Buttons */
 .navigation {
     display: flex;
     justify-content: space-between;
