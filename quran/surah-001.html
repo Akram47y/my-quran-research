@@ -138,7 +138,7 @@
         .nav-btn:hover {
             background-color: #0d3b2e;
         }
-                /* উচ্চারণ দেখান/লুকান বক্স এবং বাটনের স্টাইল */
+        /* উচ্চারণ দেখান/লুকান বক্স এবং বাটনের স্টাইল */
         .transliteration-box {
             display: none;
             margin-top: 8px;
@@ -178,9 +178,9 @@
         <!-- হেডার -->
         <div class="header">
             <h1>সূরা আল-ফাতিহা</h1>
-                    <button class="trans-toggle-btn" onclick="toggleTransliteration()" id="transToggleBtn">
-            👁️ উচ্চারণ দেখান
-                    </button>
+            <button class="trans-toggle-btn" onclick="toggleTransliteration()" id="transToggleBtn">
+                👁️ উচ্চারণ দেখান
+            </button>
             <div class="meta-info">সূরা ১ | আয়াত: ৭ | মাক্কী</div>
         </div>
 
@@ -211,11 +211,15 @@
                     <span class="verified-meaning">সর্ব-জগতসমূহের</span>
                 </div>
             </div>
-                    <div class="transliteration-box">
-            <strong>উচ্চারণ:</strong> আলহামদু লিল্লাহি রাব্বিল আলামীন
-                    </div>
+            <div class="transliteration-box">
+                <strong>উচ্চারণ:</strong> আলহামদু লিল্লাহি রাব্বিল আলামীন
+            </div>
             <div class="full-translation">
                 "সকল প্রশংসা সর্ব-জগতসমূহের প্রতিপালক আল্লাহর জন্য।"
+            </div>
+            <div class="action-buttons" style="display: flex; gap: 8px; margin-top: 10px;">
+                <button class="trans-toggle-btn" style="margin: 0;" onclick="copyVerse(this)">📋 কপি</button>
+                <button class="trans-toggle-btn" style="margin: 0; background-color: #2d3748;" onclick="shareVerse(this)">🔗 শেয়ার</button>
             </div>
         </div>
 
@@ -232,14 +236,19 @@
                     <span class="verified-meaning">সদামমতাবদ্ধ</span>
                 </div>
             </div>
-                    <div class="transliteration-box">
-            <strong>উচ্চারণ:</strong> আর-রহমানির রহীম
-                    </div>
+            <div class="transliteration-box">
+                <strong>উচ্চারণ:</strong> আর-রহমানির রহীম
+            </div>
             <div class="full-translation">
                 "পরম মমতাময়, সদামমতাবদ্ধ।"
             </div>
+            <div class="action-buttons" style="display: flex; gap: 8px; margin-top: 10px;">
+                <button class="trans-toggle-btn" style="margin: 0;" onclick="copyVerse(this)">📋 কপি</button>
+                <button class="trans-toggle-btn" style="margin: 0; background-color: #2d3748;" onclick="shareVerse(this)">🔗 শেয়ার</button>
+            </div>
         </div>
-     <!-- আয়াত ১:৩ -->
+
+        <!-- আয়াত ১:৩ -->
         <div class="verse-card">
             <div class="verse-num">১:৩</div>
             <div class="word-by-word-container">
@@ -256,14 +265,19 @@
                     <span class="verified-meaning">দায়বদ্ধতার</span>
                 </div>
             </div>
-                    <div class="transliteration-box">
-            <strong>উচ্চারণ:</strong> মালিকি ইয়াওমিদ্দীন
-                    </div>
+            <div class="transliteration-box">
+                <strong>উচ্চারণ:</strong> মালিকি ইয়াওমিদ্দীন
+            </div>
             <div class="full-translation">
                 “দায়বদ্ধতার সময়ের কর্তৃত্বকারী।”
             </div>
+            <div class="action-buttons" style="display: flex; gap: 8px; margin-top: 10px;">
+                <button class="trans-toggle-btn" style="margin: 0;" onclick="copyVerse(this)">📋 কপি</button>
+                <button class="trans-toggle-btn" style="margin: 0; background-color: #2d3748;" onclick="shareVerse(this)">🔗 শেয়ার</button>
+            </div>
         </div>
-     <!-- আয়াত ১:৪ -->
+
+        <!-- আয়াত ১:৪ -->
         <div class="verse-card">
             <div class="verse-num">১:৪</div>
             <div class="word-by-word-container">
@@ -284,13 +298,18 @@
                     <span class="verified-meaning">আমরা উৎস খুঁজি</span>
                 </div>
             </div>
-                    <div class="transliteration-box">
-            <strong>উচ্চারণ:</strong> ইয়্যাকা নাবুদু ওয়া ইয়্যাকা নাস্তায়ীন
-                    </div>
+            <div class="transliteration-box">
+                <strong>উচ্চারণ:</strong> ইয়্যাকা নাবুদু ওয়া ইয়্যাকা নাস্তায়ীন
+            </div>
             <div class="full-translation">
                 “আমরা আপনারই দাসত্ব করি এবং আমরা আপনারই উৎস খুঁজি।”
             </div>
+            <div class="action-buttons" style="display: flex; gap: 8px; margin-top: 10px;">
+                <button class="trans-toggle-btn" style="margin: 0;" onclick="copyVerse(this)">📋 কপি</button>
+                <button class="trans-toggle-btn" style="margin: 0; background-color: #2d3748;" onclick="shareVerse(this)">🔗 শেয়ার</button>
+            </div>
         </div>
+
         <!-- আয়াত ১:৫ -->
         <div class="verse-card">
             <div class="verse-num">১:৫</div>
@@ -305,17 +324,22 @@
                 </div>
                 <div class="word-box">
                     <span class="arabic-word">ٱلْمُسْتَقِيمَ</span>
-                    <span>সুদৃঢ়</span>
+                    <span class="verified-meaning">সুদৃঢ়</span>
                 </div>
             </div>
-                    <div class="transliteration-box">
-            <strong>উচ্চারণ:</strong> ইহদিনাস সিরাত্বাল মুস্তাকীম
-                    </div>
+            <div class="transliteration-box">
+                <strong>উচ্চারণ:</strong> ইহদিনাস সিরাত্বাল মুস্তাকীম
+            </div>
             <div class="full-translation">
                 "আমাদেরকে সুদৃঢ় পথের দিশা দিন।"
             </div>
+            <div class="action-buttons" style="display: flex; gap: 8px; margin-top: 10px;">
+                <button class="trans-toggle-btn" style="margin: 0;" onclick="copyVerse(this)">📋 কপি</button>
+                <button class="trans-toggle-btn" style="margin: 0; background-color: #2d3748;" onclick="shareVerse(this)">🔗 শেয়ার</button>
+            </div>
         </div>
-                        <!-- আয়াত ১:৬ -->
+
+        <!-- আয়াত ১:৬ -->
         <div class="verse-card">
             <div class="verse-num">১:৬</div>
             <div class="word-by-word-container">
@@ -329,7 +353,7 @@
                 </div>
                 <div class="word-box">
                     <span class="arabic-word">أَنْعَمْتَ</span>
-                    <span class="verified-meaning" style="color: #2d3748 !important;">অনুগ্রহ করেছ</span>
+                    <span class="verified-meaning">অনুগ্রহ করেছ</span>
                 </div>
                 <div class="word-box">
                     <span class="arabic-word">عَلَيْهِمْ</span>
@@ -344,30 +368,35 @@
             <div class="full-translation">
                 "যাদের উপর তুমি অনুগ্রহ করেছ তাদের পথ।"
             </div>
+            <div class="action-buttons" style="display: flex; gap: 8px; margin-top: 10px;">
+                <button class="trans-toggle-btn" style="margin: 0;" onclick="copyVerse(this)">📋 কপি</button>
+                <button class="trans-toggle-btn" style="margin: 0; background-color: #2d3748;" onclick="shareVerse(this)">🔗 শেয়ার</button>
+            </div>
         </div>
-                               <!-- আয়াত ১:৭ -->
+
+        <!-- আয়াত ১:৭ -->
         <div class="verse-card">
             <div class="verse-num">১:৭</div>
             <div class="word-by-word-container">
                 <div class="word-box">
                     <span class="arabic-word">غَيْرِ</span>
-                    <span class="verified-meaning" style="color: #008744 !important;">তাদের ব্যতীত</span>
+                    <span class="verified-meaning">তাদের ব্যতীত</span>
                 </div>
                 <div class="word-box">
                     <span class="arabic-word">الْمَغْضُوبِ</span>
-                    <span class="verified-meaning" style="color: #2d3748 !important;">ক্রোধ</span>
+                    <span class="verified-meaning">ক্রোধ</span>
                 </div>
                 <div class="word-box">
                     <span class="arabic-word">عَلَيْهِمْ</span>
-                    <span class="verified-meaning" style="color: #008744 !important;">যাদের উপর</span>
+                    <span class="verified-meaning">যাদের উপর</span>
                 </div>
                 <div class="word-box">
                     <span class="arabic-word">وَلَا</span>
-                    <span class="verified-meaning" style="color: #008744 !important;">এবং না</span>
+                    <span class="verified-meaning">এবং না</span>
                 </div>
                 <div class="word-box">
                     <span class="arabic-word">الضَّالِّينَ</span>
-                    <span class="verified-meaning" style="color: #008744 !important;">ভ্রান্তদের</span>
+                    <span class="verified-meaning">ভ্রান্তদের</span>
                 </div>
             </div>
 
@@ -378,15 +407,19 @@
             <div class="full-translation">
                 "তাদের ব্যতীত, যাদের উপর ক্রোধ এবং ভ্রান্তদের না।"
             </div>
+            <div class="action-buttons" style="display: flex; gap: 8px; margin-top: 10px;">
+                <button class="trans-toggle-btn" style="margin: 0;" onclick="copyVerse(this)">📋 কপি</button>
+                <button class="trans-toggle-btn" style="margin: 0; background-color: #2d3748;" onclick="shareVerse(this)">🔗 শেয়ার</button>
+            </div>
         </div>
         
-         
         <!-- নেভিগেশন -->
         <div class="navigation">
             <a href="index.html" class="nav-btn">← সূরা তালিকা</a>
             <a href="surah-002.html" class="nav-btn">পরবর্তী সূরা →</a>
         </div>
     </div>
+
 <script>
 function toggleTransliteration() {
     const transBoxes = document.querySelectorAll('.transliteration-box');
@@ -408,7 +441,52 @@ function toggleTransliteration() {
         btn.innerHTML = '👁️ উচ্চারণ দেখান';
     }
 }
-    // সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
+
+// কপি করার ফাংশন
+function copyVerse(button) {
+    const card = button.closest('.verse-card');
+    const verseNum = card.querySelector('.verse-num')?.innerText || '';
+    const fullTranslation = card.querySelector('.full-translation')?.innerText || '';
+    
+    const wordBoxes = card.querySelectorAll('.word-box');
+    let wordMeanings = [];
+    wordBoxes.forEach(box => {
+        const ar = box.querySelector('.arabic-word')?.innerText || '';
+        const bn = box.querySelector('.verified-meaning')?.innerText || '';
+        if(ar && bn) wordMeanings.push(`${ar} (${bn})`);
+    });
+
+    const textToCopy = `আয়াত: ${verseNum}\nশব্দানুবাদ: ${wordMeanings.join(' ')}\nঅনুবাদ: ${fullTranslation}\n— কুরআন গবেষণা ও শব্দানুবাদ`;
+
+    navigator.clipboard.writeText(textToCopy).then(() => {
+        const originalText = button.innerText;
+        button.innerText = '✅ কপি হয়েছে!';
+        setTimeout(() => { button.innerText = originalText; }, 2000);
+    });
+}
+
+// শেয়ার করার ফাংশন
+function shareVerse(button) {
+    const card = button.closest('.verse-card');
+    const verseNum = card.querySelector('.verse-num')?.innerText || '';
+    const fullTranslation = card.querySelector('.full-translation')?.innerText || '';
+
+    const shareData = {
+        title: `সূরা আল-ফাতিহা - আয়াত ${verseNum}`,
+        text: `আয়াত ${verseNum}: ${fullTranslation}`,
+        url: window.location.href
+    };
+
+    if (navigator.share) {
+        navigator.share(shareData).catch(() => {});
+    } else {
+        navigator.clipboard.writeText(`${shareData.text}\n${shareData.url}`);
+        alert('আয়াতের লিংক ও অনুবাদ কপি করা হয়েছে!');
+    }
+}
+
+// সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
+window.addEventListener('DOMContentLoaded', () => {
   const currentSurah = {
     surahName: "সূরা আল-ফাতিহা",
     surahUrl: "surah-001.html"
@@ -423,8 +501,9 @@ function toggleTransliteration() {
   }
 
   localStorage.setItem('lastReadQuranList', JSON.stringify(surahList));
-
+});
 </script>
     
 </body>
-</html>
+    </html>
+
