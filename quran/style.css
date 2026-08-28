@@ -5,8 +5,8 @@
 
 /* 1. Standard Light Mode Rules */
 :root {
-    color-scheme: light strictly !important;
-    supported-color-schemes: light !important;
+    color-scheme: only light !important;
+    supported-color-schemes: only light !important;
 }
 
 /* 2. Global Reset */
@@ -146,16 +146,16 @@ span[style*="rgb(0, 135, 68)"] {
     font-weight: bold !important;
 }
 
-/* খ) যে শব্দগুলো এখনো বিশ্লেষণ করা হয়নি (Unverified/অসম্পূর্ণ) = গাঢ় কালো রঙ */
+/* খ) যে শব্দগুলো এখনো বিশ্লেষণ করা হয়নি (Unverified/অসম্পূর্ণ) = স্পষ্ট গাঢ় রঙ */
 .unverified-meaning,
 span[style*="#2d3748"],
 span[style*="rgb(45, 55, 72)"] {
     font-size: 13.5px;
-    color: #000000 !important; /* সম্পূর্ণ স্পষ্ট কালো */
+    color: #1a1a1a !important; /* আরও গাঢ় স্পষ্ট রঙ */
     direction: ltr;
     text-align: center;
     line-height: 1.4;
-    font-weight: normal !important;
+    font-weight: 600 !important; /* হালকা বোল্ড যাতে মোবাইলে স্পষ্ট ফুটে ওঠে */
 }
 
 /* 9. Transliteration & Full Translation */
