@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>সূরা আল-ফুরকান - কুরআন গবেষণা ও শিক্ষা</title>
+    <title>সূরা আল-ফুরকান - কুরআন গবেষণা ও শব্দানুবাদ</title>
     <style>
         * {
             box-sizing: border-box;
@@ -115,6 +115,45 @@
             color: #2c3e50;
             direction: ltr;
         }
+
+        /* কপি ও শেয়ার বাটন স্টাইল */
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .btn-copy {
+            background-color: #1b4332;
+            color: #ffffff;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13.5px;
+            font-weight: bold;
+            transition: opacity 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .btn-share {
+            background-color: #2b3445;
+            color: #ffffff;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13.5px;
+            font-weight: bold;
+            transition: opacity 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .btn-copy:hover, .btn-share:hover {
+            opacity: 0.9;
+        }
+
         .navigation {
             display: flex;
             justify-content: space-between;
@@ -184,53 +223,56 @@
         <div class="bismillah-meaning">পরম মমতাময়, সদামমতাবদ্ধ আল্লাহর নামে।</div>
     </div>
 
-    <!-- আয়াত প্লেসহোল্ডার (পরবর্তীতে আয়াত অনুবাদ বসানোর জন্য প্রস্তুত) -->
-    <!-- উদাহরণস্বরূপ ২৫:১ আয়াত কাঠামোর টেমপ্লেট -->
     <!-- সূরা ২৫:২৮ আয়াত -->
-<div class="verse-card">
-    <div class="verse-num">২৫:২৮</div>
-    <div class="word-by-word-container">
-        <div class="word-box">
-            <span class="arabic-word">يَا</span>
-            <span class="verified-meaning" style="color: #008744;">হে</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">لَيْتَنِي</span>
-            <span class="verified-meaning" style="color: #008744;">আমার দুর্ভোগ</span>
-        </div>
-        <!-- لَمْ - না (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">لَمْ</span>
-            <span class="verified-meaning" style="color: #2d3748;">না</span>
-        </div>
-        <!-- أَتَّخِذْ - গ্রহণ করতাম (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">أَتَّخِذْ</span>
-            <span class="verified-meaning" style="color: #2d3748;">গ্রহণ করতাম</span>
-        </div>
-        <!-- فُلَانًا - অমুককে (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">فُلَانًا</span>
-            <span class="verified-meaning" style="color: #2d3748;">অমুককে</span>
-        </div>
-        <!-- خَلِيلًا - বন্ধুরূপে (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">خَلِيلًا</span>
-            <span class="verified-meaning" style="color: #2d3748;">বন্ধুরূপে</span>
+    <div class="verse-card">
+        <div class="verse-num">২৫:২৮</div>
+        <div class="word-by-word-container">
+            <div class="word-box">
+                <span class="arabic-word">يَا</span>
+                <span class="verified-meaning" style="color: #008744;">হে</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">لَيْتَنِي</span>
+                <span class="verified-meaning" style="color: #008744;">আমার দুর্ভোগ</span>
+            </div>
+            <!-- لَمْ - না (কালো) -->
+            <div class="word-box">
+                <span class="arabic-word">لَمْ</span>
+                <span class="verified-meaning" style="color: #2d3748;">না</span>
+            </div>
+            <!-- أَتَّخِذْ - গ্রহণ করতাম (কালো) -->
+            <div class="word-box">
+                <span class="arabic-word">أَتَّخِذْ</span>
+                <span class="verified-meaning" style="color: #2d3748;">গ্রহণ করতাম</span>
+            </div>
+            <!-- فُلَانًا - অমুককে (কালো) -->
+            <div class="word-box">
+                <span class="arabic-word">فُلَانًا</span>
+                <span class="verified-meaning" style="color: #2d3748;">অমুককে</span>
+            </div>
+            <!-- خَلِيلًا - বন্ধুরূপে (কালো) -->
+            <div class="word-box">
+                <span class="arabic-word">خَلِيلًا</span>
+                <span class="verified-meaning" style="color: #2d3748;">বন্ধুরূপে</span>
+            </div>
         </div>
         
+        <!-- উচ্চারণ -->
+        <div class="transliteration-box">
+            <strong>উচ্চারণ:</strong> ইয়া লাইতানী লাম আত্তাখিয ফুলানান খালীলা
+        </div>
+        
+        <!-- পূর্ণ অনুবাদ -->
+        <div class="full-translation">
+            হে আমার দুর্ভোগ! আমি যদি অমুককে বন্ধুরূপে গ্রহণ না করতাম!
+        </div>
+
+        <!-- কপি ও শেয়ার বাটন -->
+        <div class="action-buttons">
+            <button class="btn-copy" onclick="copyVerse(this)">📋 কপি</button>
+            <button class="btn-share" onclick="shareVerse(this)">🔗 শেয়ার</button>
+        </div>
     </div>
-    
-    <!-- উচ্চারণ -->
-    <div class="transliteration-box">
-        <strong>উচ্চারণ:</strong> ইয়া লাইতানী লাম আত্তাখিয ফুলানান খালীলা
-    </div>
-    
-    <!-- পূর্ণ অনুবাদ -->
-    <div class="full-translation">
-        হে আমার দুর্ভোগ! আমি যদি অমুককে বন্ধুরূপে গ্রহণ না করতাম!
-    </div>
-</div>
 
     <!-- নেভিগেশন -->
     <div class="navigation">
@@ -261,8 +303,51 @@ function toggleTransliteration() {
         btn.innerHTML = '👁️ উচ্চারণ দেখান';
     }
 }
-      // সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
-  window.addEventListener('DOMContentLoaded', () => {
+
+// আয়াত কপি করার ফাংশন
+function copyVerse(button) {
+    const card = button.closest('.verse-card');
+    const verseNum = card.querySelector('.verse-num').innerText.trim();
+    
+    // আরবি শব্দগুলো সাজানো
+    const arabicWords = Array.from(card.querySelectorAll('.arabic-word'))
+                             .map(el => el.innerText.trim())
+                             .join(' ');
+    
+    // পূর্ণ অনুবাদ নেওয়া
+    const translation = card.querySelector('.full-translation').innerText.trim();
+    
+    const textToCopy = `সূরা আল-ফুরকান [${verseNum}]\n\n${arabicWords}\n\nঅনুবাদ: ${translation}`;
+
+    navigator.clipboard.writeText(textToCopy).then(() => {
+        alert(`আয়াত ${verseNum} সফলভাবে কপি হয়েছে!`);
+    }).catch(err => {
+        console.error('কপি করতে সমস্যা হয়েছে: ', err);
+    });
+}
+
+// আয়াত শেয়ার করার ফাংশন
+function shareVerse(button) {
+    const card = button.closest('.verse-card');
+    const verseNum = card.querySelector('.verse-num').innerText.trim();
+    const translation = card.querySelector('.full-translation').innerText.trim();
+    const shareText = `সূরা আল-ফুরকান [আয়াত ${verseNum}]\n${translation}`;
+    const shareUrl = window.location.href;
+
+    if (navigator.share) {
+        navigator.share({
+            title: `সূরা আল-ফুরকান - আয়াত ${verseNum}`,
+            text: shareText,
+            url: shareUrl
+        }).catch(err => console.log('শেয়ার বাতিল করা হয়েছে', err));
+    } else {
+        navigator.clipboard.writeText(`${shareText}\n${shareUrl}`);
+        alert('আপনার ব্রাউজারে সরাসরি শেয়ার সাপোর্ট করে না। আয়াতের তথ্য ও লিংক কপি করা হয়েছে!');
+    }
+}
+
+// সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
+window.addEventListener('DOMContentLoaded', () => {
     const currentSurah = {
       surahName: "সূরা আল-ফুরকান",
       surahUrl: "surah-025.html"
@@ -277,8 +362,7 @@ function toggleTransliteration() {
     }
 
     localStorage.setItem('lastReadQuranList', JSON.stringify(surahList));
-  });
-    
+});
 </script>
 
 </body>
