@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>সূরা তা-হা - কুরআন গবেষণা ও শিক্ষা</title>
+    <title>সূরা তা-হা - কুরআন গবেষণা ও শব্দানুবাদ</title>
     <style>
         * {
             box-sizing: border-box;
@@ -115,6 +115,45 @@
             color: #2c3e50;
             direction: ltr;
         }
+
+        /* কপি ও শেয়ার বাটন স্টাইল */
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .btn-copy {
+            background-color: #1b4332;
+            color: #ffffff;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13.5px;
+            font-weight: bold;
+            transition: opacity 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .btn-share {
+            background-color: #2b3445;
+            color: #ffffff;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13.5px;
+            font-weight: bold;
+            transition: opacity 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .btn-copy:hover, .btn-share:hover {
+            opacity: 0.9;
+        }
+
         .navigation {
             display: flex;
             justify-content: space-between;
@@ -184,92 +223,95 @@
         <div class="bismillah-meaning">পরম মমতাময়, সদামমতাবদ্ধ আল্লাহর নামে।</div>
     </div>
 
-    <!-- আয়াত প্লেসহোল্ডার (পরবর্তীতে আয়াত অনুবাদ বসানোর জন্য প্রস্তুত) -->
-    <!-- উদাহরণস্বরূপ ২০:১ আয়াত কাঠামোর টেমপ্লেট -->
     <!-- সূরা ২০:৬১ আয়াত -->
-<div class="verse-card">
-    <div class="verse-num">২০:৬১</div>
-    <div class="word-by-word-container">
-        <div class="word-box">
-            <span class="arabic-word">قَالَ</span>
-            <span class="verified-meaning" style="color: #008744;">বলল</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">لَهُم</span>
-            <span class="verified-meaning" style="color: #008744;">তাদের</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">مُّوسَىٰ</span>
-            <span class="verified-meaning" style="color: #008744;">মূসা</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">وَيْلَكُمْ</span>
-            <span class="verified-meaning" style="color: #008744;">তোমাদের জন্য দুর্ভোগ</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">لَا</span>
-            <span class="verified-meaning" style="color: #008744;">না</span>
-        </div>
-        <!-- تَفْتَرُوا - তোমরা উদ্ভাবন করো (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">تَفْتَرُوا</span>
-            <span class="verified-meaning" style="color: #2d3748;">তোমরা উদ্ভাবন করো</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">عَلَى</span>
-            <span class="verified-meaning" style="color: #008744;">উপর</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">اللَّهِ</span>
-            <span class="verified-meaning" style="color: #008744;">আল্লাহর</span>
-        </div>
-        <!-- كَذِبًا - মিথ্যা (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">كَذِبًا</span>
-            <span class="verified-meaning" style="color: #2d3748;">মিথ্যা</span>
-        </div>
-        <!-- فَيُسْحِتَكُم - ফলে তিনি তোমাদের ধ্বংস করবেন (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">فَيُسْحِتَكُم</span>
-            <span class="verified-meaning" style="color: #2d3748;">ফলে তিনি তোমাদের ধ্বংস করবেন</span>
-        </div>
-        <!-- بِعَذَابٍ - শাস্তি দ্বারা (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">بِعَذَابٍ</span>
-            <span class="verified-meaning" style="color: #2d3748;">শাস্তি দ্বারা</span>
-        </div>
-        <!-- وَقَدْ - এবং নিশ্চয়ই (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">وَقَدْ</span>
-            <span class="verified-meaning" style="color: #2d3748;">এবং নিশ্চয়ই</span>
-        </div>
-        <!-- خَابَ - ব্যর্থ হয়েছে (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">خَابَ</span>
-            <span class="verified-meaning" style="color: #2d3748;">ব্যর্থ হয়েছে</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">مَنِ</span>
-            <span class="verified-meaning" style="color: #008744;">যে</span>
-        </div>
-        <!-- افْتَرَىٰ - উদ্ভাবন করেছে (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">افْتَرَىٰ</span>
-            <span class="verified-meaning" style="color: #2d3748;">উদ্ভাবন করেছে</span>
+    <div class="verse-card">
+        <div class="verse-num">২০:৬১</div>
+        <div class="word-by-word-container">
+            <div class="word-box">
+                <span class="arabic-word">قَالَ</span>
+                <span class="verified-meaning" style="color: #008744;">বলল</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">لَهُم</span>
+                <span class="verified-meaning" style="color: #008744;">তাদের</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">مُّوسَىٰ</span>
+                <span class="verified-meaning" style="color: #008744;">মূসা</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">وَيْلَكُمْ</span>
+                <span class="verified-meaning" style="color: #008744;">তোমাদের জন্য দুর্ভোগ</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">لَا</span>
+                <span class="verified-meaning" style="color: #008744;">না</span>
+            </div>
+            <!-- تَفْتَرُوا - তোমরা উদ্ভাবন করো (কালো) -->
+            <div class="word-box">
+                <span class="arabic-word">تَفْتَرُوا</span>
+                <span class="verified-meaning" style="color: #2d3748;">তোমরা উদ্ভাবন করো</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">عَلَى</span>
+                <span class="verified-meaning" style="color: #008744;">উপর</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">اللَّهِ</span>
+                <span class="verified-meaning" style="color: #008744;">আল্লাহর</span>
+            </div>
+            <!-- كَذِبًا - মিথ্যা (কালো) -->
+            <div class="word-box">
+                <span class="arabic-word">كَذِبًا</span>
+                <span class="verified-meaning" style="color: #2d3748;">মিথ্যা</span>
+            </div>
+            <!-- فَيُسْحِتَكُم - ফলে তিনি তোমাদের ধ্বংস করবেন (কালো) -->
+            <div class="word-box">
+                <span class="arabic-word">فَيُسْحِتَكُم</span>
+                <span class="verified-meaning" style="color: #2d3748;">ফলে তিনি তোমাদের ধ্বংস করবেন</span>
+            </div>
+            <!-- بِعَذَابٍ - শাস্তি দ্বারা (কালো) -->
+            <div class="word-box">
+                <span class="arabic-word">بِعَذَابٍ</span>
+                <span class="verified-meaning" style="color: #2d3748;">শাস্তি দ্বারা</span>
+            </div>
+            <!-- وَقَدْ - এবং নিশ্চয়ই (কালো) -->
+            <div class="word-box">
+                <span class="arabic-word">وَقَدْ</span>
+                <span class="verified-meaning" style="color: #2d3748;">এবং নিশ্চয়ই</span>
+            </div>
+            <!-- خَابَ - ব্যর্থ হয়েছে (কালো) -->
+            <div class="word-box">
+                <span class="arabic-word">خَابَ</span>
+                <span class="verified-meaning" style="color: #2d3748;">ব্যর্থ হয়েছে</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">مَنِ</span>
+                <span class="verified-meaning" style="color: #008744;">যে</span>
+            </div>
+            <!-- افْتَرَىٰ - উদ্ভাবন করেছে (কালো) -->
+            <div class="word-box">
+                <span class="arabic-word">افْتَرَىٰ</span>
+                <span class="verified-meaning" style="color: #2d3748;">উদ্ভাবন করেছে</span>
+            </div>
         </div>
         
+        <!-- উচ্চারণ -->
+        <div class="transliteration-box">
+            <strong>উচ্চারণ:</strong> ক্বালা লাহুম মূসা ওয়াইলাকুম লা তাফতারূ 'আল্লাহি কাযিবান ফাইউসহিতাকুম বি'আযাব, ওয়া ক্বাদ খাবা মানিফতারা
+        </div>
+        
+        <!-- পূর্ণ অনুবাদ -->
+        <div class="full-translation">
+            মূসা তাদের বলল, 'তোমাদের জন্য দুর্ভোগ! তোমরা আল্লাহর উপর মিথ্যা উদ্ভাবন করো না, ফলে তিনি তোমাদের শাস্তি দ্বারা ধ্বংস করবেন; এবং নিশ্চয়ই যে উদ্ভাবন করেছে সে ব্যর্থ হয়েছে।'
+        </div>
+
+        <!-- কপি ও শেয়ার বাটন -->
+        <div class="action-buttons">
+            <button class="btn-copy" onclick="copyVerse(this)">📋 কপি</button>
+            <button class="btn-share" onclick="shareVerse(this)">🔗 শেয়ার</button>
+        </div>
     </div>
-    
-    <!-- উচ্চারণ -->
-    <div class="transliteration-box">
-        <strong>উচ্চারণ:</strong> ক্বালা লাহুম মূসা ওয়াইলাকুম লা তাফতারূ 'আল্লাহি কাযিবান ফাইউসহিতাকুম বি'আযাব, ওয়া ক্বাদ খাবা মানিফতারা
-    </div>
-    
-    <!-- পূর্ণ অনুবাদ -->
-    <div class="full-translation">
-        মূসা তাদের বলল, 'তোমাদের জন্য দুর্ভোগ! তোমরা আল্লাহর উপর মিথ্যা উদ্ভাবন করো না, ফলে তিনি তোমাদের শাস্তি দ্বারা ধ্বংস করবেন; এবং নিশ্চয়ই যে উদ্ভাবন করেছে সে ব্যর্থ হয়েছে।'
-    </div>
-</div>
 
     <!-- নেভিগেশন -->
     <div class="navigation">
@@ -300,8 +342,51 @@ function toggleTransliteration() {
         btn.innerHTML = '👁️ উচ্চারণ দেখান';
     }
 }
-      // সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
-  window.addEventListener('DOMContentLoaded', () => {
+
+// আয়াত কপি করার ফাংশন
+function copyVerse(button) {
+    const card = button.closest('.verse-card');
+    const verseNum = card.querySelector('.verse-num').innerText.trim();
+    
+    // আরবি শব্দগুলো ডান থেকে বামে ক্রমানুসারে সাজানো
+    const arabicWords = Array.from(card.querySelectorAll('.arabic-word'))
+                             .map(el => el.innerText.trim())
+                             .join(' ');
+    
+    // পূর্ণ অনুবাদ নেওয়া
+    const translation = card.querySelector('.full-translation').innerText.trim();
+    
+    const textToCopy = `সূরা তা-হা [${verseNum}]\n\n${arabicWords}\n\nঅনুবাদ: ${translation}`;
+
+    navigator.clipboard.writeText(textToCopy).then(() => {
+        alert(`আয়াত ${verseNum} সফলভাবে কপি হয়েছে!`);
+    }).catch(err => {
+        console.error('কপি করতে সমস্যা হয়েছে: ', err);
+    });
+}
+
+// আয়াত শেয়ার করার ফাংশন
+function shareVerse(button) {
+    const card = button.closest('.verse-card');
+    const verseNum = card.querySelector('.verse-num').innerText.trim();
+    const translation = card.querySelector('.full-translation').innerText.trim();
+    const shareText = `সূরা তা-হা [আয়াত ${verseNum}]\n${translation}`;
+    const shareUrl = window.location.href;
+
+    if (navigator.share) {
+        navigator.share({
+            title: `সূরা তা-হা - আয়াত ${verseNum}`,
+            text: shareText,
+            url: shareUrl
+        }).catch(err => console.log('শেয়ার বাতিল করা হয়েছে', err));
+    } else {
+        navigator.clipboard.writeText(`${shareText}\n${shareUrl}`);
+        alert('আপনার ব্রাউজারে সরাসরি শেয়ার সাপোর্ট করে না। আয়াতের তথ্য ও লিংক কপি করা হয়েছে!');
+    }
+}
+
+// সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
+window.addEventListener('DOMContentLoaded', () => {
     const currentSurah = {
       surahName: "সূরা তা-হা",
       surahUrl: "surah-020.html"
@@ -316,9 +401,9 @@ function toggleTransliteration() {
     }
 
     localStorage.setItem('lastReadQuranList', JSON.stringify(surahList));
-  });
-    
+});
 </script>
 
 </body>
 </html>
+
