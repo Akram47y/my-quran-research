@@ -115,6 +115,45 @@
             color: #2c3e50;
             direction: ltr;
         }
+
+        /* কপি ও শেয়ার বাটন স্টাইল */
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .btn-copy {
+            background-color: #1b4332;
+            color: #ffffff;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13.5px;
+            font-weight: bold;
+            transition: opacity 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .btn-share {
+            background-color: #2b3445;
+            color: #ffffff;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13.5px;
+            font-weight: bold;
+            transition: opacity 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .btn-copy:hover, .btn-share:hover {
+            opacity: 0.9;
+        }
+
         .navigation {
             display: flex;
             justify-content: space-between;
@@ -184,135 +223,161 @@
         <div class="bismillah-meaning">পরম মমতাময়, সদামমতাবদ্ধ আল্লাহর নামে।</div>
     </div>
 
-    <!-- আয়াত প্লেসহোল্ডার (পরবর্তীতে আয়াত অনুবাদ বসানোর জন্য প্রস্তুত) -->
-    <!-- উদাহরণস্বরূপ ৫৬:১ আয়াত কাঠামোর টেমপ্লেট -->
+    <!-- ৫৬:১ আয়াত -->
     <div class="verse-card">
-    <div class="verse-num">৫৬:১</div>
-    <div class="word-by-word-container">
-        <div class="word-box">
-            <span class="arabic-word">إِذَا</span>
-            <span class="verified-meaning">যখন</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">وَقَعَتِ</span>
-            <span class="verified-meaning">ঘটবে</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">ٱلْوَاقِعَةُ</span>
-            <span class="verified-meaning">ঘটনাটি</span>
-        </div>
-    </div>
-    
-    <div class="transliteration-box">
-        <strong>উচ্চারণ:</strong> ইযা ওয়াক্বা'আতিল ওয়াক্বি'আহ।
-    </div>
-
-    <div class="full-translation">
-        যখন ঘটনাটি ঘটবে।
-    </div>
-    </div>
-        <!-- ৫৬:৫১ আয়াত -->
-        <div class="verse-card">
-            <div class="verse-num">৫৬:৫১</div>
-            <div class="word-by-word-container">
-                <div class="word-box">
-                    <span class="arabic-word">ثُمَّ</span>
-                    <span class="verified-meaning">অতঃপর</span>
-                </div>
-                <div class="word-box">
-                    <span class="arabic-word">إِنَّكُمْ</span>
-                    <span class="verified-meaning">নিশ্চয় তোমরা</span>
-                </div>
-                <div class="word-box">
-                    <span class="arabic-word">أَيُّهَا</span>
-                    <span class="verified-meaning">হে</span>
-                </div>
-                <div class="word-box">
-                    <span class="arabic-word">الضَّالُّونَ</span>
-                    <span class="verified-meaning">ভ্রান্ত</span>
-                </div>
-                <div class="word-box">
-                    <span class="arabic-word">الْمُكَذِّبُونَ</span>
-                    <span class="verified-meaning">মিথ্যাচারকারীরা</span>
-                </div>
+        <div class="verse-num">৫৬:১</div>
+        <div class="word-by-word-container">
+            <div class="word-box">
+                <span class="arabic-word">إِذَا</span>
+                <span class="verified-meaning">যখন</span>
             </div>
-
-            <div class="transliteration-box">
-                <strong>উচ্চারণ:</strong> সুম্মা ইন্নাকুম আইয়ুহাদ্দ্বল্লূনাল মুকাযযিবূন।
+            <div class="word-box">
+                <span class="arabic-word">وَقَعَتِ</span>
+                <span class="verified-meaning">ঘটবে</span>
             </div>
-
-            <div class="full-translation">
-                অতঃপর নিশ্চয় তোমরা, হে ভ্রান্ত মিথ্যাচারকারীরা,
+            <div class="word-box">
+                <span class="arabic-word">ٱلْوَاقِعَةُ</span>
+                <span class="verified-meaning">ঘটনাটি</span>
             </div>
         </div>
-    
+        
+        <div class="transliteration-box">
+            <strong>উচ্চারণ:</strong> ইযা ওয়াক্বা'আতিল ওয়াক্বি'আহ।
+        </div>
+
+        <div class="full-translation">
+            যখন ঘটনাটি ঘটবে।
+        </div>
+
+        <!-- কপি ও শেয়ার বাটন -->
+        <div class="action-buttons">
+            <button class="btn-copy" onclick="copyVerse(this)">📋 কপি</button>
+            <button class="btn-share" onclick="shareVerse(this)">🔗 শেয়ার</button>
+        </div>
+    </div>
+
+    <!-- ৫৬:৫১ আয়াত -->
     <div class="verse-card">
-    <div class="verse-num">৫৬:৫৬</div>
-    <div class="word-by-word-container">
-        <div class="word-box">
-            <span class="arabic-word">هَٰذَا</span>
-            <span class="verified-meaning">এটি</span>
+        <div class="verse-num">৫৬:৫১</div>
+        <div class="word-by-word-container">
+            <div class="word-box">
+                <span class="arabic-word">ثُمَّ</span>
+                <span class="verified-meaning">অতঃপর</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">إِنَّكُمْ</span>
+                <span class="verified-meaning">নিশ্চয় তোমরা</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">أَيُّهَا</span>
+                <span class="verified-meaning">হে</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">الضَّالُّونَ</span>
+                <span class="verified-meaning">ভ্রান্ত</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">الْمُكَذِّبُونَ</span>
+                <span class="verified-meaning">মিথ্যাচারকারীরা</span>
+            </div>
         </div>
-        <div class="word-box">
-            <span class="arabic-word">نُزُلُهُمْ</span>
-            <span class="verified-meaning">তাদের অবতরণ</span>
+
+        <div class="transliteration-box">
+            <strong>উচ্চারণ:</strong> সুম্মা ইন্নাকুম আইয়ুহাদ্দ্বল্লূনাল মুকাযযিবূন।
         </div>
-        <div class="word-box">
-            <span class="arabic-word">يَوْمَ</span>
-            <span class="verified-meaning">সময়ে</span>
+
+        <div class="full-translation">
+            অতঃপর নিশ্চয় তোমরা, হে ভ্রান্ত মিথ্যাচারকারীরা,
         </div>
-        <div class="word-box">
-            <span class="arabic-word">ٱلدِّينِ</span>
-            <span class="verified-meaning">দায়বদ্ধতার</span>
+
+        <!-- কপি ও শেয়ার বাটন -->
+        <div class="action-buttons">
+            <button class="btn-copy" onclick="copyVerse(this)">📋 কপি</button>
+            <button class="btn-share" onclick="shareVerse(this)">🔗 শেয়ার</button>
         </div>
     </div>
     
-    <div class="transliteration-box">
-        <strong>উচ্চারণ:</strong> হাজা নুজুলুহুম ইয়াওমাদ্দীন।
-    </div>
-
-    <div class="full-translation">
-        দায়বদ্ধতার সময়ে এটি তাদের অবতরণ।
-    </div>
-    </div>
-            <!-- ৫৬:৯২ আয়াত -->
-        <div class="verse-card">
-            <div class="verse-num">৫৬:৯২</div>
-            <div class="word-by-word-container">
-                <div class="word-box">
-                    <span class="arabic-word">وَأَمَّا</span>
-                    <span class="verified-meaning">এবং পক্ষান্তরে</span>
-                </div>
-                <div class="word-box">
-                    <span class="arabic-word">إِنْ</span>
-                    <span class="verified-meaning">যদি</span>
-                </div>
-                <div class="word-box">
-                    <span class="arabic-word">كَانَ</span>
-                    <span class="verified-meaning">সে হয়</span>
-                </div>
-                <div class="word-box">
-                    <span class="arabic-word">مِنَ</span>
-                    <span class="verified-meaning">মধ্যে</span>
-                </div>
-                <div class="word-box">
-                    <span class="arabic-word">الْمُكَذِّبِينَ</span>
-                    <span class="verified-meaning">মিথ্যাচারকারী</span>
-                </div>
-                <div class="word-box">
-                    <span class="arabic-word">الضَّالِّينَ</span>
-                    <span class="verified-meaning">ভ্রান্তদের</span>
-                </div>
+    <!-- ৫৬:৫৬ আয়াত -->
+    <div class="verse-card">
+        <div class="verse-num">৫৬:৫৬</div>
+        <div class="word-by-word-container">
+            <div class="word-box">
+                <span class="arabic-word">هَٰذَا</span>
+                <span class="verified-meaning">এটি</span>
             </div>
-
-            <div class="transliteration-box">
-                <strong>উচ্চারণ:</strong> ওয়া আম্মা ইন কানা মিনাল মুকাযযিবীনাদ দ্বাল্লীন।
+            <div class="word-box">
+                <span class="arabic-word">نُزُلُهُمْ</span>
+                <span class="verified-meaning">তাদের অবতরণ</span>
             </div>
-
-            <div class="full-translation">
-                এবং পক্ষান্তরে, সে যদি মিথ্যাচারকারী ভ্রান্তদের মধ্যে হয়।
+            <div class="word-box">
+                <span class="arabic-word">يَوْمَ</span>
+                <span class="verified-meaning">সময়ে</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">ٱلدِّينِ</span>
+                <span class="verified-meaning">দায়বদ্ধতার</span>
             </div>
         </div>
+        
+        <div class="transliteration-box">
+            <strong>উচ্চারণ:</strong> হাজা নুজুলুহুম ইয়াওমাদ্দীন।
+        </div>
+
+        <div class="full-translation">
+            দায়বদ্ধতার সময়ে এটি তাদের অবতরণ।
+        </div>
+
+        <!-- কপি ও শেয়ার বাটন -->
+        <div class="action-buttons">
+            <button class="btn-copy" onclick="copyVerse(this)">📋 কপি</button>
+            <button class="btn-share" onclick="shareVerse(this)">🔗 শেয়ার</button>
+        </div>
+    </div>
+
+    <!-- ৫৬:৯২ আয়াত -->
+    <div class="verse-card">
+        <div class="verse-num">৫৬:৯২</div>
+        <div class="word-by-word-container">
+            <div class="word-box">
+                <span class="arabic-word">وَأَمَّا</span>
+                <span class="verified-meaning">এবং পক্ষান্তরে</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">إِنْ</span>
+                <span class="verified-meaning">যদি</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">كَانَ</span>
+                <span class="verified-meaning">সে হয়</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">مِنَ</span>
+                <span class="verified-meaning">মধ্যে</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">الْمُكَذِّبِينَ</span>
+                <span class="verified-meaning">মিথ্যাচারকারী</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">الضَّالِّينَ</span>
+                <span class="verified-meaning">ভ্রান্তদের</span>
+            </div>
+        </div>
+
+        <div class="transliteration-box">
+            <strong>উচ্চারণ:</strong> ওয়া আম্মা ইন কানা মিনাল মুকাযযিবীনাদ দ্বাল্লীন।
+        </div>
+
+        <div class="full-translation">
+            এবং পক্ষান্তরে, সে যদি মিথ্যাচারকারী ভ্রান্তদের মধ্যে হয়।
+        </div>
+
+        <!-- কপি ও শেয়ার বাটন -->
+        <div class="action-buttons">
+            <button class="btn-copy" onclick="copyVerse(this)">📋 কপি</button>
+            <button class="btn-share" onclick="shareVerse(this)">🔗 শেয়ার</button>
+        </div>
+    </div>
     
     <!-- নেভিগেশন -->
     <div class="navigation">
@@ -343,8 +408,53 @@ function toggleTransliteration() {
         btn.innerHTML = '👁️ উচ্চারণ দেখান';
     }
 }
-      // সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
-  window.addEventListener('DOMContentLoaded', () => {
+
+// আয়াত কপি করার ফাংশন
+function copyVerse(button) {
+    const card = button.closest('.verse-card');
+    const verseNum = card.querySelector('.verse-num').innerText.trim();
+    
+    // আরবি শব্দগুলো সাজানো
+    const arabicWords = Array.from(card.querySelectorAll('.arabic-word'))
+                             .map(el => el.innerText.trim())
+                             .join(' ');
+    
+    // পূর্ণ অনুবাদ নেওয়া
+    const translation = card.querySelector('.full-translation').innerText.trim();
+    
+    const textToCopy = `সূরা আল-ওয়াকি'আ [${verseNum}]\n\n${arabicWords}\n\nঅনুবাদ: ${translation}`;
+
+    navigator.clipboard.writeText(textToCopy).then(() => {
+        const originalText = button.innerText;
+        button.innerText = '✅ কপি হয়েছে!';
+        setTimeout(() => { button.innerText = originalText; }, 2000);
+    }).catch(err => {
+        console.error('কপি করতে সমস্যা হয়েছে: ', err);
+    });
+}
+
+// আয়াত শেয়ার করার ফাংশন
+function shareVerse(button) {
+    const card = button.closest('.verse-card');
+    const verseNum = card.querySelector('.verse-num').innerText.trim();
+    const translation = card.querySelector('.full-translation').innerText.trim();
+    const shareText = `সূরা আল-ওয়াকি'আ [আয়াত ${verseNum}]\n${translation}`;
+    const shareUrl = window.location.href;
+
+    if (navigator.share) {
+        navigator.share({
+            title: `সূরা আল-ওয়াকি'আ - আয়াত ${verseNum}`,
+            text: shareText,
+            url: shareUrl
+        }).catch(err => console.log('শেয়ার বাতিল করা হয়েছে', err));
+    } else {
+        navigator.clipboard.writeText(`${shareText}\n${shareUrl}`);
+        alert('আপনার ব্রাউজারে সরাসরি শেয়ার সাপোর্ট করে না। আয়াতের তথ্য ও লিংক কপি করা হয়েছে!');
+    }
+}
+
+// সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
+window.addEventListener('DOMContentLoaded', () => {
     const currentSurah = {
       surahName: "সূরা আল-ওয়াকি'আ",
       surahUrl: "surah-056.html"
@@ -359,8 +469,7 @@ function toggleTransliteration() {
     }
 
     localStorage.setItem('lastReadQuranList', JSON.stringify(surahList));
-  });
-    
+});
 </script>
 
 </body>
