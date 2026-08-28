@@ -244,32 +244,22 @@
 <div class="verse-card">
     <div class="verse-num">৫১:৬০</div>
     <div class="word-by-word-container">
-        
-        <!-- فَوَيْلٌ - অতএব দুর্ভোগ (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">فَوَيْلٌ</span>
             <span class="verified-meaning" style="color: #008744;">অতএব দুর্ভোগ</span>
         </div>
-        
-        <!-- لِّلَّذِينَ - যারা (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">لِّلَّذِينَ</span>
             <span class="verified-meaning" style="color: #008744;">যারা</span>
         </div>
-        
-        <!-- كَفَرُوا - আচ্ছাদন করেছে (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">كَفَرُوا</span>
             <span class="verified-meaning" style="color: #008744;">আচ্ছাদন করেছে</span>
         </div>
-        
-        <!-- مِن - থেকে (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">مِن</span>
             <span class="verified-meaning" style="color: #008744;">থেকে</span>
         </div>
-        
-        <!-- يَوْمِهِمُ - সেই সময় (সবুজ) -->
         <div class="word-box">
             <span class="arabic-word">يَوْمِهِمُ</span>
             <span class="verified-meaning" style="color: #008744;">সেই সময়</span>
@@ -329,6 +319,24 @@ function toggleTransliteration() {
         btn.innerHTML = '👁️ উচ্চারণ দেখান';
     }
 }
+      // সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
+  window.addEventListener('DOMContentLoaded', () => {
+    const currentSurah = {
+      surahName: "সূরা আয-যারিয়াত",
+      surahUrl: "surah-051.html"
+    };
+
+    let surahList = JSON.parse(localStorage.getItem('lastReadQuranList')) || [];
+    surahList = surahList.filter(item => item.surahName !== currentSurah.surahName);
+    surahList.unshift(currentSurah);
+
+    if (surahList.length > 5) {
+      surahList.pop();
+    }
+
+    localStorage.setItem('lastReadQuranList', JSON.stringify(surahList));
+  });
+    
 </script>
 
 </body>
