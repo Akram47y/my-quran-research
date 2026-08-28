@@ -115,6 +115,45 @@
             color: #2c3e50;
             direction: ltr;
         }
+
+        /* কপি ও শেয়ার বাটন স্টাইল */
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .btn-copy {
+            background-color: #1b4332;
+            color: #ffffff;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13.5px;
+            font-weight: bold;
+            transition: opacity 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .btn-share {
+            background-color: #2b3445;
+            color: #ffffff;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13.5px;
+            font-weight: bold;
+            transition: opacity 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .btn-copy:hover, .btn-share:hover {
+            opacity: 0.9;
+        }
+
         .navigation {
             display: flex;
             justify-content: space-between;
@@ -137,6 +176,7 @@
         .nav-btn:hover {
             background-color: #0d3b2e;
         }
+        /* উচ্চারণ দেখান/লুকান এবং এর বাক্সের স্টাইল */
         .transliteration-box {
             display: none;
             margin-top: 8px;
@@ -201,9 +241,10 @@
             পরম মমতাময়।
         </div>
 
-        <div class="action-buttons" style="display: flex; gap: 8px; margin-top: 10px;">
-            <button class="trans-toggle-btn" style="margin: 0;" onclick="copyVerse(this)">📋 কপি</button>
-            <button class="trans-toggle-btn" style="margin: 0; background-color: #2d3748;" onclick="shareVerse(this)">🔗 শেয়ার</button>
+        <!-- কপি ও শেয়ার বাটন -->
+        <div class="action-buttons">
+            <button class="btn-copy" onclick="copyVerse(this)">📋 কপি</button>
+            <button class="btn-share" onclick="shareVerse(this)">🔗 শেয়ার</button>
         </div>
     </div>
 
@@ -229,9 +270,10 @@
             এই পাঠ্যের জ্ঞান দিলেন।
         </div>
 
-        <div class="action-buttons" style="display: flex; gap: 8px; margin-top: 10px;">
-            <button class="trans-toggle-btn" style="margin: 0;" onclick="copyVerse(this)">📋 কপি</button>
-            <button class="trans-toggle-btn" style="margin: 0; background-color: #2d3748;" onclick="shareVerse(this)">🔗 শেয়ার</button>
+        <!-- কপি ও শেয়ার বাটন -->
+        <div class="action-buttons">
+            <button class="btn-copy" onclick="copyVerse(this)">📋 কপি</button>
+            <button class="btn-share" onclick="shareVerse(this)">🔗 শেয়ার</button>
         </div>
     </div>
 
@@ -257,9 +299,10 @@
             তাকে স্পষ্টতার জ্ঞান দিয়েছেন।
         </div>
 
-        <div class="action-buttons" style="display: flex; gap: 8px; margin-top: 10px;">
-            <button class="trans-toggle-btn" style="margin: 0;" onclick="copyVerse(this)">📋 কপি</button>
-            <button class="trans-toggle-btn" style="margin: 0; background-color: #2d3748;" onclick="shareVerse(this)">🔗 শেয়ার</button>
+        <!-- কপি ও শেয়ার বাটন -->
+        <div class="action-buttons">
+            <button class="btn-copy" onclick="copyVerse(this)">📋 কপি</button>
+            <button class="btn-share" onclick="shareVerse(this)">🔗 শেয়ার</button>
         </div>
     </div>
 
@@ -291,46 +334,47 @@ function toggleTransliteration() {
     }
 }
 
-// কপি করার ফাংশন
+// আয়াত কপি করার ফাংশন
 function copyVerse(button) {
     const card = button.closest('.verse-card');
-    const verseNum = card.querySelector('.verse-num')?.innerText || '';
-    const fullTranslation = card.querySelector('.full-translation')?.innerText || '';
+    const verseNum = card.querySelector('.verse-num').innerText.trim();
     
-    const wordBoxes = card.querySelectorAll('.word-box');
-    let wordMeanings = [];
-    wordBoxes.forEach(box => {
-        const ar = box.querySelector('.arabic-word')?.innerText || '';
-        const bn = box.querySelector('.verified-meaning')?.innerText || '';
-        if(ar && bn) wordMeanings.push(`${ar} (${bn})`);
-    });
-
-    const textToCopy = `আয়াত: ${verseNum}\nশব্দানুবাদ: ${wordMeanings.join(' ')}\nঅনুবাদ: ${fullTranslation}\n— কুরআন গবেষণা ও শিক্ষা`;
+    // আরবি শব্দগুলো সাজানো
+    const arabicWords = Array.from(card.querySelectorAll('.arabic-word'))
+                             .map(el => el.innerText.trim())
+                             .join(' ');
+    
+    // পূর্ণ অনুবাদ নেওয়া
+    const translation = card.querySelector('.full-translation').innerText.trim();
+    
+    const textToCopy = `সূরা আর-রাহমান [${verseNum}]\n\n${arabicWords}\n\nঅনুবাদ: ${translation}`;
 
     navigator.clipboard.writeText(textToCopy).then(() => {
         const originalText = button.innerText;
         button.innerText = '✅ কপি হয়েছে!';
         setTimeout(() => { button.innerText = originalText; }, 2000);
+    }).catch(err => {
+        console.error('কপি করতে সমস্যা হয়েছে: ', err);
     });
 }
 
-// শেয়ার করার ফাংশন
+// আয়াত শেয়ার করার ফাংশন
 function shareVerse(button) {
     const card = button.closest('.verse-card');
-    const verseNum = card.querySelector('.verse-num')?.innerText || '';
-    const fullTranslation = card.querySelector('.full-translation')?.innerText || '';
-
-    const shareData = {
-        title: `সূরা আর-রাহমান - আয়াত ${verseNum}`,
-        text: `আয়াত ${verseNum}: ${fullTranslation}`,
-        url: window.location.href
-    };
+    const verseNum = card.querySelector('.verse-num').innerText.trim();
+    const translation = card.querySelector('.full-translation').innerText.trim();
+    const shareText = `সূরা আর-রাহমান [আয়াত ${verseNum}]\n${translation}`;
+    const shareUrl = window.location.href;
 
     if (navigator.share) {
-        navigator.share(shareData).catch(() => {});
+        navigator.share({
+            title: `সূরা আর-রাহমান - আয়াত ${verseNum}`,
+            text: shareText,
+            url: shareUrl
+        }).catch(err => console.log('শেয়ার বাতিল করা হয়েছে', err));
     } else {
-        navigator.clipboard.writeText(`${shareData.text}\n${shareData.url}`);
-        alert('আয়াতের লিংক ও অনুবাদ কপি করা হয়েছে!');
+        navigator.clipboard.writeText(`${shareText}\n${shareUrl}`);
+        alert('আপনার ব্রাউজারে সরাসরি শেয়ার সাপোর্ট করে না। আয়াতের তথ্য ও লিংক কপি করা হয়েছে!');
     }
 }
 
