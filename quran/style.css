@@ -1,6 +1,6 @@
 /* ==========================================
    Quran Research & Translation Project
-   Global Light Theme Stylesheet (style.css)
+   Global Stylesheet (style.css)
    ========================================== */
 
 /* 1. Reset & Global Box Sizing */
@@ -10,7 +10,7 @@
     padding: 0;
 }
 
-/* 2. Base Setup (Light Theme) */
+/* 2. Base Setup */
 body {
     font-family: 'SolaimanLipi', 'Kalpurush', 'Segoe UI', Arial, sans-serif;
     background-color: #f4f6f8;
@@ -45,7 +45,7 @@ body {
 }
 
 .header .meta-info {
-    color: #666;
+    color: #666666;
     font-size: 14px;
     margin-top: 6px;
 }
@@ -126,18 +126,35 @@ body {
 .arabic-word {
     font-family: 'Meaney', 'Amiri', 'Traditional Arabic', serif;
     font-size: 20px;
-    color: #1b4332;
+    color: #1b4332 !important;
     margin-bottom: 4px;
     direction: rtl;
     text-align: center;
 }
 
+/* সাধারণ/অবিশ্লেষিত অনুবাদের কালার (ডিফল্ট কালো/গাঢ় কালার) */
 .verified-meaning {
     font-size: 13.5px;
-    color: #2c3e50;
+    color: #111827 !important;
     direction: ltr;
     text-align: center;
     line-height: 1.4;
+    font-weight: normal;
+}
+
+.verified-meaning * {
+    color: #111827 !important;
+}
+
+/* বিশ্লেষণ করা ভেরিফাইড শব্দ (HTML-এ সবুজ রঙ সংকেত থাকলে তা উজ্জ্বল সবুজ হবে) */
+.verified-meaning[style*="#28a745"],
+.verified-meaning[style*="rgb(40, 167, 69)"],
+.verified-meaning[style*="green"],
+.verified-meaning span[style*="#28a745"],
+.verified-meaning span[style*="rgb(40, 167, 69)"],
+.verified-meaning span[style*="green"] {
+    color: #28a745 !important;
+    font-weight: bold;
 }
 
 /* 8. Transliteration (Pronunciation) Box */
