@@ -1,35 +1,41 @@
 /* ==========================================
    Quran Research & Translation Project
-   Pure Light Theme Stylesheet (style.css)
+   Forced Pure Light Theme Stylesheet (style.css)
    ========================================== */
 
-/* 1. Reset & Global Box Sizing */
+/* 1. Force Browser Light Mode (ডার্ক মোডের প্রভাব সম্পূর্ণ বন্ধ করার জন্য) */
+:root {
+    color-scheme: light strictly;
+    supported-color-schemes: light;
+}
+
+/* 2. Reset & Global Box Sizing */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* 2. Base Setup (Light Background) */
-body {
-    font-family: 'SolaimanLipi', 'Kalpurush', 'Segoe UI', Arial, sans-serif;
+/* 3. Base Setup (Light Background) */
+html, body {
     background-color: #f4f6f8 !important;
     color: #2c3e50 !important;
+    font-family: 'SolaimanLipi', 'Kalpurush', 'Segoe UI', Arial, sans-serif;
     line-height: 1.8;
     padding: 15px;
 }
 
-/* 3. Main Container */
+/* 4. Main Container */
 .container {
     max-width: 850px;
     margin: 0 auto;
-    background: #ffffff !important;
+    background-color: #ffffff !important;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
-/* 4. Surah Header Section */
+/* 5. Surah Header Section */
 .header {
     text-align: center;
     border-bottom: 2px solid #eef2f5;
@@ -50,7 +56,7 @@ body {
     margin-top: 6px;
 }
 
-/* 5. Bismillah Box */
+/* 6. Bismillah Box */
 .bismillah-box {
     background-color: #f8f9fa !important;
     border: 1px solid #e2e8f0 !important;
@@ -75,7 +81,7 @@ body {
     font-weight: bold;
 }
 
-/* 6. Verse Card */
+/* 7. Verse Card */
 .verse-card {
     border: 1px solid #e0e6ed !important;
     border-radius: 8px;
@@ -94,7 +100,7 @@ body {
     margin-bottom: 12px;
 }
 
-/* 7. Word-by-Word Grid (Strictly 3 boxes per row) */
+/* 8. Word-by-Word Grid (Strictly 3 boxes per row) */
 .word-by-word-container {
     display: flex;
     flex-wrap: wrap;
@@ -109,7 +115,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #f8f9fa !important;
+    background-color: #ffffff !important;
     border: 1px solid #edf2f7 !important;
     padding: 6px 4px;
     border-radius: 6px;
@@ -120,7 +126,7 @@ body {
 }
 
 .word-box:hover {
-    background-color: #edf2f7 !important;
+    background-color: #f8f9fa !important;
 }
 
 .arabic-word {
@@ -132,11 +138,11 @@ body {
     text-align: center;
 }
 
-/* অবিন্যস্ত/সাধারণ অনুবাদ (পুরোপুরি স্পষ্ট ডার্ক/কালো লেখা) */
+/* অবিন্যস্ত/সাধারণ অনুবাদ (গাঢ় কালো স্পষ্ট বর্ণ) */
 .verified-meaning,
-.verified-meaning[style*="#2d3748"] {
+.verified-meaning[style*="#008744"] {
     font-size: 13.5px;
-    color: #2d3748 !important;
+    color: #000000 !important;
     direction: ltr;
     text-align: center;
     line-height: 1.4;
@@ -144,7 +150,7 @@ body {
 }
 
 /* বিশ্লেষণ করা ভেরিফাইড শব্দ (উজ্জ্বল সবুজ রঙ) */
-.verified-meaning[style*="#008744"],
+.verified-meaning[style*="#2d3748"],
 .verified-meaning[style*="#28a745"],
 .verified-meaning[style*="rgb(40, 167, 69)"],
 .verified-meaning[style*="green"] {
@@ -152,7 +158,7 @@ body {
     font-weight: bold;
 }
 
-/* 8. Transliteration Box */
+/* 9. Transliteration Box */
 .transliteration-box {
     display: none;
     margin-top: 8px;
@@ -184,7 +190,7 @@ body {
     background-color: #0d3b2e !important;
 }
 
-/* 9. Full Sentence Translation */
+/* 10. Full Sentence Translation */
 .full-translation {
     background-color: #f8f9fa !important;
     border-left: 4px solid #1b4332 !important;
@@ -196,7 +202,7 @@ body {
     line-height: 1.8;
 }
 
-/* 10. Copy / Share Buttons */
+/* 11. Copy / Share Buttons */
 .action-buttons {
     display: flex;
     gap: 8px;
@@ -207,7 +213,7 @@ body {
     margin: 0;
 }
 
-/* 11. Navigation Buttons */
+/* 12. Navigation Buttons */
 .navigation {
     display: flex;
     justify-content: space-between;
