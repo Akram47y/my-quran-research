@@ -115,6 +115,45 @@
             color: #2c3e50;
             direction: ltr;
         }
+
+        /* কপি ও শেয়ার বাটন স্টাইল (ছবির সাথে মিল রেখে) */
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .btn-copy {
+            background-color: #1b4332;
+            color: #ffffff;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13.5px;
+            font-weight: bold;
+            transition: opacity 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .btn-share {
+            background-color: #2b3445;
+            color: #ffffff;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13.5px;
+            font-weight: bold;
+            transition: opacity 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .btn-copy:hover, .btn-share:hover {
+            opacity: 0.9;
+        }
+
         .navigation {
             display: flex;
             justify-content: space-between;
@@ -137,6 +176,7 @@
         .nav-btn:hover {
             background-color: #0d3b2e;
         }
+
         /* উচ্চারণ দেখান/লুকান এবং এর বাক্সের স্টাইল */
         .transliteration-box {
             display: none;
@@ -184,9 +224,8 @@
         <div class="bismillah-meaning">পরম মমতাময়, সদামমতাবদ্ধ আল্লাহর নামে।</div>
     </div>
 
-    <!-- আয়াত প্লেসহোল্ডার (পরবর্তীতে আয়াত অনুবাদ বসানোর জন্য প্রস্তুত) -->
-    <!-- উদাহরণস্বরূপ ৪:১ আয়াত কাঠামোর টেমপ্লেট -->
-        <div class="verse-card">
+    <!-- আয়াত ৪:৬৮ -->
+    <div class="verse-card" id="verse-4-68">
         <div class="verse-num">৪:৬৮</div>
         <div class="word-by-word-container">
             <div class="word-box">
@@ -210,7 +249,13 @@
         <div class="full-translation">
             এবং অবশ্যই আমরা তাদেরকে সুদৃঢ় পথের দিশা দিতাম।
         </div>
+
+        <!-- কপি ও শেয়ার বাটন -->
+        <div class="action-buttons">
+            <button class="btn-copy" onclick="copyVerse('verse-4-68', '৪:৬৮')">📋 কপি</button>
+            <button class="btn-share" onclick="shareVerse('verse-4-68', '৪:৬৮')">🔗 শেয়ার</button>
         </div>
+    </div>
 
     <!-- নেভিগেশন -->
     <div class="navigation">
@@ -221,31 +266,71 @@
 </div>
 
 <script>
+// উচ্চারণ দেখানো ও লুকানোর ফাংশন
 function toggleTransliteration() {
     const transBoxes = document.querySelectorAll('.transliteration-box');
     const btn = document.getElementById('transToggleBtn');
 
     if (transBoxes.length === 0) return;
 
-    // বর্তমান অবস্থা চেক করা (দেখা যাচ্ছে কি না)
     const isHidden = window.getComputedStyle(transBoxes[0]).display === 'none';
 
     transBoxes.forEach(box => {
         box.style.display = isHidden ? 'block' : 'none';
     });
 
-    // বাটনের টেক্সট পরিবর্তন
     if (isHidden) {
         btn.innerHTML = '🙈 উচ্চারণ লুকান';
     } else {
         btn.innerHTML = '👁️ উচ্চারণ দেখান';
     }
 }
-      // সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
-  window.addEventListener('DOMContentLoaded', () => {
+
+// আয়াত কপি করার ফাংশন
+function copyVerse(verseId, verseNum) {
+    const card = document.getElementById(verseId);
+    
+    // আরবি শব্দগুলো সংযুক্ত করা
+    const arabicWords = Array.from(card.querySelectorAll('.arabic-word'))
+                             .map(el => el.innerText.trim())
+                             .join(' ');
+    
+    // অনুবাদ নেওয়া
+    const translation = card.querySelector('.full-translation').innerText.trim();
+    
+    const textToCopy = `সূরা আন-নিসা [${verseNum}]\n\n${arabicWords}\n\nঅনুবাদ: ${translation}`;
+
+    navigator.clipboard.writeText(textToCopy).then(() => {
+        alert(`আয়াত ${verseNum} সফলভাবে কপি হয়েছে!`);
+    }).catch(err => {
+        console.error('কপি করতে সমস্যা হয়েছে: ', err);
+    });
+}
+
+// আয়াত শেয়ার করার ফাংশন
+function shareVerse(verseId, verseNum) {
+    const card = document.getElementById(verseId);
+    const translation = card.querySelector('.full-translation').innerText.trim();
+    const shareText = `সূরা আন-নিসা [আয়াত ${verseNum}]\n${translation}`;
+    const shareUrl = window.location.href;
+
+    if (navigator.share) {
+        navigator.share({
+            title: `সূরা আন-নিসা - আয়াত ${verseNum}`,
+            text: shareText,
+            url: shareUrl
+        }).catch(err => console.log('শেয়ার বাতিল করা হয়েছে', err));
+    } else {
+        navigator.clipboard.writeText(`${shareText}\n${shareUrl}`);
+        alert('আপনার ব্রাউজারে সরাসরি শেয়ার সাপোর্ট করে না। আয়াতের তথ্য ও লিংক কপি করা হয়েছে!');
+    }
+}
+
+// সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
+window.addEventListener('DOMContentLoaded', () => {
     const currentSurah = {
-      surahName: "সূরা আন-নিসা",
-      surahUrl: "surah-004.html"
+        surahName: "সূরা আন-নিসা",
+        surahUrl: "surah-004.html"
     };
 
     let surahList = JSON.parse(localStorage.getItem('lastReadQuranList')) || [];
@@ -253,13 +338,13 @@ function toggleTransliteration() {
     surahList.unshift(currentSurah);
 
     if (surahList.length > 5) {
-      surahList.pop();
+        surahList.pop();
     }
 
     localStorage.setItem('lastReadQuranList', JSON.stringify(surahList));
-  });
-    
+});
 </script>
 
 </body>
 </html>
+
