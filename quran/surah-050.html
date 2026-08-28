@@ -203,7 +203,7 @@
 
     <!-- নেভিগেশন -->
     <div class="navigation">
-        <a href="surah-049.html" class="nav-btn">&larr; সূরা আল-হুজুরাত</a>
+        <a href="surah-049.html" class="nav-btn">&larr; পূর্ববর্তী সূরা</a>
         <a href="index.html" class="nav-btn">সূরা তালিকা</a>
         <a href="surah-051.html" class="nav-btn">পরবর্তী সূরা &rarr;</a>
     </div>
@@ -230,6 +230,24 @@ function toggleTransliteration() {
         btn.innerHTML = '👁️ উচ্চারণ দেখান';
     }
 }
+      // সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
+  window.addEventListener('DOMContentLoaded', () => {
+    const currentSurah = {
+      surahName: "সূরা ক্বাফ",
+      surahUrl: "surah-050.html"
+    };
+
+    let surahList = JSON.parse(localStorage.getItem('lastReadQuranList')) || [];
+    surahList = surahList.filter(item => item.surahName !== currentSurah.surahName);
+    surahList.unshift(currentSurah);
+
+    if (surahList.length > 5) {
+      surahList.pop();
+    }
+
+    localStorage.setItem('lastReadQuranList', JSON.stringify(surahList));
+  });
+    
 </script>
 
 </body>
