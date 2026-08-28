@@ -116,6 +116,45 @@
             color: #2c3e50; /* মূল অনুবাদ গাঢ় ধূসর/কালো */
             direction: ltr;
         }
+
+        /* কপি ও শেয়ার বাটন স্টাইল */
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .btn-copy {
+            background-color: #1b4332;
+            color: #ffffff;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13.5px;
+            font-weight: bold;
+            transition: opacity 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .btn-share {
+            background-color: #2b3445;
+            color: #ffffff;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13.5px;
+            font-weight: bold;
+            transition: opacity 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .btn-copy:hover, .btn-share:hover {
+            opacity: 0.9;
+        }
+
         .navigation {
             display: flex;
             justify-content: space-between;
@@ -147,9 +186,9 @@
         <div class="header">
             <h1>সূরা আল-ইখলাস</h1>
             <div style="text-align: center; margin: 15px 0;">
-    <button id="pronun-toggle" onclick="togglePronunciation()" style="background-color: #1a5d1a; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: bold;">
-        <span id="pronun-icon">👁️</span> <span id="pronun-text">উচ্চারণ দেখান</span>
-    </button>
+                <button id="pronun-toggle" onclick="togglePronunciation()" style="background-color: #1a5d1a; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: bold;">
+                    <span id="pronun-icon">👁️</span> <span id="pronun-text">উচ্চারণ দেখান</span>
+                </button>
             </div>
             <div class="meta-info">সূরা ১১২ | আয়াত: ৪ | মাক্কী</div>
         </div>
@@ -181,14 +220,19 @@
                     <span class="verified-meaning">একক</span>
                 </div>
             </div>
-            <!-- ১১০:১ উচ্চারণ সেকশন (যথাযথ পরিবর্তন করে ১১২:১ এর জন্য) -->
-<div class="pronunciation-box" style="display: none; background-color: #f8fafc; border-left: 3px solid #1a5d1a; padding: 12px 15px; margin-bottom: 10px; border-radius: 4px;">
-    <p style="margin: 0; font-size: 15px; color: #2d3748; line-height: 1.6;">
-        <strong style="color: #1a5d1a;">উচ্চারণ:</strong> ক্বুল হুওয়াল্লা-হু আহাদ।
-    </p>
-</div>
+            <!-- ১১২:১ উচ্চারণ সেকশন -->
+            <div class="pronunciation-box" style="display: none; background-color: #f8fafc; border-left: 3px solid #1a5d1a; padding: 12px 15px; margin-bottom: 10px; border-radius: 4px;">
+                <p style="margin: 0; font-size: 15px; color: #2d3748; line-height: 1.6;">
+                    <strong style="color: #1a5d1a;">উচ্চারণ:</strong> ক্বুল হুওয়াল্লা-হু আহাদ।
+                </p>
+            </div>
             <div class="full-translation">
                 "বলো, তিনিই আল্লাহ, একক।"
+            </div>
+            <!-- কপি ও শেয়ার বাটন -->
+            <div class="action-buttons">
+                <button class="btn-copy" onclick="copyVerse(this)">📋 কপি</button>
+                <button class="btn-share" onclick="shareVerse(this)">🔗 শেয়ার</button>
             </div>
         </div>
 
@@ -206,13 +250,18 @@
                 </div>
             </div>
             <!-- ১১২:২ উচ্চারণ সেকশন -->
-<div class="pronunciation-box" style="display: none; background-color: #f8fafc; border-left: 3px solid #1a5d1a; padding: 12px 15px; margin-bottom: 10px; border-radius: 4px;">
-    <p style="margin: 0; font-size: 15px; color: #2d3748; line-height: 1.6;">
-        <strong style="color: #1a5d1a;">উচ্চারণ:</strong> আল্লা-হুচ্ছামাদ।
-    </p>
-</div>
+            <div class="pronunciation-box" style="display: none; background-color: #f8fafc; border-left: 3px solid #1a5d1a; padding: 12px 15px; margin-bottom: 10px; border-radius: 4px;">
+                <p style="margin: 0; font-size: 15px; color: #2d3748; line-height: 1.6;">
+                    <strong style="color: #1a5d1a;">উচ্চারণ:</strong> আল্লা-হুচ্ছামাদ।
+                </p>
+            </div>
             <div class="full-translation">
                 "আল্লাহ, সর্বাশ্রয়।"
+            </div>
+            <!-- কপি ও শেয়ার বাটন -->
+            <div class="action-buttons">
+                <button class="btn-copy" onclick="copyVerse(this)">📋 কপি</button>
+                <button class="btn-share" onclick="shareVerse(this)">🔗 শেয়ার</button>
             </div>
         </div>
 
@@ -238,13 +287,18 @@
                 </div>
             </div>
             <!-- ১১২:৩ উচ্চারণ সেকশন -->
-<div class="pronunciation-box" style="display: none; background-color: #f8fafc; border-left: 3px solid #1a5d1a; padding: 12px 15px; margin-bottom: 10px; border-radius: 4px;">
-    <p style="margin: 0; font-size: 15px; color: #2d3748; line-height: 1.6;">
-        <strong style="color: #1a5d1a;">উচ্চারণ:</strong> লাম ইয়ালিদ ওয়া লাম ইউলাদ।
-    </p>
-</div>
+            <div class="pronunciation-box" style="display: none; background-color: #f8fafc; border-left: 3px solid #1a5d1a; padding: 12px 15px; margin-bottom: 10px; border-radius: 4px;">
+                <p style="margin: 0; font-size: 15px; color: #2d3748; line-height: 1.6;">
+                    <strong style="color: #1a5d1a;">উচ্চারণ:</strong> লাম ইয়ালিদ ওয়া লাম ইউলাদ।
+                </p>
+            </div>
             <div class="full-translation">
                 "তিনি জন্ম দেননি এবং তিনি জন্ম নেননি।"
+            </div>
+            <!-- কপি ও শেয়ার বাটন -->
+            <div class="action-buttons">
+                <button class="btn-copy" onclick="copyVerse(this)">📋 কপি</button>
+                <button class="btn-share" onclick="shareVerse(this)">🔗 শেয়ার</button>
             </div>
         </div>
 
@@ -274,13 +328,18 @@
                 </div>
             </div>
             <!-- ১১২:৪ উচ্চারণ সেকশন -->
-<div class="pronunciation-box" style="display: none; background-color: #f8fafc; border-left: 3px solid #1a5d1a; padding: 12px 15px; margin-bottom: 10px; border-radius: 4px;">
-    <p style="margin: 0; font-size: 15px; color: #2d3748; line-height: 1.6;">
-        <strong style="color: #1a5d1a;">উচ্চারণ:</strong> ওয়া লাম ইয়াকুল-লাহূ কুফুওয়ান আহাদ।
-    </p>
-</div>
+            <div class="pronunciation-box" style="display: none; background-color: #f8fafc; border-left: 3px solid #1a5d1a; padding: 12px 15px; margin-bottom: 10px; border-radius: 4px;">
+                <p style="margin: 0; font-size: 15px; color: #2d3748; line-height: 1.6;">
+                    <strong style="color: #1a5d1a;">উচ্চারণ:</strong> ওয়া লাম ইয়াকুল-লাহূ কুফুওয়ান আহাদ।
+                </p>
+            </div>
             <div class="full-translation">
                 "এবং তাঁর জন্য সমকক্ষ কেউ হয়নি।"
+            </div>
+            <!-- কপি ও শেয়ার বাটন -->
+            <div class="action-buttons">
+                <button class="btn-copy" onclick="copyVerse(this)">📋 কপি</button>
+                <button class="btn-share" onclick="shareVerse(this)">🔗 শেয়ার</button>
             </div>
         </div>
 
@@ -291,6 +350,7 @@
             <a href="surah-113.html" class="nav-btn">পরবর্তী সূরা →</a>
         </div>
     </div>
+
 <script>
 function togglePronunciation() {
     var pronunBoxes = document.querySelectorAll('.pronunciation-box');
@@ -313,7 +373,69 @@ function togglePronunciation() {
         if (btnIcon) btnIcon.textContent = '👁️';
     }
 }
-</script>
+
+// আয়াত কপি করার ফাংশন
+function copyVerse(button) {
+    const card = button.closest('.verse-card');
+    const verseNum = card.querySelector('.verse-num').innerText.trim();
     
+    // আরবি শব্দগুলো সাজানো
+    const arabicWords = Array.from(card.querySelectorAll('.arabic-word'))
+                             .map(el => el.innerText.trim())
+                             .join(' ');
+    
+    // পূর্ণ অনুবাদ নেওয়া
+    const translation = card.querySelector('.full-translation').innerText.trim();
+    
+    const textToCopy = `সূরা আল-ইখলাস [${verseNum}]\n\n${arabicWords}\n\nঅনুবাদ: ${translation}`;
+
+    navigator.clipboard.writeText(textToCopy).then(() => {
+        const originalText = button.innerText;
+        button.innerText = '✅ কপি হয়েছে!';
+        setTimeout(() => { button.innerText = originalText; }, 2000);
+    }).catch(err => {
+        console.error('কপি করতে সমস্যা হয়েছে: ', err);
+    });
+}
+
+// আয়াত শেয়ার করার ফাংশন
+function shareVerse(button) {
+    const card = button.closest('.verse-card');
+    const verseNum = card.querySelector('.verse-num').innerText.trim();
+    const translation = card.querySelector('.full-translation').innerText.trim();
+    const shareText = `সূরা আল-ইখলাস [আয়াত ${verseNum}]\n${translation}`;
+    const shareUrl = window.location.href;
+
+    if (navigator.share) {
+        navigator.share({
+            title: `সূরা আল-ইখলাস - আয়াত ${verseNum}`,
+            text: shareText,
+            url: shareUrl
+        }).catch(err => console.log('শেয়ার বাতিল করা হয়েছে', err));
+    } else {
+        navigator.clipboard.writeText(`${shareText}\n${shareUrl}`);
+        alert('আপনার ব্রাউজারে সরাসরি শেয়ার সাপোর্ট করে না। আয়াতের তথ্য ও লিংক কপি করা হয়েছে!');
+    }
+}
+
+// সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
+window.addEventListener('DOMContentLoaded', () => {
+    const currentSurah = {
+      surahName: "সূরা আল-ইখলাস",
+      surahUrl: "surah-112.html"
+    };
+
+    let surahList = JSON.parse(localStorage.getItem('lastReadQuranList')) || [];
+    surahList = surahList.filter(item => item.surahName !== currentSurah.surahName);
+    surahList.unshift(currentSurah);
+
+    if (surahList.length > 5) {
+      surahList.pop();
+    }
+
+    localStorage.setItem('lastReadQuranList', JSON.stringify(surahList));
+});
+</script>
+
 </body>
 </html>
