@@ -110,7 +110,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #1c2128;
+    background-color: #1c2128 !important;
     border: 1px solid #30363d;
     padding: 10px 4px;
     border-radius: 6px;
@@ -127,7 +127,7 @@ body {
 .arabic-word {
     font-family: 'Meaney', 'Amiri', 'Traditional Arabic', serif;
     font-size: 22px;
-    color: #e6edf3;
+    color: #ffffff !important;
     margin-bottom: 4px;
     direction: rtl;
     text-align: center;
