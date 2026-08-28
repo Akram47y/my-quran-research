@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>সূরা আন-নাস - কুরআন গবেষণা ও শিক্ষা</title>
+    <title>সূরা আন-নাস - কুরআন গবেষণা ও শব্দানুবাদ</title>
     <style>
         * {
             box-sizing: border-box;
@@ -137,17 +137,15 @@
         .nav-btn:hover {
             background-color: #0d3b2e;
         }
-        /* উচ্চারণ দেখান/লুকান এবং এর বাক্সের স্টাইল */
         .transliteration-box {
             display: none;
             margin-top: 8px;
-            margin-bottom: 5px;
-            padding: 6px 12px;
-            background-color: #f8f9fa;
+            margin-bottom: 10px;
+            padding: 8px 12px;
+            background-color: #f8fafc;
             border-left: 3px solid #1b4332;
             border-radius: 4px;
-            font-style: italic;
-            font-size: 0.95em;
+            font-size: 14.5px;
             color: #2c3e50;
         }
         .trans-toggle-btn {
@@ -160,11 +158,36 @@
             font-size: 13px;
             font-weight: bold;
             transition: background 0.2s;
-            margin-top: 4px;
+            margin-top: 10px;
             margin-bottom: 6px;
         }
         .trans-toggle-btn:hover {
             background-color: #0d3b2e;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .btn-copy, .btn-share {
+            background-color: #1b4332;
+            color: #ffffff;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: bold;
+            transition: opacity 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .btn-share {
+            background-color: #2b3445;
+        }
+        .btn-copy:hover, .btn-share:hover {
+            opacity: 0.9;
         }
     </style>
 </head>
@@ -181,23 +204,206 @@
     <!-- বিসমিল্লাহ -->
     <div class="bismillah-box">
         <span class="bismillah-arabic">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</span>
-        <div class="bismillah-meaning">পরম মমতাময়, সদামমতাবদ্ধ আল্লাহর নামে।</div>
+        <div class="bismillah-meaning">"পরম মমতাময়, সদামমতাবদ্ধ আল্লাহর নামে।"</div>
     </div>
 
-    <!-- আয়াত প্লেসহোল্ডার (পরবর্তীতে আয়াত অনুবাদ বসানোর জন্য প্রস্তুত) -->
-    <!-- উদাহরণস্বরূপ ১১৪:১ আয়াত কাঠামোর টেমপ্লেট -->
+    <!-- আয়াত ১১৪:১ -->
     <div class="verse-card">
         <div class="verse-num">১১৪:১</div>
         <div class="word-by-word-container">
-            <!-- শব্দ কার্ডসমূহ পরবর্তীতে এখানে বসবে -->
+            <div class="word-box">
+                <span class="arabic-word">قُلْ</span>
+                <span class="verified-meaning"><!-- শব্দ অর্থ --></span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">أَعُوذُ</span>
+                <span class="verified-meaning"><!-- শব্দ অর্থ --></span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">بِرَبِّ</span>
+                <span class="verified-meaning"><!-- শব্দ অর্থ --></span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">النَّاسِ</span>
+                <span class="verified-meaning"><!-- শব্দ অর্থ --></span>
+            </div>
         </div>
         
         <div class="transliteration-box">
-            <strong>উচ্চারণ:</strong> [এখানে আয়াতের সম্পূর্ণ উচ্চারণ থাকবে]
+            <strong style="color: #1b4332;">উচ্চারণ:</strong> ক্বুল আ'ঊজু বিরাব্বিন-না-স।
         </div>
 
         <div class="full-translation">
-            [এখানে সম্পূর্ণ অনুবাদের বাক্য থাকবে]
+            <!-- সাজানো অনুবাদ -->
+        </div>
+
+        <div class="action-buttons">
+            <button class="btn-copy" onclick="copyVerse(this)">📋 কপি</button>
+            <button class="btn-share" onclick="shareVerse(this)">🔗 শেয়ার</button>
+        </div>
+    </div>
+
+    <!-- আয়াত ১১৪:২ -->
+    <div class="verse-card">
+        <div class="verse-num">১১৪:২</div>
+        <div class="word-by-word-container">
+            <div class="word-box">
+                <span class="arabic-word">مَلِكِ</span>
+                <span class="verified-meaning"><!-- শব্দ অর্থ --></span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">النَّاسِ</span>
+                <span class="verified-meaning"><!-- শব্দ অর্থ --></span>
+            </div>
+        </div>
+        
+        <div class="transliteration-box">
+            <strong style="color: #1b4332;">উচ্চারণ:</strong> মালিকিন-না-স।
+        </div>
+
+        <div class="full-translation">
+            <!-- সাজানো অনুবাদ -->
+        </div>
+
+        <div class="action-buttons">
+            <button class="btn-copy" onclick="copyVerse(this)">📋 কপি</button>
+            <button class="btn-share" onclick="shareVerse(this)">🔗 শেয়ার</button>
+        </div>
+    </div>
+
+    <!-- আয়াত ১১৪:৩ -->
+    <div class="verse-card">
+        <div class="verse-num">১১৪:৩</div>
+        <div class="word-by-word-container">
+            <div class="word-box">
+                <span class="arabic-word">إِلَٰهِ</span>
+                <span class="verified-meaning"><!-- শব্দ অর্থ --></span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">النَّاسِ</span>
+                <span class="verified-meaning"><!-- শব্দ অর্থ --></span>
+            </div>
+        </div>
+        
+        <div class="transliteration-box">
+            <strong style="color: #1b4332;">উচ্চারণ:</strong> ইলা-হিন-না-স।
+        </div>
+
+        <div class="full-translation">
+            <!-- সাজানো অনুবাদ -->
+        </div>
+
+        <div class="action-buttons">
+            <button class="btn-copy" onclick="copyVerse(this)">📋 কপি</button>
+            <button class="btn-share" onclick="shareVerse(this)">🔗 শেয়ার</button>
+        </div>
+    </div>
+
+    <!-- আয়াত ১১৪:৪ -->
+    <div class="verse-card">
+        <div class="verse-num">১১৪:৪</div>
+        <div class="word-by-word-container">
+            <div class="word-box">
+                <span class="arabic-word">مِنْ</span>
+                <span class="verified-meaning"><!-- শব্দ অর্থ --></span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">شَرِّ</span>
+                <span class="verified-meaning"><!-- শব্দ অর্থ --></span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">الْوَسْوَاسِ</span>
+                <span class="verified-meaning"><!-- শব্দ অর্থ --></span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">الْخَنَّاسِ</span>
+                <span class="verified-meaning"><!-- শব্দ অর্থ --></span>
+            </div>
+        </div>
+        
+        <div class="transliteration-box">
+            <strong style="color: #1b4332;">উচ্চারণ:</strong> মিন শাররিল ওয়াসওয়া-সিল খান্না-স।
+        </div>
+
+        <div class="full-translation">
+            <!-- সাজানো অনুবাদ -->
+        </div>
+
+        <div class="action-buttons">
+            <button class="btn-copy" onclick="copyVerse(this)">📋 কপি</button>
+            <button class="btn-share" onclick="shareVerse(this)">🔗 শেয়ার</button>
+        </div>
+    </div>
+
+    <!-- আয়াত ১১৪:৫ -->
+    <div class="verse-card">
+        <div class="verse-num">১১৪:৫</div>
+        <div class="word-by-word-container">
+            <div class="word-box">
+                <span class="arabic-word">الَّذِي</span>
+                <span class="verified-meaning"><!-- শব্দ অর্থ --></span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">يُوَسْوِسُ</span>
+                <span class="verified-meaning"><!-- শব্দ অর্থ --></span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">فِي</span>
+                <span class="verified-meaning"><!-- শব্দ অর্থ --></span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">صُدُورِ</span>
+                <span class="verified-meaning"><!-- শব্দ অর্থ --></span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">النَّاسِ</span>
+                <span class="verified-meaning"><!-- শব্দ অর্থ --></span>
+            </div>
+        </div>
+        
+        <div class="transliteration-box">
+            <strong style="color: #1b4332;">উচ্চারণ:</strong> আল্লাজি ইউওয়াসউিসু ফি সুদু-রিন-না-স।
+        </div>
+
+        <div class="full-translation">
+            <!-- সাজানো অনুবাদ -->
+        </div>
+
+        <div class="action-buttons">
+            <button class="btn-copy" onclick="copyVerse(this)">📋 কপি</button>
+            <button class="btn-share" onclick="shareVerse(this)">🔗 শেয়ার</button>
+        </div>
+    </div>
+
+    <!-- আয়াত ১১৪:৬ -->
+    <div class="verse-card">
+        <div class="verse-num">১১৪:৬</div>
+        <div class="word-by-word-container">
+            <div class="word-box">
+                <span class="arabic-word">مِنَ</span>
+                <span class="verified-meaning"><!-- শব্দ অর্থ --></span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">الْجِنَّةِ</span>
+                <span class="verified-meaning"><!-- শব্দ অর্থ --></span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">وَالنَّاسِ</span>
+                <span class="verified-meaning"><!-- শব্দ অর্থ --></span>
+            </div>
+        </div>
+        
+        <div class="transliteration-box">
+            <strong style="color: #1b4332;">উচ্চারণ:</strong> মিনাল জিন্নাতি ওয়ান-না-স।
+        </div>
+
+        <div class="full-translation">
+            <!-- সাজানো অনুবাদ -->
+        </div>
+
+        <div class="action-buttons">
+            <button class="btn-copy" onclick="copyVerse(this)">📋 কপি</button>
+            <button class="btn-share" onclick="shareVerse(this)">🔗 শেয়ার</button>
         </div>
     </div>
 
@@ -216,21 +422,77 @@ function toggleTransliteration() {
 
     if (transBoxes.length === 0) return;
 
-    // বর্তমান অবস্থা চেক করা (দেখা যাচ্ছে কি না)
     const isHidden = window.getComputedStyle(transBoxes[0]).display === 'none';
 
     transBoxes.forEach(box => {
         box.style.display = isHidden ? 'block' : 'none';
     });
 
-    // বাটনের টেক্সট পরিবর্তন
     if (isHidden) {
         btn.innerHTML = '🙈 উচ্চারণ লুকান';
     } else {
         btn.innerHTML = '👁️ উচ্চারণ দেখান';
     }
 }
+
+function copyVerse(button) {
+    const card = button.closest('.verse-card');
+    const verseNum = card.querySelector('.verse-num').innerText.trim();
+    
+    const arabicWords = Array.from(card.querySelectorAll('.arabic-word'))
+                             .map(el => el.innerText.trim())
+                             .join(' ');
+    
+    const translation = card.querySelector('.full-translation').innerText.trim();
+    
+    const textToCopy = `সূরা আন-নাস [${verseNum}]\n\n${arabicWords}\n\nঅনুবাদ: ${translation}`;
+
+    navigator.clipboard.writeText(textToCopy).then(() => {
+        const originalText = button.innerText;
+        button.innerText = '✅ কপি হয়েছে!';
+        setTimeout(() => { button.innerText = originalText; }, 2000);
+    }).catch(err => {
+        console.error('কপি করতে সমস্যা হয়েছে: ', err);
+    });
+}
+
+function shareVerse(button) {
+    const card = button.closest('.verse-card');
+    const verseNum = card.querySelector('.verse-num').innerText.trim();
+    const translation = card.querySelector('.full-translation').innerText.trim();
+    const shareText = `সূরা আন-নাস [আয়াত ${verseNum}]\n${translation}`;
+    const shareUrl = window.location.href;
+
+    if (navigator.share) {
+        navigator.share({
+            title: `সূরা আন-নাস - আয়াত ${verseNum}`,
+            text: shareText,
+            url: shareUrl
+        }).catch(err => console.log('শেয়ার বাতিল করা হয়েছে', err));
+    } else {
+        navigator.clipboard.writeText(`${shareText}\n${shareUrl}`);
+        alert('আপনার ব্রাউজারে সরাসরি শেয়ার সাপোর্ট করে না। আয়াতের তথ্য ও লিংক কপি করা হয়েছে!');
+    }
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    const currentSurah = {
+      surahName: "সূরা আন-নাস",
+      surahUrl: "surah-114.html"
+    };
+
+    let surahList = JSON.parse(localStorage.getItem('lastReadQuranList')) || [];
+    surahList = surahList.filter(item => item.surahName !== currentSurah.surahName);
+    surahList.unshift(currentSurah);
+
+    if (surahList.length > 5) {
+      surahList.pop();
+    }
+
+    localStorage.setItem('lastReadQuranList', JSON.stringify(surahList));
+});
 </script>
 
 </body>
 </html>
+
