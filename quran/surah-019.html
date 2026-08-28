@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>সূরা মারইয়াম - কুরআন গবেষণা ও শিক্ষা</title>
+    <title>সূরা মারইয়াম - কুরআন গবেষণা ও শব্দানুবাদ</title>
     <style>
         * {
             box-sizing: border-box;
@@ -115,6 +115,45 @@
             color: #2c3e50;
             direction: ltr;
         }
+
+        /* কপি ও শেয়ার বাটন স্টাইল */
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .btn-copy {
+            background-color: #1b4332;
+            color: #ffffff;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13.5px;
+            font-weight: bold;
+            transition: opacity 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .btn-share {
+            background-color: #2b3445;
+            color: #ffffff;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13.5px;
+            font-weight: bold;
+            transition: opacity 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .btn-copy:hover, .btn-share:hover {
+            opacity: 0.9;
+        }
+
         .navigation {
             display: flex;
             justify-content: space-between;
@@ -184,75 +223,79 @@
         <div class="bismillah-meaning">পরম মমতাময়, সদামমতাবদ্ধ আল্লাহর নামে।</div>
     </div>
 
-    <!-- আয়াত প্লেসহোল্ডার (পরবর্তীতে আয়াত অনুবাদ বসানোর জন্য প্রস্তুত) -->
-    <!-- উদাহরণস্বরূপ ১৯:১ আয়াত কাঠামোর টেমপ্লেট -->
     <!-- সূরা ১৯:৩৭ আয়াত -->
-<div class="verse-card">
-    <div class="verse-num">১৯:৩৭</div>
-    <div class="word-by-word-container">
+    <div class="verse-card">
+        <div class="verse-num">১৯:৩৭</div>
+        <div class="word-by-word-container">
+            
+            <!-- فَاخْتَلَفَ - ফলে মতভেদ করল (কালো) -->
+            <div class="word-box">
+                <span class="arabic-word">فَاخْتَلَفَ</span>
+                <span class="verified-meaning" style="color: #2d3748;">ফলে মতভেদ করল</span>
+            </div>
+            <!-- الْأَحْزَابُ - দলসমূহ (কালো) -->
+            <div class="word-box">
+                <span class="arabic-word">الْأَحْزَابُ</span>
+                <span class="verified-meaning" style="color: #2d3748;">দলসমূহ</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">مِن</span>
+                <span class="verified-meaning" style="color: #008744;">থেকে</span>
+            </div>
+            <!-- بَيْنِهِمْ - তাদের মধ্যে (কালো) -->
+            <div class="word-box">
+                <span class="arabic-word">بَيْنِهِمْ</span>
+                <span class="verified-meaning" style="color: #2d3748;">তাদের মধ্যে</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">فَوَيْلٌ</span>
+                <span class="verified-meaning" style="color: #008744;">সুতরাং দুর্ভোগ</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">لِّلَّذِينَ</span>
+                <span class="verified-meaning" style="color: #008744;">তাদের জন্য যারা</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">كَفَرُوا</span>
+                <span class="verified-meaning" style="color: #008744;">আচ্ছাদন করেছে</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">مِن</span>
+                <span class="verified-meaning" style="color: #008744;">থেকে</span>
+            </div>
+            <!-- مَّشْهَدِ - প্রত্যক্ষতা (কালো) -->
+            <div class="word-box">
+                <span class="arabic-word">مَّشْهَدِ</span>
+                <span class="verified-meaning" style="color: #2d3748;">প্রত্যক্ষতা</span>
+            </div>
+            <div class="word-box">
+                <span class="arabic-word">يَوْمٍ</span>
+                <span class="verified-meaning" style="color: #008744;">সময়ের</span>
+            </div>
+            <!-- عَظِيمٍ - মহা (কালো) -->
+            <div class="word-box">
+                <span class="arabic-word">عَظِيمٍ</span>
+                <span class="verified-meaning" style="color: #2d3748;">মহা</span>
+            </div>
+            
+        </div>
         
-        <!-- فَاخْتَلَفَ - ফলে মতভেদ করল (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">فَاخْتَلَفَ</span>
-            <span class="verified-meaning" style="color: #2d3748;">ফলে মতভেদ করল</span>
-        </div>
-        <!-- الْأَحْزَابُ - দলসমূহ (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">الْأَحْزَابُ</span>
-            <span class="verified-meaning" style="color: #2d3748;">দলসমূহ</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">مِن</span>
-            <span class="verified-meaning" style="color: #008744;">থেকে</span>
-        </div>
-        <!-- بَيْنِهِمْ - তাদের মধ্যে (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">بَيْنِهِمْ</span>
-            <span class="verified-meaning" style="color: #2d3748;">তাদের মধ্যে</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">فَوَيْلٌ</span>
-            <span class="verified-meaning" style="color: #008744;">সুতরাং দুর্ভোগ</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">لِّلَّذِينَ</span>
-            <span class="verified-meaning" style="color: #008744;">তাদের জন্য যারা</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">كَفَرُوا</span>
-            <span class="verified-meaning" style="color: #008744;">আচ্ছাদন করেছে</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">مِن</span>
-            <span class="verified-meaning" style="color: #008744;">থেকে</span>
-        </div>
-        <!-- مَّشْهَدِ - প্রত্যক্ষতা (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">مَّشْهَدِ</span>
-            <span class="verified-meaning" style="color: #2d3748;">প্রত্যক্ষতা</span>
-        </div>
-        <div class="word-box">
-            <span class="arabic-word">يَوْمٍ</span>
-            <span class="verified-meaning" style="color: #008744;">সময়ের</span>
-        </div>
-        <!-- عَظِيمٍ - মহা (কালো) -->
-        <div class="word-box">
-            <span class="arabic-word">عَظِيمٍ</span>
-            <span class="verified-meaning" style="color: #2d3748;">মহা</span>
+        <!-- উচ্চারণ -->
+        <div class="transliteration-box">
+            <strong>উচ্চারণ:</strong> ফাখতালাফাল আহযাবু মিম বাইনিহিম, ফাওয়াইলুল লিল্লাযীনা কাফারূ মিম মাশহাদি ইয়াওমিন 'আযীম
         </div>
         
+        <!-- পূর্ণ অনুবাদ -->
+        <div class="full-translation">
+            ফলে তাদের মধ্যে থেকে দলসমূহ মতভেদ করল; সুতরাং দুর্ভোগ তাদের জন্য যারা আচ্ছাদন করেছে, মহা সময়ের প্রত্যক্ষতা থেকে।
+        </div>
+
+        <!-- কপি ও শেয়ার বাটন -->
+        <div class="action-buttons">
+            <button class="btn-copy" onclick="copyVerse(this)">📋 কপি</button>
+            <button class="btn-share" onclick="shareVerse(this)">🔗 শেয়ার</button>
+        </div>
     </div>
-    
-    <!-- উচ্চারণ -->
-    <div class="transliteration-box">
-        <strong>উচ্চারণ:</strong> ফাখতালাফাল আহযাবু মিম বাইনিহিম, ফাওয়াইলুল লিল্লাযীনা কাফারূ মিম মাশহাদি ইয়াওমিন 'আযীম
-    </div>
-    
-    <!-- পূর্ণ অনুবাদ -->
-    <div class="full-translation">
-        ফলে তাদের মধ্যে থেকে দলসমূহ মতভেদ করল; সুতরাং দুর্ভোগ তাদের জন্য যারা আচ্ছাদন করেছে, মহা সময়ের প্রত্যক্ষতা থেকে।
-    </div>
-</div>
 
     <!-- নেভিগেশন -->
     <div class="navigation">
@@ -283,8 +326,51 @@ function toggleTransliteration() {
         btn.innerHTML = '👁️ উচ্চারণ দেখান';
     }
 }
-      // সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
-  window.addEventListener('DOMContentLoaded', () => {
+
+// আয়াত কপি করার ফাংশন
+function copyVerse(button) {
+    const card = button.closest('.verse-card');
+    const verseNum = card.querySelector('.verse-num').innerText.trim();
+    
+    // আরবি শব্দগুলো সাজানো
+    const arabicWords = Array.from(card.querySelectorAll('.arabic-word'))
+                             .map(el => el.innerText.trim())
+                             .join(' ');
+    
+    // পূর্ণ অনুবাদ নেওয়া
+    const translation = card.querySelector('.full-translation').innerText.trim();
+    
+    const textToCopy = `সূরা মারইয়াম [${verseNum}]\n\n${arabicWords}\n\nঅনুবাদ: ${translation}`;
+
+    navigator.clipboard.writeText(textToCopy).then(() => {
+        alert(`আয়াত ${verseNum} সফলভাবে কপি হয়েছে!`);
+    }).catch(err => {
+        console.error('কপি করতে সমস্যা হয়েছে: ', err);
+    });
+}
+
+// আয়াত শেয়ার করার ফাংশন
+function shareVerse(button) {
+    const card = button.closest('.verse-card');
+    const verseNum = card.querySelector('.verse-num').innerText.trim();
+    const translation = card.querySelector('.full-translation').innerText.trim();
+    const shareText = `সূরা মারইয়াম [আয়াত ${verseNum}]\n${translation}`;
+    const shareUrl = window.location.href;
+
+    if (navigator.share) {
+        navigator.share({
+            title: `সূরা মারইয়াম - আয়াত ${verseNum}`,
+            text: shareText,
+            url: shareUrl
+        }).catch(err => console.log('শেয়ার বাতিল করা হয়েছে', err));
+    } else {
+        navigator.clipboard.writeText(`${shareText}\n${shareUrl}`);
+        alert('আপনার ব্রাউজারে সরাসরি শেয়ার সাপোর্ট করে না। আয়াতের তথ্য ও লিংক কপি করা হয়েছে!');
+    }
+}
+
+// সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
+window.addEventListener('DOMContentLoaded', () => {
     const currentSurah = {
       surahName: "সূরা মারইয়াম",
       surahUrl: "surah-019.html"
@@ -299,8 +385,7 @@ function toggleTransliteration() {
     }
 
     localStorage.setItem('lastReadQuranList', JSON.stringify(surahList));
-  });
-    
+});
 </script>
 
 </body>
