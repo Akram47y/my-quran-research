@@ -1,6 +1,6 @@
 /* ==========================================
    Quran Research & Translation Project
-   Global Light Theme Stylesheet (style.css)
+   Pure Light Theme Stylesheet (style.css)
    ========================================== */
 
 /* 1. Reset & Global Box Sizing */
@@ -10,11 +10,11 @@
     padding: 0;
 }
 
-/* 2. Base Setup (Light Theme) */
+/* 2. Base Setup (Light Background) */
 body {
     font-family: 'SolaimanLipi', 'Kalpurush', 'Segoe UI', Arial, sans-serif;
-    background-color: #f4f6f8;
-    color: #2c3e50;
+    background-color: #f4f6f8 !important;
+    color: #2c3e50 !important;
     line-height: 1.8;
     padding: 15px;
 }
@@ -23,7 +23,7 @@ body {
 .container {
     max-width: 850px;
     margin: 0 auto;
-    background: #ffffff;
+    background: #ffffff !important;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -39,21 +39,21 @@ body {
 
 .header h1 {
     font-size: 26px;
-    color: #1b4332;
+    color: #1b4332 !important;
     margin-bottom: 8px;
     font-weight: 700;
 }
 
 .header .meta-info {
-    color: #666;
+    color: #666666 !important;
     font-size: 14px;
     margin-top: 6px;
 }
 
 /* 5. Bismillah Box */
 .bismillah-box {
-    background-color: #f8f9fa;
-    border: 1px solid #e2e8f0;
+    background-color: #f8f9fa !important;
+    border: 1px solid #e2e8f0 !important;
     border-radius: 8px;
     padding: 15px;
     text-align: center;
@@ -63,7 +63,7 @@ body {
 .bismillah-arabic {
     font-family: 'Meaney', 'Amiri', 'Traditional Arabic', serif;
     font-size: 24px;
-    color: #1b4332;
+    color: #1b4332 !important;
     margin-bottom: 8px;
     display: block;
     line-height: 1.6;
@@ -71,17 +71,17 @@ body {
 
 .bismillah-meaning {
     font-size: 15px;
-    color: #28a745;
+    color: #008744 !important;
     font-weight: bold;
 }
 
-/* 6. Verse Card (Optimized for Performance) */
+/* 6. Verse Card */
 .verse-card {
-    border: 1px solid #e0e6ed;
+    border: 1px solid #e0e6ed !important;
     border-radius: 8px;
     padding: 15px;
     margin-bottom: 20px;
-    background-color: #ffffff;
+    background-color: #ffffff !important;
     content-visibility: auto;
     contain-intrinsic-size: 0 250px;
     scroll-margin-top: 20px;
@@ -90,7 +90,7 @@ body {
 .verse-num {
     font-size: 14px;
     font-weight: bold;
-    color: #1b4332;
+    color: #1b4332 !important;
     margin-bottom: 12px;
 }
 
@@ -109,8 +109,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #f8f9fa;
-    border: 1px solid #edf2f7;
+    background-color: #f8f9fa !important;
+    border: 1px solid #edf2f7 !important;
     padding: 6px 4px;
     border-radius: 6px;
     width: calc(33.333% - 6px);
@@ -120,7 +120,7 @@ body {
 }
 
 .word-box:hover {
-    background-color: #edf2f7;
+    background-color: #edf2f7 !important;
 }
 
 .arabic-word {
@@ -132,43 +132,43 @@ body {
     text-align: center;
 }
 
-/* সাধারণ/অবিশ্লেষিত অনুবাদের কালার (HTML-এর #008744 ওভাররাইড করে পুরোপুরি কালো করা হলো) */
+/* অবিন্যস্ত/সাধারণ অনুবাদ (পুরোপুরি স্পষ্ট ডার্ক/কালো লেখা) */
 .verified-meaning,
-.verified-meaning[style*="#008744"] {
+.verified-meaning[style*="#2d3748"] {
     font-size: 13.5px;
-    color: #111827 !important;
+    color: #2d3748 !important;
     direction: ltr;
     text-align: center;
     line-height: 1.4;
     font-weight: normal;
 }
 
-/* বিশ্লেষণ করা ভেরিফাইড শব্দ (HTML-এর #2d3748 ওভাররাইড করে সবুজ করা হলো) */
-.verified-meaning[style*="#2d3748"],
+/* বিশ্লেষণ করা ভেরিফাইড শব্দ (উজ্জ্বল সবুজ রঙ) */
+.verified-meaning[style*="#008744"],
 .verified-meaning[style*="#28a745"],
 .verified-meaning[style*="rgb(40, 167, 69)"],
 .verified-meaning[style*="green"] {
-    color: #28a745 !important;
+    color: #008744 !important;
     font-weight: bold;
 }
 
-/* 8. Transliteration (Pronunciation) Box */
+/* 8. Transliteration Box */
 .transliteration-box {
     display: none;
     margin-top: 8px;
     margin-bottom: 8px;
     padding: 6px 12px;
-    background-color: #f8f9fa;
-    border-left: 3px solid #1b4332;
+    background-color: #f8f9fa !important;
+    border-left: 3px solid #1b4332 !important;
     border-radius: 4px;
     font-style: italic;
     font-size: 0.95em;
-    color: #2c3e50;
+    color: #2c3e50 !important;
 }
 
 .trans-toggle-btn {
-    background-color: #1b4332;
-    color: #ffffff;
+    background-color: #1b4332 !important;
+    color: #ffffff !important;
     border: none;
     padding: 6px 14px;
     border-radius: 6px;
@@ -181,17 +181,17 @@ body {
 }
 
 .trans-toggle-btn:hover {
-    background-color: #0d3b2e;
+    background-color: #0d3b2e !important;
 }
 
 /* 9. Full Sentence Translation */
 .full-translation {
-    background-color: #f8f9fa;
-    border-left: 4px solid #1b4332;
+    background-color: #f8f9fa !important;
+    border-left: 4px solid #1b4332 !important;
     padding: 12px 15px;
     border-radius: 0 6px 6px 0;
     font-size: 15.5px;
-    color: #2c3e50;
+    color: #2c3e50 !important;
     direction: ltr;
     line-height: 1.8;
 }
@@ -213,15 +213,15 @@ body {
     justify-content: space-between;
     margin-top: 30px;
     padding-top: 15px;
-    border-top: 2px solid #eef2f5;
+    border-top: 2px solid #eef2f5 !important;
     gap: 10px;
     flex-wrap: wrap;
 }
 
 .nav-btn {
     text-decoration: none;
-    color: #ffffff;
-    background-color: #1b4332;
+    color: #ffffff !important;
+    background-color: #1b4332 !important;
     padding: 10px 18px;
     border-radius: 6px;
     font-size: 14px;
@@ -230,5 +230,6 @@ body {
 }
 
 .nav-btn:hover {
-    background-color: #0d3b2e;
+    background-color: #0d3b2e !important;
 }
+
