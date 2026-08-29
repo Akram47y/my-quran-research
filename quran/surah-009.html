@@ -185,46 +185,7 @@
     </div>
 </div>
 
-<script>
-function toggleTransliteration() {
-    const transBoxes = document.querySelectorAll('.transliteration-box');
-    const btn = document.getElementById('transToggleBtn');
-
-    if (transBoxes.length === 0) return;
-
-    // বর্তমান অবস্থা চেক করা (দেখা যাচ্ছে কি না)
-    const isHidden = window.getComputedStyle(transBoxes[0]).display === 'none';
-
-    transBoxes.forEach(box => {
-        box.style.display = isHidden ? 'block' : 'none';
-    });
-
-    // বাটনের টেক্সট পরিবর্তন
-    if (isHidden) {
-        btn.innerHTML = '🙈 উচ্চারণ লুকান';
-    } else {
-        btn.innerHTML = '👁️ উচ্চারণ দেখান';
-    }
-}
-      // সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
-  window.addEventListener('DOMContentLoaded', () => {
-    const currentSurah = {
-      surahName: "সূরা আত-তাওবাহ",
-      surahUrl: "surah-009.html"
-    };
-
-    let surahList = JSON.parse(localStorage.getItem('lastReadQuranList')) || [];
-    surahList = surahList.filter(item => item.surahName !== currentSurah.surahName);
-    surahList.unshift(currentSurah);
-
-    if (surahList.length > 5) {
-      surahList.pop();
-    }
-
-    localStorage.setItem('lastReadQuranList', JSON.stringify(surahList));
-  });
-    
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
