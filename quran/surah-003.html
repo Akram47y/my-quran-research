@@ -108,11 +108,6 @@
         <div class="full-translation">
             "পূর্বে থেকে মানবসমষ্টির জন্য দিশা হিসেবে; এবং তিনি পার্থক্যকারী অবতীর্ণ করেছেন। নিশ্চয়ই যারা আল্লাহর নিদর্শনসমূহে আচ্ছাদন করেছে, তাদের জন্য কঠিন শাস্তি; আর আল্লাহ পরাক্রমশালী, প্রতিশোধের অধিকারী।"
         </div>
-
-        <div class="action-buttons" style="display: flex; gap: 8px; margin-top: 10px;">
-    <button class="trans-toggle-btn" style="margin: 0;" onclick="copyVerse(this)">📋 কপি</button>
-    <button class="trans-toggle-btn" style="margin: 0; background-color: #2d3748;" onclick="shareVerse(this)">🔗 শেয়ার</button>
-        </div>
         
     </div>
 
@@ -162,10 +157,6 @@
             "নিশ্চয়ই আল্লাহ আমার প্রতিপালক এবং তোমাদের প্রতিপালক। অতএব তাঁর দাসত্ব করো। এটাই সুদৃঢ় পথ।"
         </div>
 
-        <div class="action-buttons" style="display: flex; gap: 8px; margin-top: 10px;">
-    <button class="trans-toggle-btn" style="margin: 0;" onclick="copyVerse(this)">📋 কপি</button>
-    <button class="trans-toggle-btn" style="margin: 0; background-color: #2d3748;" onclick="shareVerse(this)">🔗 শেয়ার</button>
-        </div>
     </div>
 
     <!-- আয়াত ৩:১৩৮ -->
@@ -205,11 +196,7 @@
         <div class="full-translation">
             "এটি মানবসমষ্টির জন্য স্পষ্টীকরণ, এবং দিশা, এবং আত্মরক্ষাকারীদের জন্য উপদেশ।"
         </div>
-
-        <div class="action-buttons" style="display: flex; gap: 8px; margin-top: 10px;">
-    <button class="trans-toggle-btn" style="margin: 0;" onclick="copyVerse(this)">📋 কপি</button>
-    <button class="trans-toggle-btn" style="margin: 0; background-color: #2d3748;" onclick="shareVerse(this)">🔗 শেয়ার</button>
-        </div>
+    
     </div>
 
     <!-- নেভিগেশন -->
@@ -225,86 +212,7 @@
     </div>
 </div>
 
-<script>
-// উচ্চারণ দেখানো ও লুকানোর ফাংশন
-function toggleTransliteration() {
-    const transBoxes = document.querySelectorAll('.transliteration-box');
-    const btn = document.getElementById('transToggleBtn');
-    
-    if (transBoxes.length === 0) return;
-    
-    const isHidden = window.getComputedStyle(transBoxes[0]).display === 'none';
-    
-    transBoxes.forEach(box => {
-        box.style.display = isHidden ? 'block' : 'none';
-    });
-    
-    if (isHidden) {
-        btn.innerHTML = '🙈 উচ্চারণ লুকান';
-    } else {
-        btn.innerHTML = '👁️ উচ্চারণ দেখান';
-    }
-}
-
-// আয়াত কপি করার ফাংশন
-function copyVerse(verseId, verseNum) {
-    const card = document.getElementById(verseId);
-    
-    // আরবি শব্দসমূহ একত্রিত করা
-    const arabicWords = Array.from(card.querySelectorAll('.arabic-word'))
-                             .map(el => el.innerText.trim())
-                             .join(' ');
-    
-    // পূর্ণাঙ্গ অনুবাদ নেওয়া
-    const translation = card.querySelector('.full-translation').innerText.trim();
-    
-    const textToCopy = `সূরা আল-ইমরান [${verseNum}]\n\n${arabicWords}\n\nঅনুবাদ: ${translation}`;
-
-    navigator.clipboard.writeText(textToCopy).then(() => {
-        alert(`আয়াত ${verseNum} সফলভাবে কপি হয়েছে!`);
-    }).catch(err => {
-        console.error('কপি করতে সমস্যা হয়েছে: ', err);
-    });
-}
-
-// আয়াত শেয়ার করার ফাংশন
-function shareVerse(verseId, verseNum) {
-    const card = document.getElementById(verseId);
-    const translation = card.querySelector('.full-translation').innerText.trim();
-    const shareText = `সূরা আল-ইমরান [আয়াত ${verseNum}]\n${translation}`;
-    const shareUrl = window.location.href;
-
-    if (navigator.share) {
-        navigator.share({
-            title: `সূরা আল-ইমরান - আয়াত ${verseNum}`,
-            text: shareText,
-            url: shareUrl
-        }).catch(err => console.log('শেয়ার বাতিল করা হয়েছে', err));
-    } else {
-        // ওয়েব শেয়ার এপিআই না থাকলে লিংক এবং তথ্য কপি করে নোটিফিকেশন দেবে
-        navigator.clipboard.writeText(`${shareText}\n${shareUrl}`);
-        alert('আপনার ব্রাউজারে ডায়রেক্ট শেয়ার সাপোর্ট করে না। আয়াতের তথ্য ও লিংক কপি করা হয়েছে!');
-    }
-}
-
-// সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
-window.addEventListener('DOMContentLoaded', () => {
-    const currentSurah = {
-        surahName: "সূরা আল-ইমরান",
-        surahUrl: "surah-003.html"
-    };
-
-    let surahList = JSON.parse(localStorage.getItem('lastReadQuranList')) || [];
-    surahList = surahList.filter(item => item.surahName !== currentSurah.surahName);
-    surahList.unshift(currentSurah);
-
-    if (surahList.length > 5) {
-        surahList.pop();
-    }
-
-    localStorage.setItem('lastReadQuranList', JSON.stringify(surahList));
-});
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
