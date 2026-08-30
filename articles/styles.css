@@ -1,6 +1,8 @@
-/* styles.css */
-
+/* ==========================================
+   ১. কালার থিম ভ্যারিয়েবল (Dark & Light Mode)
+   ========================================== */
 :root {
+    /* ডার্ক মোড (ডিফল্ট) */
     --bg-color: #0d1117;
     --text-primary: #e6edf3;
     --text-secondary: #8b949e;
@@ -11,11 +13,15 @@
     --btn-hover: #30363d;
     --quote-bg: #1c2128;
     --quote-border: #2ea043;
+    --highlight-bg: #1b382b;      /* ডার্ক মোডের সবুজ বাক্সের ব্যাকগ্রাউন্ড */
+    --highlight-border: #2e5a44;  /* ডার্ক মোডের সবুজ বাক্সের বর্ডার */
+    --highlight-text: #a5d6a7;    /* ডার্ক মোডের সবুজ বাক্সের লেখা */
     --disabled-bg: #21262d;
     --disabled-text: #8b949e;
 }
 
 [data-theme="light"] {
+    /* লাইট মোড */
     --bg-color: #f6f8fa;
     --text-primary: #1f2328;
     --text-secondary: #656d76;
@@ -26,10 +32,16 @@
     --btn-hover: #e5e7eb;
     --quote-bg: #f0fdf4;
     --quote-border: #1f883d;
+    --highlight-bg: #e8f5e9;      /* লাইট মোডের হালকা সবুজ ব্যাকগ্রাউন্ড */
+    --highlight-border: #c8e6c9;  /* লাইট মোডের হালকা সবুজ বর্ডার */
+    --highlight-text: #2e7d32;    /* লাইট মোডের ডার্ক সবুজ লেখা */
     --disabled-bg: #e5e7eb;
     --disabled-text: #656d76;
 }
 
+/* ==========================================
+   ২. গ্লোবাল ব্যাকগ্রাউন্ড ও বডি স্টাইল
+   ========================================== */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     background-color: var(--bg-color);
@@ -45,6 +57,9 @@ body {
     margin: 0 auto;
 }
 
+/* ==========================================
+   ৩. টপ বার ও ডার্ক মোড বাটন
+   ========================================== */
 .top-bar {
     display: flex;
     justify-content: flex-end;
@@ -59,8 +74,16 @@ body {
     border-radius: 20px;
     cursor: pointer;
     font-size: 13px;
+    transition: background-color 0.2s, border-color 0.2s;
 }
 
+.theme-toggle-btn:hover {
+    background-color: var(--btn-hover);
+}
+
+/* ==========================================
+   ৪. হেডার সেকশন
+   ========================================== */
 .header {
     text-align: center;
     margin-bottom: 30px;
@@ -78,7 +101,10 @@ body {
     font-size: 13px;
 }
 
-.card {
+/* ==========================================
+   ৫. মূল কার্ড ও কনটেন্ট (Card Structure)
+   ========================================== */
+.card, .author-box {
     background-color: var(--card-bg);
     border: 1px solid var(--card-border);
     border-radius: 8px;
@@ -87,7 +113,7 @@ body {
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
-.card h2 {
+.card h2, .author-box h2 {
     color: var(--header-color);
     font-size: 18px;
     margin-top: 0;
@@ -96,7 +122,7 @@ body {
     padding-bottom: 6px;
 }
 
-.card p, .card ul {
+.card p, .card ul, .author-box p {
     margin: 0 0 10px 0;
     font-size: 15px;
 }
@@ -109,6 +135,9 @@ body {
     margin-bottom: 6px;
 }
 
+/* ==========================================
+   ৬. কোট বক্স ও হাইলাইট বক্স (Highlight Box)
+   ========================================== */
 .quote-box {
     background-color: var(--quote-bg);
     border-left: 4px solid var(--quote-border);
@@ -118,24 +147,27 @@ body {
     font-style: italic;
 }
 
-.author-box {
-    background-color: var(--card-bg);
-    border: 1px solid var(--card-border) !important;
+/* ১ ও ২ নম্বর আর্টিকেলের উপসংহারের হালকা সবুজ রঙের বক্স */
+.highlight-box {
+    background-color: var(--highlight-bg);
+    border: 1px solid var(--highlight-border);
     border-radius: 8px;
-    padding: 20px;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    font-size: 15px;
-    color: var(--text-primary);
+    padding: 15px;
+    margin-top: 15px;
 }
 
-.author-box h2 {
-    color: var(--header-color) !important;
-    font-size: 18px;
-    margin-top: 0;
-    margin-bottom: 12px;
-    border-bottom: 1px solid var(--btn-bg);
-    padding-bottom: 6px;
+.highlight-box p {
+    margin: 0;
+    color: var(--highlight-text);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   ৭. লেখক পরিচিতি (Author Info)
+   ========================================== */
+.author-box {
+    margin-top: 30px;
 }
 
 .author-info {
@@ -147,6 +179,9 @@ body {
     margin: 4px 0;
 }
 
+/* ==========================================
+   ৮. নেভিগেশন বাটন ও ফুটার
+   ========================================== */
 .navigation {
     display: flex;
     justify-content: space-between;
@@ -159,7 +194,7 @@ body {
 .nav-btn {
     text-decoration: none;
     color: #ffffff !important;
-    background-color: var(--card-border) !important;
+    background-color: var(--card-border);
     padding: 10px 16px;
     border-radius: 6px;
     font-size: 13px;
@@ -167,20 +202,26 @@ body {
     display: inline-block;
     text-align: center;
     flex: 1;
+    transition: background-color 0.2s;
+}
+
+.nav-btn:hover {
+    opacity: 0.9;
 }
 
 .nav-btn.disabled {
-    background-color: #238636 !important;
-    color: #ffffff !important;
-    border: 1px solid #30363d !important;
-    cursor: pointer;
-    opacity: 1;
+    background-color: var(--disabled-bg) !important;
+    color: var(--disabled-text) !important;
+    border: 1px solid var(--btn-hover);
+    cursor: not-allowed;
+    opacity: 0.7;
 }
 
 footer {
     text-align: center;
     font-size: 13px;
-    color: var(--text-secondary) !important;
+    color: var(--text-secondary);
     margin-top: 20px;
     padding-bottom: 20px;
 }
+
