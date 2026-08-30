@@ -4,54 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>কুরআনের অক্ষর, উচ্চারণ ও লিপির ইতিহাস</title>
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; transition: background-color 0.3s, color 0.3s; }
-        :root {
-            --bg-color: #121212; --container-bg: #1e1e1e; --card-bg: #2d2d2d;
-            --card-border: #3d3d3d; --text-primary: #e0e0e0; --text-secondary: #a0a0a0;
-            --primary-accent: #28a745; --highlight-bg: #1c3322; --highlight-border: #28a745;
-        }
-        [data-theme="light"] {
-            --bg-color: #f4f6f8; --container-bg: #ffffff; --card-bg: #f8f9fa;
-            --card-border: #e0e6ed; --text-primary: #2c3e50; --text-secondary: #666666;
-            --primary-accent: #1b4332; --highlight-bg: #e8f5e9; --highlight-border: #2e7d32;
-        }
-        body { font-family: 'SolaimanLipi', 'Kalpurush', Arial, sans-serif; background-color: var(--bg-color); color: var(--text-primary); line-height: 1.8; padding: 15px; }
-        .container { max-width: 850px; margin: 0 auto; background: var(--container-bg); padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); position: relative; }
-        .header { position: relative; text-align: center; border-bottom: 2px solid var(--card-border); padding-top: 35px; padding-bottom: 15px; margin-bottom: 25px; }
-        .header h1 { font-size: 22px; color: var(--primary-accent); margin-bottom: 5px; word-wrap: break-word; }
-        .header p { color: var(--text-secondary); font-size: 14px; }
-        
-        /* ছোট ও সুন্দর লাইট মোড বাটন */
-        .theme-toggle-btn { 
-            position: absolute; 
-            top: 0px; 
-            right: 0px; 
-            background-color: var(--card-bg); 
-            border: 1px solid var(--card-border); 
-            color: var(--text-primary); 
-            padding: 3px 8px; 
-            border-radius: 15px; 
-            cursor: pointer; 
-            font-size: 11px; 
-            display: flex; 
-            align-items: center; 
-            gap: 4px;
-            z-index: 10;
-        }
-
-        .section-card { background-color: var(--card-bg); border: 1px solid var(--card-border); border-left: 4px solid var(--primary-accent); padding: 20px; border-radius: 8px; margin-bottom: 20px; }
-        .section-card h2 { font-size: 18px; color: var(--primary-accent); margin-bottom: 12px; }
-        .section-card p, .section-card ul { font-size: 15px; color: var(--text-primary); margin-bottom: 10px; }
-        .section-card ul { padding-left: 20px; }
-        .section-card li { margin-bottom: 8px; }
-        .highlight-box { background-color: var(--highlight-bg); border: 1px solid var(--highlight-border); padding: 15px; border-radius: 6px; margin: 15px 0; }
-        
-        /* নেভিগেশন বাটন স্টাইল */
-        .navigation { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 30px; padding-top: 15px; border-top: 2px solid var(--card-border); }
-        .nav-btn { text-decoration: none; color: #ffffff; background-color: #1b4332; padding: 8px 14px; border-radius: 6px; font-size: 13px; font-weight: bold; text-align: center; flex: 1; min-width: 110px; }
-        .nav-btn:hover { background-color: #2d6a4f; }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
@@ -109,32 +62,7 @@
         
     </div>
 
-    <script>
-        const themeToggleBtn = document.getElementById('themeToggle');
-        const themeIcon = document.getElementById('themeIcon');
-        const themeText = document.getElementById('themeText');
-        const currentTheme = localStorage.getItem('theme');
-
-        if (currentTheme === 'light') {
-            document.documentElement.setAttribute('data-theme', 'light');
-            themeIcon.textContent = '🌙'; themeText.textContent = 'ডার্ক মোড';
-        } else {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            themeIcon.textContent = '☀️'; themeText.textContent = 'লাইট মোড';
-        }
-
-        themeToggleBtn.addEventListener('click', () => {
-            let theme = document.documentElement.getAttribute('data-theme');
-            if (theme === 'light') {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-                themeIcon.textContent = '☀️'; themeText.textContent = 'লাইট মোড';
-            } else {
-                document.documentElement.setAttribute('data-theme', 'light');
-                localStorage.setItem('theme', 'light');
-                themeIcon.textContent = '🌙'; themeText.textContent = 'ডার্ক মোড';
-            }
-        });
-    </script>
+    <script src="dark-mode.js"></script>
+    
 </body>
 </html>
