@@ -187,42 +187,7 @@ body {
     line-height: 1.8;
 }
 
-/* 10. Insight (উপলব্ধি) Button & Box Style */
-.insight-toggle-btn {
-    background-color: #21262d !important;
-    color: #d29922 !important;
-    border: 1px solid #30363d !important;
-    padding: 7px 14px !important;
-    border-radius: 6px !important;
-    font-size: 13.5px !important;
-    font-weight: bold !important;
-    cursor: pointer !important;
-    margin-top: 10px !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 6px !important;
-    transition: all 0.2s ease-in-out !important;
-    outline: none !important;
-}
-
-.insight-toggle-btn:hover {
-    background-color: #30363d !important;
-    color: #f1e05a !important;
-    border-color: #8b949e !important;
-}
-
-.insight-box {
-    margin-top: 10px;
-    padding: 16px;
-    background-color: #1c2128;
-    border-left: 4px solid #d29922;
-    border-radius: 0 6px 6px 0;
-    font-size: 14.5px;
-    color: #c9d1d9;
-    line-height: 1.8;
-}
-
-/* 11. Copy / Share Buttons */
+/* 10. Copy / Share Buttons */
 .action-buttons {
     display: flex;
     gap: 8px;
@@ -234,7 +199,7 @@ body {
     color: #c9d1d9;
 }
 
-/* 12. Navigation Buttons */
+/* 11. Navigation Buttons */
 .navigation {
     display: flex;
     justify-content: space-between;
