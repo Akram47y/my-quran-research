@@ -21,18 +21,7 @@ function toggleTransliteration() {
     }
 }
 
-// ২. উপলব্ধি দেখান/লুকান ফাংশন (নিরাপদ উপায়)
-function toggleInsight(button) {
-    const card = button.closest('.verse-card');
-    const insightBox = card.querySelector('.insight-box');
-    if (!insightBox) return;
-
-    const isHidden = window.getComputedStyle(insightBox).display === 'none';
-    insightBox.style.display = isHidden ? 'block' : 'none';
-    button.innerHTML = isHidden ? '🙈 উপলব্ধি লুকান' : '💡 উপলব্ধি দেখুন';
-}
-
-// ৩. ডায়নামিক কপি করার ফাংশন
+// ২. ডায়নামিক কপি করার ফাংশন
 function copyVerse(button) {
     const card = button.closest('.verse-card');
     const verseNum = card.querySelector('.verse-num')?.innerText || '';
@@ -55,7 +44,7 @@ function copyVerse(button) {
     });
 }
 
-// ৪. ডায়নামিক শেয়ার করার ফাংশন
+// ৩. ডায়নামিক শেয়ার করার ফাংশন
 function shareVerse(button) {
     const card = button.closest('.verse-card');
     const verseNum = card.querySelector('.verse-num')?.innerText || '';
@@ -76,7 +65,7 @@ function shareVerse(button) {
     }
 }
 
-// ৫. পেজ লোড হলে স্বয়ংক্রিয়ভাবে বাটন বসানো এবং পঠিত সূরা সেভ করা
+// ৪. পেজ লোড হলে স্বয়ংক্রিয়ভাবে বাটন বসানো এবং পঠিত সূরা সেভ করা
 document.addEventListener('DOMContentLoaded', () => {
     
     // ক) প্রতি আয়াতে স্বয়ংক্রিয়ভাবে কপি ও শেয়ার বাটন যুক্ত করা
