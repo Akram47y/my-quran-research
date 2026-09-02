@@ -21,9 +21,10 @@ function toggleTransliteration() {
     }
 }
 
-// ২. উপলব্ধি দেখান/লুকান ফাংশন
+// ২. উপলব্ধি দেখান/লুকান ফাংশন (নিরাপদ উপায়)
 function toggleInsight(button) {
-    const insightBox = button.nextElementSibling;
+    const card = button.closest('.verse-card');
+    const insightBox = card.querySelector('.insight-box');
     if (!insightBox) return;
 
     const isHidden = window.getComputedStyle(insightBox).display === 'none';
@@ -99,7 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const pageTitle = document.querySelector('.header h1')?.innerText || document.title;
     const pageUrl = window.location.pathname.split('/').pop() || 'index.html';
 
-    // শুধুমাত্র যদি এটি কোনো সূরার পেজ হয় (index.html না হয়)
     if (pageUrl !== 'index.html' && pageUrl !== '') {
         const currentSurah = {
             surahName: pageTitle,
@@ -117,4 +117,3 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('lastReadQuranList', JSON.stringify(surahList));
     }
 });
-
