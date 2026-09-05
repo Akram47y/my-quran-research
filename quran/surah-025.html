@@ -223,17 +223,68 @@
         <div class="bismillah-meaning">পরম মমতাময়, সদামমতাবদ্ধ আল্লাহর নামে।</div>
     </div>
 
+    <!-- আয়াত ২৫:১২ -->
+        <div class="verse-card">
+            <div class="verse-num">২৫:১২</div>
+            <div class="word-by-word-container">
+                <div class="word-box">
+                    <span class="arabic-word">إِذَا</span>
+                    <span class="verified-meaning">যখন</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">رَأَتْهُم</span>
+                    <span class="unverified-meaning">তাদের দেখবে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">مِّن</span>
+                    <span class="verified-meaning">থেকে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">مَّكَانٍ</span>
+                    <span class="unverified-meaning">স্থান</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">بَعِيدٍ</span>
+                    <span class="unverified-meaning">দূরবর্তী</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">سَمِعُوا</span>
+                    <span class="unverified-meaning">তারা শুনবে</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">لَهَا</span>
+                    <span class="unverified-meaning">তার</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">تَغَيُّظًا</span>
+                    <span class="verified-meaning">ক্ষোভ</span>
+                </div>
+                <div class="word-box">
+                    <span class="arabic-word">وَزَفِيرًا</span>
+                    <span class="unverified-meaning">এবং গর্জন</span>
+                </div>
+            </div>
+
+            <div class="transliteration-box">
+                <strong>উচ্চারণ:</strong> ইযা রাআতহুম মি মাকানিম বা'ঈদিন সামি'ঊ লাহা তাগাইয়ুযাওঁ ওয়া যাফীরা।
+            </div>
+
+            <div class="full-translation">
+                "যখন তা দূরবর্তী স্থান থেকে তাদের দেখবে, তারা তার ক্ষোভ এবং গর্জন শুনবে।"
+            </div>
+        </div>
+
     <!-- সূরা ২৫:২৮ আয়াত -->
     <div class="verse-card">
         <div class="verse-num">২৫:২৮</div>
         <div class="word-by-word-container">
             <div class="word-box">
                 <span class="arabic-word">يَا</span>
-                <span class="verified-meaning" style="color: #008744;">হে</span>
+                <span class="verified-meaning">হে</span>
             </div>
             <div class="word-box">
                 <span class="arabic-word">لَيْتَنِي</span>
-                <span class="verified-meaning" style="color: #008744;">আমার দুর্ভোগ</span>
+                <span class="verified-meaning">আমার দুর্ভোগ</span>
             </div>
             <!-- لَمْ - না (কালো) -->
             <div class="word-box">
@@ -282,88 +333,7 @@
     </div>
 </div>
 
-<script>
-function toggleTransliteration() {
-    const transBoxes = document.querySelectorAll('.transliteration-box');
-    const btn = document.getElementById('transToggleBtn');
-
-    if (transBoxes.length === 0) return;
-
-    // বর্তমান অবস্থা চেক করা (দেখা যাচ্ছে কি না)
-    const isHidden = window.getComputedStyle(transBoxes[0]).display === 'none';
-
-    transBoxes.forEach(box => {
-        box.style.display = isHidden ? 'block' : 'none';
-    });
-
-    // বাটনের টেক্সট পরিবর্তন
-    if (isHidden) {
-        btn.innerHTML = '🙈 উচ্চারণ লুকান';
-    } else {
-        btn.innerHTML = '👁️ উচ্চারণ দেখান';
-    }
-}
-
-// আয়াত কপি করার ফাংশন
-function copyVerse(button) {
-    const card = button.closest('.verse-card');
-    const verseNum = card.querySelector('.verse-num').innerText.trim();
-    
-    // আরবি শব্দগুলো সাজানো
-    const arabicWords = Array.from(card.querySelectorAll('.arabic-word'))
-                             .map(el => el.innerText.trim())
-                             .join(' ');
-    
-    // পূর্ণ অনুবাদ নেওয়া
-    const translation = card.querySelector('.full-translation').innerText.trim();
-    
-    const textToCopy = `সূরা আল-ফুরকান [${verseNum}]\n\n${arabicWords}\n\nঅনুবাদ: ${translation}`;
-
-    navigator.clipboard.writeText(textToCopy).then(() => {
-        alert(`আয়াত ${verseNum} সফলভাবে কপি হয়েছে!`);
-    }).catch(err => {
-        console.error('কপি করতে সমস্যা হয়েছে: ', err);
-    });
-}
-
-// আয়াত শেয়ার করার ফাংশন
-function shareVerse(button) {
-    const card = button.closest('.verse-card');
-    const verseNum = card.querySelector('.verse-num').innerText.trim();
-    const translation = card.querySelector('.full-translation').innerText.trim();
-    const shareText = `সূরা আল-ফুরকান [আয়াত ${verseNum}]\n${translation}`;
-    const shareUrl = window.location.href;
-
-    if (navigator.share) {
-        navigator.share({
-            title: `সূরা আল-ফুরকান - আয়াত ${verseNum}`,
-            text: shareText,
-            url: shareUrl
-        }).catch(err => console.log('শেয়ার বাতিল করা হয়েছে', err));
-    } else {
-        navigator.clipboard.writeText(`${shareText}\n${shareUrl}`);
-        alert('আপনার ব্রাউজারে সরাসরি শেয়ার সাপোর্ট করে না। আয়াতের তথ্য ও লিংক কপি করা হয়েছে!');
-    }
-}
-
-// সর্বশেষ পড়া সূরার তথ্য লিস্টে সেভ করা
-window.addEventListener('DOMContentLoaded', () => {
-    const currentSurah = {
-      surahName: "সূরা আল-ফুরকান",
-      surahUrl: "surah-025.html"
-    };
-
-    let surahList = JSON.parse(localStorage.getItem('lastReadQuranList')) || [];
-    surahList = surahList.filter(item => item.surahName !== currentSurah.surahName);
-    surahList.unshift(currentSurah);
-
-    if (surahList.length > 5) {
-      surahList.pop();
-    }
-
-    localStorage.setItem('lastReadQuranList', JSON.stringify(surahList));
-});
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
